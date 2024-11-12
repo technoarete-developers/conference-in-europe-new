@@ -1,0 +1,51 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use App\Models\EventTable;
+use Illuminate\Http\Request;
+
+class FilterApiController extends Controller
+{
+    protected $filter;
+
+    public function __construct(JsonFetchDataController $filter)
+    {
+        $this->filter = $filter;
+    }
+
+    public function countryApi(Request $request)
+    {
+        try {
+            $topicList = $this->filter->topicSubtopicList();
+
+            $content_json = $request->getContent();
+            $content = json_decode($content_json, true);
+            foreach ($topicList as $main_topic => $sub_topic) {
+                $subtopicName = [];
+        
+                    $result = EventTable::where('country', $content['country'])->whereIn('sub_topic', $sub_topic)
+                        ->select('topic', 'sub_topic')
+                        ->get();
+
+                    foreach ($result as $subtopic) {
+                        $explode_subtopic = explode(',', $subtopic->sub_topic);
+                        foreach ($explode_subtopic as $sub_topic_explode) {
+                            if (!in_array(trim($sub_topic_explode), $subtopicName) && $sub_topic_explode != "") {
+                                $stopic = strtolower(str_replace(" ","-",trim($sub_topic_explode)));
+                                $subtopicName[$stopic] = $sub_topic_explode;
+                            }
+                        }
+                    }
+             
+                $filterTopic[$main_topic] = $subtopicName; 
+            }
+
+            return $filterTopic;
+        } catch (\Exception $e) {
+            $failure['response']['message'] = 'Exception:' . $e->getMessage() . ' | Line: ' . $e->getLine();
+            return $failure;
+        }
+    }
+}
