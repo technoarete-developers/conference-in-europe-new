@@ -24,13 +24,13 @@
                         <div class="col-md-12">
                             <ul class="foot-ul">
                                 <h4 class="lin">Popular Topic’s</h4>
-                                <li><a href="{{ route('subtopic-page', ['topic_list' => 'dentistry']) }}" target="_blank">Dentistry</a></li>
-                                <li><a href="{{ route('subtopic-page', ['topic_list' => 'pharmacy']) }}" target="_blank">Pharmacy</a></li>
-                                <li><a href="{{ route('subtopic-page', ['topic_list' => 'nanotechnology']) }}" target="_blank">Nanotechnology</a></li>
-                                <li><a href="{{ route('subtopic-page', ['topic_list' => 'nursing']) }}" target="_blank">Nursing</a></li>
-                                <li><a href="{{ route('subtopic-page', ['topic_list' => 'health']) }}" target="_blank">Health</a></li>
-                                <li><a href="{{ route('subtopic-page', ['topic_list' => 'oncology']) }}" target="_blank">Oncology</a></li>
-                                <li><a href="{{ route('subtopic-page', ['topic_list' => 'earth-sciences']) }}" target="_blank">Earth Sciences</a>
+                                <li><a href="{{ route('subtopic-page', ['subtopic' => 'dentistry']) }}" target="_blank">Dentistry</a></li>
+                                <li><a href="{{ route('subtopic-page', ['subtopic' => 'pharmacy']) }}" target="_blank">Pharmacy</a></li>
+                                <li><a href="{{ route('subtopic-page', ['subtopic' => 'nanotechnology']) }}" target="_blank">Nanotechnology</a></li>
+                                <li><a href="{{ route('subtopic-page', ['subtopic' => 'nursing']) }}" target="_blank">Nursing</a></li>
+                                <li><a href="{{ route('subtopic-page', ['subtopic' => 'health']) }}" target="_blank">Health</a></li>
+                                <li><a href="{{ route('subtopic-page', ['subtopic' => 'oncology']) }}" target="_blank">Oncology</a></li>
+                                <li><a href="{{ route('subtopic-page', ['subtopic' => 'earth-sciences']) }}" target="_blank">Earth Sciences</a>
                                 </li>
                             </ul>
                         </div>
@@ -76,7 +76,7 @@
         <div class="container mx-auto">
             <div class="row">
                 <div class="col-md-12" style="margin-top: 8px;">
-                    <h4>Copyright &copy; {{ date('Y') }} Conference in Europe. All Rights Reserved. | <a href="{{ route('privacy-terms') }}">Terms &amp; Conditions</a></h4>
+                    <h4>Copyright &copy; {{ date('Y') }} Conference in Europe. All Rights Reserved. | <a href="{{ route('terms-and-condition') }}">Terms &amp; Conditions</a></h4>
                 </div>
             </div>
         </div>
