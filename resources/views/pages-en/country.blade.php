@@ -177,5 +177,5 @@
             }
             fetch_country_api();
         }
-    </script>
+    </script>   
 @endsection
