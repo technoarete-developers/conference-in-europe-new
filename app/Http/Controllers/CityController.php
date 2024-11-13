@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class CityController extends Controller
 {
-    //
+   public function cityPage(Request $request){
+    
+   }
 }
