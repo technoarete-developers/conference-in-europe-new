@@ -100,7 +100,7 @@ font-size: 13px;font-weight:400;" for="agree">I
             <div class="row">
                 <div class=" col-md-8" style="margin-top: 8px; text-align: left;">
                     <h4>Copyright &copy; {{ date('Y') }} Conference in Europe. All Rights Reserved. | <a
-                            href="{{ route('privacy-terms') }}">Terms &amp; Conditions</a></h4>
+                            href="{{ route('terms-and-condition') }}">Terms &amp; Conditions</a></h4>
                 </div>
                 <div class="col-md-4  social text-right">
                 </div>

@@ -10,7 +10,7 @@
 
     {{-- load stylesheets --}}
     <link rel="preload" href="{{ url('css/bootstrap.min.css') }}" as="style" onload="this.rel='stylesheet'">
-    <link rel="shortcut icon" href="{{ url('img/favicon.ico') }}" type="image/x-icon">
+   <link rel="shortcut icon" href="{{url('img/favicon.ico')}}" type="image/x-icon">
     <link rel="preload" type="text/css" href="{{ url('slick/slick.css') }}" as="style"
         onload="this.rel='stylesheet'" />
     <link rel="preload" type="text/css" href="{{ url('slick/slick-theme.css') }}" as="style"

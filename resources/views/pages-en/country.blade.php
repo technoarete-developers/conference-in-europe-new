@@ -130,6 +130,11 @@
             fetch_country(country);
         });
 
+        $('#selected_country').change(function() {
+            var country = $(this).val();
+            fetch_country(country);
+        });
+
         function search() {
             $('.search_loading').text("loading...")
             $('.search_loading').css("background-color", "rgb(24 62 131)");

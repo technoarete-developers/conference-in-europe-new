@@ -31,10 +31,6 @@ Route::get('/blog', function () {
     return view('blog');
 })->name('blog');
 
-Route::get('/contact', function () {
-    return view('pages-en.contact');
-})->name('contact');
-
 Route::get('/faq', function () {
     return view('pages-en.faq');
 })->name('faq');
@@ -51,9 +47,9 @@ Route::get('/sitemap.html', function () {
     return view('sitemap');
 })->name('sitemap');
 
-Route::get('/privacy-terms', function () {
-    return view('pages-en.privacy-terms');
-})->name('privacy-terms');
+Route::get('/terms-and-condition', function () {
+    return view('pages-en.terms-and-condition');
+})->name('terms-and-condition');
 
 
 Route::controller(AddEventController::class)->group(function () {
@@ -70,9 +66,11 @@ Route::controller(SubscribeController::class)->group(function () {
 });
 
 
-// Route::controller(ContactController::class)->group(function () {
-//     Route::get('/eventdetail/{id}', 'eventDetail')->name('event-detail');
-// });
+Route::controller(ContactController::class)->group(function () {
+    Route::get('/contact', 'contactPage')->name('contact');
+
+    Route::post('/contact-form', 'contactForm')->name('contact-form');
+});
 
 
 // Route::controller(EventSubscribeController::class)->group(function () {
@@ -111,8 +109,8 @@ Route::controller(CityController::class)->group(function () {
 
 
 Route::controller(TopicController::class)->group(function () {
-    Route::get('/topic-list/{topic_list}', 'subtopicPage')->name('subtopic-page');
-    Route::get('/topic-list/{topic_list}/{month}', 'subtopicMonthPage')->name('subtopic-month-page');
+    Route::get('/topic-list/{subtopic}', 'subtopicPage')->name('subtopic-page');
+    Route::get('/topic-list/{subtopic}/{month}', 'subtopicMonthPage')->name('subtopic-month-page');
 });
 
 

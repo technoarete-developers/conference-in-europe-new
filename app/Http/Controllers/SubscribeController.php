@@ -21,9 +21,9 @@ class SubscribeController extends Controller
 	public function subscribePage()
 	{
 		$topicList = $this->filter->topicSubtopicList();
-        $topCountry = $this->filter->topCountry();
+		$countryWithCity = $this->filter->countryWithCity();
 
-        return view('pages-en.subscribe', compact('topicList', 'topCountry'));
+        return view('pages-en.subscribe', compact('topicList', 'countryWithCity'));
 	}
 
 	public function subscribeForm(Request $request)
@@ -40,6 +40,8 @@ class SubscribeController extends Controller
 		$subscription->topic = $request->topic;
 		$subscription->category = $request->category;
 		$subscription->country = $request->country;
+		$subscription->city = $request->city;
+		$subscription->university_org = $request->university_org;
 		$subscription->status = '';
 		$subscription->index_id = '22';
 		$subscription->source = 'subscribe';
@@ -55,6 +57,7 @@ class SubscribeController extends Controller
             'City' => $request->city,
             'Topic' => $request->topic,
             'Category' => $request->category,
+            'University_org' => $request->university_org,
             'Source' => 'General Subscribe',
         ];
 
