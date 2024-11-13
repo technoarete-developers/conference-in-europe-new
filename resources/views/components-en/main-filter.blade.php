@@ -496,7 +496,18 @@
         .text-center {
             font-size: 2.0vw;
         }
-    }
+    }    
+.megamenu-nav .nav-item:hover {   
+    background-color: #f1f1f1; 
+}
+
+.megamenu-nav .nav-item:hover .megamenu-content {
+    display: block; 
+}
+
+.megamenu-nav .megamenu-content {
+    display: none;
+}
 </style>
 <div class="container">
 
@@ -642,4 +653,16 @@
             updateCities();
         });
     });
+</script>
+<script>
+    $(document).ready(function() {
+    $('.megamenu-nav .nav-item').hover(
+        function() {
+            $(this).addClass('is-open');
+        },
+        function() {
+            $(this).removeClass('is-open'); 
+        }
+    );
+});
 </script>
