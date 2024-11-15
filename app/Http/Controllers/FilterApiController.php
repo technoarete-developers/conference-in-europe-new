@@ -23,23 +23,32 @@ class FilterApiController extends Controller
             $content_json = $request->getContent();
             $content = json_decode($content_json, true);
             foreach ($topicList as $main_topic => $sub_topic) {
-                $subtopicName = [];
-        
-                    $result = EventTable::where('country', $content['country'])->whereIn('sub_topic', $sub_topic)
-                        ->select('topic', 'sub_topic')
-                        ->get();
 
-                    foreach ($result as $subtopic) {
-                        $explode_subtopic = explode(',', $subtopic->sub_topic);
-                        foreach ($explode_subtopic as $sub_topic_explode) {
-                            if (!in_array(trim($sub_topic_explode), $subtopicName) && $sub_topic_explode != "") {
-                                $stopic = strtolower(str_replace(" ","-",trim($sub_topic_explode)));
-                                $subtopicName[$stopic] = $sub_topic_explode;
-                            }
+                $subtopicName = [];
+
+                if ($content['slectedType'] == 'city_select') {
+                    $result = EventTable::where('city', str_replace("-"," ",$content['data']))->whereIn('sub_topic', $sub_topic)
+                        ->select('topic', 'sub_topic')
+                        ->orderBy('sub_topic', 'asc') 
+                        ->get();
+                } else {
+                    $result = EventTable::where('country', str_replace("-"," ",$content['data']))->whereIn('sub_topic', $sub_topic)
+                        ->select('topic', 'sub_topic')
+                        ->orderBy('sub_topic', 'asc')
+                        ->get();
+                }
+
+                foreach ($result as $subtopic) {
+                    $explode_subtopic = explode(',', $subtopic->sub_topic);
+                    foreach ($explode_subtopic as $sub_topic_explode) {
+                        if (!in_array(trim($sub_topic_explode), $subtopicName) && $sub_topic_explode != "") {
+                            $stopic = strtolower(str_replace(" ", "-", trim($sub_topic_explode)));
+                            $subtopicName[$stopic] = $sub_topic_explode;
                         }
                     }
-             
-                $filterTopic[$main_topic] = $subtopicName; 
+                }
+
+                $filterTopic[$main_topic] = $subtopicName;
             }
 
             return $filterTopic;

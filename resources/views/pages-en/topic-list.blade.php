@@ -154,7 +154,7 @@
                     $('.subtopics-container').empty();
 
                     $.each(subTopics, function(index, subTopic) {
-                        var subTopicUrl = "{{ route('subtopic-page', ['topic_list' => ':subTopic']) }}";
+                        var subTopicUrl = "{{ route('topic-page', ['topic' => ':subTopic']) }}";
                         subTopicUrl = subTopicUrl.replace(':subTopic', index.replace(/\s+/g, '-'));
 
                         var displaySubTopic = subTopic.replace(/-/g, ' ');

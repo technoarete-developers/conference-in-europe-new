@@ -24,7 +24,7 @@ class HomeController extends Controller
         return view('pages-en.home', compact('topCity', 'topicList', 'topCountry'));
     }
 
-    public function topicPage()
+    public function topicListPage()
     {
         $topicList = $this->filter->topicSubtopicList();
 

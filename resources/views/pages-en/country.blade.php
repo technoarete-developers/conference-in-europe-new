@@ -75,7 +75,7 @@
                 event.preventDefault();
                 var currentPage = $(this).data('current-page');
                 var page = currentPage + 1;
-                var country = "<?php echo request()->country; ?>";
+                var country = "{{ request()->country }}";
                 fetchLoadMoreEvents(country, page);
             });
 
@@ -108,6 +108,7 @@
 
 
         $(document).ready(function() {
+        
             setTimeout(function() {
                 $(".select_sub_topics").select2({
                     width: '100%',
@@ -126,61 +127,11 @@
                     theme: "classic"
                 });
             }, 3000);
-            country = '{{ request()->country }}';
-            fetch_country(country);
+            var country = '{{ request()->country }}';
+            var slectedType = "country_select";
+            fetch_country(country, slectedType);
+             // passing to main-filter page
         });
 
-        $('#selected_country').change(function() {
-            var country = $(this).val();
-            fetch_country(country);
-        });
-
-        function search() {
-            $('.search_loading').text("loading...")
-            $('.search_loading').css("background-color", "rgb(24 62 131)");
-            $('.search_loading').css("border-color", "blue");
-        }
-
-        function fetch_country(country) {
-            $('.hero').removeClass('loaded')
-            $('.hero').addClass('loading');
-            const fetch_country_api = async () => {
-                const response = await fetch('{{ route('subtopics-fetch-api') }}', {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        "country": country,
-                    }),
-                });
-                const myJson = await response.json();
-                $('.hero').removeClass('loading')
-                $('.hero').addClass('loaded');
-
-                Object.keys(myJson).forEach(function(topicName) {
-
-                    const subtopics = myJson[topicName];
-
-                    if (Object.entries(subtopics).length === 0) {
-
-                        $('#' + topicName + '_ul').append(
-                            $(`<li><button class="subnav-item" 
-                            value="No Subtopics for ${topicName}">
-                            No Subtopics for ${topicName}
-                        </button></li>`)
-                        );
-                    } else {
-                        Object.entries(subtopics).forEach(([subTopicUrl, subTopicName]) => {
-                            $('#' + topicName + '_ul').append(
-                                $(`<li style="list-style-type: disclosure-closed;"><button class="subnav-item" 
-                            onclick="subtopic_click('${subTopicName}');" 
-                            value="${subTopicUrl}">
-                        ${subTopicName}
-                    </button></li>`)
-                            );
-                        });
-                    }
-                });
-            }
-            fetch_country_api();
-        }
-    </script>   
+    </script>
 @endsection

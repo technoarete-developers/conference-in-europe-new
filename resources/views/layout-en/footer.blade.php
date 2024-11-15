@@ -24,13 +24,13 @@
                         <div class="col-md-12">
                             <ul class="foot-ul">
                                 <h4 class="lin">Popular Topic’s</h4>
-                                <li><a href="{{ route('subtopic-page', ['subtopic' => 'dentistry']) }}" target="_blank">Dentistry</a></li>
-                                <li><a href="{{ route('subtopic-page', ['subtopic' => 'pharmacy']) }}" target="_blank">Pharmacy</a></li>
-                                <li><a href="{{ route('subtopic-page', ['subtopic' => 'nanotechnology']) }}" target="_blank">Nanotechnology</a></li>
-                                <li><a href="{{ route('subtopic-page', ['subtopic' => 'nursing']) }}" target="_blank">Nursing</a></li>
-                                <li><a href="{{ route('subtopic-page', ['subtopic' => 'health']) }}" target="_blank">Health</a></li>
-                                <li><a href="{{ route('subtopic-page', ['subtopic' => 'oncology']) }}" target="_blank">Oncology</a></li>
-                                <li><a href="{{ route('subtopic-page', ['subtopic' => 'earth-sciences']) }}" target="_blank">Earth Sciences</a>
+                                <li><a href="{{ route('topic-page', ['topic' => 'dentistry']) }}" target="_blank">Dentistry</a></li>
+                                <li><a href="{{ route('topic-page', ['topic' => 'pharmacy']) }}" target="_blank">Pharmacy</a></li>
+                                <li><a href="{{ route('topic-page', ['topic' => 'nanotechnology']) }}" target="_blank">Nanotechnology</a></li>
+                                <li><a href="{{ route('topic-page', ['topic' => 'nursing']) }}" target="_blank">Nursing</a></li>
+                                <li><a href="{{ route('topic-page', ['topic' => 'health']) }}" target="_blank">Health</a></li>
+                                <li><a href="{{ route('topic-page', ['topic' => 'oncology']) }}" target="_blank">Oncology</a></li>
+                                <li><a href="{{ route('topic-page', ['topic' => 'earth-sciences']) }}" target="_blank">Earth Sciences</a>
                                 </li>
                             </ul>
                         </div>
