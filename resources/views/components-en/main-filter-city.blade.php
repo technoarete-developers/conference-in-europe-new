@@ -456,6 +456,24 @@
         display: none;
     }
 
+    .dots-loader:not(:required) {
+        opacity: 1;
+        overflow: hidden;
+        position: relative;
+        left: 45%;
+        top: 20%;
+        margin-left: 0px;
+        margin-top: 0px;
+        text-indent: -9999px;
+        display: inline-block;
+        width: 120px;
+        height: 120px;
+        background: url(/img/loading-f.gif);
+        animation: dots-loader 5s infinite ease-in-out;
+        transform-origin: 50% 50%;
+        transform: scale(1);
+        transition: .3s all;
+    }
 
     .loaded .dots-loader {
         opacity: 0;
@@ -623,9 +641,9 @@
                         <div class="drop">
                             <span style="display: flex;"><i class="fa fa-map-signs" aria-hidden="true"
                                     style="color: #000;position: relative;top: 4px; font-size: 19px;"></i>&nbsp;
-                                <select class="dropdown select_countries" id="selected_country">
-                                    <option value="{{ request()->country ? request()->country : '' }}">
-                                        {{ request()->country ? ucfirst(str_replace('-', ' ', request()->country)) : 'Select Country' }}
+                                <select class="dropdown select_countries text-capitalize" id="selected_country">
+                                    <option>
+                                        {{ ucfirst($countryName) }}
                                     </option>
                                     @foreach ($topCountry as $url => $name)
                                         <option value="{{ $url }}" data-name="{{ $name }}">
@@ -642,8 +660,8 @@
                             <span style="display: flex;"><i class="fa fa-map-o" aria-hidden="true"
                                     style="color: #000;position: relative;top: 4px; font-size: 19px;"></i>&nbsp;
                                 <select class="dropdown select_cities" id="selected_city">
-                                    <option value="">
-                                        {{ request()->city ? ucfirst(str_replace('-', ' ', request()->city)) : 'Select City' }}
+                                    <option value="{{ request()->city }}">
+                                        {{ ucfirst(str_replace('-', ' ', request()->city)) }}
                                     </option>
                                 </select>
                             </span>
@@ -673,12 +691,11 @@
         var countryWithCity = @json($countryWithCity);
         var subTopicUrl = "{{ request()->topic }}";
         localStorage.setItem('subTopicUrl', subTopicUrl);
-
+        
         // update the cities based on the selected country
         function updateCities() {
             var selectedCountry = $('#selected_country').val();
-            citySelect.empty();
-            citySelect.append('<option value="">Select City</option>');
+
 
             if (countryWithCity[selectedCountry]) {
                 $.each(countryWithCity[selectedCountry], function(cityKey, cityName) {
@@ -697,7 +714,7 @@
     });
 </script>
 <script>
-    // topic container open script
+    // subtopic container open script
     $(document).ready(function() {
         $('.megamenu-nav .nav-item').hover(
             function() {
@@ -709,18 +726,26 @@
         );
     });
 
+    // if selected country
     $('#selected_country').change(function() {
         var country = $(this).val();
         var slectedType = "country_select";
+
+        var citySelect = $('#selected_city');
+        citySelect.empty();
+        citySelect.append('<option value="">Select City</option>');
+
         fetch_country(country, slectedType);
     });
 
+    // if selected city
     $('#selected_city').change(function() {
         var city = $(this).val();
         var slectedType = "city_select";
         fetch_country(city, slectedType);
     });
 
+    //  fetching subtopic list using city
     function fetch_country(data, slectedType) {
         $('.hero').removeClass('loaded')
         $('.hero').addClass('loading');
@@ -928,6 +953,7 @@
         }
 
     }
+
 
     // search 
     function search() {

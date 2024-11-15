@@ -75,18 +75,19 @@
                 event.preventDefault();
                 var currentPage = $(this).data('current-page');
                 var page = currentPage + 1;
-                alert(page);
-                var country = "<?php echo request()->country; ?>";
-                fetchLoadMoreEvents(country, page);
+                var country = "{{ request()->country }}";
+                var subtopic = "{{ request()->subtopic }}";
+                fetchLoadMoreEvents(country, subtopic, page);
             });
 
             // load more button for mobile
-            function fetchLoadMoreEvents(country, page) {
+            function fetchLoadMoreEvents(country, subtopic, page) {
                 $.ajax({
                     url: "{{ route('country-ajax') }}",
                     type: "GET",
                     data: {
                         country: country,
+                        subtopic: subtopic,
                         page: page
                     },
                     beforeSend: function() {
@@ -127,66 +128,11 @@
                     theme: "classic"
                 });
             }, 3000);
-            country = '{{ request()->country }}';
-            fetch_country(country);
+            var country = '{{ request()->country }}';
+            var slectedType = "country_select";
+            fetch_country(country, slectedType);
+            // passing to main-filter page
         });
 
-        function search() {
-            $('.search_loading').text("loading...")
-            $('.search_loading').css("background-color", "rgb(24 62 131)");
-            $('.search_loading').css("border-color", "blue");
-        }
-
-        function fetch_country(country) {
-            $('.hero').removeClass('loaded').addClass('loading');
-
-            const fetch_country_api = async () => {
-
-                const response = await fetch('{{ route('subtopics-fetch-api') }}', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content'),
-                    },
-                    body: JSON.stringify({
-                        "country": country
-                    }),
-                });
-
-                const myJson = await response.json();
-
-                $('.hero').removeClass('loading').addClass('loaded');
-
-                Object.keys(myJson).forEach((topicName) => {
-                    const subtopics = myJson[topicName];
-                    const topicList = $(`#${topicName}_ul`);
-
-                    topicList.empty();
-
-                    if (Object.entries(subtopics).length === 0) {
-                        topicList.append(
-                            $(`<li><button class="subnav-item" 
-                            value="No Subtopics for ${topicName}">
-                            No Subtopics for ${topicName}
-                        </button></li>`)
-                        );
-                    } else {
-                        Object.entries(subtopics).forEach(([subTopicUrl, subTopicName]) => {
-                            topicList.append(
-                                $(`<li style="list-style-type: disclosure-closed;">
-                                <button class="subnav-item" 
-                                    onclick="subtopic_click('${subTopicName}');" 
-                                    value="${subTopicUrl}">
-                                    ${subTopicName}
-                                </button>
-                            </li>`)
-                            );
-                        });
-                    }
-                });
-            };
-
-            fetch_country_api();
-        }
     </script>
 @endsection

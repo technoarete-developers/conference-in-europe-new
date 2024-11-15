@@ -10,7 +10,7 @@
 
     {{-- load stylesheets --}}
     <link rel="preload" href="{{ url('css/bootstrap.min.css') }}" as="style" onload="this.rel='stylesheet'">
-   <link rel="shortcut icon" href="{{url('img/favicon.ico')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url('img/favicon.ico') }}" type="image/x-icon">
     <link rel="preload" type="text/css" href="{{ url('slick/slick.css') }}" as="style"
         onload="this.rel='stylesheet'" />
     <link rel="preload" type="text/css" href="{{ url('slick/slick-theme.css') }}" as="style"
@@ -28,7 +28,7 @@
     <script src="/js/bootstrap.min.js" async></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
@@ -78,10 +78,7 @@
             border-radius: 0.25rem;
         }
 
-        #subform {
-            margin-top: 10px;
-        }
-        
+
         .g-recaptcha {
             transform: scale(0.77);
             transform-origin: 0 0;

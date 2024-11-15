@@ -80,13 +80,33 @@ Route::controller(ContactController::class)->group(function () {
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'homePage')->name('home');
-    Route::get('/topic/{topics}', 'topicPage')->name('topic-page');
+    Route::get('/topic/{topic}', 'topicListPage')->name('topic-list-page');
     Route::get('/journal', 'journalPage')->name('journal-page');
 });
 
 
+Route::controller(TopicController::class)->group(function () {
+    Route::get('/topic-list/{topic}', 'topicPage')->name('topic-page');
+    Route::get('/topic-list/{topic}/{month}', 'topicMonthPage')->name('topic-month-page');
+
+    Route::get('/topic-ajax', 'topicPage')->name('topic-ajax');
+});
+
+
+Route::controller(CityController::class)->group(function () {
+    Route::get('/cities/{city}', 'cityPage')->name('city-page');
+    Route::get('/cities/{city}/{month}', 'cityMonthPage')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->name('city-month-page');
+    Route::get('/cities/{city}/{topic}', 'cityTopicPage')->name('city-topic-page');
+    Route::get('/cities/{city}/{topic}/{month}', 'cityTopicMonthPage')->name('city-topic-month-page');
+
+    Route::get('/city-ajax', 'cityPage')->name('city-ajax');
+});
+
+
 Route::controller(MonthController::class)->group(function () {
-    Route::get('/{month}', 'countryPage')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->name('month-page');
+    Route::get('/{month}', 'monthPage')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->name('month-page');
+
+    Route::get('/month-ajax', 'monthPage')->name('month-ajax');
 });
 
 
@@ -97,20 +117,6 @@ Route::controller(CountryController::class)->group(function () {
     Route::get('/{country}/{topic}/{month}', 'countryTopicMonthPage')->name('country-topic-month-page');
 
     Route::get('/country-ajax', 'countryPage')->name('country-ajax');
-});
-
-
-Route::controller(CityController::class)->group(function () {
-    Route::get('/cities/{city}', 'cityPage')->name('city-page');
-    Route::get('/cities/{city}/{month}', 'cityMonthPage')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->name('city-month-page');
-    Route::get('/cities/{city}/{topics}', 'cityTopicPage')->name('city-topic-page');
-    Route::get('/cities/{city}/{topics}/{month}', 'cityTopicMonthPage')->name('city-topic-month-page');
-});
-
-
-Route::controller(TopicController::class)->group(function () {
-    Route::get('/topic-list/{subtopic}', 'subtopicPage')->name('subtopic-page');
-    Route::get('/topic-list/{subtopic}/{month}', 'subtopicMonthPage')->name('subtopic-month-page');
 });
 
 

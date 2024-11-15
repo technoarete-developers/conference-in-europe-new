@@ -427,7 +427,7 @@
 
                                     <div class="tabItem">
                                         @foreach ($topicList as $topic => $subtopic)
-                                            <a href="{{ route('topic-page', ['topics' => $topic]) }}"
+                                            <a href="{{ route('topic-list-page', ['topic' => $topic]) }}"
                                                 class="city_click">{{ ucfirst($topic) }}</a>
                                         @endforeach
                                     </div>
@@ -483,7 +483,7 @@
                             <div class="tabContent">
                                 <div class="tabItem">
                                     @foreach ($topicList as $topic => $subtopic)
-                                        <a href="{{ route('topic-page', ['topics' => $topic]) }}"
+                                        <a href="{{ route('topic-list-page', ['topic' => $topic]) }}"
                                             class="city_click">{{ ucfirst($topic) }}</a>
                                     @endforeach
                                 </div>
@@ -529,7 +529,7 @@
                         @endphp
 
                         <div class="col-lg-2 col-6 col-sm-4 col-md-3 calender-media">
-                            <a href="{{ route('month-page', ['month' => $monthName]) }}" class="calendar month_click">
+                            <a href="{{ route('month-page', ['month' => strtolower($monthName)]) }}" class="calendar month_click">
                                 <div class="calander-div">
                                     <em> {{ date('Y', strtotime("first day of +$i month ")) }}</em>
                                     <span class="calander-year">

@@ -709,61 +709,27 @@
         );
     });
 
-    $('#selected_country').change(function() {
-        var country = $(this).val();
-        var slectedType = "country_select";
-        fetch_country(country, slectedType);
-    });
+    $(document).ready(function() {
 
-    $('#selected_city').change(function() {
-        var city = $(this).val();
-        var slectedType = "city_select";
-        fetch_country(city, slectedType);
-    });
+        var topicJson = @json($topicList);
 
-    function fetch_country(data, slectedType) {
-        $('.hero').removeClass('loaded')
-        $('.hero').addClass('loading');
-        const fetch_country_api = async () => {
-            const response = await fetch('{{ route('subtopics-fetch-api') }}', {
-                method: 'POST',
-                body: JSON.stringify({
-                    "slectedType": slectedType,
-                    "data": data,
-                }),
-            });
-            const myJson = await response.json();
-            $('.hero').removeClass('loading')
-            $('.hero').addClass('loaded');
+        Object.keys(topicJson).forEach((topicName) => {
+            const topicList = $(`#${topicName}_ul`);
+            topicList.empty();
 
-            Object.keys(myJson).forEach((topicName) => {
-                const subtopicsList = myJson[topicName];
-                const topicList = $(`#${topicName}_ul`);
-
-                topicList.empty();
-
-                if (myJson[topicName].length === 0) {
-                    topicList.append(
-                        $(`<li><button class="subnav-item text-capitalize text-center" 
-                                                        value="">
-                                                        No Subtopics for ${data.replace(/-/g, ' ')}
-                                                    </button></li>`)
-                    );
-                } else {
-                    Object.entries(subtopicsList).forEach(([subTopicUrl, subTopicName]) => {
-                        topicList.append(
-                            $(`<li style="list-style-type: disclosure-closed;">
+            Object.entries(topicJson[topicName]).forEach(([subTopicUrl, subTopicName]) => {
+              
+                topicList.append(
+                    $(`<li style="list-style-type: disclosure-closed;">
                                 <div class="subnav-item" data-url="${subTopicUrl}" data-name="${subTopicName}">
                                     ${subTopicName}
                                 </div>
                             </li>`)
-                        );
-                    });
-                }
+                );
             });
-        }
-        fetch_country_api();
-    }
+        });
+    });
+
 
     // if clicked subtopic
     $(document).on('click', '.subnav-item', function() {

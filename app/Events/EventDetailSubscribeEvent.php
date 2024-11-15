@@ -2,7 +2,6 @@
 
 namespace App\Events;
 
-use App\Models\IndexSubscription;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
