@@ -13,7 +13,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>{{ str_replace('-', ' ', request()->city) }}</h2>
+                        <h2>{{ str_replace('-', ' ', request()->keyword) }}</h2>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                                 <div class="col-sm-9 topic-midule-grid">
                                     <div class="topic-date-cnfr">
                                         <legend> <span
-                                                class="fld_hed text-capitalize">{{ str_replace('-', ' ', request()->city) }}</span>
+                                                class="fld_hed text-capitalize">{{ str_replace('-', ' ', request()->keyword) }}</span>
                                         </legend>
                                         <div class="county-conference">
                                             <div class="col-md-12">
@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="eve-prom">
                                         <div class="col-xs-12 text-justify">
-                                            @include ('components-en.main-filter-city')
+                                            @include ('components-en.main-filter-topic')
                                         </div>
                                     </div>
                                     <div class="p-4 mt-4" style="background-color: #f5f7fd: font-weight: 700">
@@ -54,7 +54,7 @@
                                     </div>
                                     @include ('components-en.load-more')
                                 </div>
-                                @include('components-en.city-side-banner')
+                                {{-- @include('components-en.country-side-banner') --}}
                             </div>
                         </div>
                     </div>
@@ -75,19 +75,17 @@
                 event.preventDefault();
                 var currentPage = $(this).data('current-page');
                 var page = currentPage + 1;
-                var city = "{{ request()->city }}";
-                var subtopic = "{{ request()->subtopic }}";
-                fetchLoadMoreEvents(city, subtopic, page);
+                var keyword = "{{ request()->keyword }}";
+                fetchLoadMoreEvents(keyword, page);
             });
 
             // load more button for mobile
-            function fetchLoadMoreEvents(city, subtopic, page) {
+            function fetchLoadMoreEvents(keyword, page) {
                 $.ajax({
-                    url: "{{ route('city-ajax') }}",
+                    url: "{{ route('advance-search-ajax') }}",
                     type: "GET",
                     data: {
-                        city: city,
-                        subtopic: subtopic,
+                        keyword: keyword,
                         page: page
                     },
                     beforeSend: function() {
@@ -110,7 +108,6 @@
 
 
         $(document).ready(function() {
-
                 $(".select_sub_topics").select2({
                     width: '100%',
                     theme: "classic"
@@ -127,11 +124,7 @@
                     width: '100%',
                     theme: "classic"
                 });
+            });
 
-            var city = '{{ request()->city }}';
-            var slectedType = "country_select";
-            fetch_country(city, slectedType);
-            // passing to main-filter page
-        });
     </script>
 @endsection

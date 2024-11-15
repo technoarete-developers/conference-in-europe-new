@@ -110,7 +110,7 @@
 
 
         $(document).ready(function() {
-            setTimeout(function() {
+          
                 $(".select_sub_topics").select2({
                     width: '100%',
                     theme: "classic"
@@ -127,7 +127,7 @@
                     width: '100%',
                     theme: "classic"
                 });
-            }, 3000);
+           
             var country = '{{ request()->country }}';
             var slectedType = "country_select";
             fetch_country(country, slectedType);

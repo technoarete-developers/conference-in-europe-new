@@ -108,8 +108,6 @@
 
 
         $(document).ready(function() {
-        
-            setTimeout(function() {
                 $(".select_sub_topics").select2({
                     width: '100%',
                     theme: "classic"
@@ -127,7 +125,6 @@
                     theme: "classic"
                 });
             });
-        });
 
     </script>
 @endsection

@@ -110,29 +110,28 @@
 
 
         $(document).ready(function() {
-            setTimeout(function() {
-                $(".select_sub_topics").select2({
-                    width: '100%',
-                    theme: "classic"
-                });
-                $(".select_months").select2({
-                    width: '100%',
-                    theme: "classic"
-                });
-                $(".select_countries").select2({
-                    width: '100%',
-                    theme: "classic"
-                });
-                $(".select_cities").select2({
-                    width: '100%',
-                    theme: "classic"
-                });
-            }, 3000);
+
+            $(".select_sub_topics").select2({
+                width: '100%',
+                theme: "classic"
+            });
+            $(".select_months").select2({
+                width: '100%',
+                theme: "classic"
+            });
+            $(".select_countries").select2({
+                width: '100%',
+                theme: "classic"
+            });
+            $(".select_cities").select2({
+                width: '100%',
+                theme: "classic"
+            });
+
             var country = '{{ request()->country }}';
             var slectedType = "country_select";
             fetch_country(country, slectedType);
             // passing to main-filter page
         });
-
     </script>
 @endsection

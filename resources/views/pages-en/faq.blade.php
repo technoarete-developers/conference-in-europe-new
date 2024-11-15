@@ -362,19 +362,19 @@
                                             Applied Sciences & Medicine, Business & Economics, Mathematics and Life
                                             Sciences you are likely to find information on upcoming conferences in every
                                             existing field today! <br>
-                                            <a href="{{ route('topic-page', ['topics' => 'engineering']) }}">Conference in
+                                            <a href="{{ route('topic-list-page', ['topic' => 'engineering']) }}">Conference in
                                                 Engineering &
                                                 Technology</a><br>
-                                            <a href="{{ route('subtopic-page', ['subtopic' => 'medical']) }}">Conference in
+                                            <a href="{{ route('topic-page', ['topic' => 'medical']) }}">Conference in
                                                 Science &
                                                 Medicine</a><br>
-                                            <a href="{{ route('subtopic-page', ['subtopic' => 'mathematics']) }}">
+                                            <a href="{{ route('topic-page', ['topic' => 'mathematics']) }}">
                                                 Conference in Mathematics &
                                                 Statistics </a><br>
-                                            <a href="{{ route('subtopic-page', ['subtopic' => 'life-science']) }}">Conference
+                                            <a href="{{ route('topic-page', ['topic' => 'life-science']) }}">Conference
                                                 in Life Science
                                             </a><br>
-                                            <a href="{{ route('subtopic-page', ['subtopic' => 'business']) }}">Conference
+                                            <a href="{{ route('topic-page', ['topic' => 'business']) }}">Conference
                                                 in
                                                 Business &
                                                 Economics</a>

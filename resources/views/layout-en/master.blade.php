@@ -252,6 +252,19 @@
     @yield('script')
 </body>
 
-<script></script>
+<script>
+    $('#advance-serch').click(function() {
+        $('#search-container').show();
+        $('#advance-serch-hide').show();
+        $('#advance-serch').hide();
+    });
+
+    $('#advance-serch-hide').click(function() {
+        $('#search-container').hide();
+        $('#advance-serch-hide').hide();
+        $('#advance-serch').show();
+
+    });
+</script>
 
 </html>

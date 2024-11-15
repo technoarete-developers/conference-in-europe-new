@@ -8,6 +8,7 @@ use App\Http\Controllers\EventDetailsController;
 use App\Http\Controllers\EventSubscribeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MonthController;
+use App\Http\Controllers\SearchBoxController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TopicController;
 use Illuminate\Support\Facades\Route;
@@ -85,6 +86,13 @@ Route::controller(HomeController::class)->group(function () {
 });
 
 
+Route::controller(SearchBoxController::class)->group(function () {
+    Route::get('/advance-search', 'advanceSerachPage')->name('advance-search');
+
+    Route::get('/advance-search-ajax', 'advanceSerachPage')->name('advance-search-ajax');
+});
+
+
 Route::controller(TopicController::class)->group(function () {
     Route::get('/topic-list/{topic}', 'topicPage')->name('topic-page');
     Route::get('/topic-list/{topic}/{month}', 'topicMonthPage')->name('topic-month-page');
@@ -123,3 +131,6 @@ Route::controller(CountryController::class)->group(function () {
 Route::controller(EventDetailsController::class)->group(function () {
     Route::get('/eventdetail/{id}', 'eventDetail')->name('event-detail');
 });
+
+
+
