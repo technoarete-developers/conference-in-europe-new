@@ -1,6 +1,17 @@
 @extends('layout-en.master')
 
 @section('meta')
+<title>Are you searching for Conferences? Find the latest Europe conferences in 2024</title>
+<meta name="keyword" content="conference alert,conference alerts 2023, conferences in Europe, International conferences 2023, Academic conferences 2023, conference alerts in Europe, upcoming conferences in Europe 2023, International conference in europe 2023." />
+<meta name="description"
+    content="Are you searching for Conferences?  Find the latest Europe conferences in 2024. Subscribe and get notification of Conference in europe 2024 from our portal." />
+
+<meta property="og:title" content="Are you searching for Conferences? Find the latest Europe conferences in 2024" />
+<meta property="og:keywords" content="conference alert,conference alerts 2023, conferences in Europe, International conferences 2023, Academic conferences 2023, conference alerts in Europe, upcoming conferences in Europe 2023, International conference in europe 2023." />
+<meta property="og:description"
+    content="Are you searching for Conferences?  Find the latest Europe conferences in 2024. Subscribe and get notification of Conference in europe 2024 from our portal." />
+
+   <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
 
 @section('style')

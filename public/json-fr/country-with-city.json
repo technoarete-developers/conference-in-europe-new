@@ -1,0 +1,298 @@
+{
+    "andorra": {
+        "andorra": "Andorra",
+        "andorra-la-vella": "Andorra la Vella",
+        "arinsal": "Arinsal",
+        "canillo": "Canillo",
+        "el-pas-de-la-casa": "El Pas de la Casa",
+        "encamp": "Encamp",
+        "la-massana": "La Massana",
+        "ordino": "Ordino",
+        "santa-coloma": "Santa Coloma"
+    },
+    "armenia": {
+        "gyumri": "Gyumri",
+        "vanadzor": "Vanadzor",
+        "yerevan": "Yerevan"
+    },
+    "austria": {
+        "graz": "Graz",
+        "innsbruck": "Innsbruck",
+        "linz": "Linz",
+        "salzburg": "Salzburg",
+        "vienna": "Vienna"
+    },
+    "belarus": {
+        "babruysk": "Babruysk",
+        "brest": "Brest",
+        "gomel": "Gomel",
+        "grodno": "Grodno",
+        "lida": "Lida",
+        "mazyr": "Mazyr",
+        "minsk": "Minsk",
+        "mogilev": "Mogilev"
+    },
+    "belgium": {
+        "antwerp": "Antwerp",
+        "bruges": "Bruges",
+        "brussels": "Brussels",
+        "charleroi": "Charleroi",
+        "ghent": "Ghent",
+        "leuven": "Leuven",
+        "liege": "Liege",
+        "namur": "Namur"
+    },
+    "bulgaria": {
+        "burgas": "Burgas",
+        "plovdiv": "Plovdiv",
+        "ruse": "Ruse",
+        "sofia": "Sofia",
+        "stara-zagora": "Stara Zagora",
+        "varna": "Varna",
+        "veliko-tarnovo": "Veliko Tarnovo"
+    },
+    "croatia": {
+        "pula": "Pula",
+        "rijeka": "Rijeka",
+        "split": "Split",
+        "zagreb": "Zagreb"
+    },
+    "cyprus": {
+        "famagusta": "Famagusta",
+        "kyrenia": "Kyrenia",
+        "larnaca": "Larnaca",
+        "limassol": "Limassol",
+        "nicosia": "Nicosia",
+        "paphos": "Paphos"
+    },
+    "czech-republic": {
+        "brno": "Brno",
+        "ostrava": "Ostrava",
+        "pilsen": "Pilsen",
+        "prague": "Prague"
+    },
+    "denmark": {
+        "aalborg": "Aalborg",
+        "aarhus": "Aarhus",
+        "billund": "Billund",
+        "copenhagen": "Copenhagen",
+        "helsingor": "Helsingor",
+        "herning": "Herning",
+        "kobenhavn": "Kobenhavn",
+        "odense": "Odense",
+        "roskilde": "Roskilde",
+        "skagen": "Skagen",
+        "south-denmark": "South Denmark"
+    },
+    "estonia": {
+        "narva": "Narva",
+        "tallinn": "Tallinn",
+        "tartu": "Tartu"
+    },
+    "finland": {
+        "espoo": "Espoo",
+        "helsinki": "Helsinki",
+        "oulu": "Oulu",
+        "tampere": "Tampere",
+        "turku": "Turku",
+        "vantaa": "Vantaa"
+    },
+    "durban": {
+        "adana": "Adana",
+        "ankara": "Ankara",
+        "antalaya": "Antalaya",
+        "bursa": "Bursa",
+        "fethiye": "Fethiye",
+        "istanbul": "Istanbul",
+        "izmir": "Izmir",
+        "konya": "Konya",
+        "samsun": "Samsun",
+        "sanliurfa": "Sanliurfa"
+    },
+    "france": {
+        "bordeaux": "Bordeaux",
+        "cannes": "Cannes",
+        "lyon": "Lyon",
+        "marseille": "Marseille",
+        "nice": "Nice",
+        "paris": "Paris",
+        "strasbourg": "Strasbourg",
+        "toulouse": "Toulouse"
+    },
+    "germany": {
+        "berlin": "Berlin",
+        "cologne": "Cologne",
+        "dusseldorf": "Dusseldorf",
+        "frankfurt": "Frankfurt",
+        "hamburg": "Hamburg",
+        "leipzig": "Leipzig",
+        "munich": "Munich",
+        "nuremberg": "Nuremberg",
+        "stuttgart": "Stuttgart",
+        "wurzburg": "Wurzburg"
+    },
+    "greece": {
+        "athens": "Athens",
+        "chania": "Chania",
+        "crete": "Crete",
+        "pireas": "Pireas",
+        "thessaloniki": "Thessaloniki"
+    },
+    "hungary": {
+        "budapest": "Budapest"
+    },
+    "ireland": {
+        "dublin": "Dublin"
+    },
+    "italy": {
+        "bologna": "Bologna",
+        "florence": "Florence",
+        "genoa": "Genoa",
+        "milan": "Milan",
+        "naples": "Naples",
+        "rome": "Rome",
+        "turin": "Turin",
+        "venice": "Venice",
+        "verona": "Verona"
+    },
+    "lithuania": {
+        "kaunas": "Kaunas",
+        "klaipeda": "Klaipeda",
+        "vilnius": "Vilnius"
+    },
+    "luxembourg": {
+        "luxembourg-city": "Luxembourg City"
+    },
+    "macedonia": {
+        "bitola": "Bitola",
+        "kumanovo": "Kumanovo",
+        "skopje": "Skopje"
+    },
+    "malta": {
+        "birgu": "Birgu",
+        "bormla": "Bormla",
+        "valletta": "Valletta"
+    },
+    "netherlands": {
+        "amsterdam": "Amsterdam",
+        "rotterdam": "Rotterdam",
+        "the-hague": "The Hague",
+        "utrecht": "Utrecht"
+    },
+    "norway": {
+        "bergen": "Bergen",
+        "oslo": "Oslo",
+        "stavenger": "Stavenger",
+        "trondheim": "Trondheim"
+    },
+    "poland": {
+        "bydgoszcz": "Bydgoszcz",
+        "gdansk": "Gdansk",
+        "krakow": "Krakow",
+        "lodz": "Lodz",
+        "lublin": "Lublin",
+        "poznan": "Poznan",
+        "radom": "Radom",
+        "szczecin": "Szczecin",
+        "torun": "Torun",
+        "warsaw": "Warsaw",
+        "warszawa": "Warszawa",
+        "wroclaw": "Wroclaw"
+    },
+    "russia": {
+        "kazan": "Kazan",
+        "moscow": "Moscow",
+        "nizhny-novgorod": "Nizhny Novgorod",
+        "novosibirsk": "Novosibirsk",
+        "omsk": "Omsk",
+        "rostov-on-don": "Rostov-on-Don",
+        "saint-petersburg": "Saint Petersburg",
+        "samara": "Samara",
+        "volgograd": "Volgograd",
+        "yekaterinburg": "Yekaterinburg"
+    },
+   "romania": {
+        "brasov": "Brasov",
+        "bucharest": "Bucharest",
+        "cluj-napoca": "Cluj-Napoca",
+        "constanta": "Constanta",
+        "lasi": "Lasi",
+        "timisoara": "Timisoara"
+    },
+    "slovakia": {
+        "bratislava": "Bratislava",
+        "kosice": "Kosice",
+        "presov": "Presov"
+    },
+    "spain": {
+        "barcelona": "Barcelona",
+        "bilbao": "Bilbao",
+        "gemnnp-barcelona": "GEMNNP-Barcelona",
+        "granada": "Granada",
+        "jerez-de-la-frontera": "Jerez de la Frontera",
+        "las-palmas-de-gran-canaria": "Las Palmas de Gran Canaria",
+        "madrid": "Madrid",
+        "malaga": "Malaga",
+        "seville": "Seville",
+        "zaragoza": "Zaragoza"
+    },
+    "sweden": {
+        "gothenburg": "Gothenburg",
+        "malmo": "Malmo",
+        "malmo-municipality": "Malmo Municipality",
+        "stockholm": "Stockholm"
+    },
+    "switzerland": {
+        "bern": "Bern",
+        "geneva": "Geneva",
+        "lucerne": "Lucerne",
+        "zurich": "Zurich"
+    },
+    "turkey": {
+        "adana": "Adana",
+        "ankara": "Ankara",
+        "antalaya": "Antalaya",
+        "antalya": "Antalya",
+        "bodrum": "Bodrum",
+        "bursa": "Bursa",
+        "diyarbakir": "Diyarbakir",
+        "edirne": "Edirne",
+        "ephesus": "Ephesus",
+        "fethiye": "Fethiye",
+        "istanbul": "Istanbul",
+        "izmir": "Izmir",
+        "kayseri": "Kayseri",
+        "konya": "Konya",
+        "samsun": "Samsun",
+        "sanliurfa": "Sanliurfa"
+    },
+    "ukraine": {
+        "chernihiv": "Chernihiv",
+        "dnipro": "Dnipro",
+        "kharkiv": "Kharkiv",
+        "kiev": "Kiev",
+        "kyiv": "Kyiv",
+        "lviv": "Lviv",
+        "odesa": "Odesa",
+        "odessa": "Odessa"
+    },
+    "uk": {
+        "birmingham": "Birmingham",
+        "bradford": "Bradford",
+        "bristol": "Bristol",
+        "cambridge": "Cambridge",
+        "cardiff": "Cardiff",
+        "city-of-london": "City of London",
+        "edinburgh": "Edinburgh",
+        "glasgow": "Glasgow",
+        "liverpool": "Liverpool",
+        "london": "London",
+        "manchester": "Manchester",
+        "reading": "Reading",
+        "scotland": "Scotland",
+        "sheffield": "Sheffield"
+    },
+    "vatican-city": {
+        "vatican-city": "Vatican City"
+    }
+}

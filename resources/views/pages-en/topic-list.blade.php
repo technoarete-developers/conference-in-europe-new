@@ -1,6 +1,22 @@
+@php
+    $topicName = ucfirst(str_replace('-', ' ', request()->topic));
+@endphp
+
 @extends('layout-en.master')
 
 @section('meta')
+    <title>Conference in {{ $topicName }} {{ date('Y') }} | International Conference in {{ $topicName }}</title>
+    <meta name="keyword" content="Conferences on {{ $topicName }}, Latest conferences on {{ $topicName }}, {{ $topicName }} conference alerts, {{ $topicName }} Conferences, {{ $topicName }} conferences {{ date('Y') }}, Upcoming conferences on{{ $topicName }}, Conference alerts on {{ $topicName }}, Conference alert on {{ $topicName }}." />
+    <meta name="description"
+        content="Are you Researcher,Schloars and Scientic professionals?You can get the details of {{ $topicName }} conferences 2022.Subscribe and get Conference Alerts." />
+
+    <meta property="og:title"
+        content="Conference in {{ $topicName }} {{ date('Y') }} | International Conference in {{ $topicName }}" />
+    <meta property="og:keywords" content="Conferences on {{ $topicName }}, Latest conferences on {{ $topicName }}, {{ $topicName }} conference alerts, {{ $topicName }} Conferences, {{ $topicName }} conferences {{ date('Y') }}, Upcoming conferences on{{ $topicName }}, Conference alerts on {{ $topicName }}, Conference alert on {{ $topicName }}." />
+    <meta property="og:description"
+        content="Conference in Europe {{ date('Y') }} aims to bring all the information of upcoming events in various fields. It's your top destination for getting the latest alerts on all the updates." />
+
+    <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
 
 @section('style')
@@ -91,7 +107,7 @@
         </section>
         <div class="marqq">
             <div class="container-fluid">
-                <h1 class="heading" style="text-align: center;text-transform: uppercase;"><b>Subtopics of Business</b</h1>
+                <h1 class="heading" style="text-align: center;text-transform: uppercase;"><b>Subtopics of Business</b< /h1>
                         <div class="titleline"> </div>
             </div>
         </div>

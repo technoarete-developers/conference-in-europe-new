@@ -2,8 +2,15 @@
 
 @section('meta')
     <title>Submit Paper for Journals | Journal Publication 2022-2023 | Conference in Europe</title>
+    <meta name="keyword" content="" />
     <meta name="description"
-        content="Find upcoming video Conference in 2022 provided by various organizations in our Conference in Europe portal.">
+        content="Find upcoming video Conference in 2022 provided by various organizations in our Conference in Europe portal." />
+
+    <meta property="og:title" content="Submit Paper for Journals | Journal Publication 2022-2023 | Conference in Europe" />
+    <meta property="og:keywords" content="" />
+    <meta property="og:description"
+        content="Find upcoming video Conference in 2022 provided by various organizations in our Conference in Europe portal." />
+
     <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
 

@@ -1,17 +1,17 @@
 @extends('layout-en.master')
 
 @section('meta')
-    <title>Conference in Europe About us</title>
+    <title>Conference in Europe 2024/2025 - Perfect Platform To Know About Europe Connference</title>
     <meta name="keyword" content="" />
     <meta name="description"
-        content="Conference in Europe {{ date('Y') }} aims to bring all the information of upcoming events in various fields. It's your top destination for getting the latest alerts on all the updates." />
+        content="Conference in Europe 2024-2025, Explore the beautiful cities of Europe while attending the informative. Check conferences based on interested topics, venue, and time." />
 
-    <meta property="og:title" content="Conference in Europe About us" />
+    <meta property="og:title" content="Conference in Europe 2024/2025 - Perfect Platform To Know About Europe Connference" />
     <meta property="og:keywords" content="" />
     <meta property="og:description"
-        content="Conference in Europe {{ date('Y') }} aims to bring all the information of upcoming events in various fields. It's your top destination for getting the latest alerts on all the updates." />
+        content="Conference in Europe 2024-2025, Explore the beautiful cities of Europe while attending the informative. Check conferences based on interested topics, venue, and time." />
 
-    <link rel="canonical" href="{{ url(Request::url()) }}" />
+       <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
 
 @section('style')
