@@ -1,6 +1,19 @@
+@php
+    $topicName = ucfirst(str_replace('-', ' ', request()->topic));
+@endphp
+
 @extends('layout-en.master')
 
 @section('meta')
+    <title>{{ str_replace('@topic', $topicName, $content['title']) }}</title>
+    <meta name="keywords" content="{{ str_replace('@topic', $topicName, $content['metaKey']) }}" />
+    <meta name="Description" content="{{ str_replace('@topic', $topicName, $content['metaDes']) }}" />
+
+    <meta property="og:title" content="{{ str_replace('@topic', $topicName, $content['title']) }}" />
+    <meta property="og:keywords" content="{{ str_replace('@topic', $topicName, $content['metaKey']) }}" />
+    <meta property="og:description" content="{{ str_replace('@topic', $topicName, $content['metaDes']) }}" />
+
+    <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
 
 @section('style')
@@ -13,7 +26,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>{{ str_replace('-', ' ', request()->topic) }}</h2>
+                        <h2>{{ $topicName }}</h2>
                     </div>
                 </div>
             </div>
@@ -26,15 +39,14 @@
                             <div class="row">
                                 <div class="col-sm-9 topic-midule-grid">
                                     <div class="topic-date-cnfr">
-                                        <legend> <span
-                                                class="fld_hed text-capitalize">{{ str_replace('-', ' ', request()->topic) }}</span>
+                                        <legend> <span class="fld_hed text-capitalize">{{ $topicName }}</span>
                                         </legend>
                                         <div class="county-conference">
                                             <div class="col-md-12">
-                                                {{-- <h1 style=" font-size: 18px;font-family:Gill Sans;"><b>
-                                                            <?php echo $line; ?></b> </h1>
-                                                    <p><?php echo $para; ?></p>
-                                                    <p><?php echo $para1; ?></p> --}}
+                                                <h1 style=" font-size: 18px;font-family:Gill Sans;">
+                                                    {{ str_replace('@topic', $topicName, $content['h1']) }}</h1>
+                                                <p>{{ str_replace('@topic', $topicName, $content['contentOne']) }}</p>
+                                                <p>{{ str_replace('@topic', $topicName, $content['contentTwo']) }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -108,23 +120,22 @@
 
 
         $(document).ready(function() {
-                $(".select_sub_topics").select2({
-                    width: '100%',
-                    theme: "classic"
-                });
-                $(".select_months").select2({
-                    width: '100%',
-                    theme: "classic"
-                });
-                $(".select_countries").select2({
-                    width: '100%',
-                    theme: "classic"
-                });
-                $(".select_cities").select2({
-                    width: '100%',
-                    theme: "classic"
-                });
+            $(".select_sub_topics").select2({
+                width: '100%',
+                theme: "classic"
             });
-
+            $(".select_months").select2({
+                width: '100%',
+                theme: "classic"
+            });
+            $(".select_countries").select2({
+                width: '100%',
+                theme: "classic"
+            });
+            $(".select_cities").select2({
+                width: '100%',
+                theme: "classic"
+            });
+        });
     </script>
 @endsection

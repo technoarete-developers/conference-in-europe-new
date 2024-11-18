@@ -9,7 +9,7 @@
     <meta property="og:keywords" content="" />
     <meta property="og:description" content="" />
 
-    <link rel="canonical" href="{{ url(Request::url()) }}" />
+       <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
 
 @section('style')

@@ -13,7 +13,7 @@
     <meta property="og:description"
         content="Conference in Europe 2024-2025, Explore the beautiful cities of Europe while attending the informative. Check conferences based on interested topics, venue, and time." />
 
-    <link rel="canonical" href="{{ url(Request::url()) }}" />
+       <link rel="canonical" href="{{ url()->current() }}" />
 
     <link rel="preload" href="{{ url('css/jQuery.tab.css') }}" as="style" onload="this.rel='stylesheet'">
 @endsection

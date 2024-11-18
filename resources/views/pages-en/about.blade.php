@@ -11,7 +11,7 @@
     <meta property="og:description"
         content="Conference in Europe {{ date('Y') }} aims to bring all the information of upcoming events in various fields. It's your top destination for getting the latest alerts on all the updates." />
 
-    <link rel="canonical" href="{{ url(Request::url()) }}" />
+       <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
 
 @section('style')

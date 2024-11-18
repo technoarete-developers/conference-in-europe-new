@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FilterApiController;
+use App\Http\Controllers\TopicFetchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(FilterApiController::class)->group(function () {
     Route::post('/subtopics/fetch', 'countryApi')->name('subtopics-fetch-api');
+});
+
+Route::controller(TopicFetchController::class)->group(function () {
+    Route::get('/topic-fetch', 'countryApi')->name('topic-fetch');
 });

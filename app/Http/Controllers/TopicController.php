@@ -26,6 +26,7 @@ class TopicController extends Controller
         $topicList = $this->filter->topicSubtopicList();
         $topCountry = $this->filter->topCountry();
         $countryWithCity = $this->filter->countryWithCity();
+        $content = $this->filter->topicContent($request->topic);
         $upcomingEvent = $this->upcomingEvent->topicUpcomingEvents($topic);
 
         $events = EventTable::where(function ($query) use ($topic) {
@@ -42,7 +43,7 @@ class TopicController extends Controller
             return response()->json($response);
         }
 
-        return view('pages-en.topic', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'countryWithCity', 'monthList'));
+        return view('pages-en.topic', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'countryWithCity', 'monthList', 'content'));
     }
 
     public function topicMonthPage(Request $request)
@@ -54,6 +55,7 @@ class TopicController extends Controller
         $topicList = $this->filter->topicSubtopicList();
         $topCountry = $this->filter->topCountry();
         $countryWithCity = $this->filter->countryWithCity();
+        $content = $this->filter->topicMonthContent($request->topic, $request->month);
         $upcomingEvent = $this->upcomingEvent->topicUpcomingEvents($topic);
 
         $events = EventTable::where('month', 'like', "%{$month}%")->where(function ($query) use ($topic) {
@@ -70,6 +72,6 @@ class TopicController extends Controller
             return response()->json($response);
         }
 
-        return view('pages-en.topic-month', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'countryWithCity', 'monthList'));
+        return view('pages-en.topic-month', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'countryWithCity', 'monthList', 'content'));
     }
 }

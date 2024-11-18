@@ -26,6 +26,7 @@ class MonthController extends Controller
         $topicList = $this->filter->topicSubtopicList();
         $topCountry = $this->filter->topCountry();
         $countryWithCity = $this->filter->countryWithCity();
+        $content = $this->filter->monthContent($request->month);
         $upcomingEvent = $this->upcomingEvent->monthUpcomingEvents($month);
 
         $events = EventTable::where('month', 'like', "%{$month}%")->orderBy('sdate')
@@ -39,6 +40,6 @@ class MonthController extends Controller
             return response()->json($response);
         }
 
-        return view('pages-en.month', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'countryWithCity', 'monthList'));
+        return view('pages-en.month', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'countryWithCity', 'monthList', 'content'));
     }
 }

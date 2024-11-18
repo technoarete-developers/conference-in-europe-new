@@ -5,7 +5,6 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\EventDetailsController;
-use App\Http\Controllers\EventSubscribeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MonthController;
 use App\Http\Controllers\SearchBoxController;
@@ -79,12 +78,16 @@ Route::controller(ContactController::class)->group(function () {
 // });
 
 
+Route::controller(EventDetailsController::class)->group(function () {
+    Route::get('/eventdetail/{event_id}', 'eventDetailPage')->name('event-detail');
+});
+
+
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'homePage')->name('home');
     Route::get('/topic/{topic}', 'topicListPage')->name('topic-list-page');
     Route::get('/journal', 'journalPage')->name('journal-page');
 });
-
 
 Route::controller(SearchBoxController::class)->group(function () {
     Route::get('/advance-search', 'advanceSerachPage')->name('advance-search');
@@ -98,6 +101,7 @@ Route::controller(TopicController::class)->group(function () {
     Route::get('/topic-list/{topic}/{month}', 'topicMonthPage')->name('topic-month-page');
 
     Route::get('/topic-ajax', 'topicPage')->name('topic-ajax');
+    Route::get('/topic-month-ajax', 'topicMonthPage')->name('topic-month-ajax');
 });
 
 
@@ -108,6 +112,9 @@ Route::controller(CityController::class)->group(function () {
     Route::get('/cities/{city}/{topic}/{month}', 'cityTopicMonthPage')->name('city-topic-month-page');
 
     Route::get('/city-ajax', 'cityPage')->name('city-ajax');
+    Route::get('/city-month-ajax', 'cityMonthPage')->name('city-month-ajax');
+    Route::get('/city-topic-ajax', 'cityTopicPage')->name('city-topic-ajax');
+    Route::get('/city-topic-month-ajax', 'cityTopicMonthPage')->name('city-topic-month-ajax');
 });
 
 
@@ -125,12 +132,11 @@ Route::controller(CountryController::class)->group(function () {
     Route::get('/{country}/{topic}/{month}', 'countryTopicMonthPage')->name('country-topic-month-page');
 
     Route::get('/country-ajax', 'countryPage')->name('country-ajax');
+    Route::get('/country-month-ajax', 'countryMonthPage')->name('country-month-ajax');
+    Route::get('/country-topic-ajax', 'countryTopicPage')->name('country-topic-ajax');
+    Route::get('/country-topic-month-ajax', 'countryTopicMonthPage')->name('country-topic-month-ajax');
 });
 
-
-Route::controller(EventDetailsController::class)->group(function () {
-    Route::get('/eventdetail/{id}', 'eventDetail')->name('event-detail');
-});
 
 
 

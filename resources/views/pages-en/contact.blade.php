@@ -11,7 +11,7 @@
     <meta property="og:description"
         content="Contact us to know about the latest international conferences from conference in europe" />
 
-    <link rel="canonical" href="{{ url(Request::url()) }}" />
+       <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
 
 @section('style')

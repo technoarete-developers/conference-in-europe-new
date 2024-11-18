@@ -64,10 +64,7 @@
                             <a class="nav-link"  id="advance-serch">Search <i
                                     class="fa fa-search"></i></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link"  id="advance-serch-hide">hide <i
-                                    class="fa fa-search"></i></a>
-                        </li>
+            
                         <div class="search-container" id="search-container" style="display: none;">
                             <div class="search-wrap" >
                                 <form action="{{ url('advance-search') }}" class="tm-search-form tm-section-pad-2">
@@ -86,7 +83,7 @@
                             </div>
                             <div class="search-overlay"></div>
                         </div>
-                        <div class="js nav-link">
+                        {{-- <div class="js nav-link">
                             <button class="language-select" aria-haspopup="menu" aria-expanded="false"
                                 id="language-btn">
                                 <img src="img/world.png" alt="World Icon"
@@ -97,7 +94,7 @@
                                 <li class="language-option" data-lang="en">English</li>
                                 <li class="language-option" data-lang="fr">Français</li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </ul>
                 </div>
             </nav>

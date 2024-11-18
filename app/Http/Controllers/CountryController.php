@@ -27,6 +27,7 @@ class CountryController extends Controller
         $topicList = $this->filter->topicSubtopicList();
         $topCountry = $this->filter->topCountry();
         $countryWithCity = $this->filter->countryWithCity();
+        $content = $this->filter->countryContent($request->country);
         $upcomingEvent = $this->upcomingEvent->countryUpcomingEvents($country);
 
         $events = EventTable::where('country', $country)->orderBy('sdate')->paginate(50);
@@ -39,7 +40,7 @@ class CountryController extends Controller
             return response()->json($response);
         }
 
-        return view('pages-en.country', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'countryWithCity', 'monthList'));
+        return view('pages-en.country', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'countryWithCity', 'monthList', 'content'));
     }
 
 
@@ -52,6 +53,7 @@ class CountryController extends Controller
         $topicList = $this->filter->topicSubtopicList();
         $topCountry = $this->filter->topCountry();
         $countryWithCity = $this->filter->countryWithCity();
+        $content = $this->filter->countryTopicContent($request->country, $request->topic);
         $upcomingEvent = $this->upcomingEvent->countryUpcomingEvents($country);
 
         $events = EventTable::where('country', $country)
@@ -62,6 +64,7 @@ class CountryController extends Controller
             ->paginate(50);
 
         if ($request->ajax()) {
+            dd($topic);
             $response = [
                 'eventsAjax' => view('components-en.event-listing', compact('events'))->render(),
                 'loadMore' => view('components-en.load-more', compact('events'))->render(),
@@ -69,7 +72,7 @@ class CountryController extends Controller
             return response()->json($response);
         }
 
-        return view('pages-en.country-topic', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'countryWithCity', 'monthList'));
+        return view('pages-en.country-topic', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'countryWithCity', 'monthList', 'content'));
     }
 
 
@@ -82,6 +85,7 @@ class CountryController extends Controller
         $topicList = $this->filter->topicSubtopicList();
         $topCountry = $this->filter->topCountry();
         $countryWithCity = $this->filter->countryWithCity();
+        $content = $this->filter->countryMonthContent($request->country, $request->month);
         $upcomingEvent = $this->upcomingEvent->countryUpcomingEvents($country);
 
         $events = EventTable::where('country', $country)
@@ -97,7 +101,7 @@ class CountryController extends Controller
             return response()->json($response);
         }
 
-        return view('pages-en.country-month', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'countryWithCity', 'monthList'));
+        return view('pages-en.country-month', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'countryWithCity', 'monthList', 'content'));
     }
 
     public function countryTopicMonthPage(Request $request)
@@ -110,6 +114,7 @@ class CountryController extends Controller
         $topicList = $this->filter->topicSubtopicList();
         $topCountry = $this->filter->topCountry();
         $countryWithCity = $this->filter->countryWithCity();
+        $content = $this->filter->countryTopicMonthContent($request->country, $request->topic, $request->month);
         $upcomingEvent = $this->upcomingEvent->countryUpcomingEvents($country);
 
         $events = EventTable::where('country', $country)->where('month', 'like', "%{$month}%")
@@ -127,6 +132,6 @@ class CountryController extends Controller
             return response()->json($response);
         }
 
-        return view('pages-en.country-topic-month', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'countryWithCity', 'monthList'));
+        return view('pages-en.country-topic-month', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'countryWithCity', 'monthList', 'content'));
     }
 }
