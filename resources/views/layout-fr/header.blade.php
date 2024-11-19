@@ -10,20 +10,43 @@
             box-shadow: 0 0 7px 0 #d6d6d6;
         }
     }
+    .search-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 9999;
+    display: none;  /* Hidden by default */
+}
 
-    #search-container {
-        display: none;
-        position: absolute;
-        top: 50px;
-        right: 0;
-        z-index: 1000;
-    }
+.search-wrap {
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    max-width: 500px;
+    margin: 50px auto;
+    border-radius: 8px;
+}
 
-    /* Display search container on hover */
-    #search-btn:hover+#search-container,
-    #search-container:hover {
-        display: block;
-    }
+.close-btn {
+    position: absolute;
+    top: 10px;  /* Adjust if needed */
+    right: 10px;  /* Adjust if needed */
+    background: transparent;
+    border: none;
+    font-size: 24px;  /* Adjust size of the icon */
+    color: #333;  /* Dark color for visibility */
+    cursor: pointer;
+    z-index: 1000;  /* Ensure the button is on top of other elements */
+}
+
+.close-btn i {
+    font-size: 24px;
+}
+
+
 </style>
 <div class="tm-top-bar-bg"></div>
 <div class="tm-top-bar">
@@ -61,28 +84,35 @@
                             <a class="nav-link" href="{{ route('contact-fr') }}">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"  id="advance-serch">Search <i
-                                    class="fa fa-search"></i></a>
-                        </li>
-            
-                        <div class="search-container" id="search-container" style="display: none;">
-                            <div class="search-wrap" >
-                                <form action="{{ url('advance-search-fr') }}" class="tm-search-form tm-section-pad-2">
-                                    <div class="row">
-                                        <div class="col-md-10">
-                                            <input type="text" name="keyword" id="keyword" class="form-control"
-                                                placeholder="Search events by keyword or conference details" autofocus
-                                                required />
-                                        </div>
-                                        <div class="col-md-2 sbtn">
-                                            <button type="submit" id="submit" class="btn"
-                                                value="submit">Submit</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="search-overlay"></div>
-                        </div>
+    <a class="nav-link" id="advance-serch">Search <i class="fa fa-search"></i></a>
+</li>
+
+<div class="search-container" id="search-container" style="display: none;">
+    <div class="search-wrap">
+        <form action="{{ url('advance-search-fr') }}" class="tm-search-form tm-section-pad-2">
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="text" name="keyword" id="keyword" class="form-control"
+                        placeholder="Search events by keyword or conference details" autofocus required />
+                </div>
+                <div class="col-md-2 sbtn">
+                    <button type="submit" id="submit" class="btn" value="submit">Submit</button>
+                    
+                </div>
+                <div class="col-md-2 sbtn">
+                <button id="close-search" class="close-btn">close</button></div>
+            </div>
+        </form>
+       
+    </div>
+    <div class="search-overlay"></div>
+
+    <!-- Close button -->
+   
+</div>
+
+
+
                         {{-- <div class="js nav-link">
                             <button class="language-select" aria-haspopup="menu" aria-expanded="false"
                                 id="language-btn">
