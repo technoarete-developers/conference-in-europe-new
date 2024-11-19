@@ -278,9 +278,9 @@
             transition: 0.25s ease-in-out;
         }
 
-        input[type="checkbox"] {
+        /* input[type="checkbox"] {
             display: none;
-        }
+        } */
 
 
 

@@ -73,7 +73,7 @@ margin-bottom: 14px;"
                                     </div>
 
 
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 footer-checkbox">
                                         <input type="checkbox" id="agree" name="agree" value="agree">
                                         <label style="color: #fff;
 font-size: 13px;font-weight:400;" for="agree">I

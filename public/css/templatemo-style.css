@@ -778,10 +778,11 @@ h4.font.conname {
 }
 
 .btn-primary {
-	background: #031e6b;
-	border: none;
-	border-radius: 0;
-	outline: 0
+	background: #031e6b !important;
+    border: none !important;
+    border-radius: 0;
+    outline: 0;
+    padding: 6px 20px !important;
 }
 
 .global-page-header {
@@ -890,7 +891,7 @@ label {
 
 .tm-top-bar .navbar-expand-lg .navbar-nav .nav-link {
 	padding: 3px 18px;
-	margin: 10px 0 50px
+	/* margin: 10px 0 50px */
 }
 
 .tm-top-bar {
@@ -905,7 +906,7 @@ label {
 }
 
 .tm-top-bar.active {
-	height: 80px;
+	height: 90px;
 	box-shadow: 0 1px 5px rgba(0, 0, 0, .25)
 }
 
@@ -1059,9 +1060,9 @@ select.tm-select.form-control:not([size]):not([multiple]) {
 }
 
 .form-control {
-	font-size: 14px;
-	padding: .75rem;
-	margin-bottom: 10px
+	font-size: 14px !important;
+	padding: .75rem !important;
+	margin-bottom: 10px !important;
 }
 
 .tc h2,
