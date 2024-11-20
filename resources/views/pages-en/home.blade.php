@@ -288,7 +288,7 @@
             border: 2px solid #031e6b;
             background-color: #031e6b;
             color: #fff;
-            padding: 6px 13px 6px 13px;
+            padding: 10px 20px 10px 20px;
             font-size: 17px;
         }
     </style>
@@ -310,13 +310,15 @@
 
                     <form action="{{ url('advance-search') }}" class="tm-search-form tm-section-pad-2">
                         <div class="row">
-                            <div class="col-md-10">
+                        <div class="col-md-2"></div>
+                            <div class="col-md-6">
                                 <input type="text" name="keyword" id="keyword" class="form-control" required
                                     placeholder="Search events by keyword or conference details" />
                             </div>
-                            <div class="col-md-2 sbtn">
+                            <div class="col-md-2 sbtn p-0">
                                 <button type="submit" id="submit" class="btnn" value="submit">Submit</button>
                             </div>
+                            <div class="col-md-2"></div>
                         </div>
                     </form>
                 </div>
