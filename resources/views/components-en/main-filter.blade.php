@@ -309,7 +309,7 @@
     }
 
     .drop .col-sm-4 {
-        border-right: 1px solid #dadada;
+        border: 1px solid #dadada;
         box-shadow: rgba(0, 0, 0, 0.06) 0 8px 30px;
     }
 
@@ -364,7 +364,7 @@
     }
 
     .drop {
-        padding: 25px 10px 25px 10px;
+        padding: 15px;
     }
 
     .select2-container--classic.select2-container--open .select2-dropdown {
@@ -542,11 +542,16 @@
     li.subnav-item {
         list-style-type: disclosure-closed;
     }
+    .select_row{
+        display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    }
 </style>
 <div class="container">
 
     <nav class="megamenu">
-        <ul class="megamenu-nav d-flex justify-content-center" role="menu">
+        <ul class="megamenu-nav d-flex justify-content-between" role="menu">
             @foreach ($topicList as $topic => $subtopic)
                 <li class="nav-item is-parent text-capitalize">
                     <a class="nav-link flex-col" style="cursor: pointer" id="megamenu-dropdown-{{ $loop->index }}"
@@ -654,7 +659,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4" style="border: none">
+                <div class="col-sm-4">
                     <div class="center">
                         <div class="drop">
                             <span style="display: flex;"><i class="fa fa-map-o" aria-hidden="true"
