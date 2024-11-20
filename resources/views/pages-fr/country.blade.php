@@ -1,5 +1,10 @@
 @php
+
     $countryName = ucfirst(str_replace('-', ' ', request()->country));
+    if (array_key_exists(request()->country, $topCountry)) {
+        $countryName = $topCountry[request()->country];
+    }
+
 @endphp
 
 @extends('layout-fr.master')
@@ -44,9 +49,10 @@
                                         </legend> --}}
                                         <div class="county-conference">
                                             <div class="col-md-12">
-                                                <h1 style=" font-size: 18px;font-family:Gill Sans;">{{ str_replace('@country', $countryName, $content['h1']) }}</h1>
-                                                    <p>{{ str_replace('@country', $countryName, $content['contentOne']) }}</p>
-                                                    <p>{{ str_replace('@country', $countryName, $content['contentTwo']) }}</p>
+                                                <h1 style=" font-size: 18px;font-family:Gill Sans;">
+                                                    {{ str_replace('@country', $countryName, $content['h1']) }}</h1>
+                                                <p>{{ str_replace('@country', $countryName, $content['contentOne']) }}</p>
+                                                <p>{{ str_replace('@country', $countryName, $content['contentTwo']) }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -94,7 +100,7 @@
             // load more button for mobile
             function fetchLoadMoreEvents(country, page) {
                 $.ajax({
-                    url: "{{ route('country-ajax') }}",
+                    url: "{{ route('country-ajax-fr') }}",
                     type: "GET",
                     data: {
                         country: country,

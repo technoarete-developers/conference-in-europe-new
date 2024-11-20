@@ -53,7 +53,7 @@
     <div class="container">
         <div class="row">
             <nav class="navbar navbar-expand-lg narbar-light">
-                <a class="navbar-brand mr-auto" href="{{ route('home') }}">
+                <a class="navbar-brand mr-auto" href="{{ route('home-fr') }}">
                     <img src="/img/logo-new.png" alt="Conference in Europe" style="width:100px;height:100px;">
                 </a>
                 <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse"

@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\EventTable;
+use App\Services\EventsService;
 use App\Services\UpCommingEventService;
 use Illuminate\Http\Request;
 
 class MonthController extends Controller
 {
-    protected $filter, $upcomingEvent;
+    protected $filter, $upcomingEvent, $getEvent;
 
-    public function __construct(JsonFetchDataController $filter, UpCommingEventService $upcomingEvent)
+    public function __construct(JsonFetchDataController $filter, UpCommingEventService $upcomingEvent, EventsService $getEvent)
     {
         $this->filter = $filter;
         $this->upcomingEvent = $upcomingEvent;
+        $this->getEvent = $getEvent;
     }
 
 
@@ -27,10 +28,10 @@ class MonthController extends Controller
         $topCountry = $this->filter->topCountry();
         $countryWithCity = $this->filter->countryWithCity();
         $content = $this->filter->monthContent($request->month);
+
         $upcomingEvent = $this->upcomingEvent->monthUpcomingEvents($month);
 
-        $events = EventTable::where('month', 'like', "%{$month}%")->orderBy('sdate')
-            ->paginate(50);
+        $events = $this->getEvent->monthEvents($month);
 
         if ($request->ajax()) {
             $response = [

@@ -95,7 +95,7 @@
             // load more button for mobile
             function fetchLoadMoreEvents(topic, page) {
                 $.ajax({
-                    url: "{{ route('topic-ajax') }}",
+                    url: "{{ route('topic-ajax-fr') }}",
                     type: "GET",
                     data: {
                         topic: topic,

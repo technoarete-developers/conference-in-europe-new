@@ -1,51 +1,51 @@
 {
     "andorra": {
-        "andorra": "Andorra",
-        "andorra-la-vella": "Andorra la Vella",
+        "andorra": "Andorre",
+        "andorra-la-vella": "Andorre la Vieille",
         "arinsal": "Arinsal",
         "canillo": "Canillo",
-        "el-pas-de-la-casa": "El Pas de la Casa",
+        "el-pas-de-la-casa": "Le Pas de la Case",
         "encamp": "Encamp",
         "la-massana": "La Massana",
         "ordino": "Ordino",
-        "santa-coloma": "Santa Coloma"
+        "santa-coloma": "Sainte Coloma"
     },
     "armenia": {
         "gyumri": "Gyumri",
         "vanadzor": "Vanadzor",
-        "yerevan": "Yerevan"
+        "yerevan": "Erevan"
     },
     "austria": {
         "graz": "Graz",
         "innsbruck": "Innsbruck",
         "linz": "Linz",
-        "salzburg": "Salzburg",
-        "vienna": "Vienna"
+        "salzburg": "Salzbourg",
+        "vienna": "Vienne"
     },
     "belarus": {
-        "babruysk": "Babruysk",
+        "babruysk": "Babrouïsk",
         "brest": "Brest",
-        "gomel": "Gomel",
-        "grodno": "Grodno",
+        "gomel": "Homiel",
+        "grodno": "Hrodna",
         "lida": "Lida",
         "mazyr": "Mazyr",
         "minsk": "Minsk",
-        "mogilev": "Mogilev"
+        "mogilev": "Mahiliow"
     },
     "belgium": {
-        "antwerp": "Antwerp",
+        "antwerp": "Anvers",
         "bruges": "Bruges",
-        "brussels": "Brussels",
+        "brussels": "Bruxelles",
         "charleroi": "Charleroi",
-        "ghent": "Ghent",
-        "leuven": "Leuven",
-        "liege": "Liege",
+        "ghent": "Gand",
+        "leuven": "Louvain",
+        "liege": "Liège",
         "namur": "Namur"
     },
     "bulgaria": {
-        "burgas": "Burgas",
+        "burgas": "Bourgas",
         "plovdiv": "Plovdiv",
-        "ruse": "Ruse",
+        "ruse": "Roussé",
         "sofia": "Sofia",
         "stara-zagora": "Stara Zagora",
         "varna": "Varna",
@@ -58,31 +58,31 @@
         "zagreb": "Zagreb"
     },
     "cyprus": {
-        "famagusta": "Famagusta",
+        "famagusta": "Famagouste",
         "kyrenia": "Kyrenia",
         "larnaca": "Larnaca",
         "limassol": "Limassol",
-        "nicosia": "Nicosia",
+        "nicosia": "Nicosie",
         "paphos": "Paphos"
     },
     "czech-republic": {
         "brno": "Brno",
         "ostrava": "Ostrava",
-        "pilsen": "Pilsen",
+        "pilsen": "Plzeň",
         "prague": "Prague"
     },
     "denmark": {
         "aalborg": "Aalborg",
         "aarhus": "Aarhus",
         "billund": "Billund",
-        "copenhagen": "Copenhagen",
-        "helsingor": "Helsingor",
+        "copenhagen": "Copenhague",
+        "helsingor": "Elseneur",
         "herning": "Herning",
-        "kobenhavn": "Kobenhavn",
+        "kobenhavn": "Copenhague",
         "odense": "Odense",
         "roskilde": "Roskilde",
         "skagen": "Skagen",
-        "south-denmark": "South Denmark"
+        "south-denmark": "Danemark du Sud"
     },
     "estonia": {
         "narva": "Narva",
@@ -100,14 +100,14 @@
     "durban": {
         "adana": "Adana",
         "ankara": "Ankara",
-        "antalaya": "Antalaya",
+        "antalaya": "Antalya",
         "bursa": "Bursa",
         "fethiye": "Fethiye",
         "istanbul": "Istanbul",
         "izmir": "Izmir",
         "konya": "Konya",
         "samsun": "Samsun",
-        "sanliurfa": "Sanliurfa"
+        "sanliurfa": "Şanlıurfa"
     },
     "france": {
         "bordeaux": "Bordeaux",
@@ -122,21 +122,21 @@
     "germany": {
         "berlin": "Berlin",
         "cologne": "Cologne",
-        "dusseldorf": "Dusseldorf",
-        "frankfurt": "Frankfurt",
-        "hamburg": "Hamburg",
+        "dusseldorf": "Düsseldorf",
+        "frankfurt": "Francfort",
+        "hamburg": "Hambourg",
         "leipzig": "Leipzig",
         "munich": "Munich",
         "nuremberg": "Nuremberg",
         "stuttgart": "Stuttgart",
-        "wurzburg": "Wurzburg"
+        "wurzburg": "Wurtzbourg"
     },
     "greece": {
-        "athens": "Athens",
-        "chania": "Chania",
-        "crete": "Crete",
-        "pireas": "Pireas",
-        "thessaloniki": "Thessaloniki"
+        "athens": "Athènes",
+        "chania": "La Canée",
+        "crete": "Crète",
+        "pireas": "Pirée",
+        "thessaloniki": "Thessalonique"
     },
     "hungary": {
         "budapest": "Budapest"
@@ -145,23 +145,23 @@
         "dublin": "Dublin"
     },
     "italy": {
-        "bologna": "Bologna",
+        "bologna": "Bologne",
         "florence": "Florence",
-        "genoa": "Genoa",
+        "genoa": "Gênes",
         "milan": "Milan",
         "naples": "Naples",
         "rome": "Rome",
         "turin": "Turin",
-        "venice": "Venice",
-        "verona": "Verona"
+        "venice": "Venise",
+        "verona": "Vérone"
     },
     "lithuania": {
         "kaunas": "Kaunas",
-        "klaipeda": "Klaipeda",
+        "klaipeda": "Klaipėda",
         "vilnius": "Vilnius"
     },
     "luxembourg": {
-        "luxembourg-city": "Luxembourg City"
+        "luxembourg-city": "Ville de Luxembourg"
     },
     "macedonia": {
         "bitola": "Bitola",
@@ -171,80 +171,80 @@
     "malta": {
         "birgu": "Birgu",
         "bormla": "Bormla",
-        "valletta": "Valletta"
+        "valletta": "La Valette"
     },
     "netherlands": {
         "amsterdam": "Amsterdam",
         "rotterdam": "Rotterdam",
-        "the-hague": "The Hague",
+        "the-hague": "La Haye",
         "utrecht": "Utrecht"
     },
     "norway": {
         "bergen": "Bergen",
         "oslo": "Oslo",
-        "stavenger": "Stavenger",
+        "stavenger": "Stavanger",
         "trondheim": "Trondheim"
     },
     "poland": {
         "bydgoszcz": "Bydgoszcz",
-        "gdansk": "Gdansk",
-        "krakow": "Krakow",
-        "lodz": "Lodz",
+        "gdansk": "Gdańsk",
+        "krakow": "Cracovie",
+        "lodz": "Łódź",
         "lublin": "Lublin",
-        "poznan": "Poznan",
+        "poznan": "Poznań",
         "radom": "Radom",
         "szczecin": "Szczecin",
-        "torun": "Torun",
-        "warsaw": "Warsaw",
-        "warszawa": "Warszawa",
-        "wroclaw": "Wroclaw"
+        "torun": "Toruń",
+        "warsaw": "Varsovie",
+        "warszawa": "Varsovie",
+        "wroclaw": "Wrocław"
     },
     "russia": {
         "kazan": "Kazan",
-        "moscow": "Moscow",
-        "nizhny-novgorod": "Nizhny Novgorod",
-        "novosibirsk": "Novosibirsk",
+        "moscow": "Moscou",
+        "nizhny-novgorod": "Nijni Novgorod",
+        "novosibirsk": "Novossibirsk",
         "omsk": "Omsk",
-        "rostov-on-don": "Rostov-on-Don",
-        "saint-petersburg": "Saint Petersburg",
+        "rostov-on-don": "Rostov-sur-le-Don",
+        "saint-petersburg": "Saint-Pétersbourg",
         "samara": "Samara",
         "volgograd": "Volgograd",
-        "yekaterinburg": "Yekaterinburg"
+        "yekaterinburg": "Ekaterinbourg"
     },
-   "romania": {
-        "brasov": "Brasov",
-        "bucharest": "Bucharest",
+    "romania": {
+        "brasov": "Brașov",
+        "bucharest": "Bucarest",
         "cluj-napoca": "Cluj-Napoca",
-        "constanta": "Constanta",
-        "lasi": "Lasi",
-        "timisoara": "Timisoara"
+        "constanta": "Constanța",
+        "lasi": "Iași",
+        "timisoara": "Timișoara"
     },
     "slovakia": {
         "bratislava": "Bratislava",
-        "kosice": "Kosice",
-        "presov": "Presov"
+        "kosice": "Košice",
+        "presov": "Prešov"
     },
     "spain": {
-        "barcelona": "Barcelona",
+        "barcelona": "Barcelone",
         "bilbao": "Bilbao",
-        "gemnnp-barcelona": "GEMNNP-Barcelona",
-        "granada": "Granada",
+        "gemnnp-barcelona": "GEMNNP-Barcelone",
+        "granada": "Grenade",
         "jerez-de-la-frontera": "Jerez de la Frontera",
         "las-palmas-de-gran-canaria": "Las Palmas de Gran Canaria",
         "madrid": "Madrid",
-        "malaga": "Malaga",
-        "seville": "Seville",
-        "zaragoza": "Zaragoza"
+        "malaga": "Málaga",
+        "seville": "Séville",
+        "zaragoza": "Saragosse"
     },
     "sweden": {
-        "gothenburg": "Gothenburg",
-        "malmo": "Malmo",
-        "malmo-municipality": "Malmo Municipality",
+        "gothenburg": "Göteborg",
+        "malmo": "Malmö",
+        "malmo-municipality": "Municipalité de Malmö",
         "stockholm": "Stockholm"
     },
     "switzerland": {
-        "bern": "Bern",
-        "geneva": "Geneva",
+        "bern": "Berne",
+        "geneva": "Genève",
         "lucerne": "Lucerne",
         "zurich": "Zurich"
     },
@@ -255,25 +255,25 @@
         "antalya": "Antalya",
         "bodrum": "Bodrum",
         "bursa": "Bursa",
-        "diyarbakir": "Diyarbakir",
+        "diyarbakir": "Diyarbakır",
         "edirne": "Edirne",
-        "ephesus": "Ephesus",
+        "ephesus": "Éphèse",
         "fethiye": "Fethiye",
         "istanbul": "Istanbul",
         "izmir": "Izmir",
         "kayseri": "Kayseri",
         "konya": "Konya",
         "samsun": "Samsun",
-        "sanliurfa": "Sanliurfa"
+        "sanliurfa": "Sanlıurfa"
     },
     "ukraine": {
-        "chernihiv": "Chernihiv",
+        "chernihiv": "Tchernihiv",
         "dnipro": "Dnipro",
         "kharkiv": "Kharkiv",
         "kiev": "Kiev",
         "kyiv": "Kyiv",
         "lviv": "Lviv",
-        "odesa": "Odesa",
+        "odesa": "Odessa",
         "odessa": "Odessa"
     },
     "uk": {
@@ -282,17 +282,17 @@
         "bristol": "Bristol",
         "cambridge": "Cambridge",
         "cardiff": "Cardiff",
-        "city-of-london": "City of London",
-        "edinburgh": "Edinburgh",
+        "city-of-london": "Cité de Londres",
+        "edinburgh": "Édimbourg",
         "glasgow": "Glasgow",
         "liverpool": "Liverpool",
-        "london": "London",
+        "london": "Londres",
         "manchester": "Manchester",
         "reading": "Reading",
-        "scotland": "Scotland",
+        "scotland": "Écosse",
         "sheffield": "Sheffield"
     },
     "vatican-city": {
-        "vatican-city": "Vatican City"
+        "vatican-city": "Cité du Vatican"
     }
 }

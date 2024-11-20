@@ -551,13 +551,15 @@
 <div class="container">
 
     <nav class="megamenu">
+
         <ul class="megamenu-nav d-flex justify-content-between" role="menu">
             @foreach ($topicList as $topic => $subtopic)
+
                 <li class="nav-item is-parent text-capitalize">
                     <a class="nav-link flex-col" style="cursor: pointer" id="megamenu-dropdown-{{ $loop->index }}"
                         aria-haspopup="true" aria-expanded="false">
-                        <img src="/img/topic/{{ $topic }}.png" width="30px">
-                        <div>{{ str_replace('-', ' ', $topic) }}</div>
+                        <img src="/img/topic/{{ $url }}.png" width="30px">
+                        <div>{{ $name }}</div>
                     </a>
                     <div class="megamenu-content" aria-labelledby="megamenu-dropdown-{{ $loop->index }}">
                         <div class="container">
@@ -565,13 +567,13 @@
                                 <div class="col-12 pr-5">
                                     <h3 class="text-center"><span
                                             style=" background: linear-gradient(316.24deg,#ae1010 24.99%,#030351 100%); padding: 8px; border-radius: 5px; font-size: 24px;">
-                                            <a href="{{ route('topic-page', ['topic' => $topic]) }}"
+                                            <a href="{{ route('topic-page', ['topic' => $url]) }}"
                                                 style=" color: #fff;">
-                                                {{ str_replace('-', ' ', $topic) }}</a></span> Sub Topics</h3>
+                                                {{ $name }}</a></span> Sub Topics</h3>
                                     <hr>
                                     <div class="row">
                                         <div class="col-12">
-                                            <ul class="subnav" id="{{ $topic }}_ul">
+                                            <ul class="subnav" id="{{ $url }}_ul">
                                             </ul>
                                         </div>
                                     </div>

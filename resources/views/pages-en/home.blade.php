@@ -13,7 +13,7 @@
     <meta property="og:description"
         content="Conference in Europe 2024-2025, Explore the beautiful cities of Europe while attending the informative. Check conferences based on interested topics, venue, and time." />
 
-       <link rel="canonical" href="{{ url()->current() }}" />
+    <link rel="canonical" href="{{ url()->current() }}" />
 
     <link rel="preload" href="{{ url('css/jQuery.tab.css') }}" as="style" onload="this.rel='stylesheet'">
 @endsection
@@ -428,9 +428,9 @@
                                     </div>
 
                                     <div class="tabItem">
-                                        @foreach ($topicList as $topic => $subtopic)
-                                            <a href="{{ route('topic-list-page', ['topic' => $topic]) }}"
-                                                class="city_click">{{ ucfirst($topic) }}</a>
+                                        @foreach ($topicList as $url => $name)
+                                            <a href="{{ route('topic-list-page', ['topic' => $url]) }}"
+                                                class="city_click">{{ ucfirst($name) }}</a>
                                         @endforeach
                                     </div>
                                 </div>
@@ -525,22 +525,24 @@
                             <strong>Event Calendar 2024/2025</strong>
                         </h2>
                     </div>
-                    @for ($i = 0; $i < 12; $i++)
-                        @php
-                            $monthName = date('F', strtotime("first day of +$i month "));
-                        @endphp
-
+                    @php
+                        $i = 0;
+                    @endphp
+                    @foreach ($monthList as $url => $name)
                         <div class="col-lg-2 col-6 col-sm-4 col-md-3 calender-media">
-                            <a href="{{ route('month-page', ['month' => strtolower($monthName)]) }}" class="calendar month_click">
+                            <a href="{{ route('month-page', ['month' => $url]) }}" class="calendar month_click">
                                 <div class="calander-div">
-                                    <em> {{ date('Y', strtotime("first day of +$i month ")) }}</em>
+                                    <em> {{ date('Y', strtotime("first day of $i month ")) }}</em>
                                     <span class="calander-year">
-                                        {{ date('F', strtotime("first day of +$i month ")) }}
+                                        {{ $name }}
                                     </span>
                                 </div>
                             </a>
                         </div>
-                    @endfor
+                        @php
+                            $i++;
+                        @endphp
+                    @endforeach
                 </div>
         </section>
     </div>

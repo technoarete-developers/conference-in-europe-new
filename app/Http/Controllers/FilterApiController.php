@@ -15,7 +15,7 @@ class FilterApiController extends Controller
         $this->filter = $filter;
     }
 
-    public function countryApi(Request $request)
+    public function getSubtopicApi(Request $request)
     {
         try {
             $topicList = $this->filter->topicSubtopicList();
@@ -27,12 +27,12 @@ class FilterApiController extends Controller
                 $subtopicName = [];
 
                 if ($content['slectedType'] == 'city_select') {
-                    $result = EventTable::where('city', str_replace("-"," ",$content['data']))->whereIn('sub_topic', $sub_topic)
+                    $result = EventTable::where('city', str_replace("-", " ", $content['data']))->whereIn('sub_topic', $sub_topic)
                         ->select('topic', 'sub_topic')
-                        ->orderBy('sub_topic', 'asc') 
+                        ->orderBy('sub_topic', 'asc')
                         ->get();
                 } else {
-                    $result = EventTable::where('country', str_replace("-"," ",$content['data']))->whereIn('sub_topic', $sub_topic)
+                    $result = EventTable::where('country', str_replace("-", " ", $content['data']))->whereIn('sub_topic', $sub_topic)
                         ->select('topic', 'sub_topic')
                         ->orderBy('sub_topic', 'asc')
                         ->get();
@@ -51,6 +51,49 @@ class FilterApiController extends Controller
                 $filterTopic[$main_topic] = $subtopicName;
             }
 
+            return $filterTopic;
+        } catch (\Exception $e) {
+            $failure['response']['message'] = 'Exception:' . $e->getMessage() . ' | Line: ' . $e->getLine();
+            return $failure;
+        }
+    }
+
+    public function getSubtopicApiFr(Request $request)
+    {
+        try {
+            $topicList = $this->filter->topicSubtopicList();
+
+            $content_json = $request->getContent();
+            $content = json_decode($content_json, true);
+            foreach ($topicList as $main_topic => $sub_topic) {
+
+                $subtopicName = [];
+
+                if ($content['slectedType'] == 'city_select') {
+                    $result = EventTable::where('city', str_replace("-", " ", $content['data']))->whereIn('sub_topic', $sub_topic)
+                        ->select('topic', 'sub_topic')
+                        ->orderBy('sub_topic', 'asc')
+                        ->get();
+                } else {
+                    $result = EventTable::where('country', str_replace("-", " ", $content['data']))->whereIn('sub_topic', $sub_topic)
+                        ->select('topic', 'sub_topic')
+                        ->orderBy('sub_topic', 'asc')
+                        ->get();
+                }
+
+                foreach ($result as $subtopic) {
+                    $explode_subtopic = explode(',', $subtopic->sub_topic);
+                    foreach ($explode_subtopic as $sub_topic_explode) {
+                        if (!in_array(trim($sub_topic_explode), $subtopicName) && $sub_topic_explode != "") {
+                            $stopic = strtolower(str_replace(" ", "-", trim($sub_topic_explode)));
+                            $subtopicName[$stopic] = $sub_topic_explode;
+                        }
+                    }
+                }
+
+                $filterTopic[$main_topic] = $subtopicName;
+            }
+            
             return $filterTopic;
         } catch (\Exception $e) {
             $failure['response']['message'] = 'Exception:' . $e->getMessage() . ' | Line: ' . $e->getLine();
