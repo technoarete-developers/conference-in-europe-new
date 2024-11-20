@@ -1,5 +1,11 @@
 @php
     $cityName = ucfirst(str_replace('-', ' ', request()->city));
+
+    foreach ($countryWithCity as $country => $cityList) {
+        if (array_key_exists(request()->city, $cityList)) {
+            $cityName = $cityList[request()->city];
+        }
+    }
 @endphp
 
 @extends('layout-fr.master')
@@ -39,8 +45,7 @@
                             <div class="row">
                                 <div class="col-sm-9 topic-midule-grid">
                                     <div class="topic-date-cnfr">
-                                        <legend> <span
-                                                class="fld_hed text-capitalize">{{ $cityName }}</span>
+                                        <legend> <span class="fld_hed text-capitalize">{{ $cityName }}</span>
                                         </legend>
                                         <div class="county-conference">
                                             <div class="col-md-12">

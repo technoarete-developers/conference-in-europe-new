@@ -2,6 +2,25 @@
     $countryName = ucfirst(str_replace('-', ' ', request()->country));
     $topicName = ucfirst(str_replace('-', ' ', request()->topic));
     $monthName = ucfirst(request()->month);
+
+    if (array_key_exists(request()->country, $topCountry)) {
+        $countryName = $topCountry[request()->country];
+    }
+
+    if (array_key_exists(request()->topic, $topicList)) {
+        $topicName = $topicList[request()->topic];
+    } else {
+        foreach ($topicStopicList as $topic => $subtopic) {
+            if (array_key_exists(request()->topic, $subtopic)) {
+                $topicName = $subtopic[request()->topic];
+                break;
+            }
+        }
+    }
+
+    if (array_key_exists(request()->month, $monthList)) {
+        $monthName = $monthList[request()->month];
+    }
 @endphp
 
 @extends('layout-fr.master')
@@ -35,7 +54,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>{{ $countryName }}</h2>
+                        <h2>{{ $countryName }} / {{ $topicName }} / {{ $monthName }}</h2>
                     </div>
                 </div>
             </div>

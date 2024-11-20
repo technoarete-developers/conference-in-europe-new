@@ -6,41 +6,11 @@ use App\Http\Controllers\Controller;
 
 class JsonFetchDataController extends Controller
 {
-    // cites list
-    public function topCity()
-    {
-        $jsonData = file_get_contents(public_path('json-en/city.json'));
 
-        $data = json_decode($jsonData, true);
-
-        $topCity = $data;
-
-        return $topCity;
-    }
-
-    //topic and subtopic list
-    public function topicSubtopicList()
-    {
-        $jsonData = file_get_contents(public_path('json-en/topic.json'));
-
-        $data = json_decode($jsonData, true);
-
-        return $data;
-    }
-
-    //continent and country list
-    public function topCountry()
-    {
-
-        $jsonData = file_get_contents(public_path('json-en/country.json'));
-
-        $data = json_decode($jsonData, true);
-
-        return $data;
-    }
+    //////////////////////////////////////// -------> ENGLISH CITY, TOPIC, COUNTRY LIST FUNCTIONS <------- ///////////////////////////////////////
 
     // used for using city get country name
-    public function currentCountry($city)
+    public function getCountry($city)
     {
 
         $jsonData = file_get_contents(public_path('json-en/country-with-city.json'));
@@ -57,6 +27,50 @@ class JsonFetchDataController extends Controller
         }
 
         return $countryName;
+    }
+
+
+    // cites list
+    public function topCity()
+    {
+        $jsonData = file_get_contents(public_path('json-en/city.json'));
+
+        $data = json_decode($jsonData, true);
+
+        $topCity = $data;
+
+        return $topCity;
+    }
+
+    //topic list
+    public function topicList()
+    {
+        $jsonData = file_get_contents(public_path('json-en/topic.json'));
+
+        $data = json_decode($jsonData, true);
+
+        return $data;
+    }
+
+    //topic and subtopic list
+    public function topicSubtopicList()
+    {
+        $jsonData = file_get_contents(public_path('json-en/topic-with-subtopic.json'));
+
+        $data = json_decode($jsonData, true);
+
+        return $data;
+    }
+
+    //continent and country list
+    public function topCountry()
+    {
+
+        $jsonData = file_get_contents(public_path('json-en/country.json'));
+
+        $data = json_decode($jsonData, true);
+
+        return $data;
     }
 
     //  country and city list
@@ -91,7 +105,7 @@ class JsonFetchDataController extends Controller
     }
 
 
-    // content
+    //////////////////////////////////////////// ------------> ENGLISH CONTENT FUNCTIONS <------------- ///////////////////////////////////////
 
     //country content
     public function countryContent($country)
@@ -310,6 +324,344 @@ class JsonFetchDataController extends Controller
     {
 
         $jsonData = file_get_contents(public_path('json-en/contents/month.json'));
+
+        $data = json_decode($jsonData, true);
+
+
+        if (isset($data[$month])) {
+            $content = $data[$month];
+        } else {
+            $content = $data['default'];
+        }
+
+        return $content;
+    }
+
+
+    //////////////////////////////////////// -------> FRENCH CITY, TOPIC, COUNTRY LIST FUNCTIONS <------- ///////////////////////////////////////
+
+    // used for using city get country name
+    public function getCountryFr($city)
+    {
+
+        $jsonData = file_get_contents(public_path('json-en/country-with-city.json'));
+
+        $countryCity = json_decode($jsonData, true);
+
+        foreach ($countryCity as $country => $cityList) {
+            foreach ($cityList as $key => $value) {
+                if ($city == $key) {
+                    $countryName = $country;
+                    break 2;
+                }
+            }
+        }
+
+        // $jsonData = file_get_contents(public_path('json-en/country.json'));
+
+        // $topCountry = json_decode($jsonData, true);
+
+        // if (array_key_exists($countryName, $topCountry)) {
+        //     $countryName = $topCountry[$countryName];
+        // }
+
+        return $countryName;
+    }
+
+    // cites list
+    public function topCityFr()
+    {
+        $jsonData = file_get_contents(public_path('json-fr/city.json'));
+
+        $data = json_decode($jsonData, true);
+
+        $topCity = $data;
+
+        return $topCity;
+    }
+
+    //topic list
+    public function topicListFr()
+    {
+        $jsonData = file_get_contents(public_path('json-fr/topic.json'));
+
+        $data = json_decode($jsonData, true);
+
+        return $data;
+    }
+
+    //topic and subtopic list
+    public function topicSubtopicListFr()
+    {
+        $jsonData = file_get_contents(public_path('json-fr/topic-with-subtopic.json'));
+
+        $data = json_decode($jsonData, true);
+
+        return $data;
+    }
+
+    //continent and country list
+    public function topCountryFr()
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/country.json'));
+
+        $data = json_decode($jsonData, true);
+
+        return $data;
+    }
+
+    //  country and city list
+    public function countryWithCityFr()
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/country-with-city.json'));
+
+        $data = json_decode($jsonData, true);
+
+        return $data;
+    }
+
+
+    //  month list
+    public function monthListFr()
+    {
+        $jsonData = json_decode(file_get_contents(public_path('json-fr/month.json')), true);
+
+        $currentMonth = strtolower(date('F'));
+
+        $monthKeys = array_keys($jsonData);
+
+        $currentMonthIndex = array_search($currentMonth, $monthKeys);
+
+        $orderedMonths = array_merge(
+            array_slice($jsonData, $currentMonthIndex),
+            array_slice($jsonData, 0, $currentMonthIndex)
+        );
+
+        return $orderedMonths;
+    }
+
+
+    ///////////////////////////////////////// ------------> FRENCH CONTENT FUNCTIONS <------------- ///////////////////////////////////////
+
+    //country content
+    public function countryContentFr($country)
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/contents/country.json'));
+
+        $data = json_decode($jsonData, true);
+
+        if (isset($data[$country])) {
+            $content = $data[$country];
+        } else {
+            $content = $data['default'];
+        }
+
+        return $content;
+    }
+
+
+    //country month content
+    public function countryMonthContentFr($country, $month)
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/contents/country-month.json'));
+
+        $data = json_decode($jsonData, true);
+
+        if (isset($data[$month])) {
+            if (isset($data[$month][$country])) {
+                $content = $data[$country];
+            } else {
+                $content = $data[$month]['default'];
+            }
+        } else {
+            $content = $data['default'];
+        }
+
+        return $content;
+    }
+
+
+    //country topic content
+    public function countryTopicContentFr($country, $topic)
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/contents/country-topic.json'));
+
+        $data = json_decode($jsonData, true);
+
+        if (isset($data[$topic])) {
+            if (isset($data[$topic][$country])) {
+                $content = $data[$country];
+            } else {
+                $content = $data[$topic]['default'];
+            }
+        } else {
+            $content = $data['default'];
+        }
+
+        return $content;
+    }
+
+
+    //country topic month content
+    public function countryTopicMonthContentFr($country, $topic, $month)
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/contents/country-topic-month.json'));
+
+        $data = json_decode($jsonData, true);
+
+        if (isset($data[$month])) {
+            if (isset($data[$month][$topic])) {
+                if (isset($data[$month][$topic][$country])) {
+                    $content = $data[$month][$topic][$country];
+                } else {
+                    $content = $data[$month][$topic]['default'];
+                }
+            } else {
+                $content = $data[$month]['default'];
+            }
+        } else {
+            $content = $data['default'];
+        }
+
+        return $content;
+    }
+
+
+    //city page content
+    public function cityContentFr($city)
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/contents/city.json'));
+
+        $data = json_decode($jsonData, true);
+
+        if (isset($data[$city])) {
+            $content = $data[$city];
+        } else {
+            $content = $data['default'];
+        }
+
+        return $content;
+    }
+
+    //cities and topic page content
+    public function cityTopicContentFr($city, $topic)
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/contents/city-topic.json'));
+
+        $data = json_decode($jsonData, true);
+
+        if (isset($data[$topic])) {
+            if (isset($data[$topic][$city])) {
+                $content = $data[$city];
+            } else {
+                $content = $data[$topic]['default'];
+            }
+        } else {
+            $content = $data['default'];
+        }
+
+        return $content;
+    }
+
+    //cities and month page content
+    public function cityMonthContentFr($city, $month)
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/contents/city-month.json'));
+
+        $data = json_decode($jsonData, true);
+
+        if (isset($data[$month])) {
+            if (isset($data[$month][$city])) {
+                $content = $data[$city];
+            } else {
+                $content = $data[$month]['default'];
+            }
+        } else {
+            $content = $data['default'];
+        }
+
+        return $content;
+    }
+
+    //cities and topic and month page content
+    public function cityTopicMonthContentFr($city, $topic, $month)
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/contents/city-topic-month.json'));
+
+        $data = json_decode($jsonData, true);
+
+        if (isset($data[$month])) {
+            if (isset($data[$month][$topic])) {
+                if (isset($data[$month][$topic][$city])) {
+                    $content = $data[$month][$topic][$city];
+                } else {
+                    $content = $data[$month][$topic]['default'];
+                }
+            } else {
+                $content = $data[$month]['default'];
+            }
+        } else {
+            $content = $data['default'];
+        }
+
+
+        return $content;
+    }
+
+    //topic page content
+    public function topicContentFr($topic)
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/contents/topic.json'));
+
+        $data = json_decode($jsonData, true);
+
+        if (isset($data[$topic])) {
+            $content = $data[$topic];
+        } else {
+            $content = $data['default'];
+        }
+
+        return $content;
+    }
+
+    //topic and month page content
+    public function topicMonthContentFr($topic, $month)
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/contents/topic-month.json'));
+
+        $data = json_decode($jsonData, true);
+
+        if (isset($data[$month])) {
+            if (isset($data[$month][$topic])) {
+                $content = $data[$topic];
+            } else {
+                $content = $data[$month]['default'];
+            }
+        } else {
+            $content = $data['default'];
+        }
+
+        return $content;
+    }
+
+
+    //month page content
+    public function monthContentFr($month)
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/contents/month.json'));
 
         $data = json_decode($jsonData, true);
 

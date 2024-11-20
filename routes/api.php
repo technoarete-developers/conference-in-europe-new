@@ -21,7 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::controller(FilterApiController::class)->group(function () {
-    Route::post('/subtopics/fetch', 'countryApi')->name('subtopics-fetch-api');
+    Route::post('/subtopics/fetch', 'getSubtopicApi')->name('subtopics-fetch-api');
+
+    Route::post('/subtopics/fetch/fr', 'getSubtopicApiFr')->name('subtopics-fetch-api-fr');
 });
 
 Route::controller(TopicFetchController::class)->group(function () {

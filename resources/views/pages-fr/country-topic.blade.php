@@ -1,6 +1,22 @@
 @php
     $countryName = ucfirst(str_replace('-', ' ', request()->country));
     $topicName = ucfirst(str_replace('-', ' ', request()->topic));
+
+    if (array_key_exists(request()->country, $topCountry)) {
+        $countryName = $topCountry[request()->country];
+    }
+
+    if (array_key_exists(request()->topic, $topicList)) {
+        $topicName = $topicList[request()->topic];
+    } else {
+        foreach ($topicStopicList as $topic => $subtopic) {
+            if (array_key_exists(request()->topic, $subtopic)) {
+                $topicName = $subtopic[request()->topic];
+                break;
+            }
+        }
+    }
+
 @endphp
 
 @extends('layout-fr.master')
@@ -32,7 +48,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>{{ $countryName }}</h2>
+                        <h2>{{ $countryName }} / {{ $topicName }}</h2>
                     </div>
                 </div>
             </div>
@@ -50,9 +66,12 @@
                                         <div class="county-conference">
                                             <div class="col-md-12">
                                                 <h1 style=" font-size: 18px;font-family:Gill Sans;">
-                                                    {{ str_replace(['@country', '@topic'], [$countryName, $topicName], $content['h1']) }}</h1>
-                                                <p>{{ str_replace(['@country', '@topic'], [$countryName, $topicName], $content['contentOne']) }}</p>
-                                                <p>{{ str_replace(['@country', '@topic'], [$countryName, $topicName], $content['contentTwo']) }}</p>
+                                                    {{ str_replace(['@country', '@topic'], [$countryName, $topicName], $content['h1']) }}
+                                                </h1>
+                                                <p>{{ str_replace(['@country', '@topic'], [$countryName, $topicName], $content['contentOne']) }}
+                                                </p>
+                                                <p>{{ str_replace(['@country', '@topic'], [$countryName, $topicName], $content['contentTwo']) }}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>

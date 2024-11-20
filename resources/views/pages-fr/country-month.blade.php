@@ -1,6 +1,14 @@
 @php
     $countryName = ucfirst(str_replace('-', ' ', request()->country));
     $monthName = ucfirst(request()->month);
+
+    if (array_key_exists(request()->country, $topCountry)) {
+        $countryName = $topCountry[request()->country];
+    }
+
+    if (array_key_exists(request()->month, $monthList)) {
+        $monthName = $monthList[request()->month];
+    }
 @endphp
 
 @extends('layout-fr.master')
@@ -32,7 +40,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>{{ $countryName }}</h2>
+                        <h2>{{ $countryName }} / {{ $monthName }}</h2>
                     </div>
                 </div>
             </div>

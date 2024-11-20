@@ -2,7 +2,7 @@
     $topicName = ucfirst(str_replace('-', ' ', request()->topic));
 @endphp
 
-@extends('layout-en.master')
+@extends('layout-fr.master')
 
 @section('meta')
     <title>Conference in {{ $topicName }} {{ date('Y') }} | International Conference in {{ $topicName }}</title>
@@ -92,7 +92,7 @@
 @endsection
 
 @section('content')
-    @include('layout-en.header')
+    @include('layout-fr.header')
     <div class="tm-main-content" id="top">
         <section class="global-page-header">
             <div class="container">
@@ -107,7 +107,7 @@
         </section>
         <div class="marqq">
             <div class="container-fluid">
-                <h1 class="heading" style="text-align: center;text-transform: uppercase;"><b>Subtopics of Business</b< /h1>
+                <h1 class="heading" style="text-align: center;text-transform: uppercase;"><b>Subtopics of Business</b</h1>
                         <div class="titleline"> </div>
             </div>
         </div>
@@ -119,11 +119,10 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2 bhoechie-tab-menu">
                                     <div class="list-group">
-                                        @foreach ($topicList as $topic => $subtopic)
-                                            <a class="list-group-item text-center topic-link {{ $topic }} text-capitalize"
-                                                id="{{ $topic }}" data-topic="{{ $topic }}"
-                                                data-subtopics="{{ json_encode($subtopic) }}">
-                                                {{ str_replace('-', ' ', $topic) }}</a>
+                                        @foreach ($topicList as $topicUrl => $topicName)
+                                            <a class="list-group-item text-center topic-link {{ $topicUrl }} text-capitalize"
+                                                id="{{ $topicUrl }}" data-topic="{{ $topicUrl }}">
+                                                {{ $topicName }}</a>
                                         @endforeach
                                     </div>
                                 </div>
@@ -141,13 +140,13 @@
             </div>
         </div>
     </div>
-    @include('layout-en.footer')
+    @include('layout-fr.footer')
 @endsection
 
 @section('script')
     <script>
         $(document).ready(function() {
-            var topicList = @json($topicList);
+            var topicStopicList = @json($topicStopicList);
 
             var firstTopic = $('.topic-link').first().data('topic');
             $('.topic-link').first().addClass('active');
@@ -165,8 +164,8 @@
 
             function displaySubtopics(topics) {
 
-                if (topicList[topics]) {
-                    var subTopics = topicList[topics];
+                if (topicStopicList[topics]) {
+                    var subTopics = topicStopicList[topics];
                     $('.subtopics-container').empty();
 
                     $.each(subTopics, function(index, subTopic) {

@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\EventDetailsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeFrController;
 use App\Http\Controllers\MonthController;
 use App\Http\Controllers\SearchBoxController;
 use App\Http\Controllers\SubscribeController;
@@ -53,88 +54,88 @@ Route::get('/terms-and-condition', function () {
 
 
 Route::controller(AddEventController::class)->group(function () {
-    Route::get('/add-event', 'addEventPage')->name('add-event-fr');
+    Route::get('/add-event', 'addEventPageFr')->name('add-event-fr');
 
-    Route::post('/add-event-from', 'addEventForm')->name('add-event-from-fr');
+    Route::post('/add-event-from', 'addEventFormFr')->name('add-event-from-fr');
 });
 
 
 Route::controller(SubscribeController::class)->group(function () {
-    Route::get('/subscribe', 'subscribePage')->name('subscribe-fr');
+    Route::get('/subscribe', 'subscribePageFr')->name('subscribe-fr');
 
-    Route::post('/subscribe-form', 'subscribeForm')->name('subscribe-form-fr');
+    Route::post('/subscribe-form', 'subscribeFormFr')->name('subscribe-form-fr');
 });
 
 
 Route::controller(ContactController::class)->group(function () {
-    Route::get('/contact', 'contactPage')->name('contact-fr');
+    Route::get('/contact', 'contactPageFr')->name('contact-fr');
 
-    Route::post('/contact-form', 'contactForm')->name('contact-form-fr');
+    Route::post('/contact-form', 'contactFormFr')->name('contact-form-fr');
 });
 
 
 // Route::controller(EventSubscribeController::class)->group(function () {
-//     Route::get('/eventdetail/{id}', 'eventDetail')->name('event-detail');
+//     Route::get('/eventdetail/{id}', 'eventDetailFr')->name('event-detail');
 // });
 
 
 Route::controller(EventDetailsController::class)->group(function () {
-    Route::get('/eventdetail/{event_id}', 'eventDetailPage')->name('event-detail-fr');
+    Route::get('/eventdetail/{event_id}', 'eventDetailPageFr')->name('event-detail-fr');
 });
 
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'homePageFr')->name('home-fr');
-    Route::get('/topic/{topic}', 'topicListPage')->name('topic-list-page-fr');
-    Route::get('/journal', 'journalPage')->name('journal-page-fr');
+    Route::get('/topic/{topic}', 'topicListPageFr')->name('topic-list-page-fr');
+    Route::get('/journal', 'journalPageFr')->name('journal-page-fr');
 });
 
 Route::controller(SearchBoxController::class)->group(function () {
-    Route::get('/advance-search', 'advanceSerachPage')->name('advance-search-fr');
+    Route::get('/advance-search', 'advanceSerachPageFr')->name('advance-search-fr');
 
-    Route::get('/advance-search-ajax', 'advanceSerachPage')->name('advance-search-ajax-fr');
+    Route::get('/advance-search-ajax', 'advanceSerachPageFr')->name('advance-search-ajax-fr');
 });
 
 
 Route::controller(TopicController::class)->group(function () {
-    Route::get('/topic-list/{topic}', 'topicPage')->name('topic-page-fr');
-    Route::get('/topic-list/{topic}/{month}', 'topicMonthPage')->name('topic-month-page-fr');
+    Route::get('/topic-list/{topic}', 'topicPageFr')->name('topic-page-fr');
+    Route::get('/topic-list/{topic}/{month}', 'topicMonthPageFr')->name('topic-month-page-fr');
 
-    Route::get('/topic-ajax', 'topicPage')->name('topic-ajax-fr');
-    Route::get('/topic-month-ajax', 'topicMonthPage')->name('topic-month-ajax-fr');
+    Route::get('/topic-ajax', 'topicPageFr')->name('topic-ajax-fr');
+    Route::get('/topic-month-ajax', 'topicMonthPageFr')->name('topic-month-ajax-fr');
 });
 
 
 Route::controller(CityController::class)->group(function () {
-    Route::get('/cities/{city}', 'cityPage')->name('city-page-fr');
-    Route::get('/cities/{city}/{month}', 'cityMonthPage')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->name('city-month-page-fr');
-    Route::get('/cities/{city}/{topic}', 'cityTopicPage')->name('city-topic-page-fr');
+    Route::get('/cities/{city}', 'cityPageFr')->name('city-page-fr');
+    Route::get('/cities/{city}/{month}', 'cityMonthPageFr')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->name('city-month-page-fr');
+    Route::get('/cities/{city}/{topic}', 'cityTopicPageFr')->name('city-topic-page-fr');
     Route::get('/cities/{city}/{topic}/{month}', 'cityTopicMonthPage')->name('city-topic-month-page-fr');
 
-    Route::get('/city-ajax', 'cityPage')->name('city-ajax-fr');
-    Route::get('/city-month-ajax', 'cityMonthPage')->name('city-month-ajax-fr');
-    Route::get('/city-topic-ajax', 'cityTopicPage')->name('city-topic-ajax-fr');
-    Route::get('/city-topic-month-ajax', 'cityTopicMonthPage')->name('city-topic-month-ajax-fr');
+    Route::get('/city-ajax', 'cityPageFr')->name('city-ajax-fr');
+    Route::get('/city-month-ajax', 'cityMonthPageFr')->name('city-month-ajax-fr');
+    Route::get('/city-topic-ajax', 'cityTopicPageFr')->name('city-topic-ajax-fr');
+    Route::get('/city-topic-month-ajax', 'cityTopicMonthPageFr')->name('city-topic-month-ajax-fr');
 });
 
 
 Route::controller(MonthController::class)->group(function () {
-    Route::get('/{month}', 'monthPage')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->name('month-page-fr');
+    Route::get('/{month}', 'monthPageFr')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->name('month-page-fr');
 
-    Route::get('/month-ajax', 'monthPage')->name('month-ajax-fr');
+    Route::get('/month-ajax', 'monthPageFr')->name('month-ajax-fr');
 });
 
 
 Route::controller(CountryController::class)->group(function () {
-    Route::get('/{country}', 'countryPage')->name('country-page-fr');
-    Route::get('/{country}/{month}', 'countryMonthPage')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->name('country-month-page-fr');
-    Route::get('/{country}/{topic}', 'countryTopicPage')->name('country-topic-page-fr');
-    Route::get('/{country}/{topic}/{month}', 'countryTopicMonthPage')->name('country-topic-month-page-fr');
+    Route::get('/{country}', 'countryPageFr')->name('country-page-fr');
+    Route::get('/{country}/{month}', 'countryMonthPageFr')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->name('country-month-page-fr');
+    Route::get('/{country}/{topic}', 'countryTopicPageFr')->name('country-topic-page-fr');
+    Route::get('/{country}/{topic}/{month}', 'countryTopicMonthPageFr')->name('country-topic-month-page-fr');
 
-    Route::get('/country-ajax', 'countryPage')->name('country-ajax-fr');
-    Route::get('/country-month-ajax', 'countryMonthPage')->name('country-month-ajax-fr');
-    Route::get('/country-topic-ajax', 'countryTopicPage')->name('country-topic-ajax-fr');
-    Route::get('/country-topic-month-ajax', 'countryTopicMonthPage')->name('country-topic-month-ajax-fr');
+    Route::get('/country-ajax', 'countryPageFr')->name('country-ajax-fr');
+    Route::get('/country-month-ajax', 'countryMonthPageFr')->name('country-month-ajax-fr');
+    Route::get('/country-topic-ajax', 'countryTopicPageFr')->name('country-topic-ajax-fr');
+    Route::get('/country-topic-month-ajax', 'countryTopicMonthPageFr')->name('country-topic-month-ajax-fr');
 });
 
 
