@@ -1062,7 +1062,7 @@ select.tm-select.form-control:not([size]):not([multiple]) {
 .form-control {
 	font-size: 14px !important;
 	padding: .75rem !important;
-	margin-bottom: 10px !important;
+	margin-bottom: 10px;
 }
 
 .tc h2,

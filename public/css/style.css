@@ -78,9 +78,9 @@
     align-items: center;
 }
 
-.language-select:hover {
+/* .language-select:hover {
     background-color: #e0e0e0;
-}
+} */
 
 /* Style for the dropdown */
 .language-dropdown {
