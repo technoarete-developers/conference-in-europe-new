@@ -2,17 +2,19 @@
     $topicName = ucfirst(str_replace('-', ' ', request()->topic));
 @endphp
 
-@extends('layout-fr.master')
+@extends('layout-en.master')
 
 @section('meta')
     <title>Conference in {{ $topicName }} {{ date('Y') }} | International Conference in {{ $topicName }}</title>
-    <meta name="keyword" content="Conferences on {{ $topicName }}, Latest conferences on {{ $topicName }}, {{ $topicName }} conference alerts, {{ $topicName }} Conferences, {{ $topicName }} conferences {{ date('Y') }}, Upcoming conferences on{{ $topicName }}, Conference alerts on {{ $topicName }}, Conference alert on {{ $topicName }}." />
+    <meta name="keyword"
+        content="Conferences on {{ $topicName }}, Latest conferences on {{ $topicName }}, {{ $topicName }} conference alerts, {{ $topicName }} Conferences, {{ $topicName }} conferences {{ date('Y') }}, Upcoming conferences on{{ $topicName }}, Conference alerts on {{ $topicName }}, Conference alert on {{ $topicName }}." />
     <meta name="description"
         content="Are you Researcher,Schloars and Scientic professionals?You can get the details of {{ $topicName }} conferences 2022.Subscribe and get Conference Alerts." />
 
     <meta property="og:title"
         content="Conference in {{ $topicName }} {{ date('Y') }} | International Conference in {{ $topicName }}" />
-    <meta property="og:keywords" content="Conferences on {{ $topicName }}, Latest conferences on {{ $topicName }}, {{ $topicName }} conference alerts, {{ $topicName }} Conferences, {{ $topicName }} conferences {{ date('Y') }}, Upcoming conferences on{{ $topicName }}, Conference alerts on {{ $topicName }}, Conference alert on {{ $topicName }}." />
+    <meta property="og:keywords"
+        content="Conferences on {{ $topicName }}, Latest conferences on {{ $topicName }}, {{ $topicName }} conference alerts, {{ $topicName }} Conferences, {{ $topicName }} conferences {{ date('Y') }}, Upcoming conferences on{{ $topicName }}, Conference alerts on {{ $topicName }}, Conference alert on {{ $topicName }}." />
     <meta property="og:description"
         content="Conference in Europe {{ date('Y') }} aims to bring all the information of upcoming events in various fields. It's your top destination for getting the latest alerts on all the updates." />
 
@@ -92,7 +94,7 @@
 @endsection
 
 @section('content')
-    @include('layout-fr.header')
+    @include('layout-en.header')
     <div class="tm-main-content" id="top">
         <section class="global-page-header">
             <div class="container">
@@ -107,7 +109,7 @@
         </section>
         <div class="marqq">
             <div class="container-fluid">
-                <h1 class="heading" style="text-align: center;text-transform: uppercase;"><b>Subtopics of Business</b</h1>
+                <h1 class="heading" style="text-align: center;text-transform: uppercase;"><b>Subtopics of Business</b< /h1>
                         <div class="titleline"> </div>
             </div>
         </div>
@@ -120,7 +122,7 @@
                                 <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2 bhoechie-tab-menu">
                                     <div class="list-group">
                                         @foreach ($topicList as $topicUrl => $topicName)
-                                            <a class="list-group-item text-center topic-link {{ $topicUrl }} text-capitalize"
+                                            <a class="list-group-item text-center topic-link {{ request()->topic == $topicUrl ? 'active' : '' }} text-capitalize"
                                                 id="{{ $topicUrl }}" data-topic="{{ $topicUrl }}">
                                                 {{ $topicName }}</a>
                                         @endforeach
@@ -140,7 +142,7 @@
             </div>
         </div>
     </div>
-    @include('layout-fr.footer')
+    @include('layout-en.footer')
 @endsection
 
 @section('script')
@@ -148,9 +150,8 @@
         $(document).ready(function() {
             var topicStopicList = @json($topicStopicList);
 
-            var firstTopic = $('.topic-link').first().data('topic');
-            $('.topic-link').first().addClass('active');
-            displaySubtopics(firstTopic);
+            var requestTopic = "{{ request()->topic }}";
+            displaySubtopics(requestTopic);
 
             $('.topic-link').on('click', function() {
                 $('.topic-link').removeClass('active');

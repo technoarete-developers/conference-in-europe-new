@@ -585,9 +585,9 @@
             <div class="selection text-capitalize">
                 <div class="select-list-container">
                     <div class="select-item" id="city-country-select">
-                        @if ($countryName)
+                        @if (request()->country)
                             <span class="sub-top sub_topic text-capitalize">
-                                {{ $countryName }}
+                                {{ $countryNameFr }}
                             </span>
                             <a onclick="city_country_clear();" class="city_country_clear p-1">
                                 <img src="/img/close-button.png" style="width: 18px; cursor: pointer;">
@@ -598,7 +598,7 @@
                     <div class="select-item" id="subtopic-select">
                         @if (request()->topic)
                             <span class="sub-top sub_topic text-capitalize">
-                                {{ $topicName }}
+                                {{ $topicNameFr }}
                             </span>
                             <a onclick="subtopic_clear();" class="subtopic_clear p-1">
                                 <img src="/img/close-button.png" style="width: 18px; cursor: pointer;">
@@ -609,7 +609,7 @@
                     <div class="select-item" id="month-select">
                         @if (request()->month)
                             <span class="sub-top sub_topic text-capitalize">
-                                {{ $monthName }}
+                                {{ $monthNameFr }}
                             </span>
                             <a onclick="month_clear();" class="month_clear p-1">
                                 <img src="/img/close-button.png" style="width: 18px; cursor: pointer;">
@@ -626,7 +626,7 @@
                                     style="color: #000;position: relative;top: 4px; font-size: 19px;"></i>&nbsp;
                                 <select class="dropdown select_months" id="selected_month">
                                     <option value="{{ request()->month ? request()->month : '' }}">
-                                        {{ request()->month ? $monthName : 'Select Month' }}</option>
+                                        {{ request()->month ? $monthNameFr : 'Select Month' }}</option>
                                     @foreach ($monthList as $url => $name)
                                         <option value="{{ $url }}" data-name="{{ $name }}">
                                             {{ $name }} </option>
@@ -643,7 +643,7 @@
                                     style="color: #000;position: relative;top: 4px; font-size: 19px;"></i>&nbsp;
                                 <select class="dropdown select_countries" id="selected_country">
                                     <option value="{{ request()->country ? request()->country : '' }}">
-                                        {{ request()->country ? $countryName : 'Select Country' }}
+                                        {{ request()->country ? $countryNameFr : 'Select Country' }}
                                     </option>
                                     @foreach ($topCountry as $url => $name)
                                         <option value="{{ $url }}" data-name="{{ $name }}">

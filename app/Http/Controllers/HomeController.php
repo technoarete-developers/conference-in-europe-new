@@ -62,12 +62,13 @@ class HomeController extends Controller
         return view('pages-fr.home', compact('monthList', 'topCity', 'topicList', 'topCountry'));
     }
 
-    public function topicListPageFr()
+    public function topicListPageFr(Request $request)
     {
         $topicStopicList = $this->filter->topicSubtopicListFr();
         $topicList = $this->filter->topicListFr();
+        $topicNameFr = $this->filter->getTopicFrName($request->topic);
 
-        return view('pages-fr.topic-list', compact('topicList', 'topicStopicList'));
+        return view('pages-fr.topic-list', compact('topicList', 'topicStopicList', 'topicNameFr'));
     }
 
     public function journalPageFr()

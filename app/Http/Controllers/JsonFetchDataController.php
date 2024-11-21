@@ -357,15 +357,73 @@ class JsonFetchDataController extends Controller
             }
         }
 
-        // $jsonData = file_get_contents(public_path('json-en/country.json'));
-
-        // $topCountry = json_decode($jsonData, true);
-
-        // if (array_key_exists($countryName, $topCountry)) {
-        //     $countryName = $topCountry[$countryName];
-        // }
-
         return $countryName;
+    }
+
+    // get country french name
+    public function getCountryFrName($country)
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/country.json'));
+
+        $countryCity = json_decode($jsonData, true);
+
+        if (array_key_exists($country, $countryCity)) {
+            $countryFrName = $countryCity[$country];
+        }
+
+        return $countryFrName;
+    }
+
+    // get city french name
+    public function getCityFrName($city)
+    {
+
+        $jsonData = file_get_contents(public_path('json-en/country-with-city.json'));
+
+        $countryCity = json_decode($jsonData, true);
+
+        foreach ($countryCity as $country => $cityList) {
+            if (array_key_exists($city, $cityList)) {
+                $cityNameFr = $cityList[$city];
+                break;
+            }
+        }
+
+        return $cityNameFr;
+    }
+
+    // get topic french name
+    public function getTopicFrName($topic)
+    {
+
+        $jsonData = file_get_contents(public_path('json-fr/topic-with-subtopic.json'));
+
+        $topicSubtopic = json_decode($jsonData, true);
+
+        foreach ($topicSubtopic as $topics => $subtopicList) {
+            if (array_key_exists($topic, $subtopicList)) {
+                $topicNameFr = $subtopicList[$topic];
+                break;
+            }
+        }
+
+        return $topicNameFr;
+    }
+
+    // get month french name
+    public function getMonthFrName($month)
+    {
+
+        $jsonData = json_decode(file_get_contents(public_path('json-fr/month.json')), true);
+
+        $monthList = json_decode($jsonData, true);
+
+        if (array_key_exists($month, $monthList)) {
+            $monthNameFr = $monthList[$month];
+        }
+
+        return $monthNameFr;
     }
 
     // cites list

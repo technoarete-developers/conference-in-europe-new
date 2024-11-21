@@ -57,11 +57,11 @@
                                         </div>
                                     </div>
                                     <div class="p-4 mt-4" style="background-color: #f5f7fd: font-weight: 700">
-                                        <h3 class="text-center mb-4 p-2" style="color: #b03031">All Conference List</h3>
+                                        <h3 class="text-center mb-4 p-2" style="color: #b03031">Liste de toutes les conférences</h3>
                                         <div class="row bg-dark text-white py-2">
                                             <div class="col-2">Date</div>
-                                            <div class="col-7">Conference Name</div>
-                                            <div class="col-3">Venue</div>
+                                            <div class="col-7">Nom de la conférence</div>
+                                            <div class="col-3">Lieu</div>
                                         </div>
                                         @include ('components-fr.event-listing')
                                     </div>

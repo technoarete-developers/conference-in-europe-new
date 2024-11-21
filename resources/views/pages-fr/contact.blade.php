@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block">
-                        <h2>Contact</h2>
+                        <h2>Contactez-nous</h2>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                                 <div class="col-md-12 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                        <input name="name" placeholder="Enter Name" class="form-control" type="text"
+                                        <input name="name" placeholder="Entrez le nom" class="form-control" type="text"
                                             required>
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-envelope"
                                                 aria-hidden="true"></i></span>
-                                        <input name="email" placeholder="Enter E-Mail Address" class="form-control"
+                                        <input name="email" placeholder="Entrer l'adresse e-mail" class="form-control"
                                             type="text" required>
                                     </div>
                                 </div>
@@ -68,7 +68,7 @@
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-phone"
                                                 aria-hidden="true"></i></span>
-                                        <input name="mobile_no" placeholder="Enter Mobile Number" class="form-control"
+                                        <input name="mobile_no" placeholder="Entrez le numero de portable" class="form-control"
                                             type="text" required>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-map-marker"
                                                 aria-hidden="true"></i></span>
-                                        <input name="country" placeholder="Enter Place" class="form-control" type="text"
+                                        <input name="country" placeholder="Entrez le lieu" class="form-control" type="text"
                                             required>
                                     </div>
                                 </div>
@@ -92,10 +92,10 @@
                                         <span class="input-group-addon"><i class="fa fa-pencil"
                                                 aria-hidden="true"></i></span>
                                         <select id="topic" name="topic" class="field form-control text-capitalize" required>
-                                            <option value="">Select Topic</option>
-                                            @foreach ($topicList as $topic => $subtopic)
-                                                <option value="{{ str_replace('-', ' ', $topic) }}">
-                                                    {{ str_replace('-', ' ', $topic) }}
+                                            <option value="">Sélectionnez un sujet</option>
+                                            @foreach ($topicList as $url => $name)
+                                                <option value="{{ str_replace('-', ' ', $url) }}">
+                                                    {{ $name }}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -117,7 +117,7 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <button type="submit" class="btn btn-danger" name="btnsubmit"  onclick="onClick(event)"
-                                        style="background-color:#b00000;border-color: #b00000; color: #fff;">Submit
+                                        style="background-color:#b00000;border-color: #b00000; color: #fff;">Soumettre
                                         <span class="glyphicon glyphicon-send"></span></button>
                                 </div>
                             </div>
@@ -126,7 +126,7 @@
                     <div class="col-md-6">
                         <div class="subsc">
                             <div class="main-heading" style="text-align:center;">
-                                <h3 style="color:#000;font-weight:bold">CONFERENCE IN EUROPE</h3>
+                                <h3 style="color:#000;font-weight:bold">CONFÉRENCE EN EUROPE</h3>
                                 <p><i class="fa fa-envelope" aria-hidden="true"></i> info@conferenceineurope.net</p>
                                 <p><i class="fa fa-phone" aria-hidden="true"></i> 91-8925031783</p>
                             </div>

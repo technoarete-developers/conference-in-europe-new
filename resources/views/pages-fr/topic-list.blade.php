@@ -1,18 +1,16 @@
-@php
-    $topicName = ucfirst(str_replace('-', ' ', request()->topic));
-@endphp
-
 @extends('layout-fr.master')
 
 @section('meta')
-    <title>Conference in {{ $topicName }} {{ date('Y') }} | International Conference in {{ $topicName }}</title>
-    <meta name="keyword" content="Conferences on {{ $topicName }}, Latest conferences on {{ $topicName }}, {{ $topicName }} conference alerts, {{ $topicName }} Conferences, {{ $topicName }} conferences {{ date('Y') }}, Upcoming conferences on{{ $topicName }}, Conference alerts on {{ $topicName }}, Conference alert on {{ $topicName }}." />
+    <title>Conference in {{ $topicNameFr }} {{ date('Y') }} | International Conference in {{ $topicNameFr }}</title>
+    <meta name="keyword"
+        content="Conferences on {{ $topicNameFr }}, Latest conferences on {{ $topicNameFr }}, {{ $topicNameFr }} conference alerts, {{ $topicNameFr }} Conferences, {{ $topicNameFr }} conferences {{ date('Y') }}, Upcoming conferences on{{ $topicNameFr }}, Conference alerts on {{ $topicNameFr }}, Conference alert on {{ $topicNameFr }}." />
     <meta name="description"
-        content="Are you Researcher,Schloars and Scientic professionals?You can get the details of {{ $topicName }} conferences 2022.Subscribe and get Conference Alerts." />
+        content="Are you Researcher,Schloars and Scientic professionals?You can get the details of {{ $topicNameFr }} conferences 2022.Subscribe and get Conference Alerts." />
 
     <meta property="og:title"
-        content="Conference in {{ $topicName }} {{ date('Y') }} | International Conference in {{ $topicName }}" />
-    <meta property="og:keywords" content="Conferences on {{ $topicName }}, Latest conferences on {{ $topicName }}, {{ $topicName }} conference alerts, {{ $topicName }} Conferences, {{ $topicName }} conferences {{ date('Y') }}, Upcoming conferences on{{ $topicName }}, Conference alerts on {{ $topicName }}, Conference alert on {{ $topicName }}." />
+        content="Conference in {{ $topicNameFr }} {{ date('Y') }} | International Conference in {{ $topicNameFr }}" />
+    <meta property="og:keywords"
+        content="Conferences on {{ $topicNameFr }}, Latest conferences on {{ $topicNameFr }}, {{ $topicNameFr }} conference alerts, {{ $topicNameFr }} Conferences, {{ $topicNameFr }} conferences {{ date('Y') }}, Upcoming conferences on{{ $topicNameFr }}, Conference alerts on {{ $topicNameFr }}, Conference alert on {{ $topicNameFr }}." />
     <meta property="og:description"
         content="Conference in Europe {{ date('Y') }} aims to bring all the information of upcoming events in various fields. It's your top destination for getting the latest alerts on all the updates." />
 
@@ -99,7 +97,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block text-capitalize py-4">
-                            <h2>{{ str_replace('-', ' ', request()->topics) }}</h2>
+                            <h2>{{ $topicNameFr }}</h2>
                         </div>
                     </div>
                 </div>
@@ -107,7 +105,7 @@
         </section>
         <div class="marqq">
             <div class="container-fluid">
-                <h1 class="heading" style="text-align: center;text-transform: uppercase;"><b>Subtopics of Business</b</h1>
+                <h1 class="heading" style="text-align: center;text-transform: uppercase;"><b>Subtopics of Business</b< /h1>
                         <div class="titleline"> </div>
             </div>
         </div>
@@ -120,7 +118,7 @@
                                 <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2 bhoechie-tab-menu">
                                     <div class="list-group">
                                         @foreach ($topicList as $topicUrl => $topicName)
-                                            <a class="list-group-item text-center topic-link {{ $topicUrl }} text-capitalize"
+                                            <a class="list-group-item text-center topic-link {{ request()->topic == $topicUrl ? 'active' : '' }} text-capitalize"
                                                 id="{{ $topicUrl }}" data-topic="{{ $topicUrl }}">
                                                 {{ $topicName }}</a>
                                         @endforeach
@@ -148,9 +146,8 @@
         $(document).ready(function() {
             var topicStopicList = @json($topicStopicList);
 
-            var firstTopic = $('.topic-link').first().data('topic');
-            $('.topic-link').first().addClass('active');
-            displaySubtopics(firstTopic);
+            var requestTopic = "{{ request()->topic }}";
+            displaySubtopics(requestTopic);
 
             $('.topic-link').on('click', function() {
                 $('.topic-link').removeClass('active');

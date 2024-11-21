@@ -1,22 +1,13 @@
-@php
-
-    $countryName = ucfirst(str_replace('-', ' ', request()->country));
-    if (array_key_exists(request()->country, $topCountry)) {
-        $countryName = $topCountry[request()->country];
-    }
-
-@endphp
-
 @extends('layout-fr.master')
 
 @section('meta')
-    <title>{{ str_replace('@country', $countryName, $content['title']) }}</title>
-    <meta name="keywords" content="{{ str_replace('@country', $countryName, $content['metaKey']) }}" />
-    <meta name="Description" content="{{ str_replace('@country', $countryName, $content['metaDes']) }}" />
+    <title>{{ str_replace('@country', $countryNameFr, $content['title']) }}</title>
+    <meta name="keywords" content="{{ str_replace('@country', $countryNameFr, $content['metaKey']) }}" />
+    <meta name="Description" content="{{ str_replace('@country', $countryNameFr, $content['metaDes']) }}" />
 
-    <meta property="og:title" content="{{ str_replace('@country', $countryName, $content['title']) }}" />
-    <meta property="og:keywords" content="{{ str_replace('@country', $countryName, $content['metaKey']) }}" />
-    <meta property="og:description" content="{{ str_replace('@country', $countryName, $content['metaDes']) }}" />
+    <meta property="og:title" content="{{ str_replace('@country', $countryNameFr, $content['title']) }}" />
+    <meta property="og:keywords" content="{{ str_replace('@country', $countryNameFr, $content['metaKey']) }}" />
+    <meta property="og:description" content="{{ str_replace('@country', $countryNameFr, $content['metaDes']) }}" />
 
     <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
@@ -31,7 +22,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>{{ $countryName }}</h2>
+                        <h2>{{ $countryNameFr }}</h2>
                     </div>
                 </div>
             </div>
@@ -44,15 +35,15 @@
                             <div class="row">
                                 <div class="col-sm-9 topic-midule-grid">
                                     <div class="topic-date-cnfr">
-                                        {{-- <legend> <span
-                                                class="fld_hed text-capitalize">{{ $countryName }}</span>
-                                        </legend> --}}
+                                        <legend> <span
+                                                class="fld_hed text-capitalize">{{ $countryNameFr }}</span>
+                                        </legend>
                                         <div class="county-conference">
                                             <div class="col-md-12">
                                                 <h1 style=" font-size: 18px;font-family:Gill Sans;">
-                                                    {{ str_replace('@country', $countryName, $content['h1']) }}</h1>
-                                                <p>{{ str_replace('@country', $countryName, $content['contentOne']) }}</p>
-                                                <p>{{ str_replace('@country', $countryName, $content['contentTwo']) }}</p>
+                                                    {{ str_replace('@country', $countryNameFr, $content['h1']) }}</h1>
+                                                <p>{{ str_replace('@country', $countryNameFr, $content['contentOne']) }}</p>
+                                                <p>{{ str_replace('@country', $countryNameFr, $content['contentTwo']) }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -62,11 +53,11 @@
                                         </div>
                                     </div>
                                     <div class="p-4 mt-4" style="background-color: #f5f7fd: font-weight: 700">
-                                        <h3 class="text-center mb-4 p-2" style="color: #b03031">All Conference List</h3>
+                                        <h3 class="text-center mb-4 p-2" style="color: #b03031">Liste de toutes les conférences</h3>
                                         <div class="row bg-dark text-white py-2">
                                             <div class="col-2">Date</div>
-                                            <div class="col-7">Conference Name</div>
-                                            <div class="col-3">Venue</div>
+                                            <div class="col-7">Nom de la conférence</div>
+                                            <div class="col-3">Lieu</div>
                                         </div>
                                         @include ('components-fr.event-listing')
                                     </div>

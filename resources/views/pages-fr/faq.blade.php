@@ -9,7 +9,7 @@
     <meta property="og:keywords" content="" />
     <meta property="og:description" content="" />
 
-       <link rel="canonical" href="{{ url()->current() }}" />
+    <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
 
 @section('style')
@@ -33,22 +33,26 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        <h4>FAQs For Conference Planners/Organizers</h4>
+                        <h4>FAQ pour les planificateurs/organisateurs de conference</h4>
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingTwo">
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        What is the procedure to add events to the conferenceineurope.net website?
+                                        Quelles sont les formalites pour ajouter un evenement sur le site
+                                        Conferenceineurope.net ?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingTwo">
                                 <div class="panel-body">
-                                    In order to add your upcoming event (whatever it may be - a conference, seminar,
-                                    symposium, lecture or any other sort of academic event), all you have to do is get on
-                                    the home page of the conferenceineurope.net website and click on the 'Add Event' option.
+                                    <p>Vous desirez ajouter un evenement,qu'il s'agisse d'un seminaire, d'un congres,
+                                        d'uneconference, d'un symposium ou de tout autre genre d'evenement academique? Il
+                                        vous
+                                        suffit de vous rendre sur la page d'accueil du site Conferenceineurope.net et de
+                                        cliquer
+                                        sur Ajouter un evenement.</p>
                                 </div>
                             </div>
                         </div>
@@ -57,22 +61,23 @@
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What sort of additional information can be added to the event listing?</a>
+                                        Quelles informations faut-il fournir lors de l'ajout d'un evenement?</a>
                                 </h4>
                             </div>
                             <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
                                 aria-labelledby="headingOne">
-                                Along with adding your event to the listing on the conferenceineurope.net website, you can
-                                also attach supplementary details including
-                                ● Date/Dates when your event will be held,
-                                ● Venue, city, and other location information,
-                                ● URL for your upcoming event,
-                                ● Deadline info for all paper submissions/presentations,
-                                ● Topics of discussion/theme of the event,
-                                ● Program schedule,
-                                ● Registration info,
-                                ● Organizer contact details, and
-                                ● Any other relevant information."
+                                <p>Au moment dajouter votre evenement a la liste des evenements disponibles sur
+                                    Conferenceineurope.net, vous pouvez indiquer certaines informations supplementaires,
+                                    asavoir</p>
+                                <p>Dates et heures auxquelles l'evenement aura lieu,</p>
+                                <p>Lieu, ville et autres informations sur l'adresse;</p>
+                                <p>Liens vers votre prochain evenement;</p>
+                                <p>Renseignements sur les delais de soumission des documents d'inscription;</p>
+                                <p>Sujets/thematiques abordes lors de l'evenement;</p>
+                                <p>Planning du programme;</p>
+                                <p>Informations pour s'inscrire a l'evenement;</p>
+                                <p>Coordonnees de l'organisateur</p>
+                                <p>Toutes les informations necessaires et pertinentes.</p>
                                 <div class="panel-body">
                                 </div>
                             </div>
@@ -82,15 +87,15 @@
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Are there any charges for adding an event to conferenceineurope.net?
+                                        Le rajout d'un evenement sur Conferenceineurope.net est-il payant?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingThree">
                                 <div class="panel-body">
-                                    No, adding your upcoming event to this website does not cost a single penny and is
-                                    absolutely free-of-cost!
+                                    <p>Non, l'ajout d'un evenement sur ce site Web est totalement gratuit. Vous n'aurez a
+                                        debourseraucun centime!</p>
                                 </div>
                             </div>
                         </div>
@@ -99,16 +104,16 @@
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-                                        How long does it take for my event to show up on the conferenceineurope.net website
-                                        after adding it?
+                                        Apres l'avoir ajoute, combien de temps faut-il attendre pour que mon evenement
+                                        apparaisse sur le site Web Conferenceineurope.net?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingFour">
                                 <div class="panel-body">
-                                    At the most, it will take 12 hrs for your event to formally be listed on the
-                                    conferenceineurope.net website after adding it.
+                                    <p>Vous aurez a patienter au maximum 12 heures avant que votre evenement soit
+                                        officiellement repertorie sur le site Conferenceineurope.net apres son ajout.</p>
                                 </div>
                             </div>
                         </div>
@@ -117,16 +122,19 @@
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
-                                        Is it possible to edit, append or modify the details for an event after it has been
-                                        added to the website?</a>
+                                        Est-il possible de modifier, d'ajouter ou de changer les details d'un evenement
+                                        apres l'avoir inscrit sur le site Web?</a>
                                 </h4>
                             </div>
                             <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingFive">
                                 <div class="panel-body">
-                                    Yes, any information pertaining to the event that you have added on to the
-                                    conferenceineurope.net website can be edited, appended and modified at any time by
-                                    simply logging in to the event panel and making the required changes
+                                    <p>Oui, vous pouvez modifier toutes les informations relatives a l'evenement que vous
+                                        avez
+                                        ajoute sur le site Web Conferenceineurope.net. Vous pouvez le faire a tout instant,
+                                        en
+                                        vous connectant simplement sur le site et en cliquant sur l'evenement. Vous pourrez
+                                        alors y apporter les modifications requises.</p>
                                 </div>
                             </div>
                         </div>
@@ -135,19 +143,20 @@
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                        Is it possible to promote my events further on the conferenceineurope.net website?
+                                        Plus tard, serait-ce possible de promouvoir mes evenements sur le site
+                                        WebConferenceineurope.net?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseSix" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingSix">
                                 <div class="panel-body">
-                                    Sure! All you have to do for your upcoming events to be promoted even more on this
-                                    website is to send an email about your intention to do so to the following email address
-                                    - info@conferenceineurope.net.
-                                    Our team will subsequently get back to you with relevant details such as -
-                                    ● Diverse advertisement plans that you can choose from,
-                                    ● Promotion period, etc.
+                                    <p>Bien sûr! Tout ce que vous avez a faire pour que vos evenements a venir soient encore
+                                        pluspromus sur ce site Web est d'envoyer un e-mail sur vos intentions a l'adresse
+                                        e-mailsuivante: info@conferenceineurope.net.
+                                        Notre equipe reviendra par la suite vers vous avec des details pertinents comme:</p>
+                                    <p>Les plans de publicite que vous pouvez selectionner,</p>
+                                    <p>La periode de promotion, etc.</p>
                                 </div>
                             </div>
                         </div>
@@ -156,44 +165,45 @@
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                        What is the maximum number of events that can be added to the conferenceineurope.net
-                                        listing from a single organizer account?
+                                        Quel est le nombre maximal d'evenements que je peux ajouter a la liste de
+                                        conferenceineurope.net depuis un seul compte d'organisateur?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingSeven">
                                 <div class="panel-body">
-                                    Each year, an organizer is allowed to add a maximum of 50 events to the event listing on
-                                    this website from their account.
+                                    <p>Tous les ans, un organisateur est autorise a ajouter un maximum de 50 evenements a
+                                        laliste des evenements sur ce site Web a partir de son compte.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <h4>FAQs for Subscribers</h4>
+                        <h4>FAQ pour les abonnes</h4>
 
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingEight">
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                                        What is the procedure to subscribe to conferenceineurope.net involved?
+                                        Quelle est la procedure a suivre pour s'abonner sur ConferenceInEurope.net?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseEight" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingEight">
                                 <div class="panel-body">
-                                    The procedure to subscribe to conferenceineurope.net is extremely simple and
-                                    straightforward!
-                                    All you have to do is get on to the homepage of the conferenceineurope.net website and
-                                    then click on the 'Subscribe' option.
-                                    Subsequently, you will be required to provide some basic information such as your
-                                    ● Name,
-                                    ● Email address,
-                                    ● Phone number,
-                                    ● Field/topic/subject of study & interest, and
-                                    ● Country.
+                                    <p>La procedure pour s'abonner sur conferenceineurope.net est tout a fait simple! Tout
+                                        ce
+                                        que vous avez a faire est de vous rendre sur la page d'accueil du site et de cliquer
+                                        sur
+                                        l'option Abonnez-vous.
+                                        Vous aurez ensuite a fournir certaines informations de base telles que votre:</p>
+                                    <p>Nom,</p>
+                                    <p>Adresse e-mail,</p>
+                                    <p>Numero de telephone,</p>
+                                    <p>Theme/sujet d'etude et d'interêt, et</p>
+                                    <p>Pays.</p>
                                 </div>
                             </div>
                         </div>
@@ -203,19 +213,21 @@
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                                        How does conferenceineurope.net help me find the best conferences?
+                                        Comment conferenceineurope.net peut-il m'aider a trouver les meilleures conferences?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseNine" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingNine">
                                 <div class="panel-body">
-                                    This website finds out the most appropriate and relevant international as well as
-                                    regional conferences for you, by getting to know your exact requirements such as -
-                                    ● Your preferred location,
-                                    ● Preferred date/time,
-                                    ● Preferred topic/field/subject of study & interest,
-                                    ● Registration deadlines and more!
+                                    <p>Ce site Web recherche les conferences internationales et regionales les plus
+                                        appropriees
+                                        et les plus pertinentes pour vous, en se referant a vos exigences exactes telles
+                                        que:</p>
+                                    <p>Votre emplacement prefere,</p>
+                                    <p>Date/heure preferee,</p>
+                                    <p>Sujet/champ/domaine prefere d'etudes et interêts,</p>
+                                    <p>Delai d'inscription et plus encore!</p>
                                 </div>
                             </div>
                         </div>
@@ -225,14 +237,14 @@
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                                        How much does it cost to subscribe to conferenceineurope.net?
+                                        Combien cela coûte-t-il de s'abonner a conferenceineurope.net?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseTen" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingTen">
                                 <div class="panel-body">
-                                    Not a single penny! Subscribing to this website is totally free-of-charge!
+                                    <p>Pas un seul centime! L'abonnement a ce site Web est totalement gratuit! </p>
                                 </div>
                             </div>
                         </div>
@@ -242,16 +254,16 @@
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
-                                        Is possible for a user to own a subscriber account and an organizer account at the
-                                        same time?
+                                        Est-il possible pour un utilisateur de posseder un compte d'abonne et un
+                                        compteorganisateur en même temps?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseEleven" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingEleven">
                                 <div class="panel-body">
-                                    Sure! At any point in time, a person can have both an organizer account as well as a
-                                    subscriber account on the conferenceineurope.net website!
+                                    <p>Bien sûr! a tout moment, une personne peut avoir a la fois un compte d'organisateur
+                                        ainsi qu'un compte d'abonne sur le site conferenceineurope.net!</p>
                                 </div>
                             </div>
                         </div>
@@ -261,56 +273,60 @@
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTen">
-                                        Why is it important for both experienced and novice researchers, scientists,
-                                        academicians, scholars, and others, to attend international & regional conferences
-                                        in their respective field of study?
+                                        Quel est l'interêt pour les chercheurs experimentes et novices, les scientifiques,
+                                        les universitaires, les academiciens et autres, d'assister a des conferences
+                                        internationales et regionales dans leur domaine d'etudes respectif?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseTwelve" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingTwelve">
                                 <div class="panel-body">
-                                    Conferences offer a variety of advantages to delegates. Some of these benefits include
-                                    the chance to -
-                                    ● Learn about the most recent advancements,
-                                    ● Interact with people whom they admire,
-                                    ● Gain inspiration,
-                                    ● Network with peers,
-                                    ● Acquire critical collaborative opportunities,
-                                    ● Progress their career,
-                                    ● Spread awareness about their groundbreaking research work,
-                                    ● Gain awareness about the latest tools & strategies being used in their fields, and
-                                    more!
+                                    <p>Les conferences offrent plusieurs avantages. Elles sont aux participants et aux
+                                        acteurs
+                                        l'occasion de:</p>
+                                    <p>Decouvrir les progres les plus recents, </p>
+                                    <p>Interagir avec les personnes qu'ils admirent,</p>
+                                    <p>Puiser de l'inspiration,</p>
+                                    <p>Se connecter avec d'autres personnes,</p>
+                                    <p>Acquerir des opportunites de collaboration,</p>
+                                    <p>Progresser dans leur carriere,</p>
+                                    <p>Sensibiliser les autres a leurs travaux de recherche revolutionnaires,</p>
+                                    <p>Faire connaître les derniers outils et strategies utilises dans leurs domaines,
+                                        etplus
+                                        encore!</p>
                                 </div>
                             </div>
                         </div>
-                        <h4>General FAQs<h4>
+                        <h4>FAQ generales<h4>
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headingThirteen">
                                         <h4 class="panel-title">
                                             <a class="collapsed" role="button" data-toggle="collapse"
                                                 data-parent="#accordion" href="#collapseThirteen" aria-expanded="false"
                                                 aria-controls="collapseTen">
-                                                What is the importance of conference alerts in the modern-day?
+                                                Quelle est l'importance des alertes de conference?
                                             </a>
                                         </h4>
                                     </div>
                                     <div id="collapseThirteen" class="panel-collapse collapse" role="tabpanel"
                                         aria-labelledby="headingThirteen">
                                         <div class="panel-body">
-                                            The average conference delegate is researcher, scientist, academician, scholar,
-                                            entrepreneur, or business person. Individuals involved in such professions have
-                                            little to no free time to do the things that they love, like spending time with
-                                            their families, chores, day-to-day responsibilities, etc, leave alone spending
-                                            time to search for relevant information on what upcoming conferences to attend!
-                                            This is where a trustworthy conference alerts provider such as
-                                            conferenceineurope.net comes into play! Here, anybody who is eager to attend
-                                            upcoming conferences can simply subscribe to our conference alerts and rest
-                                            assured that they will receive periodic notifications on their favorite upcoming
-                                            conferences, without having to -
-                                            ● Waste any time searching the internet,
-                                            ● Look for trustworthy sources, and most importantly,
-                                            ● Spend any money!
+                                            <p>La plupart des participants aux conferences sont des chercheurs, des
+                                                scientifiques, des academiciens, des boursiers, des entrepreneurs ou des
+                                                hommes d'affaires. Les personnes impliquees dans de telles professions ont
+                                                peu ou pas de temps libre pour s'adonner aux choses qu'ils aiment, comme
+                                                passer du temps avec leurs familles, vaquer a leurs occupations et
+                                                responsabilites quotidiennes, etc. Ils n'ont guere le temps de rechercher
+                                                des informations sur des conferences auxquelles ils voudraient assister.
+                                                C'est dans cette optique que vous aurez besoin des alertes de conferences
+                                                proposees sur, conferenceineurope.net. Si vous desirez prendre part aux
+                                                prochaines conferences, il vous suffit de vous abonner a nos alertes. Vous
+                                                serez alors certain de recevoir des notifications sur les prochaines
+                                                conferences sans devoir:</p>
+                                            <p>beaucoup de temps a rechercher sur Internet,</p>
+                                            <p>Rechercher des sources de confiance, et surtout,</p>
+                                            <p>Depenser de l'argent!</p>
                                         </div>
                                     </div>
                                 </div>
@@ -321,25 +337,27 @@
                                             <a class="collapsed" role="button" data-toggle="collapse"
                                                 data-parent="#accordion" href="#collapsefourteen" aria-expanded="false"
                                                 aria-controls="collapseTen">
-                                                Why is conferenceineurope.net trusted by millions of people across Europe
-                                                and the world?
+                                                Pourquoi des millions de personnes a travers l'Europe et le monde font-ils
+                                                confiance a conferenceineurope.net?
                                             </a>
                                         </h4>
                                     </div>
                                     <div id="collapsefourteen" class="panel-collapse collapse" role="tabpanel"
                                         aria-labelledby="headingfourteen">
                                         <div class="panel-body">
-                                            At conferenceineurope.net, we take our subscribers very seriously!
-                                            That is why, we have a dedicated team of professionals, whose sole task is to
-                                            verify all the details/information posted on this website for their -
-                                            ● Accuracy,
-                                            ● Reliability,
-                                            ● Relevancy,
-                                            ● Up-to-date and more!
-                                            For this very reason millions of European researchers, scientists, scholars,
-                                            academicians, and others, find that conferenceineurope.net is the most
-                                            trustworthy source of information on upcoming conferences scheduled to take
-                                            place all across the continent.
+                                            <p>Sur conferenceineurope.net, nous prenons nos abonnes tres au serieux!
+                                                C'est pourquoi, nous avons une equipe de professionnels dediee, dont la
+                                                seule
+                                                tâche est de verifier tous les details/informations publiees sur ce site et
+                                                de
+                                                s'assurer de leur:</p>
+                                            <p>Precision,</p>
+                                            <p>Fiabilite,</p>
+                                            <p>Pertinence,</p>
+                                            <p>Pour cette raison, des millions de chercheurs europeens, scientifiques,
+                                                universitaires, academiciens et autres ont la certitude que
+                                                conferenceineurope.net est la source d'information la plus fiable sur les
+                                                prochaines conferences venir prevues dans tout le continent.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -350,34 +368,30 @@
                                             <a class="collapsed" role="button" data-toggle="collapse"
                                                 data-parent="#accordion" href="#collapsesixteen" aria-expanded="false"
                                                 aria-controls="collapseTen">
-                                                What countries does conferenceineurope.net cover?
+                                                Quels champs/domaines/sujets le site conferentineurope.net aborde-t-il?
                                             </a>
                                         </h4>
                                     </div>
                                     <div id="collapsesixteen" class="panel-collapse collapse" role="tabpanel"
                                         aria-labelledby="headingsixteen">
                                         <div class="panel-body">
-                                            Conferenceineurope.net offers information on every field/subject/topic of
-                                            study that one can imagine! Right from Law, Engineering & Technology,
-                                            Applied Sciences & Medicine, Business & Economics, Mathematics and Life
-                                            Sciences you are likely to find information on upcoming conferences in every
-                                            existing field today! <br>
-                                            <a href="{{ route('topic-list-page', ['topic' => 'engineering']) }}">Conference in
-                                                Engineering &
-                                                Technology</a><br>
-                                            <a href="{{ route('topic-page', ['topic' => 'medical']) }}">Conference in
-                                                Science &
-                                                Medicine</a><br>
-                                            <a href="{{ route('topic-page', ['topic' => 'mathematics']) }}">
-                                                Conference in Mathematics &
-                                                Statistics </a><br>
+                                            <p>Conferenceineurope.net offre des informations sur tous les
+                                                domaines/thematiques/sujets d'etude qui existent! Du droit a l'ingenierie,
+                                                en passant par la technologie, les sciences appliquees et la medecine, les
+                                                affaires et l'economie, les mathematiques et les sciences de la vie, vous
+                                                trouverez probablement toutes les informations sur les conferences a venir
+                                                dans tous les domaines existants a ce jour!</p>
+                                            <a href="{{ route('topic-list-page', ['topic' => 'engineering']) }}">
+                                                Conference en ingenierie et technologie</a><br>
+                                            <a href="{{ route('topic-page', ['topic' => 'medical']) }}">Conference en
+                                                sciences et medecine</a><br>
+                                            <a href="{{ route('topic-page', ['topic' => 'mathematics']) }}">Conference
+                                                en mathematiques et statistiques</a><br>
                                             <a href="{{ route('topic-page', ['topic' => 'life-science']) }}">Conference
-                                                in Life Science
+                                                en sciences de la vie
                                             </a><br>
-                                            <a href="{{ route('topic-page', ['topic' => 'business']) }}">Conference
-                                                in
-                                                Business &
-                                                Economics</a>
+                                            <a href="{{ route('topic-page', ['topic' => 'business']) }}">Conference en
+                                                affaires et en economie</a>
                                         </div>
                                     </div>
                                 </div>
@@ -388,45 +402,33 @@
                                             <a class="collapsed" role="button" data-toggle="collapse"
                                                 data-parent="#accordion" href="#collapseseveenteen" aria-expanded="false"
                                                 aria-controls="collapseseveenteen">
-                                                Conferenceineurope.net provides information on upcoming conferences
-                                                scheduled to take place all across the European continent! Whether you live
-                                                in Switzerland, France, Italy, Belgium, Sweden and Germany in this website
-                                                will offer you information on upcoming events in all country all over
-                                                European continent!
-                                                ● Conference in France
-                                                ● Conference in Italy
-                                                ● Conference in Switzerland
-                                                ● Conference in Sweden
-                                                ● Conference in Germany
-                                                ● Conference in Belgium
+                                                Quels pays sont inclus sur Conferenceineurope.net?
                                             </a>
                                         </h4>
                                     </div>
                                     <div id="collapseseveenteen" class="panel-collapse collapse" role="tabpanel"
                                         aria-labelledby="headingseveenteen">
                                         <div class="panel-body">
-                                            Conferenceineurope.net provides information on upcoming conferences
-                                            scheduled to take place all across the European continent! Whether you live
-                                            in Switzerland, France, Italy, Belgium, Sweden and Germany in this website
-                                            will offer you information on upcoming events in all country all over
-                                            European continent!<br>
-                                            <a href="{{ route('country-page', ['country' => 'france']) }}">Conference in
+                                            <p>Conferenceineurope.net fournit des informations sur les conferences a venir
+                                                organisees dans tout le continent europeen! Que vous viviez en Suisse, en
+                                                France, en Italie, en Belgique, en Suede et en Allemagne, ce site Web vous
+                                                offrira des renseignements sur les evenements a venir dans tous les pays du
+                                                continent europeen!</p>
+                                            <a href="{{ route('country-page', ['country' => 'france']) }}">Conference en
                                                 France
                                             </a><br>
-                                            <a href="{{ route('country-page', ['country' => 'italy']) }}">Conference in
-                                                Italy
+                                            <a href="{{ route('country-page', ['country' => 'italy']) }}">Conference en
+                                                Italie
                                             </a><br>
-                                            <a href="{{ route('country-page', ['country' => 'switzerland']) }}">
-                                                Conference
-                                                in
-                                                Switzerland </a><br>
-                                            <a href="{{ route('country-page', ['country' => 'sweden']) }}"> Conference in
-                                                Sweden
+                                            <a href="{{ route('country-page', ['country' => 'switzerland']) }}">Conference
+                                                en Suisse</a><br>
+                                            <a href="{{ route('country-page', ['country' => 'sweden']) }}">Conference en
+                                                Suede
                                             </a><br>
-                                            <a href="{{ route('country-page', ['country' => 'germany']) }}">Conference in
-                                                Germany </a><br>
-                                            <a href="{{ route('country-page', ['country' => 'belgium']) }}"> Conference in
-                                                Belgium </a>
+                                            <a href="{{ route('country-page', ['country' => 'germany']) }}">Conference en
+                                                Allemagne</a><br>
+                                            <a href="{{ route('country-page', ['country' => 'belgium']) }}">Conference en
+                                                Belgique</a>
                                         </div>
                                     </div>
                                 </div>
@@ -436,24 +438,29 @@
                                             <a class="collapsed" role="button" data-toggle="collapse"
                                                 data-parent="#accordion" href="#collapsenineteen" aria-expanded="false"
                                                 aria-controls="collapseTen">
-                                                How can I find conferences relevant to my field/subject of study and
-                                                interest on conferenceineurope.net?
+                                                Comment puis-je trouver des conferences pertinentes pour mon domaine/sujet
+                                                d'etude et mes centres d'interêt sur conferenceInEurope.net?
                                             </a>
                                         </h4>
                                     </div>
                                     <div id="collapsenineteen" class="panel-collapse collapse" role="tabpanel"
                                         aria-labelledby="headingnineteen">
                                         <div class="panel-body">
-                                            In order to find conferences relevant to your specific field/fields of interest,
-                                            all you have to do is head over to conferenceineurope.net and type in the name
-                                            of your field in the 'Search Here' bar, which is present on the homepage of the
-                                            website!
-                                            If you are looking for upcoming conferences according to the month and date,
-                                            then all you have to do is click on the 'Conference Calendar' option on the
-                                            homepage of this website, where you will be shown a complete list of
-                                            conferences. You can then click on the month of your preference, whatever it may
-                                            be, either 'January', 'March', 'December', or otherwise, to view the conferences
-                                            that are scheduled to take place in that particular month of the year.
+                                            <p>de trouver des conferences pertinentes et relatives a votre domaine/champs
+                                                d'interêt specifiques, tout ce que vous avez a faire est de vous rendre sur
+                                                ConferenceInEurope.net et de taper le nom de votre domaine dans la barre de
+                                                recherche, que vous pouvez trouver sur la page d'accueil du site Web! Si
+                                                vous
+                                                recherchez des conferences a venir en fonction du mois et de la date, tout
+                                                ce
+                                                quevous devez faire est de cliquer sur l'option Calendrier de conference»
+                                                sur la
+                                                page d'accueil du site. Vous y decouvrirez une liste complete des
+                                                conferences.
+                                                Vous pouvez ensuite cliquersur le mois qui vous convient: janvier», mars»,
+                                                decembre» ou autre. Cela vous permettra d'en savoir davantage sur les
+                                                conferences qui devraient avoir lieu au cours de ce mois particulier de
+                                                l'annee.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -463,23 +470,25 @@
                                             <a class="collapsed" role="button" data-toggle="collapse"
                                                 data-parent="#accordion" href="#collapsetwenty" aria-expanded="false"
                                                 aria-controls="collapseTen">
-                                                Why is it crucially important to subscribe to conference alerts from a
-                                                trustworthy source of information such as conferenceineurope.net
+                                                Pourquoi est-il crucial de s'abonner aux alertes de conference sur une
+                                                source fiable d'informations telle que ConferenceInEurope.net?
                                             </a>
                                         </h4>
                                     </div>
                                     <div id="collapsetwenty" class="panel-collapse collapse" role="tabpanel"
                                         aria-labelledby="headingtwenty">
                                         <div class="panel-body">
-                                            Although there are numerous providers of information on conferences and
-                                            conference organizers/planners that exist today, it is highly important to find
-                                            the most trustworthy and reliable provider of information on upcoming
-                                            conferences because failing to do can lead to the following -
-                                            ● Loss of precious time,
-                                            ● Loss of valuable resources & money,
-                                            ● Getting scammed by phony conference organizers/planners,
-                                            ● Identity theft
-                                            ● Theft of personal information, etc.
+                                            <p>Bien qu'il existe de nombreuses sources d'informations sur les conferences et
+                                                les organisateurs/planificateurs de conferences, vous devez miser sur la
+                                                source
+                                                la plus fiable et la plus credible. Si vous cherchez sur un site peu fiable,
+                                                vous risquez de:</p>
+                                            <p>Perdre du temps precieux,</p>
+                                            <p>Perdre de l'argent,</p>
+                                            <p>Vous faire arnaquer par de faux organisateurs/planificateurs de conference,
+                                            </p>
+                                            <p>Vous faire voler votre identite,</p>
+                                            <p>Divulguer vos informations personnelles, etc.</p>
                                         </div>
                                     </div>
                                 </div>
