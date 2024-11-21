@@ -48,7 +48,8 @@ a:hover {
 body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 15px;
-	font-weight: 400
+	font-weight: 400;
+	overflow-x: hidden;
 }
 
 a,

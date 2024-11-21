@@ -46,7 +46,7 @@
                     <div class="col-md-12">
                         <div class="toppage">
                             <div class="row">
-                                <div class="col-sm-9 topic-midule-grid">
+                                <div class="col-sm-12 topic-midule-grid">
                                     <div class="topic-date-cnfr">
                                         <legend> <span
                                                 class="fld_hed text-capitalize">{{ $cityName  }}</span>
@@ -63,12 +63,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-sm-12">
                                     <div class="eve-prom">
                                         <div class="col-xs-12 text-justify">
                                             @include ('components-en.main-filter-city')
                                         </div>
                                     </div>
-                                    <div class="p-4 mt-4" style="background-color: #f5f7fd: font-weight: 700">
+                                </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-sm-9 topic-midule-grid">
+                                    <div class=" p-4 mt-4" style="background-color: #f5f7fd: font-weight: 700">
                                         <h3 class="text-center mb-4 p-2" style="color: #b03031">All Conference List</h3>
                                         <div class="row bg-dark text-white py-2">
                                             <div class="col-2">Date</div>
@@ -80,6 +86,7 @@
                                     @include ('components-en.load-more')
                                 </div>
                                 @include('components-en.city-side-banner')
+                            </div>
                             </div>
                         </div>
                     </div>

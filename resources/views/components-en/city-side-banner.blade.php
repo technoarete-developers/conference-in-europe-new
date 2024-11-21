@@ -1,5 +1,5 @@
 <div class="col-sm-3 topic-left-grid">
-    <div style="margin-bottom: 2rem;">
+    <div style="margin-bottom: 2rem; margin-top: 3rem;">
         <a href="https://conferenceineurope.net/blog/conference-in-europe-with-invitation-letter" id="invitation-letter"
             target="_blank"> <img alt="conference in europe with invitation letter" src="/img/invitation-letter.png"
                 width="100%" /> </a>
