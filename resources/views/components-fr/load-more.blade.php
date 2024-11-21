@@ -4,12 +4,12 @@
             <h5 class="text-center">
                 <button class="btn load-more" id="load-more-btn" data-current-page="{{ $events->currentPage() }}"
                     style="background-color: darkblue;color: white;">
-                    <span class="btn-txt">More Conference</span>
+                    <span class="btn-txt">Plus de conférence</span>
                 </button>
                 <button class="btn loading-button" id="load-more-btn" data-current-page="{{ $events->currentPage() }}"
                     style="background-color: darkblue;color: white; display:none;">
                     <i class="fa fa-spinner fa-spin"></i>
-                    <span class="btn-txt">Loading...</span>
+                    <span class="btn-txt">Chargement...</span>
                 </button>
             </h5>
         </div>

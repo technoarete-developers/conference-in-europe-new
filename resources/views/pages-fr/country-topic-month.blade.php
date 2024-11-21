@@ -1,45 +1,20 @@
-@php
-    $countryName = ucfirst(str_replace('-', ' ', request()->country));
-    $topicName = ucfirst(str_replace('-', ' ', request()->topic));
-    $monthName = ucfirst(request()->month);
-
-    if (array_key_exists(request()->country, $topCountry)) {
-        $countryName = $topCountry[request()->country];
-    }
-
-    if (array_key_exists(request()->topic, $topicList)) {
-        $topicName = $topicList[request()->topic];
-    } else {
-        foreach ($topicStopicList as $topic => $subtopic) {
-            if (array_key_exists(request()->topic, $subtopic)) {
-                $topicName = $subtopic[request()->topic];
-                break;
-            }
-        }
-    }
-
-    if (array_key_exists(request()->month, $monthList)) {
-        $monthName = $monthList[request()->month];
-    }
-@endphp
-
 @extends('layout-fr.master')
 
 @section('meta')
     <title>
-        {{ str_replace(['@country', '@topic', '@month'], [$countryName, $topicName, $monthName], $content['title']) }}
+        {{ str_replace(['@country', '@topic', '@month'], [$countryNameFr, $topicNameFr, $monthNameFr], $content['title']) }}
     </title>
     <meta name="keyword"
-        content="{{ str_replace(['@country', '@topic', '@month'], [$countryName, $topicName, $monthName], $content['metaKey']) }}" />
+        content="{{ str_replace(['@country', '@topic', '@month'], [$countryNameFr, $topicNameFr, $monthNameFr], $content['metaKey']) }}" />
     <meta name="description"
-        content="{{ str_replace(['@country', '@topic', '@month'], [$countryName, $topicName, $monthName], $content['metaDes']) }}" />
+        content="{{ str_replace(['@country', '@topic', '@month'], [$countryNameFr, $topicNameFr, $monthNameFr], $content['metaDes']) }}" />
 
     <meta property="og:title"
-        content="{{ str_replace(['@country', '@topic', '@month'], [$countryName, $topicName, $monthName], $content['title']) }}" />
+        content="{{ str_replace(['@country', '@topic', '@month'], [$countryNameFr, $topicNameFr, $monthNameFr], $content['title']) }}" />
     <meta property="og:keywords"
-        content="{{ str_replace(['@country', '@topic', '@month'], [$countryName, $topicName, $monthName], $content['metaKey']) }}" />
+        content="{{ str_replace(['@country', '@topic', '@month'], [$countryNameFr, $topicNameFr, $monthNameFr], $content['metaKey']) }}" />
     <meta property="og:description"
-        content="{{ str_replace(['@country', '@topic', '@month'], [$countryName, $topicName, $monthName], $content['metaDes']) }}" />
+        content="{{ str_replace(['@country', '@topic', '@month'], [$countryNameFr, $topicNameFr, $monthNameFr], $content['metaDes']) }}" />
 
     <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
@@ -54,7 +29,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>{{ $countryName }} / {{ $topicName }} / {{ $monthName }}</h2>
+                        <h2>{{ $countryNameFr }} / {{ $topicNameFr }} / {{ $monthNameFr }}</h2>
                     </div>
                 </div>
             </div>
@@ -67,16 +42,16 @@
                             <div class="row">
                                 <div class="col-sm-9 topic-midule-grid">
                                     <div class="topic-date-cnfr">
-                                        <legend> <span class="fld_hed text-capitalize">{{ $countryName }}</span>
+                                        <legend> <span class="fld_hed text-capitalize">{{ $countryNameFr }}</span>
                                         </legend>
                                         <div class="county-conference">
                                             <div class="col-md-12">
                                                 <h1 style=" font-size: 18px;font-family:Gill Sans;">
-                                                    {{ str_replace(['@country', '@topic', '@month'], [$countryName, $topicName, $monthName], $content['h1']) }}
+                                                    {{ str_replace(['@country', '@topic', '@month'], [$countryNameFr, $topicNameFr, $monthNameFr], $content['h1']) }}
                                                 </h1>
-                                                <p>{{ str_replace(['@country', '@topic', '@month'], [$countryName, $topicName, $monthName], $content['contentOne']) }}
+                                                <p>{{ str_replace(['@country', '@topic', '@month'], [$countryNameFr, $topicNameFr, $monthNameFr], $content['contentOne']) }}
                                                 </p>
-                                                <p>{{ str_replace(['@country', '@topic', '@month'], [$countryName, $topicName, $monthName], $content['contentTwo']) }}
+                                                <p>{{ str_replace(['@country', '@topic', '@month'], [$countryNameFr, $topicNameFr, $monthNameFr], $content['contentTwo']) }}
                                                 </p>
                                             </div>
                                         </div>
@@ -87,11 +62,11 @@
                                         </div>
                                     </div>
                                     <div class="p-4 mt-4" style="background-color: #f5f7fd: font-weight: 700">
-                                        <h3 class="text-center mb-4 p-2" style="color: #b03031">All Conference List</h3>
+                                        <h3 class="text-center mb-4 p-2" style="color: #b03031">Liste de toutes les conférences</h3>
                                         <div class="row bg-dark text-white py-2">
                                             <div class="col-2">Date</div>
-                                            <div class="col-7">Conference Name</div>
-                                            <div class="col-3">Venue</div>
+                                            <div class="col-7">Nom de la conférence</div>
+                                            <div class="col-3">Lieu</div>
                                         </div>
                                         @include ('components-fr.event-listing')
                                     </div>

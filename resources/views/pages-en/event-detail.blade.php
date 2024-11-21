@@ -623,8 +623,7 @@
                                                 immediately</li>
                                             <li>After completion of registration process, participant are required to
                                                 send the Screen shot of transaction or registration fees payment proof
-                                                to us <strong>(mail to : <a href="" class="__cf_email__"
-                                                        data-cfemail="e881868e87a8899a8c898b87868e8d9a8d868b8dc68b8785">[email&#160;protected]</a>)</strong>
+                                                to us <strong>(mail to : info@ardaconference.com)</strong>
                                                 on or before the last date of registration.</li>
                                             <li>Any modification in the paper will not be accepted after the final
                                                 submission date.</li>
@@ -636,10 +635,8 @@
                                         <div class="step">Step 2</div>
                                         <h5><b>Mail Bank Statement</b></h5>
                                         <p>Once you have transfered the registration fees mail the screen shot of online
-                                            transaction to <i>info@<a href="/cdn-cgi/l/email-protection"
-                                                    class="__cf_email__"
-                                                    data-cfemail="355c5b535a755456545150585c56425a475951475046505447565d1b5a4752">[email&#160;protected]</a>(With
-                                                your complete registration details)</i></p>
+                                            transaction to <i>info@info@academicworldresearch.org(With your complete
+                                                registration details)</i></p>
                                         <div class="step">Step 3</div>
                                         <h5><b>Camera Ready Paper Submission</b></h5>
                                         <p>Submit Camera ready paper as per the guidelines.</p>
@@ -647,11 +644,11 @@
                                 </div>
                                 <div data-tab="addtocalender" class="tabs__tab">
                                     <div class="conn">
-                                        <a href="" class="goog" style=" background-color: #5e70c5;">Google
+                                        <a href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text= {{ $eventing->event_name }}and Recognition &amp;add=foo@bar.baz&amp;location= {{ $eventing->city }} &amp;details=The aim of the Conference is to provide a platform to the researchers and practitioners from both academia as well as industry to meet the share cuttingedge development in the field." class="goog" style=" background-color: #5e70c5;">Google
                                             Calendar</a>
-                                        <a href="" class="yah" style="background-color: #bbb62c;">Yahoo
+                                        <a href="https://calendar.yahoo.com/render?action=template&amp;text={{ $eventing->event_name }}and recognition &amp;add=foo@bar.baz&amp;location={{ $eventing->city }}&amp;details=the aim of the conference is to provide a platform to the researchers and practitioners from both academia as 0well 0as industry to meet the share cuttingedge development in the field." class="yah" style="background-color: #bbb62c;">Yahoo
                                             Calendar</a>
-                                        <a href="" class="outl" style=" background-color: #2bc3ae;">Outlook
+                                        <a href="https://office.live.com/start/Calendar.aspx" class="outl" style=" background-color: #2bc3ae;">Outlook
                                             Calendar</a>
                                     </div>
                                 </div>

@@ -11,7 +11,7 @@
     <meta property="og:description"
         content="Conference in Europe {{ date('Y') }} aims to bring all the information of upcoming events in various fields. It's your top destination for getting the latest alerts on all the updates." />
 
-       <link rel="canonical" href="{{ url()->current() }}" />
+    <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
 
 @section('style')
@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block">
-                        <h2>About</h2>
+                        <h2>a propos</h2>
                     </div>
                 </div>
             </div>
@@ -37,20 +37,20 @@
                     <div class="col-xs-12 mx-auto text-justify">
                         <h6 class="mb-4 tdd-cont">Looking For a Convenient & Reliable Way to Learn About Upcoming
                             Conferences? Look No Further!</h6>
-                        <p class="mb-4 abt-cont">Conference in Europe is a one-stop platform for all the latest and reliable
-                            information on upcoming high-level discussions. We are glad to assist budding academicians,
-                            researchers, and applicants in finding accurate information on upcoming conferences in various
-                            parts and countries of Europe. This platform will give you timely information on booking,
-                            venues, schedules and much more. We want you to focus on your main goals while we will assist
-                            you with upcoming events that can boost you.</p>
-                        <p class="mb-4 abt-cont">Moreover, you will get customised alerts based on your preference and
-                            location after subscribing. This is the most straightforward way to know about events concerning
-                            your field. We would love to simplify your conference journey with the most comprehensive and
-                            user-friendly conference notification service. You can explore and participate in these events
-                            to gain incredible information about your field. Also, you will get a professional and
-                            personality boost with active participation, socialising, and speaking opportunities. Not to
-                            mention, you can also present your research, ideas and gain valuable feedback and acclaim.</p>
-                        <p class="mb-4 abt-cont">So, subscribe here to experience knowledge, connections, and growth.</p>
+                        <p class="mb-4 abt-cont">Conference en Europe est une plateforme qui met a votre disposition tous
+                            les renseignements necessaires afin de prendre part a une conference en Europe en 2024. Que vous
+                            soyez un chercheur, un etudiant, ou un professionnel en particulier, les conferences en Europe
+                            seront pour vous l'occasion d'enrichir vos connaissances et de faire la rencontre d'acteurs
+                            majeurs dans le secteur des affaires.</p>
+                        <p class="mb-4 abt-cont">Sur cette plateforme, vous obtiendrez toutes les informations concernant
+                            les dates,les horaires et les lieux où seront organisees les conferences en Europe en
+                            2024.Assistez donc a ces evenements professionnels et donnez un elan a votre
+                            carriereprofessionnelle.</p>
+                        <p class="mb-4 abt-cont">En consultant notre site Internet, vous pourrez egalement recevoir des
+                            alertessuivant vos preferences. Vous connaîtrez tout sur les prochains seminaires qui
+                            setiendront dans differents pays europeens, allant de la France a l'Allemagne, en passant par
+                            l'Autriche, la Bulgarie et bien d'autres encore. Abonnez-vous desmaintenant sur notre site. Si
+                            vous avez des questions, n'hesitez pas a nous contacterpar mail ou par telephone.</p>
                     </div>
                 </div>
             </div>

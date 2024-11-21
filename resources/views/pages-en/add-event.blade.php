@@ -11,7 +11,7 @@
     <meta property="og:description"
         content="Conference in Europe 2024-2025, Explore the beautiful cities of Europe while attending the informative. Check conferences based on interested topics, venue, and time." />
 
-       <link rel="canonical" href="{{ url()->current() }}" />
+    <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
 
 @section('style')
@@ -84,8 +84,8 @@
                             <label>Topic</label>
                             <select id="topic" class="form-control text-capitalize" name="topic">
                                 <option value="">Select Topic</option>
-                                @foreach ($topicList as $topic => $subtopic)
-                                    <option value="{{ str_replace('-', ' ', $topic) }}">{{ str_replace('-', ' ', $topic) }}
+                                @foreach ($topicList as $url => $name)
+                                    <option value="{{ str_replace('-', ' ', $url) }}">{{ str_replace('-', ' ', $name) }}
                                     </option>
                                 @endforeach
                             </select>
@@ -104,9 +104,9 @@
                                 <label>Country</label>
                                 <select id="country" class="form-control text-capitalize" name="country">
                                     <option value="">Select Country</option>
-                                    @foreach ($countryWithCity as $country => $city)
-                                        <option value="{{ str_replace('-', ' ', $country) }}">
-                                            {{ str_replace('-', ' ', $country) }}
+                                    @foreach ($topCountry as $url => $name)
+                                        <option value="{{ str_replace('-', ' ', $url) }}">
+                                            {{ $name }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -525,7 +525,7 @@
                                     </option>
                                 </select>
                             </div>
-                            <div class="col-md-8">  
+                            <div class="col-md-8">
                                 <label>Contact number*</label>
                                 <input class="form-control" id="contact_no" name="contact_no" type="text"
                                     required="">
@@ -547,14 +547,14 @@
                             <select class="form-control text-capitalize" name="month" id="month">
                                 <option value="" selected="">Select month & year</option>
                                 @php
-                                    $this_month = mktime(0, 0, 0, date('m'), 1, date('Y'));
-                                    $months = [];
-                                    for ($i = 0; $i <= 12; $i++) {
-                                        $months[] = date('F-Y', strtotime("+$i month", $this_month));
-                                    }
+                                    $i = 0;
                                 @endphp
-                                @foreach ($months as $month)
-                                    <option value="{{ $month }}">{{ $month }}</option>
+                                @foreach ($monthList as $url => $name)
+                                    <option value="{{ str_replace('-', ' ', $url) }}">
+                                        {{ $name }}-{{ date('Y', strtotime("first day of $i month ")) }}</option>
+                                    @php
+                                        $i++;
+                                    @endphp
                                 @endforeach
                             </select>
                         </div>
@@ -636,14 +636,14 @@
 
         //subtopic listing as per the topic name 
         $('#topic').change(function() {
-            var subtopics = @json($topicList);
+            var topicStopicList = @json($topicStopicList);
             var selectedTopic = $(this).val();
             var subTopicSelect = $('#sub_topic');
             subTopicSelect.empty();
             subTopicSelect.append('<option value="">Select Sub Topic</option>');
 
-            if (subtopics[selectedTopic]) {
-                $.each(subtopics[selectedTopic], function(subtopicUrl, SubtopicName) {
+            if (topicStopicList[selectedTopic]) {
+                $.each(topicStopicList[selectedTopic], function(subtopicUrl, SubtopicName) {
                     subTopicSelect.append('<option value="' + SubtopicName + '">' + SubtopicName +
                         '</option>');
                 });

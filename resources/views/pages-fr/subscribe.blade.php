@@ -9,7 +9,7 @@
     <meta property="og:keywords" content="" />
     <meta property="og:description" content="Subscribe to Conference in Europe portal and get lnformation in your inbox." />
 
-       <link rel="canonical" href="{{ url()->current() }}" />
+    <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
 
 @section('style')
@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block">
-                        <h2>Subscribe</h2>
+                        <h2>S'abonner</h2>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6">
-                                <form method="POST" id="subform_1" class="example" action="{{ route('subscribe-form') }}"
+                                <form method="POST" id="subform_1" class="example" action="{{ route('subscribe-form-fr') }}"
                                     class="well form-horizontal">
                                     @csrf
                                     <div class="form-group">
@@ -48,7 +48,7 @@
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-user"
                                                         aria-hidden="true"></i></span>
-                                                <input name="name" placeholder="Enter Name" required class="form-control"
+                                                <input name="name" placeholder="Entrez le nom" required class="form-control"
                                                     type="text">
                                             </div>
                                         </div>
@@ -59,7 +59,7 @@
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-envelope"
                                                         aria-hidden="true"></i></span>
-                                                <input name="email" placeholder="Enter E-Mail Address" required
+                                                <input name="email" placeholder="Entrer l'adresse e-mail" required
                                                     class="form-control" type="text">
                                             </div>
                                         </div>
@@ -72,7 +72,7 @@
                                                         aria-hidden="true"></i></span>
                                                 <select id="country_code" name="country_code"
                                                     class="form-control form-item text-capitalize">
-                                                    <option value="">-- Select country code --</option>
+                                                    <option value="">-- Sélectionnez le code du pays --</option>
                                                     <option data-countrycode="DZ" value="+213">Algeria (+213)
                                                     </option>
                                                     <option data-countrycode="AD" value="+376">Andorra (+376)
@@ -455,7 +455,7 @@
                                             </div>
 
                                             <div class="input-group col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                <input name="Number" placeholder="Enter Mobile Number" required
+                                                <input name="Number" placeholder="Entrez le numero de portable" required
                                                     class="form-control" type="text">
                                             </div>
                                         </div>
@@ -468,10 +468,10 @@
                                                         aria-hidden="true"></i></span>
                                                 <select id="country" name="country"
                                                     class="field form-control text-capitalize">
-                                                    <option value="">-- Select Country --</option>
-                                                    @foreach ($countryWithCity as $country => $city)
-                                                        <option value="{{ str_replace('-', ' ', $country) }}">
-                                                            {{ str_replace('-', ' ', $country) }}
+                                                    <option value="">-- Sélectionnez un pays --</option>
+                                                    @foreach ($topCountry as $url => $name)
+                                                        <option value="{{ str_replace('-', ' ', $url) }}">
+                                                            {{ $name }}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -487,7 +487,7 @@
                                                     aria-hidden="true"></i></span>
                                                 <select id="city" name="city"
                                                     class="field form-control text-capitalize">
-                                                    <option value="">-- Select City --</option>
+                                                    <option value="">-- Sélectionnez la ville --</option>
                                                 </select>
                                             </div>
                                             <span class="error-message" id="city-error"></span>
@@ -501,10 +501,10 @@
                                                         aria-hidden="true"></i></span>
                                                 <select id="topic" name="topic"
                                                     class="field form-control text-capitalize">
-                                                    <option value="">-- Select Topic --</option>
-                                                    @foreach ($topicList as $topic => $subtopic)
-                                                        <option value="{{ str_replace('-', ' ', $topic) }}">
-                                                            {{ str_replace('-', ' ', $topic) }}
+                                                    <option value="">-- Sélectionnez un sujet --</option>
+                                                    @foreach ($topicList as $url => $name)
+                                                        <option value="{{ str_replace('-', ' ', $url) }}">
+                                                            {{ $name }}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -518,7 +518,7 @@
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-envelope"
                                                         aria-hidden="true"></i></span>
-                                                <input name="university_org" id="university_org" placeholder="Enter university/organisation"
+                                                <input name="university_org" id="university_org" placeholder="Entrez l'université / l'organisation"
                                                     required class="form-control" type="text">
                                             </div>
                                         </div>
@@ -539,7 +539,8 @@
                                         <label class="col-md-12 control-label"></label>
                                         <div class="col-md-12">
                                             <button type="submit" onclick="onClick(event)" class="btn btn-danger"
-                                                style="background-color:#b00000;border-color: #b00000; color: #fff;">Submit
+                                                style="background-color:#b00000;border-color: #b00000; color: #fff;">
+                                                Soumettre
                                                 <span class="glyphicon glyphicon-send"></span></button>
                                         </div>
                                     </div>
@@ -549,12 +550,11 @@
                             <div class="col-md-6">
                                 <div class="subsc">
                                     <div class="main-heading" style="text-align:center;">
-                                        <h3 style="color:#000;font-weight:bold">CONFERENCE IN EUROPE</h3>
-                                        <p><i class="fa fa-envelope" aria-hidden="true"></i> info@conferenceineurope.com
+                                        <h3 style="color:#000;font-weight:bold">CONFÉRENCE EN EUROPE</h3>
+                                        <p><i class="fa fa-envelope" aria-hidden="true"></i>info@conferenceineurope.com
                                         </p>
-                                        <p><i class="fa fa-phone" aria-hidden="true"></i> +91 9344546233</p>
+                                        <p><i class="fa fa-phone" aria-hidden="true"></i>+91 9344546233</p>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -592,8 +592,8 @@
 
                     // Show error if country and empty
                     if (country === "" && topic === "") {
-                        countryError.text("Please select either a Country or Topic.").addClass("error-message");
-                        topicError.text("Please select either a Country or Topic.").addClass("error-message");
+                        countryError.text("Veuillez sélectionner un pays ou un sujet.").addClass("error-message");
+                        topicError.text("Veuillez sélectionner un pays ou un sujet.").addClass("error-message");
                     } else {
                         countryError.text("").removeClass("error-message");
                         topicError.text("").removeClass("error-message");
@@ -618,7 +618,7 @@
                 var selectedCountry = $(this).val();
                 var citySelect = $('#city');
                 citySelect.empty();
-                citySelect.append('<option value="">-- Select City --</option>');
+                citySelect.append('<option value="">-- Sélectionnez la ville --</option>');
 
                 if (countryWithCity[selectedCountry]) {
                     $.each(countryWithCity[selectedCountry], function(cityUrl, cityName) {

@@ -731,14 +731,14 @@
 
 
     $(document).ready(function() {
-        var topicJson = @json($topicList);
+        var topicStopicList = @json($topicStopicList);
         $('.hero').removeClass('loading')
         $('.hero').addClass('loaded');
-        Object.keys(topicJson).forEach((topicName) => {
+        Object.keys(topicStopicList).forEach((topicName) => {
             const topicList = $(`#${topicName}_ul`);
             topicList.empty();
 
-            Object.entries(topicJson[topicName]).forEach(([subTopicUrl, subTopicName]) => {
+            Object.entries(topicStopicList[topicName]).forEach(([subTopicUrl, subTopicName]) => {
 
                 topicList.append(
                     $(`<li style="list-style-type: disclosure-closed;">

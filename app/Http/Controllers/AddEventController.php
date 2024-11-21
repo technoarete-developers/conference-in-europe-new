@@ -19,13 +19,34 @@ class AddEventController extends Controller
         $this->filter = $filter;
     }
 
+    ///////////////////////////////////////// ------------> ENGLISH PAGES <------------- ///////////////////////////////////////
+
     public function addEventPage(Request $request)
     {
-        $topicList = $this->filter->topicSubtopicList();
+        $topicStopicList = $this->filter->topicSubtopicList();
+        $topicList = $this->filter->topicList();
+        $topCountry = $this->filter->topCountry();
         $countryWithCity = $this->filter->countryWithCity();
+        $monthList = $this->filter->monthList();
 
-        return view('pages-en.add-event', compact('topicList', 'countryWithCity'));
+        return view('pages-en.add-event', compact('topicList', 'topicStopicList', 'topCountry', 'countryWithCity', 'monthList'));
     }
+
+    ///////////////////////////////////////// ------------> FRENCH PAGES <------------- ///////////////////////////////////////
+
+    public function addEventPageFr(Request $request)
+    {
+        $topicStopicList = $this->filter->topicSubtopicListFr();
+        $topicList = $this->filter->topicListFr();
+        $topCountry = $this->filter->topCountryFr();
+        $countryWithCity = $this->filter->countryWithCityFr();
+        $monthList = $this->filter->monthListFr();
+
+        return view('pages-fr.add-event', compact('topicList', 'topicStopicList', 'topCountry', 'countryWithCity', 'monthList'));
+    }
+
+
+    ///////////////////////////////////////// ------------> FORM STORE <------------- ///////////////////////////////////////
 
     public function addEventForm(Request $request)
     {

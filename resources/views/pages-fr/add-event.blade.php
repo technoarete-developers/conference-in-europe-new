@@ -11,7 +11,7 @@
     <meta property="og:description"
         content="Conference in Europe 2024-2025, Explore the beautiful cities of Europe while attending the informative. Check conferences based on interested topics, venue, and time." />
 
-       <link rel="canonical" href="{{ url()->current() }}" />
+    <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
 
 @section('style')
@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block">
-                        <h2>Add Event</h2>
+                        <h2>Ajouter un évènement</h2>
                     </div>
                 </div>
             </div>
@@ -42,111 +42,112 @@
                             <p>{{ session()->get('smessage') }}</p>
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('add-event-from') }}" id="add-event-form" class="hm_contact_form">
+                    <form method="POST" action="{{ route('add-event-from-fr') }}" id="add-event-form"
+                        class="hm_contact_form">
 
                         @csrf
 
-                        <h5>Event Details</h5>
+                        <h5>Détails de l'évènement</h5>
                         <div class="form_row clearfix">
-                            <label>Event Name</label>
+                            <label>Nom de l'événement</label>
                             <input class="form-control" id="event_name" name="event_name" required type="text">
                         </div>
                         <div class="form_row clearfix">
-                            <label>Event Title</label>
+                            <label>Titre de l'événement</label>
                             <input class="form-control" id="title" name="title" required type="text">
                         </div>
 
                         <div class="form_row clearfix">
-                            <label>Event Platform</label>
+                            <label>Plateforme événementielle</label>
                             <select class="form-control" name="mode" id="mode">
-                                <option selected="selected" value="">Event Platform</option>
-                                <option value="Virtual">Virtual</option>
-                                <option value="In-Person">In-Person</option>
-                                <option value="Hybrid">Hybrid</option>
+                                <option selected="selected" value="">Plateforme événementielle</option>
+                                <option value="Virtual">Virtuelle</option>
+                                <option value="In-Person">En personne</option>
+                                <option value="Hybrid">Hybride</option>
                             </select>
                         </div>
 
                         <div class="form_row clearfix">
-                            <label>Event type</label>
+                            <label>Type d'événement</label>
                             <select class="form-control" name="type" id="type">
-                                <option value="Conference">Select type of event</option>
-                                <option value="Conference">Conference</option>
-                                <option value="Seminar">Seminar</option>
-                                <option value="Workshop">Workshop</option>
-                                <option value="Webinar">Webinar</option>
-                                <option value="Trade shows & Expo">Trade Shows & Expo</option>
-                                <option value="Professional Development Event">Professional Development Event</option>
-                                <option value="Others">Others</option>
+                                <option value="Conference">Sélectionnez le type d'événement</option>
+                                <option value="Conference">Conférence</option>
+                                <option value="Seminar">Séminaire</option>
+                                <option value="Workshop">Atelier</option>
+                                <option value="Webinar">Webinaire</option>
+                                <option value="Trade shows & Expo">Salons et expositions</option>
+                                <option value="Professional Development Event">Événement de développement professionnel
+                                </option>
+                                <option value="Others">Autres</option>
                             </select>
                         </div>
 
                         <div class="form_row clearfix">
-                            <label>Topic</label>
+                            <label>Sujette</label>
                             <select id="topic" class="form-control text-capitalize" name="topic">
-                                <option value="">Select Topic</option>
-                                @foreach ($topicList as $topic => $subtopic)
-                                    <option value="{{ str_replace('-', ' ', $topic) }}">{{ str_replace('-', ' ', $topic) }}
+                                <option value="">Sélectionnez un sujet</option>
+                                @foreach ($topicList as $url => $name)
+                                    <option value="{{ str_replace('-', ' ', $url) }}">{{ str_replace('-', ' ', $name) }}
                                     </option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form_row clearfix">
-                            <label>Sub Topic</label>
+                            <label>Sous-thème</label>
                             <select id="sub_topic" class="form-control text-capitalize" name="sub_topic">
-                                <option value="">Select Sub Topic</option>
+                                <option value="">Sélectionnez un sous-thème</option>
                             </select>
 
                         </div><br>
                         <div id="event_venue">
-                            <h5>Event Venue</h5>
-
+                            <h5>Lieu de l'événement</h5>
                             <div>
-                                <label>Country</label>
+                                <label>Pays</label>
                                 <select id="country" class="form-control text-capitalize" name="country">
                                     <option value="">Select Country</option>
-                                    @foreach ($countryWithCity as $country => $city)
-                                        <option value="{{ str_replace('-', ' ', $country) }}">
-                                            {{ str_replace('-', ' ', $country) }}
+                                    @foreach ($topCountry as $url => $name)
+                                        <option value="{{ str_replace('-', ' ', $url) }}">
+                                            {{ $name }}
                                         </option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div>
-                                <label>State</label>
+                                <label>État</label>
                                 <input class="form-control" name="state" id="state" type="text">
                             </div>
                             <div>
-                                <label>City</label>
+                                <label>Ville</label>
                                 <select id="city" class="form-control text-capitalize" name="city">
                                     <option value="">Select City</option>
                                 </select>
                             </div>
 
                             <div class="form_row clearfix">
-                                <label>Venue Address</label>
+                                <label>Nom du lieu</label>
                                 <textarea class="form-control venue" name="venue"></textarea>
                             </div><br>
                         </div>
 
-                        <h5>Event Organized By</h5>
+                        <h5>Événement organisé par</h5>
 
                         <div class="form_row clearfix">
-                            <label>Organization Name</label>
+                            <label>Nom de l'organisation</label>
                             <input class="form-control" name="org" required type="text">
                         </div>
 
                         <div class="form_row clearfix">
-                            <label>Contact Person</label>
+                            <label>Personne de contact</label>
                             <input class="form-control" name="contact_person" required type="text">
                         </div>
 
                         <div class="form_row clearfix row">
                             <div class="col-md-4">
-                                <label>Country code*</label>
+                                <label>Code du pays</label>
                                 <select id="country_code" name="country_code"
                                     class="form-control form-item text-capitalize mr-2" required="">
-                                    <option value="">-- Select country code --</option>
+                                    <option value="">-- Sélectionnez le code du pays --</option>
                                     <option data-countrycode="DZ" value="+213">Algeria (+213)
                                     </option>
                                     <option data-countrycode="AD" value="+376">Andorra (+376)
@@ -525,63 +526,63 @@
                                     </option>
                                 </select>
                             </div>
-                            <div class="col-md-8">  
-                                <label>Contact number*</label>
+                            <div class="col-md-8">
+                                <label>Numéro de contact</label>
                                 <input class="form-control" id="contact_no" name="contact_no" type="text"
                                     required="">
                             </div>
                         </div>
 
                         <div class="form_row clearfix">
-                            <label>Email ID</label>
+                            <label>Identifiant de courrier électronique</label>
                             <input class="form-control" name="contact_email" required type="text">
                         </div>
 
                         <div class="form_row clearfix">
-                            <label>Web Address</label>
+                            <label>Adresse web</label>
                             <input class="form-control" name="url" required type="text">
                         </div>
 
                         <div>
-                            <label>Select the month & year*</label>
+                            <label>Mois et année de l'événement</label>
                             <select class="form-control text-capitalize" name="month" id="month">
-                                <option value="" selected="">Select month & year</option>
+                                <option value="" selected="">Sélectionnez le mois et l'année</option>
                                 @php
-                                    $this_month = mktime(0, 0, 0, date('m'), 1, date('Y'));
-                                    $months = [];
-                                    for ($i = 0; $i <= 12; $i++) {
-                                        $months[] = date('F-Y', strtotime("+$i month", $this_month));
-                                    }
+                                    $i = 0;
                                 @endphp
-                                @foreach ($months as $month)
-                                    <option value="{{ $month }}">{{ $month }}</option>
+                                @foreach ($monthList as $url => $name)
+                                    <option value="{{ str_replace('-', ' ', $url) }}">
+                                        {{ $name }}-{{ date('Y', strtotime("first day of $i month ")) }}</option>
+                                    @php
+                                        $i++;
+                                    @endphp
                                 @endforeach
+
                             </select>
                         </div>
 
                         <div class="form_row clearfix">
-                            <label>Start Date</label>
+                            <label>Date de début</label>
                             <input class="form-control" id="sdate" name="sdate" type="date">
                         </div>
 
                         <div class="form_row clearfix">
-                            <label>End Date</label>
+                            <label>Date de fin</label>
                             <input class="form-control" id="edate" name="edate" type="date">
                         </div>
 
                         <div class="form_row clearfix">
-                            <label>Registration Deadline</label>
+                            <label>Date limite d'inscription</label>
                             <input class="form-control"id="rdead" name="rdead" type="date">
                         </div>
 
                         <div class="form_row clearfix">
-                            <label>Abstract Submission Deadline</label>
+                            <label>Date limite de soumission des résumés</label>
                             <input class="form-control" id="sdead" name="sdead" type="date">
                         </div>
 
                         <div class="form_row clearfix">
-                            <label>
-                                Description</label>
+                            <label>Description</label>
                             <textarea class="form-control Description" id="des" name="des"></textarea>
                         </div>
 
@@ -598,7 +599,7 @@
 
                         <div class="form_row clearfix">
                             <button type="submit" name="btnSubmit" onclick="onClick(event)"
-                                class="send_button full_button">Submit</button>
+                                class="send_button full_button">Soumettre</button>
                         </div>
                     </form>
                 </div>
@@ -636,14 +637,14 @@
 
         //subtopic listing as per the topic name 
         $('#topic').change(function() {
-            var subtopics = @json($topicList);
+            var topicStopicList = @json($topicStopicList);
             var selectedTopic = $(this).val();
             var subTopicSelect = $('#sub_topic');
             subTopicSelect.empty();
-            subTopicSelect.append('<option value="">Select Sub Topic</option>');
+            subTopicSelect.append('<option value="">Sélectionnez un sous-thème</option>');
 
-            if (subtopics[selectedTopic]) {
-                $.each(subtopics[selectedTopic], function(subtopicUrl, SubtopicName) {
+            if (topicStopicList[selectedTopic]) {
+                $.each(topicStopicList[selectedTopic], function(subtopicUrl, SubtopicName) {
                     subTopicSelect.append('<option value="' + SubtopicName + '">' + SubtopicName +
                         '</option>');
                 });
@@ -656,7 +657,7 @@
             var selectedCountry = $(this).val();
             var citySelect = $('#city');
             citySelect.empty();
-            citySelect.append('<option value="">Select City</option>');
+            citySelect.append('<option value="">Sélectionnez la ville</option>');
 
             if (countryWithCity[selectedCountry]) {
                 $.each(countryWithCity[selectedCountry], function(cityUrl, cityName) {

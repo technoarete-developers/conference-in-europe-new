@@ -145,6 +145,7 @@ class CountryController extends Controller
         $topCountry = $this->filter->topCountryFr();
         $countryWithCity = $this->filter->countryWithCityFr();
         $content = $this->filter->countryContentFr($request->country);
+        $countryNameFr = $this->filter->getCountryFrName($request->country);
 
         $upcomingEvent = $this->upcomingEvent->countryUpcomingEvents($country);
 
@@ -158,7 +159,7 @@ class CountryController extends Controller
             return response()->json($response);
         }
 
-        return view('pages-fr.country', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'topicStopicList', 'countryWithCity', 'monthList', 'content'));
+        return view('pages-fr.country', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'topicStopicList', 'countryWithCity', 'monthList', 'content', 'countryNameFr'));
     }
 
 
@@ -173,6 +174,8 @@ class CountryController extends Controller
         $topCountry = $this->filter->topCountryFr();
         $countryWithCity = $this->filter->countryWithCityFr();
         $content = $this->filter->countryTopicContentFr($request->country, $request->topic);
+        $countryNameFr = $this->filter->getCountryFrName($request->country);
+        $topicNameFr = $this->filter->getTopicFrName($request->topic);
 
         $upcomingEvent = $this->upcomingEvent->countryUpcomingEvents($country);
 
@@ -187,7 +190,7 @@ class CountryController extends Controller
             return response()->json($response);
         }
 
-        return view('pages-fr.country-topic', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'topicStopicList', 'countryWithCity', 'monthList', 'content'));
+        return view('pages-fr.country-topic', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'topicStopicList', 'countryWithCity', 'monthList', 'content', 'countryNameFr', 'topicNameFr'));
     }
 
 
@@ -202,6 +205,8 @@ class CountryController extends Controller
         $topCountry = $this->filter->topCountryFr();
         $countryWithCity = $this->filter->countryWithCityFr();
         $content = $this->filter->countryMonthContentFr($request->country, $request->month);
+        $countryNameFr = $this->filter->getCountryFrName($request->country);
+        $monthNameFr = $this->filter->getMonthFrName($request->month);
 
         $upcomingEvent = $this->upcomingEvent->countryUpcomingEvents($country);
 
@@ -215,7 +220,7 @@ class CountryController extends Controller
             return response()->json($response);
         }
 
-        return view('pages-fr.country-month', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'topicStopicList', 'countryWithCity', 'monthList', 'content'));
+        return view('pages-fr.country-month', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'topicStopicList', 'countryWithCity', 'monthList', 'content', 'countryNameFr', 'monthNameFr'));
     }
 
     public function countryTopicMonthPageFr(Request $request)
@@ -231,6 +236,9 @@ class CountryController extends Controller
         $countryWithCity = $this->filter->countryWithCityFr();
         $content = $this->filter->countryTopicMonthContentFr($request->country, $request->topic, $request->month);
         $upcomingEvent = $this->upcomingEvent->countryUpcomingEvents($country);
+        $countryNameFr = $this->filter->getCountryFrName($request->country);
+        $topicNameFr = $this->filter->getTopicFrName($request->topic);
+        $monthNameFr = $this->filter->getMonthFrName($request->month);
 
         $events =  $this->getEvent->countryTopicMonthEvents($country, $topic, $month);
 
@@ -242,6 +250,6 @@ class CountryController extends Controller
             return response()->json($response);
         }
 
-        return view('pages-fr.country-topic-month', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'topicStopicList', 'countryWithCity', 'monthList', 'content'));
+        return view('pages-fr.country-topic-month', compact('events', 'upcomingEvent', 'topCountry', 'topicList', 'topicStopicList', 'countryWithCity', 'monthList', 'content', 'countryNameFr', 'topicNameFr', 'monthNameFr'));
     }
 }

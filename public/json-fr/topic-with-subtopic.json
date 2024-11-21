@@ -1,5 +1,5 @@
 {
-    "business": "business" => {
+    "business":{
         "business": "Affaires",
         "bank-and-financing": "Banque et financement",
         "e-commerce": "Commerce électronique",

@@ -2,10 +2,18 @@
 
 namespace App\Services;
 
+use App\Http\Controllers\JsonFetchDataController;
 use App\Models\EventTable;
+use Carbon\Carbon;
 
 class EventsService
 {
+    protected $filter;
+
+    public function __construct(JsonFetchDataController $filter)
+    {
+        $this->filter = $filter;
+    }
 
     ///////////////////////////////////////// ------------> CITY PAGES <------------- ///////////////////////////////////////
 
@@ -113,6 +121,7 @@ class EventsService
 
     public function topicEvents($topic)
     {
+        $topCountry = $this->filter->topCountry();
 
         // topic name not matched to data base so here changed as per data base topic name
         if ($topic == "e commerce") {
@@ -122,7 +131,7 @@ class EventsService
             $topic = str_replace("e learning", "e-learning", $topic);
         }
 
-        return EventTable::where(function ($query) use ($topic) {
+        return EventTable::whereIn('country', $topCountry)->where(function ($query) use ($topic) {
             $query->where('sub_topic', 'LIKE', "%{$topic}%")
                 ->orWhere('topic', 'like', "%{$topic}%");
         })->orderBy('sdate')
@@ -131,6 +140,7 @@ class EventsService
 
     public function topicMonthEvents($topic, $month)
     {
+        $topCountry = $this->filter->topCountry();
 
         // topic name not matched to data base so here changed as per data base topic name
         if ($topic == "e commerce") {
@@ -140,7 +150,7 @@ class EventsService
             $topic = str_replace("e learning", "e-learning", $topic);
         }
 
-        return EventTable::where('month', 'like', "%{$month}%")->where(function ($query) use ($topic) {
+        return EventTable::whereIn('country', $topCountry)->where('month', 'like', "%{$month}%")->where(function ($query) use ($topic) {
             $query->where('sub_topic', 'LIKE', "%{$topic}%")
                 ->orWhere('topic', 'like', "%{$topic}%");
         })->orderBy('sdate')
@@ -151,7 +161,10 @@ class EventsService
 
     public function monthEvents($month)
     {
-        return EventTable::where('month', 'like', "%{$month}%")->orderBy('sdate')
+
+        $topCountry = $this->filter->topCountry();
+
+        return EventTable::whereIn('country', $topCountry)->where('month', 'like', "%{$month}%")->orderBy('sdate')
             ->paginate(50);
     }
 
@@ -160,24 +173,11 @@ class EventsService
     public function advanceSearchEvents($keyword)
     {
 
+        $topCountry = $this->filter->topCountry();
+
         $importantWords = ['conference', 'international', 'Upcoming', 'virtual', 'upcoming', 'conferences', 'and', 'in', 'events', 'event'];
         $keywords = explode(' ', str_replace(',', ' ', $keyword));
         $searchConditions = [];
-        $allIgnored = true;
-
-        $searchConditions[] = "country = 'usa'";
-
-        // if ($request->cities) {
-        //     $searchConditions[] = "city LIKE '%{$request->cities}%'";
-        // }
-
-        // if ($request->topic) {
-        //     $searchConditions[] = "(topic LIKE '%$request->topic%' OR sub_topic LIKE '%$request->topic%')";
-        // }
-
-        // if ($request->month) {
-        //     $searchConditions[] = "month LIKE '%{$request->month}%'";
-        // }
 
         foreach ($keywords as $word) {
             $word = trim($word);
@@ -201,26 +201,32 @@ class EventsService
             }
         }
 
-
         $searchQuery = implode(' AND ', $searchConditions);
 
-        return EventTable::whereRaw($searchQuery)->orderBy('sdate')->paginate(50);
+        return EventTable::where('country', $topCountry)->whereRaw($searchQuery)->orderBy('sdate')->paginate(100);
     }
 
     ///////////////////////////////////////// ------------> EVENT DETAILS PAGES <------------- ///////////////////////////////////////
 
     public function eventDetailsEvents($event_id)
     {
+
+        $nextMonthStart = Carbon::now()->addMonth()->startOfMonth()->format('Y-m-d');
+        $afterThreeMonthsLastDate = Carbon::now()->addMonth(5)->endOfMonth()->format('Y-m-d');
+
         $events = EventTable::where('event_id', $event_id)->get();
 
         $similarEventName = EventTable::where('event_name', $events[0]->event_name)
-            ->where('country', $events[0]->country)->where('event_id', '!=', $event_id)
+            ->where('event_id', '!=', $event_id)
+            ->whereBetween('sdate', [$nextMonthStart, $afterThreeMonthsLastDate])
             ->orderBy('sdate')
             ->limit(20)
             ->get();
 
         $similarCountryEvent = EventTable::where('country', $events[0]->country)
             ->orderBy('sdate')->where('event_id', '!=', $event_id)
+            ->whereBetween('sdate', [$nextMonthStart, $afterThreeMonthsLastDate])
+            ->orderBy('sdate')
             ->limit(20)
             ->get();
 

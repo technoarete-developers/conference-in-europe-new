@@ -18,12 +18,24 @@ class ContactController extends Controller
         $this->filter = $filter;
     }
 
+    ///////////////////////////////////////// ------------> ENGLISH PAGES <------------- ///////////////////////////////////////
+
     public function contactPage()
     {
         $topicList = $this->filter->topicSubtopicList();
         $countryWithCity = $this->filter->countryWithCity();
 
         return view('pages-en.contact', compact('topicList', 'countryWithCity'));
+    }
+
+    ///////////////////////////////////////// ------------> FRENCH PAGES <------------- ///////////////////////////////////////
+
+    public function contactPageFr()
+    {
+        $topicList = $this->filter->topicListFr();
+        $countryWithCity = $this->filter->countryWithCityFr();
+
+        return view('pages-fr.contact', compact('topicList', 'countryWithCity'));
     }
 
     public function contactForm(Request $request)

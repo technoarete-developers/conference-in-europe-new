@@ -2,15 +2,16 @@
 
 @section('meta')
     @foreach ($events as $data)
-        <title>{{ $data->event_name }}</title>
+        <title>
+            {{ $data->event_name }}</title>
         <meta name="keyword" content="" />
         <meta name="description"
-            content="{{ $data->event_name }} {{ $data->event_title }}portal and get lnformation in your inbox." />
+            content="{{ $data->event_name }} {{ $data->event_title }} portal and get lnformation in your inbox." />
 
         <meta property="og:title" content="{{ $data->event_name }}" />
         <meta property="og:keywords" content="" />
         <meta property="og:description"
-            content="{{ $data->event_name }} {{ $data->event_title }}portal and get lnformation in your inbox." />
+            content="{{ $data->event_name }} {{ $data->event_title }} portal and get lnformation in your inbox." />
 
         <link rel="canonical" href="{{ url()->current() }}" />
     @endforeach
@@ -302,14 +303,15 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>Event detail</h2>
+                            <h2>Détail de l'événement</h2>
                             <ol class="breadcrumb">
                                 @foreach ($breadcrumbs as $breadcrumb)
                                     <li class="breadcrumb-item">
-                                        <a href="{{ $breadcrumb['url'] }}">{{ str_replace('-', ' ', $breadcrumb['title']) }}</a> 
+                                        <a
+                                            href="{{ $breadcrumb['url'] }}">{{ str_replace('-', ' ', $breadcrumb['title']) }}</a>
                                     </li>
                                 @endforeach
-                                <li class="breadcrumb-item active" aria-current="page">Event Detail</li>
+                                <li class="breadcrumb-item active" aria-current="page">Détail de l'événement</li>
                             </ol>
                         </div>
                     </div>
@@ -329,7 +331,7 @@
                 @if (session()->has('smessage_subscribe'))
                     <div class="alert alert-success"
                         style="color: green; font-size: 25px; text-align: center; padding: 10px">
-                        <h2>{{ session()->get('smessage_subscribe') }} ({{ $eventing->event_title }}) Conference.</h2>
+                        <h2>{{ session()->get('smessage_subscribe') }} ({{ $eventing->event_title }}) Conférence.</h2>
                     </div>
                 @endif
             @endforeach
@@ -347,13 +349,13 @@
                                 <div class="button-container">
                                     @if (strpos($eventing->event_location, 'outside'))
                                         <a href="{{ $eventing->url }}" target="_blank"
-                                            class="image-button outside-event">Attend</a>
+                                            class="image-button outside-event">Participer</a>
                                     @else
                                         <a href="{{ $eventing->url }}{{ $eventing->event_id }}" target="_blank"
-                                            class="image-button outside-event">Attend</a>
+                                            class="image-button outside-event">Participer</a>
                                     @endif
                                     <a href="#" target="_blank" class="image-button" data-toggle="modal"
-                                        data-target="#myModal">Subscribe</a>
+                                        data-target="#myModal">S’inscrire</a>
                                 </div>
                             </div>
 
@@ -366,7 +368,7 @@
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
                                         <div class="modal-body">
-                                            <h3 class="event-text">Subscribe Us</h3>
+                                            <h3 class="event-text">Nous S’inscrire</h3>
 
                                             <form method="post" id="subscribe-form" name="google-sheet"
                                                 class="contact-form e-subscribe-form" data-toggle="validator" novalidate>
@@ -377,10 +379,10 @@
 
                                                 <select id="slct1" name="Category" class="field form-control"
                                                     required="">
-                                                    <option value="">--Select Category--</option>
-                                                    <option value="Listener">Listener</option>
-                                                    <option value="Paper Presentation">Paper Presentation</option>
-                                                    <option value="Others">Others</option>
+                                                    <option value="">--Sélectionner une catégorie--</option>
+                                                    <option value="Listener">Auditeur</option>
+                                                    <option value="Paper Presentation">Présentation de papier</option>
+                                                    <option value="Others">Autres</option>
                                                 </select>
 
                                                 <input type="text" class="form-control" name="conference_name"
@@ -417,7 +419,7 @@
                                                     value="{{ $eventing->contact_person }}">
 
                                                 <button type="submit" class="btn btn-primary submit mb-4 continue"
-                                                    name="btnsubmit">Submit</button>
+                                                    name="btnsubmit">Soumettre</button>
 
                                             </form>
                                         </div>
@@ -434,7 +436,8 @@
                                 {{ $eventing->city }}, {{ $eventing->country }}
                             </p>
                             <hr>
-                            <h4 class="org-details"><b>Organizer Details</b>
+                            <h4 class="org-details"><b>
+                                    Détails de l'organisateur</b>
                             </h4>
                             <p class="new-user"><img src="/img/user-clock.png">&nbsp;
                                 &nbsp;{{ $eventing->contact_person }}</p>
@@ -445,7 +448,7 @@
                                 {{ $eventing->contact_email }}
                             </p>
                             <hr>
-                            <h4 class="call-paper" style="color:#150371;"><b>Call For Paper</b>
+                            <h4 class="call-paper" style="color:#150371;"><b>Appel à communication</b>
                             </h4>
                             <ul class="paper-topics" style="line-height: 2;">
                                 @if ($eventing->call_for_paper != null)
@@ -467,7 +470,8 @@
                                     </div>
                                 @else
                                     <div>
-                                        <h5>No call for paper</h5>
+                                        <h5>
+                                            Pas d'appel à communication</h5>
                                     </div>
                                 @endif
                             </ul>
@@ -475,23 +479,25 @@
 
                         <div class="col-md-8">
                             <div class="description" style=" margin-top: 48px;">
-                                <h2 style="color:#150371;"> <b>About the Conference</b>
+                                <h2 style="color:#150371;"> <b>À propos de la conférence</b>
                                 </h2>
-                                <p style="text-align:justify;">About the <span>{{ $eventing->event_name }}
+                                <p style="text-align:justify;">À propos de la <span>{{ $eventing->event_name }}
                                         ({{ $eventing->event_title }})
                                         .</span>
-                                    is a great way to build networking by engaging in discussion relating to
-                                    <span>{{ $eventing->topic }}</span> Topics. This platform wants to bring all the
-                                    students, researchers, and
-                                    professionals to one stage to discuss new opportunities, ideas, and developments.
-                                    Bioinformatics is a great way to build networking
+                                    est un excellent moyen de créer du réseautage en engageant des discussions sur
+                                    <span>{{ $eventing->topic }}</span> Sujets. Cette plateforme veut rassembler tous les
+                                    étudiants, chercheurs et
+                                    professionnels réunis sur une même scène pour discuter de nouvelles opportunités, idées
+                                    et développements.
+                                    La bioinformatique est un excellent moyen de créer du réseautage
                                 </p>
                             </div>
                             <div class="tabs-container" style="height: 652px; overflow-y: auto;">
                                 <div class="tabs__buttons--container">
-                                    <div class="tabs__tab-btn" data-tab-id="agenda"><b>Agenda</b></div>
-                                    <div class="tabs__tab-btn" data-tab-id="registernow"><b>Register Now</b></div>
-                                    <div class="tabs__tab-btn" data-tab-id="addtocalender"><b>Add To Calender</b>
+                                    <div class="tabs__tab-btn" data-tab-id="agenda"><b>Ordre du jour</b></div>
+                                    <div class="tabs__tab-btn" data-tab-id="registernow"><b>Inscrivez-vous maintenant</b>
+                                    </div>
+                                    <div class="tabs__tab-btn" data-tab-id="addtocalender"><b>Ajouter au calendrier</b>
                                     </div>
                                 </div>
 
@@ -499,7 +505,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="about">
-                                                <h4>Day <span>1</span></h4>
+                                                <h4>Jour 1</h4>
                                                 <table class="table table-bordered">
                                                     <thead>
                                                         <tr class="row-first">
@@ -509,28 +515,28 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td class="first">9:00 AM - 9:30 AM</td>
-                                                            <td class="last">Registration</td>
+                                                            <td class="first">9h00 - 9h30</td>
+                                                            <td class="last">Inscription</td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="first">9:30 AM - 10:00 AM</td>
-                                                            <td class="last">Introduction to WCASET</td>
+                                                            <td class="first">9h30 - 10h00</td>
+                                                            <td class="last">Présentation de WCASET</td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="first">10:00 AM- 10:15 AM</td>
-                                                            <td class="last">Tea Break</td>
+                                                            <td class="first">10h00 - 10h15</td>
+                                                            <td class="last">Pause thé</td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="first">10:15 AM - 1:00 PM</td>
-                                                            <td class="last">Pre-lunch Technical Session</td>
+                                                            <td class="first">10h15 - 13h00</td>
+                                                            <td class="last">Séance technique avant le déjeuner</td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="first">1:00 PM - 1:30 PM</td>
-                                                            <td class="last">Lunch</td>
+                                                            <td class="first">13h00 - 13h30</td>
+                                                            <td class="last">Déjeuner</td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="first">1:30 PM - 5.00PM</td>
-                                                            <td class="last">Post- lunch Technical Session</td>
+                                                            <td class="first">13h30 - 17h00</td>
+                                                            <td class="last">Séance technique après le déjeuner</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -538,7 +544,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="about">
-                                                <h4>Day <span>2</span></h4>
+                                                <h4>Jour 2</h4>
                                                 <table class="table table-bordered">
                                                     <thead>
                                                         <tr>
@@ -548,32 +554,32 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td class="first">9:00 AM - 9:30 AM</td>
-                                                            <td class="last">Registration</td>
+                                                            <td class="first">9h00 - 9h30</td>
+                                                            <td class="last">Inscription</td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="first">9:30 AM - 10:00 AM</td>
-                                                            <td class="last">Inaugural Session</td>
+                                                            <td class="first">9h30 - 10h00</td>
+                                                            <td class="last">Séance inaugurale</td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="first">10:00 AM- 10:15 AM</td>
-                                                            <td class="last">Tea Break</td>
+                                                            <td class="first">10h00 - 10h15</td>
+                                                            <td class="last">Pause thé</td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="first">10:15 AM - 1:00 PM</td>
-                                                            <td class="last">Pre-lunch Technical Session</td>
+                                                            <td class="first">10h15 - 13h00</td>
+                                                            <td class="last">Séance technique avant le déjeuner</td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="first">1:00 PM - 1:30 PM</td>
-                                                            <td class="last">Lunch</td>
+                                                            <td class="first">13h00 - 13h30</td>
+                                                            <td class="last">Déjeuner</td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="first">1:30 PM - 4:00PM</td>
-                                                            <td class="last">Post- lunch Technical Session</td>
+                                                            <td class="first">13h30 - 16h00</td>
+                                                            <td class="last">Séance technique après le déjeuner</td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="first">4:00 PM - 5.00PM</td>
-                                                            <td class="last">Certificate Distribution</td>
+                                                            <td class="first">16h00 - 17h00</td>
+                                                            <td class="last">Distribution de certificats</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -584,68 +590,84 @@
 
                                 <div data-tab="registernow" class="tabs__tab">
                                     <div class="paym">
-                                        <h4>Author/Co-Author Registration Fee Includes:</h4>
+                                        <h4>Les frais d’inscription des auteurs/co-auteurs comprennent :</h4>
                                         <ul class="list-h">
-                                            <li>Participation in the technical program of upto two author/co-authors
+                                            <li>Participation au programme technique de deux auteurs/co-auteurs maximum
                                             </li>
-                                            <li>Welcome reception</li>
+                                            <li>Réception de bienvenue</li>
                                             <li>Badge</li>
-                                            <li>Research Foundation Conference Bag</li>
-                                            <li>Conference Accessories/Kits</li>
-                                            <li>Certificates for author and co-authors</li>
-                                            <li>Research Foundation Conference Proceeding</li>
-                                            <li>Research Foundation Conference Proceeding CD</li>
-                                            <li>Coffee breaks</li>
-                                            <li>Lunch</li>
-                                            <li>Awards Ceremony</li>
+                                            <li>Sac de conférence de la Fondation pour la recherche</li>
+                                            <li>Accessoires/Kits de conférence</li>
+                                            <li>Certificats pour auteur et co-auteurs</li>
+                                            <li>Actes de la conférence de la Fondation pour la recherche</li>
+                                            <li>CD des actes de la conférence de la Research Foundation</li>
+                                            <li>Pauses café</li>
+                                            <li>Déjeuner</li>
+                                            <li>Cérémonie de remise des prix</li>
                                         </ul>
                                         <br>
-                                        <div class="step">Step 1</div>
-                                        <p>At least one author of each accepted paper must be registered for the
-                                            conference for that paper to appear in the proceedings and be scheduled for
-                                            presentation. Participating members may register as per the following
-                                            charges.</p>
+                                        <div class="step">Étape 1</div>
+                                        <p>Au moins un auteur de chaque article accepté doit être inscrit au
+                                            conférence pour que cet article apparaisse dans les actes et soit programmé pour
+                                            présentation. Les membres participants peuvent s'inscrire comme suit
+                                            frais.</p>
                                         <div class="table-responsive"> </div>
-                                        <p><strong>Your Total Payment:</strong></p>
-                                        <p> <a href="" class="btn btn-info" id="go" target="_new">
-                                                Register Online</a></p>
+                                        <p><strong>Votre paiement total :</strong></p>
+                                        <p>
+                                            @if (isset($_GET['source']))
+                                                <a href="{{ !str_contains($eventing->event_location, 'outside')
+                                                    ? $eventing->url . $eventing->event_id . '&source=' . $_GET['source']
+                                                    : $eventing->url }}"
+                                                    target="_blank" class="btn secondary-button text-white "
+                                                    id="go" target="_new">Inscrivez-vous en ligne</a>
+                                            @else
+                                                <a href="{{ !str_contains($eventing->event_location, 'outside') ? $eventing->url . $eventing->event_id : $eventing->url }}"
+                                                    target="_blank" class="btn secondary-button text-white "
+                                                    id="go" target="_new">Inscrivez-vous en ligne</a>
+                                            @endif
+                                        </p>
                                         <ul class="list-h">
-                                            <li>For students registering late an extra amount of USD 20 will be charged.
+                                            <li>
+                                                Pour les étudiants s'inscrivant tardivement, un montant supplémentaire de 20
+                                                USD sera facturé.
                                             </li>
-                                            <li>Registered members are asked to intimate about the registration
-                                                immediately</li>
-                                            <li>After completion of registration process, participant are required to
-                                                send the Screen shot of transaction or registration fees payment proof
-                                                to us <strong>(mail to : <a href="" class="__cf_email__"
-                                                        data-cfemail="e881868e87a8899a8c898b87868e8d9a8d868b8dc68b8785">[email&#160;protected]</a>)</strong>
-                                                on or before the last date of registration.</li>
-                                            <li>Any modification in the paper will not be accepted after the final
-                                                submission date.</li>
-                                            <li>Maximum up to five authors/ co authors per paper is allowed for
-                                                participate.</li>
-                                            <li>No registration will be entertained after last date of registration.
+                                            <li>Les membres inscrits sont priés de donner des détails sur l'inscription.
+                                                immédiatement</li>
+                                            <li>Une fois le processus d'inscription terminé, le participant doit
+                                                envoyer la capture d'écran de la preuve de paiement de la transaction ou des
+                                                frais d'inscription
+                                                à nous <strong>(mail à : info@ardaconference.com)</strong>
+                                                au plus tard à la dernière date d’inscription.</li>
+                                            <li>Aucune modification du mémoire ne sera acceptée après la finale date de
+                                                soumission.</li>
+                                            <li>Un maximum de cinq auteurs/coauteurs par article est autorisé pour
+                                                participer.</li>
+                                            <li>Aucune inscription ne sera prise en compte après la dernière date
+                                                d'inscription.
                                             </li>
                                         </ul>
-                                        <div class="step">Step 2</div>
-                                        <h5><b>Mail Bank Statement</b></h5>
-                                        <p>Once you have transfered the registration fees mail the screen shot of online
-                                            transaction to <i>info@<a href="/cdn-cgi/l/email-protection"
-                                                    class="__cf_email__"
-                                                    data-cfemail="355c5b535a755456545150585c56425a475951475046505447565d1b5a4752">[email&#160;protected]</a>(With
-                                                your complete registration details)</i></p>
-                                        <div class="step">Step 3</div>
-                                        <h5><b>Camera Ready Paper Submission</b></h5>
-                                        <p>Submit Camera ready paper as per the guidelines.</p>
+                                        <div class="step">Étape 2</div>
+                                        <h5><b>Relevé bancaire par courrier</b></h5>
+                                        <p>Une fois que vous avez transféré les frais d'inscription, envoyez la capture
+                                            d'écran de l'application en ligne.
+                                            transaction à <i>info@info@academicworldresearch.org (avec vos détails
+                                                d'inscription complets)</i></p>
+                                        <div class="step">Étape 3</div>
+                                        <h5><b>Soumission de papier prêt à photographier</b></h5>
+                                        <p>Soumettez le papier prêt pour l’appareil photo conformément aux directives.</p>
                                     </div>
                                 </div>
                                 <div data-tab="addtocalender" class="tabs__tab">
                                     <div class="conn">
-                                        <a href="" class="goog" style=" background-color: #5e70c5;">Google
-                                            Calendar</a>
-                                        <a href="" class="yah" style="background-color: #bbb62c;">Yahoo
-                                            Calendar</a>
-                                        <a href="" class="outl" style=" background-color: #2bc3ae;">Outlook
-                                            Calendar</a>
+                                        <a href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text= {{ $eventing->event_name }}and Recognition &amp;add=foo@bar.baz&amp;location= {{ $eventing->city }} &amp;details=The aim of the Conference is to provide a platform to the researchers and practitioners from both academia as well as industry to meet the share cuttingedge development in the field."
+                                            class="goog" style=" background-color: #5e70c5;">Google
+                                            Calendrier</a>
+                                        <a href="https://calendar.yahoo.com/render?action=template&amp;text={{ $eventing->event_name }}and recognition &amp;add=foo@bar.baz&amp;location={{ $eventing->city }}&amp;details=the aim of the conference is to provide a platform to the researchers and practitioners from both academia as 0well 0as industry to meet the share cuttingedge development in the field."
+                                            class="yah" style="background-color: #bbb62c;">
+                                            Yahoo Calendrier</a>
+                                        <a href="https://office.live.com/start/Calendar.aspx" class="outl"
+                                            style=" background-color: #2bc3ae;">Perspectives
+                                            Calendrier</a>
                                     </div>
                                 </div>
                             </div>
@@ -654,62 +676,63 @@
                 @endforeach
             </div>
         </section>
-
-        <div class="p-5 tm-container-outer tm-bg-gray">
-            <div class="container-fluid">
-                <h4 class="org-details"><b>Similar Conferences in </b>
-                </h4>
-                <div class="carousel-wrap">
-                    <div class="owl-carousel">
-                        @foreach ($similarEventName as $data)
-                            <div class="card">
-                                <div class="item">
-                                    <a class="similar-conferences" data-name="{{ $data->event_name }}"
-                                        data-date="{{ date('dS-M-Y', strtotime($data->sdate)) }}" style="color: black;"
-                                        href="/eventdetail/{{ $data->event_id }}">
-                                        <h6>{{ $data->event_name }} ({{ $data->event_title }})</h6>
-                                        <p class="date-new"><img src="/img/ccalender.png">
-                                            &nbsp;{{ date('dS-M-Y', strtotime($data->sdate)) }}<sup></sup> to
-                                            {{ date('dS-M-Y', strtotime($data->edate)) }}<sup></sup>
-                                        </p>
-                                        <p class="name"><img src="/img/location.png">&nbsp;{{ $data->city }},
-                                            {{ $data->country }}
-                                        </p>
-                                    </a>
+        @foreach ($events as $eventing)
+            <div class="p-5 tm-container-outer tm-bg-gray">
+                <div class="container-fluid">
+                    <h4 class="org-details"><b>Conférences similaires en {{ $eventing->country }}</b>
+                    </h4>
+                    <div class="carousel-wrap">
+                        <div class="owl-carousel">
+                            @foreach ($similarEventName as $data)
+                                <div class="card">
+                                    <div class="item">
+                                        <a class="similar-conferences" data-name="{{ $data->event_name }}"
+                                            data-date="{{ date('dS-M-Y', strtotime($data->sdate)) }}"
+                                            style="color: black;" href="/eventdetail/{{ $data->event_id }}">
+                                            <h6>{{ $data->event_name }} ({{ $data->event_title }})</h6>
+                                            <p class="date-new"><img src="/img/ccalender.png">
+                                                &nbsp;{{ date('dS-M-Y', strtotime($data->sdate)) }}<sup></sup> to
+                                                {{ date('dS-M-Y', strtotime($data->edate)) }}<sup></sup>
+                                            </p>
+                                            <p class="name"><img src="/img/location.png">&nbsp;{{ $data->city }},
+                                                {{ $data->country }}
+                                            </p>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="p-5 tm-container-outer tm-bg-gray">
-            <div class="container-fluid">
-                <h4 class="org-details">You Might Also be Interested In </h4>
-                <div class="carousel-wrap">
-                    <div class="owl-carousel">
-                        @foreach ($similarCountryEvent as $data)
-                            <div class="card">
-                                <div class="item">
-                                    <a class="interested-conference" style="color: black;"
-                                        href="/eventdetail/{{ $data->event_id }}">
-                                        <h6 class="text-black-50">{{ $data->event_name }}
-                                            ({{ $data->event_title }})
-                                        </h6>
-                                        <p class="date-new "><img src="/img/ccalender.png">
-                                            &nbsp;{{ date('dS-M-Y', strtotime($data->sdate)) }}<sup></sup> to
-                                            {{ date('dS-M-Y', strtotime($data->edate)) }}<sup></sup>
-                                        </p>
-                                        <p class="name "><img src="/img/location.png">
-                                            &nbsp;{{ $data->city }}, {{ $data->country }}</p>
-                                    </a>
+            <div class="p-5 tm-container-outer tm-bg-gray">
+                <div class="container-fluid">
+                    <h4 class="org-details">You Might Also be Interested In {{ $eventing->country }}</h4>
+                    <div class="carousel-wrap">
+                        <div class="owl-carousel">
+                            @foreach ($similarCountryEvent as $data)
+                                <div class="card">
+                                    <div class="item">
+                                        <a class="interested-conference" style="color: black;"
+                                            href="/eventdetail/{{ $data->event_id }}">
+                                            <h6 class="text-black-50">{{ $data->event_name }}
+                                                ({{ $data->event_title }})
+                                            </h6>
+                                            <p class="date-new "><img src="/img/ccalender.png">
+                                                &nbsp;{{ date('dS-M-Y', strtotime($data->sdate)) }}<sup></sup> to
+                                                {{ date('dS-M-Y', strtotime($data->edate)) }}<sup></sup>
+                                            </p>
+                                            <p class="name "><img src="/img/location.png">
+                                                &nbsp;{{ $data->city }}, {{ $data->country }}</p>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
     @include('layout-fr.footer')
 @endsection

@@ -278,12 +278,6 @@
             transition: 0.25s ease-in-out;
         }
 
-        input[type="checkbox"] {
-            display: none;
-        }
-
-
-
         .btnn {
             border: 2px solid #031e6b;
             background-color: #031e6b;
@@ -301,8 +295,7 @@
                 <div class="row tm-banner-row tm-banner-row-header">
                     <div class="col-xs-12">
                         <div class="tm-banner-header">
-                            <h1 class="tm-banner-subtitle">Welcome to Conference in Europe 2024/2025</h1>
-
+                            <h1 class="tm-banner-subtitle">Conference en Europe 2024/2025</h1>
                         </div>
                     </div>
                 </div>
@@ -312,7 +305,7 @@
                         <div class="row">
                             <div class="col-md-10">
                                 <input type="text" name="keyword" id="keyword" class="form-control" required
-                                    placeholder="Search events by keyword or conference details" />
+                                    placeholder="Rechercher des événements par mot-clé ou détails de la conférence" />
                             </div>
                             <div class="col-md-2 sbtn">
                                 <button type="submit" id="submit" class="btnn" value="submit">Submit</button>
@@ -330,69 +323,46 @@
             <div class="container">
                 <div class="col-xs-12 mx-auto text-justify dskview">
                     <h2 class="text-uppercase mb-4 text-center" style="font-size: 30px;text-align: center!important;">
-                        <strong>About Europe Conference Alerts</strong>
+                        <strong>À propos des alertes de conférences européennes</strong>
                     </h2>
-                    <p class="mb-4" style="margin-bottom: 1.5rem!important;">Welcome to Conference in Europe
-                        2024/2025, a dedicated platform that ensures a diverse
-                        range of support in finding upcoming conferences in Europe. Get ready to explore our
-                        informative and interactive services that allow a broader range of academicians,
-                        business entrepreneurs, tech enthusiasts, students, and professionals from different
-                        fields. We provide accurate and to-the-point information on specific conference events
-                        held in Europe 2024/2025. Focusing on changing landscapes in different areas, we provide
-                        beneficial information on attending procedures, fees structure, and travelling to your
-                        specific conference.</p>
+                    <p class="mb-4" style="margin-bottom: 1.5rem!important;">Vous êtes ici sur la plateforme qui met a
+                        votre disposition toutes les informations relatives aux conferences en Europe en 2024/2025. Cela
+                        vous dit de prendre part a ces rencontres professionnelles? Ce sera pour vous l'opportunite de vous
+                        immerger dans des congres professionnels, afin d'enrichir vos connaissances et d'etablir des
+                        relations avec des experts et des acteurs professionnels europeens.</p>
                     <div class="cont">
-                        <p class="mb-4" style="margin-bottom: 1.5rem!important;">These featured conference
-                            events
-                            allow you to explore resources and knowledge for
-                            expanding your learning, understanding, and networking scopes in your field. As a
-                            participant, finding an appropriate conference that can benefit your professional
-                            and
-                            educational journey is important. However, our insightful approach to helping you
-                            get in
-                            touch with the dedicated events collaborated with the leaders, speakers,
-                            academicians,
-                            and researchers.</p>
-                        <p class="mb-4" style="margin-bottom: 1.5rem!important;">Ready to elevate your career
-                            by
-                            diving deep into the world of knowledge and learning?
-                            Join our community to get the latest updates on upcoming conferences in Europe and
-                            explore the opportunities to propel you through your career.</p>
+                        <p class="mb-4" style="margin-bottom: 1.5rem!important;">Notre site Internet dispose d'une liste
+                            complete des seminaires et congres organises en Europe en 2024/2025. Peu importe votre domaine
+                            professionnel: medecine, ingenierie, sciences, art, mathematiques, finances, genie mecanique,
+                            education…, vous tomberez sûrement sur une conference qui vous interessera.</p>
+                        <p class="mb-4" style="margin-bottom: 1.5rem!important;">Au cours de ces evenements, vous pourrez
+                            rencontrer de grands conferenciers. Vous resterez informe sur toutes les tendances actuelles de
+                            l'univers professionnel. Rejoignez donc notre communaute et recevez tous les renseignements
+                            concernant les adresses, les horaires et les sujets abordes lors des conferences. Donnez un coup
+                            de pouce a votre carriere professionnelle en participant a ces evenements de renom.</p>
                     </div>
                 </div>
                 <div class="mobileview">
                     <h2 class="text-uppercase mb-4 text-center" style="font-size: 30px;text-align: center!important;">
-                        <strong>About Europe Conference Alerts</strong>
+                        <strong>À propos des alertes de conférences européennes</strong>
                     </h2>
-                    <p style="text-align:justify;">Welcome to Conference in Europe 2024-2025, a dedicated
-                        platform
-                        that ensures a diverse
-                        range of support in finding upcoming conferences in Europe. Get ready to explore our
-                        informative and interactive services that allow a broader range of academicians,
-                        business entrepreneurs, tech enthusiasts, students, and professionals from different
-                        fields. We provide accurate and to-the-point information on specific conference events
-                        held in Europe 2024-2025. Focusing on changing landscapes in different areas, we provide
-                        beneficial information on attending procedures, fees structure, and travelling to your
-                        specific conference.<span id="dots">...</span></p><span id="more">
-                        <p style="text-align:justify;">These featured conference events allow you to explore
-                            resources and knowledge for
-                            expanding your learning, understanding, and networking scopes in your field. As a
-                            participant, finding an appropriate conference that can benefit your professional
-                            and
-                            educational journey is important. However, our insightful approach to helping you
-                            get in
-                            touch with the dedicated events collaborated with the leaders, speakers,
-                            academicians,
-                            and researchers.</p>
-                        <p style="text-align:justify;">Ready to elevate your career by diving deep into the
-                            world
-                            of knowledge and learning?
-                            Join our community to get the latest updates on upcoming conferences in Europe and
-                            explore the opportunities to propel you through your career.</p>
+                    <p style="text-align:justify;">Vous êtes ici sur la plateforme qui met a
+                        votre disposition toutes les informations relatives aux conferences en Europe en 2024/2025. Cela
+                        vous dit de prendre part a ces rencontres professionnelles? Ce sera pour vous l'opportunite de vous
+                        immerger dans des congres professionnels, afin d'enrichir vos connaissances et d'etablir des
+                        relations avec des experts et des acteurs professionnels europeens.<span id="dots">...</span></p><span id="more">
+                        <p style="text-align:justify;">Notre site Internet dispose d'une liste
+                            complete des seminaires et congres organises en Europe en 2024/2025. Peu importe votre domaine
+                            professionnel: medecine, ingenierie, sciences, art, mathematiques, finances, genie mecanique,
+                            education…, vous tomberez sûrement sur une conference qui vous interessera.</p>
+                        <p style="text-align:justify;">Au cours de ces evenements, vous pourrez
+                            rencontrer de grands conferenciers. Vous resterez informe sur toutes les tendances actuelles de
+                            l'univers professionnel. Rejoignez donc notre communaute et recevez tous les renseignements
+                            concernant les adresses, les horaires et les sujets abordes lors des conferences. Donnez un coup
+                            de pouce a votre carriere professionnelle en participant a ces evenements de renom.</p>
                     </span>
                     <button onclick="myFunction()" id="myBtn" fdprocessedid="z1hewq"
-                        style="border: 2px solid #031e6b;background-color: #031e6b;color: #fff;padding: 6px 5px 6px 6px;">Read
-                        more</button>
+                        style="border: 2px solid #031e6b;background-color: #031e6b;color: #fff;padding: 6px 5px 6px 6px;">En savoir plus</button>
                 </div>
             </div>
         </section>
@@ -405,9 +375,9 @@
                             <div class="tab tab2">
                                 <div class="tabHeader">
                                     <ul>
-                                        <li class="active">Top Countries</li>
-                                        <li>Top Cities</li>
-                                        <li>Top Topics</li>
+                                        <li class="active">Principaux pays</li>
+                                        <li>Principales villes</li>
+                                        <li>Top sujets</li>
                                     </ul>
                                 </div>
                                 <div class="tabContent">
@@ -443,7 +413,7 @@
             <div class="container">
                 <div class="faq-drawer">
                     <input class="faq-drawer__trigger" id="faq-drawer" type="checkbox" /><label class="faq-drawer__title"
-                        for="faq-drawer">Top Countries</label>
+                        for="faq-drawer">Principaux pays</label>
                     <div class="faq-drawer__content-wrapper">
                         <div class="faq-drawer__content">
                             <div class="tabContent">
@@ -460,7 +430,8 @@
 
                 <div class="faq-drawer">
                     <input class="faq-drawer__trigger" id="faq-drawer-2" type="checkbox" /><label
-                        class="faq-drawer__title" for="faq-drawer-2">Top Cities</label>
+                        class="faq-drawer__title" for="faq-drawer-2">
+                        Principales villes</label>
                     <div class="faq-drawer__content-wrapper">
                         <div class="faq-drawer__content">
                             <div class="tabContent">
@@ -477,7 +448,7 @@
 
                 <div class="faq-drawer">
                     <input class="faq-drawer__trigger" id="faq-drawer-3" type="checkbox" /><label
-                        class="faq-drawer__title" for="faq-drawer-3">Top Topics</label>
+                        class="faq-drawer__title" for="faq-drawer-3">Top sujets</label>
                     <div class="faq-drawer__content-wrapper">
                         <div class="faq-drawer__content">
                             <div class="tabContent">
@@ -519,7 +490,7 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-12">
                         <h2 class="text-uppercase mb-4 text-center" style="font-size: 30px;text-align: center!important;">
-                            <strong>Event Calendar 2024/2025</strong>
+                            <strong>Calendrier des événements 2024/2025</strong>
                         </h2>
                     </div>
                     @php
@@ -529,7 +500,7 @@
                         <div class="col-lg-2 col-6 col-sm-4 col-md-3 calender-media">
                             <a href="{{ route('month-page', ['month' => $url]) }}" class="calendar month_click">
                                 <div class="calander-div">
-                                    <em> {{ date('Y', strtotime("first day of $i month ")) }}</em>
+                                    <em>{{ date('Y', strtotime("first day of $i month ")) }}</em>
                                     <span class="calander-year">
                                         {{ $name }}
                                     </span>

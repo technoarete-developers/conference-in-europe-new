@@ -587,7 +587,7 @@
                     <div class="select-item" id="city-country-select">
                         @if (request()->city)
                             <span class="sub-top sub_topic text-capitalize">
-                                {{ $cityName }}
+                                {{ $cityNameFr }}
                             </span>
                             <a onclick="city_country_clear();" class="city_country_clear p-1">
                                 <img src="/img/close-button.png" style="width: 18px; cursor: pointer;">
@@ -598,7 +598,7 @@
                     <div class="select-item" id="subtopic-select">
                         @if (request()->topic)
                             <span class="sub-top sub_topic text-capitalize">
-                                {{ $topicName }}
+                                {{ $topicNameFr }}
                             </span>
                             <a onclick="subtopic_clear();" class="subtopic_clear p-1">
                                 <img src="/img/close-button.png" style="width: 18px; cursor: pointer;">
@@ -609,7 +609,7 @@
                     <div class="select-item" id="month-select">
                         @if (request()->month)
                             <span class="sub-top sub_topic text-capitalize">
-                                {{ $monthName }}
+                                {{ $monthNameFr }}
                             </span>
                             <a onclick="month_clear();" class="month_clear p-1">
                                 <img src="/img/close-button.png" style="width: 18px; cursor: pointer;">
@@ -625,7 +625,7 @@
                             <span style="display: flex;"><i class="fa fa-calendar" aria-hidden="true"
                                     style="color: #000;position: relative;top: 4px; font-size: 19px;"></i>&nbsp;
                                 <select class="dropdown select_months" id="selected_month">
-                                    <option value="{{ request()->month ? request()->month : '' }}">
+                                    <option value="{{ request()->month }}" data-name="{{ request()->month ? $monthNameFr : '' }}">
                                         {{ request()->month ? $monthName : 'Select Month' }}</option>
                                     @foreach ($monthList as $url => $name)
                                         <option value="{{ $url }}" data-name="{{ $name }}">
@@ -642,8 +642,8 @@
                             <span style="display: flex;"><i class="fa fa-map-signs" aria-hidden="true"
                                     style="color: #000;position: relative;top: 4px; font-size: 19px;"></i>&nbsp;
                                 <select class="dropdown select_countries text-capitalize" id="selected_country">
-                                    <option value="{{ $countryName }}">
-                                        {{ ucfirst($countryName) }}
+                                    <option value="{{ $countryName }}" data-name="{{ $countryNameFr }}">
+                                        {{ ucfirst($countryNameFr) }}
                                     </option>
                                     @foreach ($topCountry as $url => $name)
                                         <option value="{{ $url }}" data-name="{{ $name }}">
@@ -660,8 +660,8 @@
                             <span style="display: flex;"><i class="fa fa-map-o" aria-hidden="true"
                                     style="color: #000;position: relative;top: 4px; font-size: 19px;"></i>&nbsp;
                                 <select class="dropdown select_cities" id="selected_city">
-                                    <option value="{{ request()->city }}">
-                                        {{ ucfirst(str_replace('-', ' ', request()->city)) }}
+                                    <option value="{{ request()->city }}" data-name="{{ $cityNameFr }}">
+                                        {{ $cityNameFr }}
                                     </option>
                                 </select>
                             </span>

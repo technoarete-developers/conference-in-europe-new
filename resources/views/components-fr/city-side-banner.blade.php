@@ -6,24 +6,19 @@
     </div>
 
     <div class="event-promtion">
-        <h3 style="color: #b03031;">Add Your Event</h3>
+        <h3 style="color: #b03031;">Ajoutez votre événement</h3>
         <div class="col-sm-12 e-card">
-            <p>Conference in Europe are an excellent platform to promote your event and make it a huge success. We have
-                garnered thousands of followers, subscribers, and monthly more than one lakh visitors to our website!
-                So, by adding your event to our website, you and your business will reach a wider audience that will
-                find your conference very beneficial.</p>
-            <p>Whether you are planning to organize an online conference or an offline event, Conference in Europe is
-                here for you.</p>
-            <p>Here is how adding your event to Conference in Europe can help your business:</p>
+            <p>Conférence en Europe constitue la plateforme idéale si vous désirez promouvoir efficacement votre événement et lui faire connaître un énorme succès. Le site compte plusieurs milliers de followers et d’abonnés. Et tous les mois, les visiteurs sont nombreux à visiter notre site Web ! Ainsi, en ajoutant votre événement sur notre site Web, vous et votre entreprise atteindrez un public plus large qui trouvera votre conférence très bénéfique.</p>
+            <p>Que vous envisagiez d’organiser une conférence en ligne ou un événement hors ligne, Conférence en Europe est la plateforme qu’il vous faut. Elle est entièrement à votre disposition.</p>
+            <p>Que vous envisagiez d’organiser une conférence en ligne ou un événement hors ligne, Conférence en Europe est la plateforme qu’il vous faut. Elle est entièrement à votre disposition.</p>
             <ul>
-                <li>Get More Potential Audiences:</li>
-                <li>Increases The Number of People Engage your event:</li>
-                <li>Make it Easier to Form Important Partnerships:</li>
+                <li>Obtenir plus de clients potentiels :</li>
+                <li>Augmenter le nombre de personnes inscrites:</li>
+                <li>Faciliter la création de partenariats importants:</li>
             </ul>
             <div class="text-center" style="margin-top: 12%;margin-left: -54%;">
                 <a href="{{ route('add-event') }}"
-                    style="background: linear-gradient(316.24deg,#ae1010 24.99%,#030351 100%);color: #fff;padding: 8px;border-radius: 5px;margin-top: 9%;margin-left: 11%;">Add
-                    Event</a>
+                    style="background: linear-gradient(316.24deg,#ae1010 24.99%,#030351 100%);color: #fff;padding: 8px;border-radius: 5px;margin-top: 9%;margin-left: 11%;">Ajouter un événement</a>
             </div>
             <div class="text-center">
                 <img src="/img/book.png" width="80%" style="margin-bottom: 12px;margin-top: 3%;">
@@ -32,7 +27,7 @@
     </div>
 
     <div class="event-promtion">
-        <h4 class="event-title">Event Promotion</h4>
+        <h4 class="event-title">Promotion d’événements</h4>
         <div class="promot-heading">
             <div class="dte">
                 <div class="event-info">
@@ -50,7 +45,7 @@
     </div>
 
     <div class="event-promtion dskview">
-        <h4 class="event-title">Global Event Promotion</h4>
+        <h4 class="event-title">Promotion d'événements mondiaux</h4>
         <div class="promot-heading">
             @foreach ($upcomingEvent as $detail)
                 <div class="dte">
@@ -60,15 +55,10 @@
                     </div>
                     <div class="event-info">
                         {{ $detail->event_name }} ({{ $detail->event_title }})
-                        is a prestigious event organized with a motivation to
-                        provide an excellent international platform for the
-                        academicians, researchers, engineers, industrial
-                        participants and budding students around the world to SHARE
-                        their research findings with the global experts.
+                        prestigious event organized with a motivation to provide an excellent international platform for the academicians, researchers, engineers, industrial participants and budding students around the world to SHARE their research findings with the global experts.
                     </div>
                     <a href="{{ route('event-detail', ['event_id' => $detail->event_id]) }}" class="prom_submit"
-                        target="_blank">View
-                        More</a>
+                        target="_blank">Voir plus</a>
                 </div>
             @endforeach
         </div>
@@ -78,7 +68,7 @@
         <p class="event-title">
             <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
                 aria-controls="collapseExample" style="color: #fff;">
-                Global Event Promotion <i class="fa fa-angle-double-down iconn" aria-hidden="true"></i>
+                Promotion d'événements mondiaux<i class="fa fa-angle-double-down iconn" aria-hidden="true"></i>
             </a>
         </p>
         <div class="collapse" id="collapseExample">
@@ -92,15 +82,10 @@
                         <div class="event-info">
                             {{ $detail->event_name }}
                             ({{ $detail->event_title }})
-                            is a prestigious event
-                            organized with a motivation to provide an excellent
-                            international platform for the academicians,
-                            researchers, engineers, industrial participants and
-                            budding students around the world to SHARE their
-                            research findings with the global experts.
+                            prestigious event organized with a motivation to provide an excellent international platform for the academicians, researchers, engineers, industrial participants and budding students around the world to SHARE their research findings with the global experts.
                         </div>
                         <a href="{{ route('event-detail', ['event_id' => $detail->event_id]) }}" class="prom_submit"
-                            target="_blank">View More</a>
+                            target="_blank">Voir plus</a>
                     </div>
                 @endforeach
             </div>

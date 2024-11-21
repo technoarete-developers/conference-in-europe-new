@@ -9,29 +9,23 @@
     @yield('meta');
 
     {{-- load stylesheets --}}
-    <link rel="preload" href="{{ url('css/bootstrap.min.css') }}" as="style" onload="this.rel='stylesheet'">
-    <link rel="shortcut icon" href="{{ url('img/favicon.ico') }}" type="image/x-icon">
-    <link rel="preload" type="text/css" href="{{ url('slick/slick.css') }}" as="style"
+    <link rel="preload" href="{{ url('/css/bootstrap.min.css') }}" as="style" onload="this.rel='stylesheet'">
+    <link rel="shortcut icon" href="{{ url('/img/favicon.ico') }}" type="image/x-icon">
+    <link rel="preload" type="text/css" href="{{ url('/slick/slick.css') }}" as="style"
         onload="this.rel='stylesheet'" />
-    <link rel="preload" type="text/css" href="{{ url('slick/slick-theme.css') }}" as="style"
+    <link rel="preload" type="text/css" href="{{ url('/slick/slick-theme.css') }}" as="style"
         onload="this.rel='stylesheet'" />
-    <link rel="preload" href="{{ url('css/templatemo-style.css') }}" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="{{ url('css/font-awesome-4.7.0/css/font-awesome.min.css') }}" as="style"
+    <link rel="preload" href="{{ url('/css/templatemo-style.css') }}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{{ url('/css/font-awesome-4.7.0/css/font-awesome.min.css') }}" as="style"
         onload="this.rel='stylesheet'">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" as="style"
         onload="this.rel='stylesheet'" />
-    <link rel="stylesheet" href="{{ url('css/language_switcher.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url('css/style.css') }}">
-
 
     {{-- JAVASCRIPT FILES --}}
     <script src="/js/bootstrap.min.js" async></script>
-    <script src="/js/common.js" async></script>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
 
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
@@ -67,6 +61,151 @@
     </script>
 
     <style>
+        #mainNav {
+            position: relative;
+        }
+
+        .search-container {
+            display: none;
+            position: absolute;
+            top: 96px;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index: 1000;
+            border-top: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-wrap {
+            padding: 15px;
+        }
+
+        .search-box {
+            padding: 19px 20px;
+            position: relative;
+            max-width: 1050px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .search-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .search-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+        }
+
+        .search-field {
+            width: 100%;
+            outline: 0;
+            border: 1px solid #e8eef6;
+            font-size: 17px;
+            padding: 15px 40px 15px 16px;
+        }
+
+        .search-wrap .search-btn {
+            position: absolute;
+            right: 30px;
+            top: 0;
+            bottom: 0;
+            width: 22px;
+            height: 22px;
+            padding: 0;
+            border: 0;
+            cursor: pointer;
+            transform: scale(0.8);
+            margin: auto;
+            background-size: 20px auto;
+        }
+
+        .search-btn {
+            background: url('/img/searchicon.svg');
+        }
+
+        .language-select {
+            border: none;
+            background: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 150px;
+            z-index: 1000;
+        }
+
+        .language-dropdown {
+            display: none;
+            /* Hidden by default */
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 5px;
+            z-index: 1000;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            top: 60px;
+        }
+
+        .language-dropdown .language-option {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .language-dropdown .language-option:hover {
+            background-color: #f0f0f0;
+        }
+
+        .language-select:before {
+            position: absolute;
+            content: "";
+            width: 22px;
+            height: 16px;
+            left: 0;
+            background-size: 528px auto;
+            background-position: 0 0;
+            background: url('/img/world.png');
+        }
+
+        .tabContent a,
+        a.calendar.month_click,
+        #footer a {
+            text-decoration: none;
+        }
+
+        .footer-checkbox {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .form-control {
+            border-radius: 0px;
+        }
+
         .alert-success {
             color: #155724;
             background-color: #d4edda;
@@ -148,7 +287,7 @@
         .e-card {
             display: inline-block;
             margin-bottom: 20px;
-            background: url(https://conferenceineurope.net/img/event-bg.png);
+            background: url('/img/event-bg.png');
             padding: 14px 15px 20px;
             border: 2px #000000;
             background-size: cover;
@@ -253,7 +392,65 @@
 </body>
 
 <script>
- 
+    $(document).ready(function() {
+        $('#advance-serch').on('click', function() {
+            $('#search-container').show();
+            $('#advance-serch').show();
+        });
+        $('#close-search').on('click', function() {
+            $('#search-container').hide();
+        });
+    });
+
+    $(document).ready(function() {
+        $('#language-btn').click(function(event) {
+            var isExpanded = $(this).attr('aria-expanded') === 'true';
+            $(this).attr('aria-expanded', !isExpanded);
+            $('#language-dropdown').toggle();
+            event.stopPropagation();
+        });
+
+        // Handle language selection
+        $('.language-option').click(function() {
+            var selectedLang = $(this).data('lang'); 
+            var currentUrl = window.location.href;
+            var newUrl;
+
+            var selectedLangText = $(this).text();
+            $('#language-btn').html(
+                '<img src="/img/world.png" alt="World Icon" style="width: 20px; height: 20px; margin-right: 5px;"> ' +
+                selectedLangText
+            );
+
+            // Redirect based on the selected language
+            if (selectedLang === 'fr-fr') {
+                if (!currentUrl.includes('/fr-fr')) {
+                    newUrl = currentUrl.replace(window.location.origin,
+                        `${window.location.origin}/fr-fr`);
+                }
+            } else if (selectedLang === 'en') {
+                newUrl = currentUrl.replace('/fr-fr', '');
+               
+            }
+
+            if (newUrl) {
+                window.location.href = newUrl;
+            }
+            $('#language-dropdown').hide();
+            $('#language-btn').attr('aria-expanded', 'false');
+        });
+
+        $(document).click(function(event) {
+            if (
+                !$('#language-btn').is(event.target) &&
+                !$('#language-dropdown').is(event.target) &&
+                $('#language-dropdown').has(event.target).length === 0
+            ) {
+                $('#language-dropdown').hide();
+                $('#language-btn').attr('aria-expanded', 'false');
+            }
+        });
+    });
 </script>
 
 </html>

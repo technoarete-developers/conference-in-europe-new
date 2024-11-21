@@ -1551,7 +1551,7 @@ h4.font.conname {
 #footer a {
 	margin: 5px 0px;
 	display: inline-block;
-	width: 150px;
+	/* width: 150px; */
 	color: #fff;
 	padding-left: 0
 }

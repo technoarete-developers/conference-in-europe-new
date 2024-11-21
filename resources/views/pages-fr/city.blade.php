@@ -1,23 +1,14 @@
-@php
-    $cityName = ucfirst(str_replace('-', ' ', request()->city));
-
-    foreach ($countryWithCity as $country => $cityList) {
-        if (array_key_exists(request()->city, $cityList)) {
-            $cityName = $cityList[request()->city];
-        }
-    }
-@endphp
 
 @extends('layout-fr.master')
 
 @section('meta')
-    <title>{{ str_replace('@city', $cityName, $content['title']) }}</title>
-    <meta name="keywords" content="{{ str_replace('@city', $cityName, $content['metaKey']) }}" />
-    <meta name="Description" content="{{ str_replace('@city', $cityName, $content['metaDes']) }}" />
+    <title>{{ str_replace('@city', $cityNameFr, $content['title']) }}</title>
+    <meta name="keywords" content="{{ str_replace('@city', $cityNameFr, $content['metaKey']) }}" />
+    <meta name="Description" content="{{ str_replace('@city', $cityNameFr, $content['metaDes']) }}" />
 
-    <meta property="og:title" content="{{ str_replace('@city', $cityName, $content['title']) }}" />
-    <meta property="og:keywords" content="{{ str_replace('@city', $cityName, $content['metaKey']) }}" />
-    <meta property="og:description" content="{{ str_replace('@city', $cityName, $content['metaDes']) }}" />
+    <meta property="og:title" content="{{ str_replace('@city', $cityNameFr, $content['title']) }}" />
+    <meta property="og:keywords" content="{{ str_replace('@city', $cityNameFr, $content['metaKey']) }}" />
+    <meta property="og:description" content="{{ str_replace('@city', $cityNameFr, $content['metaDes']) }}" />
 
     <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
@@ -32,7 +23,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>{{ $cityName }}</h2>
+                        <h2>{{ $cityNameFr }}</h2>
                     </div>
                 </div>
             </div>
@@ -45,14 +36,14 @@
                             <div class="row">
                                 <div class="col-sm-9 topic-midule-grid">
                                     <div class="topic-date-cnfr">
-                                        <legend> <span class="fld_hed text-capitalize">{{ $cityName }}</span>
+                                        <legend> <span class="fld_hed text-capitalize">{{ $cityNameFr }}</span>
                                         </legend>
                                         <div class="county-conference">
                                             <div class="col-md-12">
                                                 <h1 style=" font-size: 18px;font-family:Gill Sans;">
-                                                    {{ str_replace('@city', $cityName, $content['h1']) }}</h1>
-                                                <p>{{ str_replace('@city', $cityName, $content['contentOne']) }}</p>
-                                                <p>{{ str_replace('@city', $cityName, $content['contentTwo']) }}</p>
+                                                    {{ str_replace('@city', $cityNameFr, $content['h1']) }}</h1>
+                                                <p>{{ str_replace('@city', $cityNameFr, $content['contentOne']) }}</p>
+                                                <p>{{ str_replace('@city', $cityNameFr, $content['contentTwo']) }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -62,11 +53,11 @@
                                         </div>
                                     </div>
                                     <div class="p-4 mt-4" style="background-color: #f5f7fd: font-weight: 700">
-                                        <h3 class="text-center mb-4 p-2" style="color: #b03031">All Conference List</h3>
+                                        <h3 class="text-center mb-4 p-2" style="color: #b03031">Liste de toutes les conférences</h3>
                                         <div class="row bg-dark text-white py-2">
                                             <div class="col-2">Date</div>
-                                            <div class="col-7">Conference Name</div>
-                                            <div class="col-3">Venue</div>
+                                            <div class="col-7">Nom de la conférence</div>
+                                            <div class="col-3">Lieu</div>
                                         </div>
                                         @include ('components-fr.event-listing')
                                     </div>
@@ -77,7 +68,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

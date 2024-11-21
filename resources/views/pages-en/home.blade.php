@@ -15,7 +15,7 @@
 
     <link rel="canonical" href="{{ url()->current() }}" />
 
-    <link rel="preload" href="{{ url('css/jQuery.tab.css') }}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{{ url('/css/jQuery.tab.css') }}" as="style" onload="this.rel='stylesheet'">
 @endsection
 
 @section('style')
@@ -189,7 +189,6 @@
 
 
         @media screen and (max-width: 768px) and (min-width: 200px) {
-
             .mobileview {
                 display: block;
                 margin-top: 33px;
@@ -219,8 +218,6 @@
         #more {
             display: none;
         }
-
-
 
         .faq-drawer {
             margin-bottom: 4px;
@@ -277,12 +274,6 @@
             transform: rotate(-45deg);
             transition: 0.25s ease-in-out;
         }
-
-        /* input[type="checkbox"] {
-            display: none;
-        } */
-
-
 
         .btnn {
             border: 2px solid #031e6b;
