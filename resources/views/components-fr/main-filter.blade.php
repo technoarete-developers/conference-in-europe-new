@@ -468,7 +468,7 @@
         display: inline-block;
         width: 120px;
         height: 120px;
-        background: url(/img/loading-f.gif);
+        background: url('/img/loading-f.gif');
         animation: dots-loader 5s infinite ease-in-out;
         transform-origin: 50% 50%;
         transform: scale(1);
