@@ -25,7 +25,7 @@ class SubscribeController extends Controller
 		$topicStopicList = $this->filter->topicSubtopicList();
 		$topicList = $this->filter->topicList();
 		$topCountry = $this->filter->topCountry();
-		$countryWithCity = $this->filter->countryWithCity();	
+		$countryWithCity = $this->filter->countryWithCity();
 
 		return view('pages-en.subscribe', compact('topicList', 'topicStopicList', 'topCountry', 'countryWithCity'));
 	}
@@ -83,6 +83,56 @@ class SubscribeController extends Controller
 
 		event(new SubscribeEvent($subscription));
 
-		return redirect()->back()->with('smessage', 'Thanks for contacting us! Our Executive will contact you shortly through mail or call regarding your conference-related information.While you’re here, check our upcoming conferences.');
+		if (app()->getLocale() == 'en') {
+			return redirect()->back()->with('smessage', 'Thank You for Subscribe Us, we will be contact u soon');
+		} else {
+			return redirect()->back()->with('smessage', 'Merci de nous avoir abonnés, nous vous contacterons bientôt');
+		}
+	}
+
+	public function footerSubscribeForm(Request $request)
+	{
+
+		$validate = $request->validate([
+			'captcha' => ['required', new Recaptcha]
+		]);
+
+		$subscription = new IndexSubscription();
+		$subscription->name = $request->name;
+		$subscription->email = $request->email;
+		$subscription->mobile_no = '';
+		$subscription->topic = '';
+		$subscription->category = $request->interest;
+		$subscription->country = '';
+		$subscription->city = '';
+		$subscription->university_org = '';
+		$subscription->status = '';
+		$subscription->index_id = '22';
+		$subscription->source = 'subscribe';
+		$subscription->save();
+
+		$formData = [
+			'Date' => now()->format('Y-m-d'),
+			'Name' => $request->name,
+			'Email' => $request->email,
+			'Country_code' => '',
+			'Mobile_number' => '',
+			'Country' => '',
+			'City' => '',
+			'Topic' => '',
+			'Category' => $request->category,
+			'University_org' => '',
+			'Source' => 'General Subscribe',
+		];
+
+		event(new GoogleSheetEvent($formData));
+
+		event(new SubscribeEvent($subscription));
+
+		if (app()->getLocale() == 'en') {
+			return redirect()->back()->with('smessage', 'Thank You for Subscribe Us, we will be contact u soon');
+		} else {
+			return redirect()->back()->with('smessage', 'Merci de nous avoir abonnés, nous vous contacterons bientôt');
+		}
 	}
 }

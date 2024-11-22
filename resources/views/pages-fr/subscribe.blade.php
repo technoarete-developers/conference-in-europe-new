@@ -530,7 +530,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="data-sitekey="{{ config('services.recaptcha.site_key') }}"
-                                                    data-action="{{ route('subscribe-form') }}"></div>
+                                                    data-action="{{ route('subscribe-form-fr') }}"></div>
                                             </div>
                                         </div>
                                     </div>

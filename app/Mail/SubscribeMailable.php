@@ -25,6 +25,7 @@ class SubscribeMailable extends Mailable
     {
         $this->subscription = $subscription;
         $this->isAdmin = $isAdmin;
+
     }
 
     /**

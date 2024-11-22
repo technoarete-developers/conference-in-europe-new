@@ -72,6 +72,10 @@ class ContactController extends Controller
 
         event(new GoogleSheetEvent($formData));
 
-        return redirect()->back()->with('smessage', 'Thank You for Contacting Us, we will be contact u soon.');
+        if (app()->getLocale() == 'en') {
+            return redirect()->back()->with('smessage', 'Thank You for Contacting Us, we will be contact u soon.');
+        } else {
+            return redirect()->back()->with('smessage', 'Merci de nous avoir contacté, nous vous contacterons bientôt');
+        }
     }
 }

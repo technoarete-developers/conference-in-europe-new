@@ -140,8 +140,8 @@ class CountryController extends Controller
         $country = str_replace("-", " ", $request->country);
 
         $monthList = $this->filter->monthListFr();
-        $topicStopicList = $this->filter->topicSubtopicList();
-        $topicList = $this->filter->topicList();
+        $topicStopicList = $this->filter->topicSubtopicListFr();
+        $topicList = $this->filter->topicListFr();
         $topCountry = $this->filter->topCountryFr();
         $countryWithCity = $this->filter->countryWithCityFr();
         $content = $this->filter->countryContentFr($request->country);

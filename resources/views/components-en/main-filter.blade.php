@@ -553,7 +553,7 @@
     <nav class="megamenu">
 
         <ul class="megamenu-nav d-flex justify-content-between" role="menu">
-            @foreach ($topicList as $topic => $subtopic)
+            @foreach ($topicList as $url => $name)
 
                 <li class="nav-item is-parent text-capitalize">
                     <a class="nav-link flex-col" style="cursor: pointer" id="megamenu-dropdown-{{ $loop->index }}"

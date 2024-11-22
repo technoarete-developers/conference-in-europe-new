@@ -125,7 +125,7 @@
 
                             <div class="form_row clearfix">
                                 <label>Venue Address</label>
-                                <textarea class="form-control venue" name="venue"></textarea>
+                                <textarea class="form-control venue" name="venue_address"></textarea>
                             </div><br>
                         </div>
 
