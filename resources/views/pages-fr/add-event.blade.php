@@ -592,7 +592,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div data-sitekey="{{ config('services.recaptcha.site_key') }}"
-                                        data-action="{{ route('add-event-from') }}"></div>
+                                        data-action="{{ route('add-event-from-fr') }}"></div>
                                 </div>
                             </div>
                         </div>

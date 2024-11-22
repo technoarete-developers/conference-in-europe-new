@@ -289,6 +289,11 @@
     <section class="tm-banner">
         <div class="tm-container-outer tm-banner-bg new-width" loading="lazy">
             <div class="container">
+                @if (session()->has('smessage'))
+                    <div class="alert-message">
+                        <p>{{ session()->get('smessage') }}</p>
+                    </div>
+                @endif
                 <div class="row tm-banner-row tm-banner-row-header">
                     <div class="col-xs-12">
                         <div class="tm-banner-header">
@@ -301,7 +306,7 @@
 
                     <form action="{{ url('advance-search') }}" class="tm-search-form tm-section-pad-2">
                         <div class="row">
-                        <div class="col-md-2"></div>
+                            <div class="col-md-2"></div>
                             <div class="col-md-6">
                                 <input type="text" name="keyword" id="keyword" class="form-control" required
                                     placeholder="Search events by keyword or conference details" />

@@ -112,6 +112,10 @@ class AddEventController extends Controller
 
         event(new AddEventGoogleSheetEvent($formData));
 
-        return redirect()->back()->with('smessage', 'Thanks for contacting us! Our Executive will contact you shortly through mail or call regarding your conference-related information.While you’re here, check our upcoming conferences.');
+        if (app()->getLocale() == 'en') {
+            return redirect()->back()->with('smessage', 'Thanks for contacting us! Our Executive will contact you shortly through mail or call regarding your conference-related information.While you’re here, check our upcoming conferences.');
+        } else {
+            return redirect()->back()->with('smessage', 'Merci de nous avoir contactés ! Notre exécutif vous contactera sous peu par courrier ou par téléphone au sujet des informations relatives à votre conférence. Pendant que vous êtes ici, consultez nos conférences à venir.');
+        }
     }
 }

@@ -39,7 +39,7 @@
                             <div class="alert alert-success"> {{ session()->get('smessage') }} </div>
                         @endif
                         <form method="POST" id="contact-form" class="well form-horizontal"
-                            action="{{ route('contact-form') }}">
+                            action="{{ route('contact-form-fr') }}">
                             @csrf
                             <div class="form-group">
                                 <div class="col-md-12 inputGroupContainer">
@@ -109,7 +109,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="data-sitekey="{{ config('services.recaptcha.site_key') }}"
-                                            data-action="{{ route('subscribe-form') }}"></div>
+                                            data-action="{{ route('subscribe-form-fr') }}"></div>
                                     </div>
                                 </div>
                             </div>

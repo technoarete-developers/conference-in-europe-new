@@ -63,6 +63,7 @@ Route::controller(SubscribeController::class)->group(function () {
     Route::get('/subscribe', 'subscribePage')->name('subscribe');
 
     Route::post('/subscribe-form', 'subscribeForm')->name('subscribe-form');
+    Route::post('/footer-subscribe-form', 'footerSubscribeForm')->name('footer-subscribe-form');
 });
 
 

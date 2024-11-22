@@ -56,21 +56,22 @@ Route::get('/terms-and-condition', function () {
 Route::controller(AddEventController::class)->group(function () {
     Route::get('/add-event', 'addEventPageFr')->name('add-event-fr');
 
-    Route::post('/add-event-from', 'addEventFormFr')->name('add-event-from-fr');
+    Route::post('/add-event-from-fr', 'addEventForm')->name('add-event-from-fr');
 });
 
 
 Route::controller(SubscribeController::class)->group(function () {
     Route::get('/subscribe', 'subscribePageFr')->name('subscribe-fr');
 
-    Route::post('/subscribe-form', 'subscribeFormFr')->name('subscribe-form-fr');
+    Route::post('/subscribe-form-fr', 'subscribeForm')->name('subscribe-form-fr');
+    Route::post('/footer-subscribe-form-fr', 'footerSubscribeForm')->name('footer-subscribe-form-fr');
 });
 
 
 Route::controller(ContactController::class)->group(function () {
     Route::get('/contact', 'contactPageFr')->name('contact-fr');
 
-    Route::post('/contact-form', 'contactFormFr')->name('contact-form-fr');
+    Route::post('/contact-form-fr', 'contactForm')->name('contact-form-fr');
 });
 
 
