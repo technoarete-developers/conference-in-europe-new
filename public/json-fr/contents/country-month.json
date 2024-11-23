@@ -1,28 +1,46 @@
 {
-    "december": {
-        "countryName": {
-            "title": "",
-            "metaDes": "",
+    "november": {
+        "france": {
+            "title": "Liste des conférences en France en Novembre 2024",
+            "metaDes": "Pour connaître les prochaines dates de conférence en France en Novembre 2024, consultez dès à présent conferenceineurope.net..",
             "metaKey": "",
-            "h1": "",
-            "contentOne": "",
-            "contentTwo": ""
+            "h1": "Novembre 2024/2025 Conférences En France",
+            "contentOne": "La France fait partie de ces pays actifs qui proposent tous les ans un grand nombre de séminaires et congrès professionnels. Le mois de Novembre 2024 n’est pas en reste. Vous aurez en effet droit à toute sorte de conférence en Novembre 2024 Conférences En France. Ce sera pour vous l’occasion d’élargir vos connaissances, mais également d’agrandir votre réseau professionnel. Rendez-vous donc sur notre plateforme.",
+            "contentTwo": "Vous y trouverez une liste de conférences intéressantes, ainsi que divers événements tournés vers différentes branches professionnelles, pour ne citer que l’économie, la science, la médecine, l’environnement, les finances ou encore le génie civil. Consultez notre calendrier de conférences classées par catégories. Vous pourrez ainsi choisir plus facilement l’événement qui suscite le plus votre intérêt. En outre, vous avez la possibilité de vous inscrire à la conférence de votre choix en passant par notre site. Quelques clics suffiront pour sélectionner la date et l’heure de l’événement auquel vous désirez prendre part."
         },
         "default": {
-            "title": "December 2024 Conferences In @country",
-            "metaDes": "December 2024 Conferences In @country",
-            "metaKey": "Find and attend top conferences in @country in December 2024. Check out our list of gatherings to timely register for professional events. Explore now.",
-            "h1": "December 2024 Conferences In @country",
-            "contentOne": "@country is all set to organise various conferences in December 2024. Such events could be your chance to discover new growth opportunities and connections this year. Join our platform of conferences to find informative and skill-enhancing events in @country. Search for the best ongoing and upcoming conferences in the country for this month. Choose from a variety of subjects, including technology, finance, science, environment, engineering, medicine, and more",
-            "contentTwo": "You can go through our sorted list of conferences or adjust your search preferences (city, date, topics, etc.) easily with our filters. Moreover, you can register for your ideal event in @country in just a few steps. You can also be assured of receiving timely support wherever you feel stuck. Our team will readily take up and resolve all your concerns about attending a conference. Browse our list now and subscribe to us for more information on gatherings sparking your interest!"
+            "title": "Conférence en @country en Novembre 2024",
+            "metaDes": "Grâce à notre liste des conférences en @country en Novembre 2024, trouvez l’événement professionnel qui vous intéresse et inscrivez-vous afin de réserver votre place.",
+            "metaKey": "",
+            "h1": "Conférence en @country en Novembre 2024 : pour hisser votre entreprise au sommet",
+            "contentOne": "Comme tous les ans, l’@country accueille tout un choix de conférences en Novembre 2024, mais également les autres mois de l’année. Ces événements pourront êtrel’opportunité que vous attendiez depuis longtemps pour agrandir votre entreprise et pour conclure de nouveaux partenariats. Ils sont aussi l’occasion de rencontrer des acteurs professionnels de renom.",
+            "contentTwo": "N’hésitez pas à vous rendre sur notre plateforme afin de découvrir les rencontres professionnelles organisées durant le mois de Novembre en @country. Vous trouvereztous les renseignements nécessaires afin de réserver votre place lors d’un séminaire,d’un congrès ou d’un atelier professionnel. Les conférences sont axées sur divers domaines : médecine, ingénierie, science, finance, environnement, technologie, banque, ressources humaines et bien d’autres encore. Parcourez notre liste triée par catégorie : lieux, dates, horaires, sujets… Nos filtres vous aideront à faciliter vos recherches. Si vous désirez obtenir davantage d’informations sur une conférence en particulier, pensez à vous inscrire dès aujourd’hui sur notre site."
+        }
+    },
+    "december": {
+        "france": {
+            "title": "Liste des conférences en France en Décembre 2024",
+            "metaDes": "Pour connaître les prochaines dates de conférence en France en Décembre 2024, consultez dès à présent conferenceineurope.net.",
+            "metaKey": "",
+            "h1": "Décembre 2024/2025 Conférences En France",
+            "contentOne": "La France fait partie de ces pays actifs qui proposent tous les ans un grand nombre de séminaires et congrès professionnels. Le mois de Décembre 2024 n’est pas en reste. Vous aurez en effet droit à toute sorte de conférence en Décembre 2024 Conférences En France. Ce sera pour vous l’occasion d’élargir vos connaissances, mais également d’agrandir votre réseau professionnel. Rendez-vous donc sur notre plateforme.",
+            "contentTwo": " Vous y trouverez une liste de conférences intéressantes, ainsi que divers événements tournés vers différentes branches professionnelles, pour ne citer que l’économie, la science, la médecine, l’environnement, les finances ou encore le génie civil. Consultez notre calendrier de conférences classées par catégories. Vous pourrez ainsi choisir plus facilement l’événement qui suscite le plus votre intérêt. En outre, vous avez la possibilité de vous inscrire à la conférence de votre choix en passant par notre site. Quelques clics suffiront pour sélectionner la date et l’heure de l’événement auquel vous désirez prendre part."
+        },
+        "default": {
+            "title": "Conférence en @country en Décembre 2024",
+            "metaDes": "Grâce à notre liste des conférences en @country en Décembre 2024, trouvez l’événement professionnel qui vous intéresse et inscrivez-vous afin de réserver votre place.",
+            "metaKey": "",
+            "h1": "Conférence en @country en Décembre 2024 : pour hisser votre entreprise au sommet",
+            "contentOne": "Comme tous les ans, l’@country accueille tout un choix de conférences en Décembre 2024, mais également les autres mois de l’année. Ces événements pourront êtrel’opportunité que vous attendiez depuis longtemps pour agrandir votre entreprise et pour conclure de nouveaux partenariats. Ils sont aussi l’occasion de rencontrer des acteurs professionnels de renom. N’hésitez pas à vous rendre sur notre plateforme afin de découvrir les rencontres professionnelles organisées durant le mois de Décembre en @country.",
+            "contentTwo": "Vous trouvereztous les renseignements nécessaires afin de réserver votre place lors d’un séminaire,d’un congrès ou d’un atelier professionnel. Les conférences sont axées sur divers domaines : médecine, ingénierie, science, finance, environnement, technologie, banque, ressources humaines et bien d’autres encore. Parcourez notre liste triée par catégorie : lieux, dates, horaires, sujets… Nos filtres vous aideront à faciliter vos recherches. Si vous désirez obtenir davantage d’informations sur une conférence en particulier, pensez à vous inscrire dès aujourd’hui sur notre site."
         }
     },
     "default": {
-        "title": "@month 2025 Conferences In @country",
-        "metaDes": "Find and attend top conferences in @country in @month 2025. Check out our list of gatherings to timely register for professional events. Explore now.",
-        "metaKey": "",
-        "h1": "@month 2025 Conferences In @country",
-        "contentOne": "@country is all set to organise various conferences in @month 2025. Such events could be your chance to discover new growth opportunities and connections this year. Join our platform of conferences to find informative and skill-enhancing events in @country. Search for the best ongoing and upcoming conferences in the country for this month. Choose from a variety of subjects, including technology, finance, science, environment, engineering, medicine, and more",
-        "contentTwo": "You can go through our sorted list of conferences or adjust your search preferences (city, date, topics, etc.) easily with our filters. Moreover, you can register for your ideal event in @country in just a few steps. You can also be assured of receiving timely support wherever you feel stuck. Our team will readily take up and resolve all your concerns about attending a conference. Browse our list now and subscribe to us for more information on gatherings sparking your interest!"
+        "title": "Conférence en @country en @month 2025",
+        "metaDes": "Grâce à notre liste des conférences en @country en @month 2025, trouvez l’événement professionnel qui vous intéresse et inscrivez-vous afin de réserver votre place.",
+        "metaKey": "Find and attend top conferences in @country in @month 2024. Check out our list of gatherings to timely register for professional events. Explore now.",
+        "h1": "Conférence en @country en @month 2025: pour hisser votre entreprise au sommet",
+        "contentOne": "Comme tous les ans, l’@country accueille tout un choix de conférences en @month 2025, mais également les autres mois de l’année. Ces événements pourront êtrel’opportunité que vous attendiez depuis longtemps pour agrandir votre entreprise et pour conclure de nouveaux partenariats. Ils sont aussi l’occasion de rencontrer des acteurs professionnels de renom.",
+        "contentTwo": "N’hésitez pas à vous rendre sur notre plateforme afin de découvrir les rencontres professionnelles organisées durant le mois de @month en @country. Vous trouvereztous les renseignements nécessaires afin de réserver votre place lors d’un séminaire,d’un congrès ou d’un atelier professionnel. Les conférences sont axées sur divers domaines : médecine, ingénierie, science, finance, environnement, technologie, banque, ressources humaines et bien d’autres encore. Parcourez notre liste triée par catégorie : lieux, dates, horaires, sujets… Nos filtres vous aideront à faciliter vos recherches. Si vous désirez obtenir davantage d’informations sur une conférence en particulier, pensez à vous inscrire dès aujourd’hui sur notre site."
     }
 }

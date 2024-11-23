@@ -155,12 +155,18 @@ class JsonFetchDataController extends Controller
 
         $data = json_decode($jsonData, true);
 
+        // if (isset($data[$topic])) {
+        //     if (isset($data[$topic][$country])) {
+        //         $content = $data[$topic][$country];
+        //     } else {
+        //         $content = $data[$topic];
+        //     }
+        // } else {
+        //     $content = $data['default'];
+        // }
+
         if (isset($data[$topic])) {
-            if (isset($data[$topic][$country])) {
-                $content = $data[$country];
-            } else {
-                $content = $data[$topic]['default'];
-            }
+            $content = $data[$topic];
         } else {
             $content = $data['default'];
         }
@@ -220,11 +226,11 @@ class JsonFetchDataController extends Controller
 
         $data = json_decode($jsonData, true);
 
-        if (isset($data[$topic])) {
-            if (isset($data[$topic][$city])) {
-                $content = $data[$city];
+        if (isset($data[$city])) {
+            if (isset($data[$city][$topic])) {
+                $content = $data[$city][$topic];
             } else {
-                $content = $data[$topic]['default'];
+                $content = $data[$city]['default'];
             }
         } else {
             $content = $data['default'];
@@ -307,7 +313,7 @@ class JsonFetchDataController extends Controller
 
         if (isset($data[$month])) {
             if (isset($data[$month][$topic])) {
-                $content = $data[$topic];
+                $content = $data[$month][$topic];
             } else {
                 $content = $data[$month]['default'];
             }
@@ -531,7 +537,7 @@ class JsonFetchDataController extends Controller
 
         if (isset($data[$month])) {
             if (isset($data[$month][$country])) {
-                $content = $data[$country];
+                $content = $data[$month][$country];
             } else {
                 $content = $data[$month]['default'];
             }

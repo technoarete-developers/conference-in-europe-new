@@ -90,7 +90,6 @@ class FilterApiController extends Controller
                         }
                     }
                 }
-
                 $filterTopic[$main_topic] = $subtopicName;
             }
             

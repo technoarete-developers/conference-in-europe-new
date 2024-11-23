@@ -288,12 +288,12 @@
     @include('layout-en.header')
     <section class="tm-banner">
         <div class="tm-container-outer tm-banner-bg new-width" loading="lazy">
+            @if (session()->has('smessage'))
+                <div class="alert-message">
+                    <p>{{ session()->get('smessage') }}</p>
+                </div>
+            @endif
             <div class="container">
-                @if (session()->has('smessage'))
-                    <div class="alert-message">
-                        <p>{{ session()->get('smessage') }}</p>
-                    </div>
-                @endif
                 <div class="row tm-banner-row tm-banner-row-header">
                     <div class="col-xs-12">
                         <div class="tm-banner-header">

@@ -1,21 +1,5 @@
 {
-    "germany": {
-        "title": "",
-        "metaDes": "Explore unlimited networking opportunities with researchers of association by attending conferences in Germany 2024/2025 with an invitation letter.",
-        "metaKey": "",
-        "h1": "Explore Upcoming Conferences in Germany 2024/2025",
-        "contentOne": "Germany is a politically stable, culturally active, and economically sound location. This makes it a popular choice for hosting global events featuring various influential personalities. Germany is leading in scientific and medical technology with institutes like Technische Universitat Muchen. If your aim is to explore the latest trends and opportunities in your field, then conferences in Germany are for you. Here, you can attend conferences on medicine, healthcare, technology, AI, science, business, and more.",
-        "contentTwo": "It is a good way to gain international exposure and solidify your position in your chosen industry. Students, researchers, professionals, scholars, scientists, policymakers, and learners are gathered here to start meaningful conversations. Anyone can easily attend these conferences in Germany 2024/2025 with invitation letter. For attendees who don’t live in germany, getting visa to attend conference will become easy with invitation letter. For this, register for the desired conference and then apply for invitation letter via sending email to organizers."
-    },
-    "netherlands": {
-        "title": "",
-        "metaDes": "Learn about the best international conference in Netherlands 2024/2025 for you. Identify the best event from our listing of upcoming Netherlands conferences",
-        "metaKey": "",
-        "h1": "Explore Upcoming Conferences in Netherlands 2024/2025",
-        "contentOne": "Whether you a student, scholar, researcher, or professional, Netherland conferences offer you many amazing benefits for your career and work.  At these conferences, you can showcase your research to industry experts and submit it to esteemed journals. This can help you gain global recognition for your work.",
-        "contentTwo": "Moreover, expert session speakers help you understand difficult topics easily and with real-life examples. In addition to attending conference in Netherlands 2024/2025, you can explore its beautiful cities such as Amsterdam, Rotterdam, and Maastricht. These conferences will also help improve your practical and communication skills. So, what do you think? Is this an event you wish to attend?"
-    },
-    "bulgaria": {
+    "cityName": {
         "title": "",
         "metaDes": "",
         "metaKey": "",
@@ -24,11 +8,11 @@
         "contentTwo": ""
     },  
     "default": {
-        "title": "",
-        "metaDes": "Researchers, scholars, students & others are the easiest way to find the upcoming conferences in @country 2024/2025 from a conference in Europe portal, subscribe to the conference alerts, and enjoy notifications on your favorite topics in international conferences in @country.",
+        "title": "Toutes les informations sur les conférences à @country en 2024/2025",
+        "metaDes": "Découvrez sur notre site la liste complète des prochaines conférences à @country en 2024/2024. Vous y trouverez de nombreux événements professionnels.",
         "metaKey": "",
-        "h1": "Explore Upcoming Conferences in @country 2024/2025",
-        "contentOne": "International conference in @country 2024/2025 welcomes you to attend high-level discussions in the presence of academicians, experts, researchers and industry professionals. Various events in science, innovation, medicine, education, arts, etc., will focus on some trending topics. This is a golden opportunity for anyone who is concerned with these fields. You can explore speaking opportunities, engage in dialogue, and build connections as a participant. Moreover, the researchers can show their professional research through speeches, workshops, and more. This will help you gain valuable feedback, recognition, and immense exposure.",
-        "contentTwo": "In this informative and encouraging environment, all the concerned participants can discuss solutions, achievements and future scope. Therefore, this is a great opportunity for participants to grow professionally and personally. You will take back confidence, knowledge, and interesting insights with enthusiastic participation. To be part of these events, you can subscribe here for all the latest updates on upcoming events, bookings, venues, schedules, and more. Remember to explore beautiful while attending these events."
+        "h1": "Obtenez des informations sur la prochaine conférence de @country 2024/2025",
+        "contentOne": "@country est une ville active où plusieurs événements culturels, professionnels et artistiques se déroulent tout au long de l’année. Participez donc aux nombreuses conférences à @country en 2024/2025 et faites la rencontre d’experts connus sur le plan international pour faire décoller votre carrière professionnelle.",
+        "contentTwo": "En côtoyant des professionnels lors de séminaires, vous aurez l’occasion de discuter et même de tisser des liens qui vous aideront à croître aussi bien sur le plan professionnel que personnel. Sur notre site, vous pouvez vous inscrire afin de trouver facilement l’événement qui vous intéresse. Si vous le souhaitez, vous pouvez également vous procurer une brochure sur la conférence de votre choix, pour ainsi obtenir toutes les informations nécessaires. Vous êtes prêt à lancer votre carrière? Commencez dès maintenant à effectuer des recherches et sélectionnez la conférence à laquelle vous désirez prendre part.Quelques clics vous suffiront pour choisir l’événement qui suscite votre intérêt  à @country en 2024/2025!"
     }  
 }

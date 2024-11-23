@@ -1,19 +1,17 @@
 @extends('layout-en.master')
 
 @section('meta')
-    <title>Are you searching for Conferences? Find the latest Europe conferences in 2024</title>
-    <meta name="keyword"
-        content="conference alert,conference alerts 2023, conferences in Europe, International conferences 2023, Academic conferences 2023, conference alerts in Europe, upcoming conferences in Europe 2023, International conference in europe 2023." />
-    <meta name="description"
-        content="Are you searching for Conferences?  Find the latest Europe conferences in 2024. Subscribe and get notification of Conference in europe 2024 from our portal." />
+<title>Are you searching for Conferences? Find the latest Europe conferences in 2024</title>
+<meta name="keyword" content="conference alert,conference alerts 2023, conferences in Europe, International conferences 2023, Academic conferences 2023, conference alerts in Europe, upcoming conferences in Europe 2023, International conference in europe 2023." />
+<meta name="description"
+    content="Are you searching for Conferences?  Find the latest Europe conferences in 2024. Subscribe and get notification of Conference in europe 2024 from our portal." />
 
-    <meta property="og:title" content="Are you searching for Conferences? Find the latest Europe conferences in 2024" />
-    <meta property="og:keywords"
-        content="conference alert,conference alerts 2023, conferences in Europe, International conferences 2023, Academic conferences 2023, conference alerts in Europe, upcoming conferences in Europe 2023, International conference in europe 2023." />
-    <meta property="og:description"
-        content="Are you searching for Conferences?  Find the latest Europe conferences in 2024. Subscribe and get notification of Conference in europe 2024 from our portal." />
+<meta property="og:title" content="Are you searching for Conferences? Find the latest Europe conferences in 2024" />
+<meta property="og:keywords" content="conference alert,conference alerts 2023, conferences in Europe, International conferences 2023, Academic conferences 2023, conference alerts in Europe, upcoming conferences in Europe 2023, International conference in europe 2023." />
+<meta property="og:description"
+    content="Are you searching for Conferences?  Find the latest Europe conferences in 2024. Subscribe and get notification of Conference in europe 2024 from our portal." />
 
-    <link rel="canonical" href="{{ url()->current() }}" />
+   <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
 
 @section('style')
@@ -38,16 +36,23 @@
                         <div class="toppage">
                             <div class="row">
                                 <div class="col-sm-12 topic-midule-grid">
-                                    <div class="col-md-12">
-                                        <div class="row">
+                                    <div class="topic-date-cnfr">
+                                        <legend> <span
+                                                class="fld_hed text-capitalize">{{ str_replace('-', ' ', request()->keyword) }}</span>
+                                        </legend>
+                                        <div class="county-conference">
                                             <div class="col-md-12">
-                                                <input type="text" style="border: 2px solid;border-radius: 10px;"
-                                                    name="search" id="myInput" class="form-control"
-                                                    onkeyup="myFunction()"
-                                                    placeholder="Search events by keyword or conference details.." />
+                                                {{-- <h1 style=" font-size: 18px;font-family:Gill Sans;"><b>
+                                                            <?php echo $line; ?></b> </h1>
+                                                    <p><?php echo $para; ?></p>
+                                                    <p><?php echo $para1; ?></p> --}}
                                             </div>
                                         </div>
-
+                                    </div>
+                                    <div class="eve-prom">
+                                        <div class="col-xs-12 text-justify">
+                                            @include ('components-en.main-filter-search')
+                                        </div>
                                     </div>
                                     <div class="p-4 mt-4" style="background-color: #f5f7fd: font-weight: 700">
                                         <h3 class="text-center mb-4 p-2" style="color: #b03031">All Conference List</h3>
@@ -64,7 +69,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -110,5 +114,26 @@
                 });
             }
         });
+
+
+        $(document).ready(function() {
+                $(".select_sub_topics").select2({
+                    width: '100%',
+                    theme: "classic"
+                });
+                $(".select_months").select2({
+                    width: '100%',
+                    theme: "classic"
+                });
+                $(".select_countries").select2({
+                    width: '100%',
+                    theme: "classic"
+                });
+                $(".select_cities").select2({
+                    width: '100%',
+                    theme: "classic"
+                });
+            });
+
     </script>
 @endsection

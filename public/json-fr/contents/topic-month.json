@@ -1,4 +1,22 @@
 {
+    "november": {
+        "countryName": {
+            "title": "",
+            "metaDes": "",
+            "metaKey": "",
+            "h1": "",
+            "contentOne": "",
+            "contentTwo": ""
+        },
+        "default": {
+            "title": "Toutes les informations sur les conférences d’@topic en Europe en @month 2024",
+            "metaDes": "Vous voulez prendre part à une conférence d’@topic en Europe en @month 2024  ? Nous vous proposons une liste des plus importants événements professionnels dans les pays européens.",
+            "metaKey": "Find and attend top conferences in @country in December 2024. Check out our list of gatherings to timely register for professional events. Explore now.",
+            "h1": "Conférences @topic en Europe en @month 2024",
+            "contentOne": "Vous êtes à la recherche d’une conférence d’@topic en Europe en @month 2024  ? Notre plateforme est l’outil qu’il vous faut pour trouver le meilleur événement. Avec notre site, vous bénéficiez d’un gain de temps considérable pour rechercher les séminaires les plus intéressants de ce mois. Vous avez un penchant pour les congrès industriels ou pour les ateliers professionnels ? Vous obtiendrez toutes les informations nécessaires en vous inscrivant sur notre site Internet. Notre sélection de conférences est triée suivant différents critères, afin de faciliter vos recherches : pays, ville, thématique, date…",
+            "contentTwo": " Que vous cherchiez une conférence d’@topic en France, en Allemagne ou dans un autre pays du continent européen, celle-ci figure sûrement dans notre liste. Pour tout savoir sur les détails et l’organisation des rencontres professionnelles axées sur les @topic en Europe en juillet 2024 , restez donc connecté sur notre plateforme. En participant à l’un de ces événements, vous aurez l’occasion de passer à un niveau supérieur dans le monde des @topic."
+        }
+    },
     "december": {
         "countryName": {
             "title": "",
@@ -9,20 +27,20 @@
             "contentTwo": ""
         },
         "default": {
-            "title": "December 2024 Conferences In @country",
-            "metaDes": "December 2024 Conferences In @country",
+            "title": "Toutes les informations sur les conférences d’@topic en Europe en @month 2024",
+            "metaDes": "Vous voulez prendre part à une conférence d’@topic en Europe en @month 2024  ? Nous vous proposons une liste des plus importants événements professionnels dans les pays européens.",
             "metaKey": "Find and attend top conferences in @country in December 2024. Check out our list of gatherings to timely register for professional events. Explore now.",
-            "h1": "December 2024 Conferences In @country",
-            "contentOne": "@country is all set to organise various conferences in December 2024. Such events could be your chance to discover new growth opportunities and connections this year. Join our platform of conferences to find informative and skill-enhancing events in @country. Search for the best ongoing and upcoming conferences in the country for this month. Choose from a variety of subjects, including technology, finance, science, environment, engineering, medicine, and more",
-            "contentTwo": "You can go through our sorted list of conferences or adjust your search preferences (city, date, topics, etc.) easily with our filters. Moreover, you can register for your ideal event in @country in just a few steps. You can also be assured of receiving timely support wherever you feel stuck. Our team will readily take up and resolve all your concerns about attending a conference. Browse our list now and subscribe to us for more information on gatherings sparking your interest!"
+            "h1": "Conférences @topic en Europe en @month 2024",
+            "contentOne": "Vous êtes à la recherche d’une conférence d’@topic en Europe en @month 2024  ? Notre plateforme est l’outil qu’il vous faut pour trouver le meilleur événement. Avec notre site, vous bénéficiez d’un gain de temps considérable pour rechercher les séminaires les plus intéressants de ce mois. Vous avez un penchant pour les congrès industriels ou pour les ateliers professionnels ? Vous obtiendrez toutes les informations nécessaires en vous inscrivant sur notre site Internet. Notre sélection de conférences est triée suivant différents critères, afin de faciliter vos recherches : pays, ville, thématique, date…",
+            "contentTwo": "Que vous cherchiez une conférence d’@topic en France, en Allemagne ou dans un autre pays du continent européen, celle-ci figure sûrement dans notre liste. Pour tout savoir sur les détails et l’organisation des rencontres professionnelles axées sur les @topic en Europe en juillet 2024 , restez donc connecté sur notre plateforme. En participant à l’un de ces événements, vous aurez l’occasion de passer à un niveau supérieur dans le monde des @topic."
         }
     },
     "default": {
-        "title": "@month 2025 Conferences In @country",
-        "metaDes": "Find and attend top conferences in @country in @month 2025. Check out our list of gatherings to timely register for professional events. Explore now.",
+        "title": "Toutes les informations sur les conférences d’@topic en Europe en @month 2025",
+        "metaDes": "Vous voulez prendre part à une conférence d’@topic en Europe en @month 2025  ? Nous vous proposons une liste des plus importants événements professionnels dans les pays européens.",
         "metaKey": "",
-        "h1": "@month 2025 Conferences In @country",
-        "contentOne": "@country is all set to organise various conferences in @month 2025. Such events could be your chance to discover new growth opportunities and connections this year. Join our platform of conferences to find informative and skill-enhancing events in @country. Search for the best ongoing and upcoming conferences in the country for this month. Choose from a variety of subjects, including technology, finance, science, environment, engineering, medicine, and more",
-        "contentTwo": "You can go through our sorted list of conferences or adjust your search preferences (city, date, topics, etc.) easily with our filters. Moreover, you can register for your ideal event in @country in just a few steps. You can also be assured of receiving timely support wherever you feel stuck. Our team will readily take up and resolve all your concerns about attending a conference. Browse our list now and subscribe to us for more information on gatherings sparking your interest!"
+        "h1": "Conférences @topic en Europe en @month 2025",
+        "contentOne": "Vous êtes à la recherche d’une conférence d’@topic en Europe en @month 2025  ? Notre plateforme est l’outil qu’il vous faut pour trouver le meilleur événement. Avec notre site, vous bénéficiez d’un gain de temps considérable pour rechercher les séminaires les plus intéressants de ce mois. Vous avez un penchant pour les congrès industriels ou pour les ateliers professionnels ? Vous obtiendrez toutes les informations nécessaires en vous inscrivant sur notre site Internet. Notre sélection de conférences est triée suivant différents critères, afin de faciliter vos recherches : pays, ville, thématique, date…",
+        "contentTwo": "Que vous cherchiez une conférence d’@topic en France, en Allemagne ou dans un autre pays du continent européen, celle-ci figure sûrement dans notre liste. Pour tout savoir sur les détails et l’organisation des rencontres professionnelles axées sur les @topic en Europe en juillet 2025 , restez donc connecté sur notre plateforme. En participant à l’un de ces événements, vous aurez l’occasion de passer à un niveau supérieur dans le monde des @topic."
     }
 }

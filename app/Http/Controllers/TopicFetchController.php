@@ -18,25 +18,26 @@ class TopicFetchController extends Controller
 
     public function countryApi(Request $request)
     {
-        // ini_set('max_execution_time', 3600);
+        ini_set('max_execution_time', 6000);
         $topicList = $this->filter->topicSubtopicList();
         $topCountry = $this->filter->topCountry();
 
-        $subtopicName = [];
+        $topicCountry = [];
         foreach ($topCountry as $countryUrl => $countryName) {
             foreach ($topicList as $topic => $subTopic) {
                 foreach ($subTopic as $subTopicUrl => $subTopicName) {
                     $subTopicUrl =  str_replace("-", " ", $subTopicUrl);
 
-                    $result = EventTable::where('country', str_replace("-", " ", $countryUrl))->where('sub_topic', 'like', "%{$subTopicUrl}%")->exists();;
+                    $result = EventTable::where('country', str_replace("-", " ", $countryUrl))->where('sub_topic', 'like', "%{$subTopicUrl}%")->exists();
 
                     if ($result) {
                         $subtopic[$subTopicUrl] = $subTopicName;
-                    } 
+                    }
                 }
-                $subtopicName[$topic] = $subtopic;
+                $topicList[$topic] = $subtopic;
             }
+            $topicCountry[$countryUrl] = $topicList;
         }
-        dd($subtopicName);
+        dd($topicCountry);
     }
 }

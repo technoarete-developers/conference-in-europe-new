@@ -35,7 +35,7 @@
                     <div class="col-md-12">
                         <div class="toppage">
                             <div class="row">
-                                <div class="col-sm-9 topic-midule-grid">
+                                <div class="col-sm-12 topic-midule-grid">
                                     <div class="topic-date-cnfr">
                                         <legend> <span
                                                 class="fld_hed text-capitalize">{{ str_replace('-', ' ', request()->keyword) }}</span>
@@ -65,7 +65,6 @@
                                     </div>
                                     @include ('components-fr.load-more')
                                 </div>
-                                {{-- @include('components-fr.country-side-banner') --}}
                             </div>
                         </div>
                     </div>
