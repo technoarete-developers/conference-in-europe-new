@@ -1,4 +1,22 @@
 {
+    "november": {
+        "countryName": {
+            "title": "",
+            "metaDes": "",
+            "metaKey": "",
+            "h1": "",
+            "contentOne": "",
+            "contentTwo": ""
+        },
+        "default": {
+            "title": "November 2024 Conferences In @country",
+            "metaDes": "Find and attend top conferences in @country in November 2024. Check out our list of gatherings to timely register for professional events. Explore now.",
+            "metaKey": "",
+            "h1": "November 2024 Conferences In @country",
+            "contentOne": "@country is all set to organise various conferences in November 2024. Such events could be your chance to discover new growth opportunities and connections this year. Join our platform of conferences to find informative and skill-enhancing events in @country. Search for the best ongoing and upcoming conferences in the country for this month. Choose from a variety of subjects, including technology, finance, science, environment, engineering, medicine, and more",
+            "contentTwo": "You can go through our sorted list of conferences or adjust your search preferences (city, date, topics, etc.) easily with our filters. Moreover, you can register for your ideal event in @country in just a few steps. You can also be assured of receiving timely support wherever you feel stuck. Our team will readily take up and resolve all your concerns about attending a conference. Browse our list now and subscribe to us for more information on gatherings sparking your interest!"
+        }
+    },
     "december": {
         "countryName": {
             "title": "",
@@ -10,15 +28,15 @@
         },
         "default": {
             "title": "December 2024 Conferences In @country",
-            "metaDes": "December 2024 Conferences In @country",
-            "metaKey": "Find and attend top conferences in @country in December 2024. Check out our list of gatherings to timely register for professional events. Explore now.",
+            "metaDes": "Find and attend top conferences in @country in December 2024. Check out our list of gatherings to timely register for professional events. Explore now.",
+            "metaKey": "",
             "h1": "December 2024 Conferences In @country",
             "contentOne": "@country is all set to organise various conferences in December 2024. Such events could be your chance to discover new growth opportunities and connections this year. Join our platform of conferences to find informative and skill-enhancing events in @country. Search for the best ongoing and upcoming conferences in the country for this month. Choose from a variety of subjects, including technology, finance, science, environment, engineering, medicine, and more",
             "contentTwo": "You can go through our sorted list of conferences or adjust your search preferences (city, date, topics, etc.) easily with our filters. Moreover, you can register for your ideal event in @country in just a few steps. You can also be assured of receiving timely support wherever you feel stuck. Our team will readily take up and resolve all your concerns about attending a conference. Browse our list now and subscribe to us for more information on gatherings sparking your interest!"
         }
     },
     "default": {
-        "title": "@month 2025 Conferences In @country",
+        "title": "@month 2025 Conferences In $country",
         "metaDes": "Find and attend top conferences in @country in @month 2025. Check out our list of gatherings to timely register for professional events. Explore now.",
         "metaKey": "",
         "h1": "@month 2025 Conferences In @country",

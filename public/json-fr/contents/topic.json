@@ -1,11 +1,18 @@
 {
-    "default": {
+    "topicName": {
         "title": "",
         "metaDes": "",
         "metaKey": "",
         "h1": "",
-        "h2": "",
         "contentOne": "",
         "contentTwo": ""
+    },
+    "default": {
+        "title": "Conférence d’@topic en Europe en 2024/2025",
+        "metaDes": "Assistez à une conférence d’@topic en Europe en 2024/2025 et améliorez vos connaissances ainsi que vos compétences professionnelles. Inscrivez- vous pour réserver votre place.",
+        "metaKey": "",
+        "h1": "Conférences @topic en Europe en 2024/2025",
+        "contentOne": "Faites un grand bond dans votre vie professionnelle à venir, et prenez part à une conférence d’@topic en Europe en 2024/2025. Tous les ans, le continent est la scène d’un grand nombre de rencontres mondiales dédiées aux entreprises et à toute autre organisation. Avec notre aide, vous aurez plus de facilité à trouver l’événement qui vous intéresse le plus. Sur notre site web, découvrez la liste des conférences internationales qui se tiendront en Europe en 2024/2025. D’innombrables sujets seront abordés afin d’avoir une meilleure perspective sur le monde des @topic.",
+        "contentTwo": "Pour simplifier vos recherches, il vous suffit de vous servir de notre filtre de requête. Cela vous permettra de préciser vos préférences en ce qui concerne le lieu où laconférence se déroulera, sur sa date ainsi que les horaires. Notre calendrier répertorie les événements par pays et villes. Consultez donc notre site Internet et inscrivez-vous dès maintenant pour réserver votre place."
     }
 }

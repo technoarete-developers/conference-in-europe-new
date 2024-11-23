@@ -28,11 +28,11 @@
         }
     },
     "default": {
-        "title": "@month 2025 Conferences In @country",
-        "metaDes": "Researchers, scholars, students & others are the easiest way to find the upcoming conferences in @country 2024 from a conference in Europe portal, subscribe to the conference alerts, and enjoy notifications on your favorite topics in international conferences in @country.",
+        "title": "Le point sur les conférences d’@topic en @country en @month 2024",
+        "metaDes": "Découvrez sur notre site web la liste des conférences d’@topic en @country en @month 2024. Recevez toutes les informations nécessaires et participez à ces événements.",
         "metaKey": "",
-        "h1": "Upcoming @topic Conferences",
-        "contentOne": "The upcoming conferences in @country, @country, aim to narrow the gap between the theory and practical uses of various topics in different fields. This extensive schedule of events will welcome industry professionals, keynote speakers, experts, academicians, and many more participants. The discussion will thrive on bringing all the nations on one page with global participation. As a result, it will help the concerned field and humankind in many ways. With active involvement, you can present your viewpoints and new ideas, research, and gain feedback and recognition on these international platforms. Also, you can socialise and build a meaningful network that will help you explore new opportunities in your fields",
-        "contentTwo": "Listen to your heroes, engage and learn the latest field trends. Moreover, this discussion will emphasise solutions and future trends and more. Subscribe here to be part of these informational events. It's your one-stop destination for all the information on bookings, venues, schedules and more."
+        "h1": "Conférences d’@topic en @country en @month 2024 : pour acquérir des compétences en entrepreneuriat et en @topic",
+        "contentOne": "L’Europe est un continent développé, avec des pays avancés comme l’@country. Ce pays offre de nombreuses opportunités aux hommes d’@topic. Si vous aussi vous travaillez dans ce domaine, n’hésitez pas à enrichir vos expériences en participant à une conférence d’@topic en @country en juillet 2024. Durant le mois de @month, le pays accueille différents événements professionnels, dont des congrès axés sur les @topic et l’entrepreneuriat.",
+        "contentTwo": "Munich, Berlin, Hambourg ou Stuttgart sont des villes où vous pourrez assister à ces rencontres professionnelles. Comptant parmi les plus grandes puissances économiques européennes, l’@country est l’endroit idéal pour prendre part à des séminaires d’@topic. Pour faire partie des auditeurs de ces conférences, inscrivez-vous sur notre site Internet. Vous pourrez y consulter une liste complète des conférences d’@topic en @country en @month 2024. Que vous soyez un chef d’entreprise, un étudiant en @topic ou un spécialiste dans le domaine, ces événements professionnels vous permettront de rencontrer d’autres acteurs du monde des @topic."
     }
 }

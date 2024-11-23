@@ -456,6 +456,7 @@
         display: none;
     }
 
+
     .dots-loader:not(:required) {
         opacity: 1;
         overflow: hidden;
@@ -641,9 +642,9 @@
                         <div class="drop">
                             <span style="display: flex;"><i class="fa fa-map-signs" aria-hidden="true"
                                     style="color: #000;position: relative;top: 4px; font-size: 19px;"></i>&nbsp;
-                                <select class="dropdown select_countries text-capitalize" id="selected_country">
-                                    <option value="{{ $countryName }}">
-                                        {{ ucfirst($countryName) }}
+                                <select class="dropdown select_countries" id="selected_country">
+                                    <option value="{{ request()->country ? request()->country : '' }}">
+                                        {{ request()->country ? ucfirst(str_replace('-', ' ', request()->country)) : 'Select Country' }}
                                     </option>
                                     @foreach ($topCountry as $url => $name)
                                         <option value="{{ $url }}" data-name="{{ $name }}">
@@ -660,8 +661,8 @@
                             <span style="display: flex;"><i class="fa fa-map-o" aria-hidden="true"
                                     style="color: #000;position: relative;top: 4px; font-size: 19px;"></i>&nbsp;
                                 <select class="dropdown select_cities" id="selected_city">
-                                    <option value="{{ request()->city }}">
-                                        {{ ucfirst(str_replace('-', ' ', request()->city)) }}
+                                    <option value="">
+                                        {{ request()->city ? ucfirst(str_replace('-', ' ', request()->city)) : 'Select City' }}
                                     </option>
                                 </select>
                             </span>
@@ -685,6 +686,7 @@
     $(document).ready(function() {
 
         localStorage.removeItem('subTopicUrl');
+
         var selectedCountry = $('#selected_country').val();
         var citySelect = $('#selected_city');
         var countryWithCity = @json($countryWithCity);
@@ -694,7 +696,9 @@
         // update the cities based on the selected country
         function updateCities() {
             var selectedCountry = $('#selected_country').val();
-            
+            citySelect.empty();
+            citySelect.append('<option value="">Select City</option>');
+
             if (countryWithCity[selectedCountry]) {
                 $.each(countryWithCity[selectedCountry], function(cityKey, cityName) {
                     citySelect.append(
@@ -712,7 +716,7 @@
     });
 </script>
 <script>
-    // subtopic container open script
+    // topic container open script
     $(document).ready(function() {
         $('.megamenu-nav .nav-item').hover(
             function() {
@@ -724,26 +728,41 @@
         );
     });
 
-    // if selected country
+
+    $(document).ready(function() {
+        var topicStopicList = @json($topicStopicList);
+        $('.hero').removeClass('loading')
+        $('.hero').addClass('loaded');
+        Object.keys(topicStopicList).forEach((topicName) => {
+            const topicList = $(`#${topicName}_ul`);
+            topicList.empty();
+
+            Object.entries(topicStopicList[topicName]).forEach(([subTopicUrl, subTopicName]) => {
+                topicList.append(
+                    $(`<li style="list-style-type: disclosure-closed;">
+                        <div class="subnav-item" data-url="${subTopicUrl}" data-name="${subTopicName}">
+                            ${subTopicName}
+                        </div>
+                    </li>`)
+                );
+            });
+        });
+    });
+
+
     $('#selected_country').change(function() {
         var country = $(this).val();
         var slectedType = "country_select";
-
-        var citySelect = $('#selected_city');
-        citySelect.empty();
-        citySelect.append('<option value="">Select City</option>');
-
         fetch_country(country, slectedType);
     });
 
-    // if selected city
     $('#selected_city').change(function() {
         var city = $(this).val();
         var slectedType = "city_select";
         fetch_country(city, slectedType);
     });
 
-    //  fetching subtopic list using city
+
     function fetch_country(data, slectedType) {
         $('.hero').removeClass('loaded')
         $('.hero').addClass('loading');
@@ -951,7 +970,6 @@
         }
 
     }
-
 
     // search 
     function search() {

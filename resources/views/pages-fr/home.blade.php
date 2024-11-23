@@ -291,6 +291,11 @@
     @include('layout-fr.header')
     <section class="tm-banner">
         <div class="tm-container-outer tm-banner-bg new-width" loading="lazy">
+            @if (session()->has('smessage'))
+                <div class="alert-message">
+                    <p>{{ session()->get('smessage') }}</p>
+                </div>
+            @endif
             <div class="container">
                 <div class="row tm-banner-row tm-banner-row-header">
                     <div class="col-xs-12">
@@ -308,7 +313,7 @@
                                     placeholder="Rechercher des événements par mot-clé ou détails de la conférence" />
                             </div>
                             <div class="col-md-2 sbtn">
-                                <button type="submit" id="submit" class="btnn" value="submit">Submit</button>
+                                <button type="submit" id="submit" class="btnn" value="submit">Soumettre</button>
                             </div>
                         </div>
                     </form>
@@ -350,7 +355,8 @@
                         votre disposition toutes les informations relatives aux conferences en Europe en 2024/2025. Cela
                         vous dit de prendre part a ces rencontres professionnelles? Ce sera pour vous l'opportunite de vous
                         immerger dans des congres professionnels, afin d'enrichir vos connaissances et d'etablir des
-                        relations avec des experts et des acteurs professionnels europeens.<span id="dots">...</span></p><span id="more">
+                        relations avec des experts et des acteurs professionnels europeens.<span id="dots">...</span>
+                    </p><span id="more">
                         <p style="text-align:justify;">Notre site Internet dispose d'une liste
                             complete des seminaires et congres organises en Europe en 2024/2025. Peu importe votre domaine
                             professionnel: medecine, ingenierie, sciences, art, mathematiques, finances, genie mecanique,
@@ -362,7 +368,8 @@
                             de pouce a votre carriere professionnelle en participant a ces evenements de renom.</p>
                     </span>
                     <button onclick="myFunction()" id="myBtn" fdprocessedid="z1hewq"
-                        style="border: 2px solid #031e6b;background-color: #031e6b;color: #fff;padding: 6px 5px 6px 6px;">En savoir plus</button>
+                        style="border: 2px solid #031e6b;background-color: #031e6b;color: #fff;padding: 6px 5px 6px 6px;">En
+                        savoir plus</button>
                 </div>
             </div>
         </section>

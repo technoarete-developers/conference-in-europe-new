@@ -76,7 +76,7 @@
                                     </div>
                                     @include ('components-fr.load-more')
                                 </div>
-                                @include('components-fr.country-side-banner')
+                                @include('components-fr.side-banner')
                             </div>
                         </div>
                         </div>

@@ -1,4 +1,22 @@
 {
+    "november": {
+        "countryName": {
+            "title": "",
+            "metaDes": "",
+            "metaKey": "",
+            "h1": "",
+            "contentOne": "",
+            "contentTwo": ""
+        },
+        "default": {
+            "title": "@topic Conferences in November 2024 | Europe",
+            "metaDes": "Explore the latest updates and highlights of @topic conferences happening in November 2024 . Quickly register to save your seat. Visit now for more info!",
+            "metaKey": "@topic Conference in November 2024",
+            "h1": "November 2024 Conferences In @topic",
+            "contentOne": "Looking for a @topic conference to close this year with an exciting opportunity for learning? Get started with one of the biggest conference websites and find the best @topic conferences in November 2024 . Almost every event we list is hosted by reputed organizations and professional bodies.",
+            "contentTwo": "These gatherings include specialists and researchers from different countries and continents. Both experts and aspirants of @topic indulge in amazing intellectual sessions and seminars to take @topic together to a whole new level. Every conference addresses topics and debates that open up new innovations in improving practices all over the world. All you need to do is skim through our exclusive list of such events and register for the ones that best suit your interests. You can also reach out to us to get an invitation letter and further assistance in attending the conferences. Sign up now to get alerts on the latest conferences."
+        }
+    },
     "december": {
         "countryName": {
             "title": "",
@@ -9,20 +27,20 @@
             "contentTwo": ""
         },
         "default": {
-            "title": "December 2024 Conferences In @country",
-            "metaDes": "December 2024 Conferences In @country",
-            "metaKey": "Find and attend top conferences in @country in December 2024. Check out our list of gatherings to timely register for professional events. Explore now.",
-            "h1": "December 2024 Conferences In @country",
-            "contentOne": "@country is all set to organise various conferences in December 2024. Such events could be your chance to discover new growth opportunities and connections this year. Join our platform of conferences to find informative and skill-enhancing events in @country. Search for the best ongoing and upcoming conferences in the country for this month. Choose from a variety of subjects, including technology, finance, science, environment, engineering, medicine, and more",
-            "contentTwo": "You can go through our sorted list of conferences or adjust your search preferences (city, date, topics, etc.) easily with our filters. Moreover, you can register for your ideal event in @country in just a few steps. You can also be assured of receiving timely support wherever you feel stuck. Our team will readily take up and resolve all your concerns about attending a conference. Browse our list now and subscribe to us for more information on gatherings sparking your interest!"
+            "title": "@topic Conferences in December 2024 | Europe",
+            "metaDes": "Explore the latest updates and highlights of @topic conferences happening in December 2024 . Quickly register to save your seat. Visit now for more info!",
+            "metaKey": "",
+            "h1": "@topic Conference in December 2024",
+            "contentOne": "Looking for a @topic conference to close this year with an exciting opportunity for learning? Get started with one of the biggest conference websites and find the best @topic conferences in December 2024 . Almost every event we list is hosted by reputed organizations and professional bodies.",
+            "contentTwo": "These gatherings include specialists and researchers from different countries and continents. Both experts and aspirants of @topic indulge in amazing intellectual sessions and seminars to take @topic together to a whole new level. Every conference addresses topics and debates that open up new innovations in improving practices all over the world. All you need to do is skim through our exclusive list of such events and register for the ones that best suit your interests. You can also reach out to us to get an invitation letter and further assistance in attending the conferences. Sign up now to get alerts on the latest conferences."
         }
     },
     "default": {
-        "title": "@month 2025 Conferences In @country",
-        "metaDes": "Find and attend top conferences in @country in @month 2025. Check out our list of gatherings to timely register for professional events. Explore now.",
+        "title": "@topic Conferences in @month 2025 | Europe",
+        "metaDes": "Explore the latest updates and highlights of @topic conferences happening in @month 2025 . Quickly register to save your seat. Visit now for more info!",
         "metaKey": "",
-        "h1": "@month 2025 Conferences In @country",
-        "contentOne": "@country is all set to organise various conferences in @month 2025. Such events could be your chance to discover new growth opportunities and connections this year. Join our platform of conferences to find informative and skill-enhancing events in @country. Search for the best ongoing and upcoming conferences in the country for this month. Choose from a variety of subjects, including technology, finance, science, environment, engineering, medicine, and more",
-        "contentTwo": "You can go through our sorted list of conferences or adjust your search preferences (city, date, topics, etc.) easily with our filters. Moreover, you can register for your ideal event in @country in just a few steps. You can also be assured of receiving timely support wherever you feel stuck. Our team will readily take up and resolve all your concerns about attending a conference. Browse our list now and subscribe to us for more information on gatherings sparking your interest!"
+        "h1": "@topic Conference in @month 2025",
+        "contentOne": "Looking for a @topic conference to close this year with an exciting opportunity for learning? Get started with one of the biggest conference websites and find the best @topic conferences in @month 2025 . Almost every event we list is hosted by reputed organizations and professional bodies.",
+        "contentTwo": "These gatherings include specialists and researchers from different countries and continents. Both experts and aspirants of @topic indulge in amazing intellectual sessions and seminars to take @topic together to a whole new level. Every conference addresses topics and debates that open up new innovations in improving practices all over the world. All you need to do is skim through our exclusive list of such events and register for the ones that best suit your interests. You can also reach out to us to get an invitation letter and further assistance in attending the conferences. Sign up now to get alerts on the latest conferences."
     }
 }

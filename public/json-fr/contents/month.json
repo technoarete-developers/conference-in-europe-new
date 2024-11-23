@@ -1,11 +1,26 @@
 {
-    "": {
-        "title": "",
-        "metaDes": "",
+    "november": {
+        "title": "Conférences en Europe en $fr_month[$month_name] 2024",
+        "metaDes": "Pour participer aux conférences en Europe en $fr_month[$month_name] 2024 les plus attendues, inscrivez-vous sur notre plateforme. Vous pourrez rester informé des actualités concernant les événements professionnels à venir.",
         "metaKey": "",
-        "h1": "",
-        "h2": "",
-        "contentOne": "",
-        "contentTwo": ""
+        "h1": "Conférences de Novembre 2024 en Europe",
+        "contentOne": "Comme tous les ans, l’Allemagne accueille tout un choix de conférences en $fr_month[$month_name] 2024, mais également les autres mois de l’année. Ces événements pourront êtrel’opportunité que vous attendiez depuis longtemps pour agrandir votre entreprise et pour conclure de nouveaux partenariats. Ils sont aussi l’occasion de rencontrer des ateurs professionnels de renom. N’hésitez pas à vous rendre sur notre plateforme afin de découvrir les rencontres professionnelles organisées durant le mois de $fr_month[$month_name] en Allemagne.",
+        "contentTwo": "Vous trouverez tous les renseignements nécessaires afin de réserver votre place lors d’un séminaire,d’un congrès ou d’un atelier professionnel. Les conférences sont axées sur divers domaines : médecine, ingénierie, science, finance, environnement, technologie, banque, ressources humaines et bien d’autres encore. Parcourez notre liste triée par catégorie : lieux, dates, horaires, sujets… Nos filtres vous aideront à faciliter vos recherches. Si vous désirez obtenir davantage d’informations sur une conférence en particulier, pensez à vous inscrire dès aujourd’hui sur notre site."
+    },
+    "december": {
+        "title": "Conférences en Europe en $fr_month[$month_name] 2024",
+        "metaDes": "Pour participer aux conférences en Europe en $fr_month[$month_name] 2024 les plus attendues, inscrivez-vous sur notre plateforme. Vous pourrez rester informé des actualités concernant les événements professionnels à venir.",
+        "metaKey": "",
+        "h1": "Conférences de December 2024 en Europe",
+        "contentOne": "Comme tous les ans, l’Allemagne accueille tout un choix de conférences en $fr_month[$month_name] 2024, mais également les autres mois de l’année. Ces événements pourront êtrel’opportunité que vous attendiez depuis longtemps pour agrandir votre entreprise et pour conclure de nouveaux partenariats. Ils sont aussi l’occasion de rencontrer des ateurs professionnels de renom. N’hésitez pas à vous rendre sur notre plateforme afin de découvrir les rencontres professionnelles organisées durant le mois de $fr_month[$month_name] en Allemagne. Vous trouverez tous les renseignements nécessaires afin de réserver votre place lors d’un séminaire,d’un congrès ou d’un atelier professionnel.",
+        "contentTwo": "Les conférences sont axées sur divers domaines : médecine, ingénierie, science, finance, environnement, technologie, banque, ressources humaines et bien d’autres encore. Parcourez notre liste triée par catégorie : lieux, dates, horaires, sujets… Nos filtres vous aideront à faciliter vos recherches. Si vous désirez obtenir davantage d’informations sur une conférence en particulier, pensez à vous inscrire dès aujourd’hui sur notre site."
+    },
+    "default": {
+        "title": "Conférences en Europe en $fr_month[$month_name] 2025",
+        "metaDes": "Pour participer aux conférences en Europe en $fr_month[$month_name] 2025 les plus attendues, inscrivez-vous sur notre plateforme. Vous pourrez rester informé des actualités concernant les événements professionnels à venir.",
+        "metaKey": "",
+        "h1": "Conférences de $fr_month[$month_name] 2025 en Europe",
+        "contentOne": "Comme tous les ans, l’Allemagne accueille tout un choix de conférences en $fr_month[$month_name] 2025, mais également les autres mois de l’année. Ces événements pourront êtrel’opportunité que vous attendiez depuis longtemps pour agrandir votre entreprise et pour conclure de nouveaux partenariats. Ils sont aussi l’occasion de rencontrer des ateurs professionnels de renom. N’hésitez pas à vous rendre sur notre plateforme afin de découvrir les rencontres professionnelles organisées durant le mois de $fr_month[$month_name] en Allemagne.",
+        "contentTwo": "Vous trouverez tous les renseignements nécessaires afin de réserver votre place lors d’un séminaire,d’un congrès ou d’un atelier professionnel. Les conférences sont axées sur divers domaines : médecine, ingénierie, science, finance, environnement, technologie, banque, ressources humaines et bien d’autres encore. Parcourez notre liste triée par catégorie : lieux, dates, horaires, sujets… Nos filtres vous aideront à faciliter vos recherches. Si vous désirez obtenir davantage d’informations sur une conférence en particulier, pensez à vous inscrire dès aujourd’hui sur notre site."
     }
 }

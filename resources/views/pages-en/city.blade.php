@@ -72,7 +72,7 @@
                                     @include ('components-en.load-more')
                                 </div>
                                 
-                                @include('components-en.city-side-banner')
+                                @include('components-en.side-banner')
                                 </div>
                             </div>
                         </div>
