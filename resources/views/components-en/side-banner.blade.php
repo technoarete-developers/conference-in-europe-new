@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    {{-- <div class="event-promtion dskview">
+    <div class="event-promtion dskview">
         <h4 class="event-title">Global Event Promotion</h4>
         <div class="promot-heading">
             @foreach ($upcomingEvent as $detail)
@@ -105,5 +105,5 @@
                 @endforeach
             </div>
         </div>
-    </div> --}}
+    </div>
 </div>

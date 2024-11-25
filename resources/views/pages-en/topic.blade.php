@@ -37,7 +37,7 @@
                     <div class="col-md-12">
                         <div class="toppage">
                             <div class="row">
-                                <div class="col-sm-9 topic-midule-grid">
+                                <div class="col-md-12">
                                     <div class="topic-date-cnfr">
                                         <legend> <span class="fld_hed text-capitalize">{{ $topicName }}</span>
                                         </legend>
@@ -50,11 +50,19 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-md-12">
+
                                     <div class="eve-prom">
                                         <div class="col-xs-12 text-justify">
                                             @include ('components-en.main-filter-topic')
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-9 topic-midule-grid">
+
                                     <div class="p-4 mt-4" style="background-color: #f5f7fd: font-weight: 700">
                                         <h3 class="text-center mb-4 p-2" style="color: #b03031">All Conference List</h3>
                                         <div class="row bg-dark text-white py-2">

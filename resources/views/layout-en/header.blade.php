@@ -89,7 +89,7 @@
                             <div class="search-wrap">
                                 <button id="close-search" class="close-btn"><i class="fa fa-times"></i></button>
 
-                                <form action="{{ url('advance-search-fr') }}" class="tm-search-form tm-section-pad-2">
+                                <form action="{{ route('advance-search') }}" class="tm-search-form tm-section-pad-2">
                                     <div class="row">
                                         <div class="col-md-10">
                                             <input type="text" name="keyword" id="keyword" class="form-control"
