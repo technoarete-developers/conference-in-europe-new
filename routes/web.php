@@ -7,6 +7,7 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\EventDetailsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MonthController;
+use App\Http\Controllers\RobotsController;
 use App\Http\Controllers\SearchBoxController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TopicController;
@@ -22,6 +23,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+// robots file local and test and production
+Route::get('/robots.txt', [RobotsController::class, 'robotsConnection'])->name('robots-dynamic');
 
 Route::get('/about', function () {
     return view('pages-en.about');
@@ -64,6 +69,7 @@ Route::controller(SubscribeController::class)->group(function () {
 
     Route::post('/subscribe-form', 'subscribeForm')->name('subscribe-form');
     Route::post('/footer-subscribe-form', 'footerSubscribeForm')->name('footer-subscribe-form');
+    Route::post('/event-subscribe', 'eventSubscribeForm')->name('event-subscribe-form');
 });
 
 
@@ -72,11 +78,6 @@ Route::controller(ContactController::class)->group(function () {
 
     Route::post('/contact-form', 'contactForm')->name('contact-form');
 });
-
-
-// Route::controller(EventSubscribeController::class)->group(function () {
-//     Route::get('/eventdetail/{id}', 'eventDetail')->name('event-detail');
-// });
 
 
 Route::controller(EventDetailsController::class)->group(function () {

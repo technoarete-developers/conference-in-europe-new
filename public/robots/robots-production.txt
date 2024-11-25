@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /*?language-picker-select=*
+Sitemap: https://conferenceineurope.net/sitemap.xml

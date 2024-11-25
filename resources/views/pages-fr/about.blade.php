@@ -1,15 +1,15 @@
 @extends('layout-fr.master')
 
 @section('meta')
-    <title>Conference in Europe About us</title>
+    <title>Conference en Europe: a propos de nous</title>
     <meta name="keyword" content="" />
     <meta name="description"
-        content="Conference in Europe {{ date('Y') }} aims to bring all the information of upcoming events in various fields. It's your top destination for getting the latest alerts on all the updates." />
+        content="Conference en Europe {{ date('Y') }} vous propose toutes les informations sur les evenements professionnels a venir en Europe et dans plusieurs domaines. Vous trouverez ici toutes les actualites sur les conferences en Europe en {{ date('Y') }}." />
 
-    <meta property="og:title" content="Conference in Europe About us" />
+    <meta property="og:title" content="Conference en Europe: a propos de nous" />
     <meta property="og:keywords" content="" />
     <meta property="og:description"
-        content="Conference in Europe {{ date('Y') }} aims to bring all the information of upcoming events in various fields. It's your top destination for getting the latest alerts on all the updates." />
+        content="Conference en Europe {{ date('Y') }} vous propose toutes les informations sur les evenements professionnels a venir en Europe et dans plusieurs domaines. Vous trouverez ici toutes les actualites sur les conferences en Europe en {{ date('Y') }}." />
 
     <link rel="canonical" href="{{ url()->current() }}" />
 @endsection

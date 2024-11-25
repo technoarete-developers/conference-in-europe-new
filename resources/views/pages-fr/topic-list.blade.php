@@ -27,9 +27,6 @@
 
         }
 
-
-        /* New CSS Start (02-09-2022) */
-
         @media (max-width: 575.98px) {
             .boxing-tab a {
                 width: 47%;
@@ -105,7 +102,7 @@
         </section>
         <div class="marqq">
             <div class="container-fluid">
-                <h1 class="heading" style="text-align: center;text-transform: uppercase;"><b>Subtopics of Business</b< /h1>
+                <h1 class="heading" style="text-align:center; text-transform:uppercase;"><b>Sous-thèmes des {{ $topicNameFr }}</b</h1>
                         <div class="titleline"> </div>
             </div>
         </div>
