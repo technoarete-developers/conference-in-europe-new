@@ -63,22 +63,22 @@ class FilterApiController extends Controller
         try {
             $topicList = $this->filter->topicSubtopicListFr();
 
-            // $content_json = $request->getContent();
-            // $content = json_decode($content_json, true);
+            $content_json = $request->getContent();
+            $content = json_decode($content_json, true);
 
-            // foreach ($topicList as $mainTopic => $subTopicList) {
-            //     $subtopic = [];
-            //     foreach ($subTopicList as $subTopicUrl => $sTopicFr) {
-            //         $subTopicUrls = str_replace("-", " ", $subTopicUrl);
-            //         $result = EventTable::where('country', str_replace("-", " ", $content['data']))->where('sub_topic', 'like', "%{$subTopicUrls}%")->exists();
+            foreach ($topicList as $mainTopic => $subTopicList) {
+                $subtopic = [];
+                foreach ($subTopicList as $subTopicUrl => $sTopicFr) {
+                    $subTopicUrls = str_replace("-", " ", $subTopicUrl);
+                    $result = EventTable::where('country', str_replace("-", " ", $content['data']))->where('sub_topic', 'like', "%{$subTopicUrls}%")->exists();
 
-            //         if ($result) {
-            //             $subtopic[$subTopicUrl] = $sTopicFr;
-            //         }
-            //     }
-            //     $filterTopic[$mainTopic] = $subtopic;
-            // }
-            return $topicList;
+                    if ($result) {
+                        $subtopic[$subTopicUrl] = $sTopicFr;
+                    }
+                }
+                $filterTopic[$mainTopic] = $subtopic;
+            }
+            return $filterTopic;
         } catch (\Exception $e) {
             $failure['response']['message'] = 'Exception:' . $e->getMessage() . ' | Line: ' . $e->getLine();
             return $failure;
