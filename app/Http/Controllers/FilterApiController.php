@@ -61,39 +61,24 @@ class FilterApiController extends Controller
     public function getSubtopicApiFr(Request $request)
     {
         try {
-            $topicList = $this->filter->topicSubtopicList();
+            $topicList = $this->filter->topicSubtopicListFr();
 
-            $content_json = $request->getContent();
-            $content = json_decode($content_json, true);
-            foreach ($topicList as $main_topic => $sub_topic) {
+            // $content_json = $request->getContent();
+            // $content = json_decode($content_json, true);
 
-                $subtopicName = [];
+            // foreach ($topicList as $mainTopic => $subTopicList) {
+            //     $subtopic = [];
+            //     foreach ($subTopicList as $subTopicUrl => $sTopicFr) {
+            //         $subTopicUrls = str_replace("-", " ", $subTopicUrl);
+            //         $result = EventTable::where('country', str_replace("-", " ", $content['data']))->where('sub_topic', 'like', "%{$subTopicUrls}%")->exists();
 
-                if ($content['slectedType'] == 'city_select') {
-                    $result = EventTable::where('city', str_replace("-", " ", $content['data']))->whereIn('sub_topic', $sub_topic)
-                        ->select('topic', 'sub_topic')
-                        ->orderBy('sub_topic', 'asc')
-                        ->get();
-                } else {
-                    $result = EventTable::where('country', str_replace("-", " ", $content['data']))->whereIn('sub_topic', $sub_topic)
-                        ->select('topic', 'sub_topic')
-                        ->orderBy('sub_topic', 'asc')
-                        ->get();
-                }
-
-                foreach ($result as $subtopic) {
-                    $explode_subtopic = explode(',', $subtopic->sub_topic);
-                    foreach ($explode_subtopic as $sub_topic_explode) {
-                        if (!in_array(trim($sub_topic_explode), $subtopicName) && $sub_topic_explode != "") {
-                            $stopic = strtolower(str_replace(" ", "-", trim($sub_topic_explode)));
-                            $subtopicName[$stopic] = $sub_topic_explode;
-                        }
-                    }
-                }
-                $filterTopic[$main_topic] = $subtopicName;
-            }
-            
-            return $filterTopic;
+            //         if ($result) {
+            //             $subtopic[$subTopicUrl] = $sTopicFr;
+            //         }
+            //     }
+            //     $filterTopic[$mainTopic] = $subtopic;
+            // }
+            return $topicList;
         } catch (\Exception $e) {
             $failure['response']['message'] = 'Exception:' . $e->getMessage() . ' | Line: ' . $e->getLine();
             return $failure;

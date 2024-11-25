@@ -49,6 +49,10 @@
             <td>Url :</td>
             <td>{{ $eventSubscribe['conference_url'] }}</td>
         </tr>
+        <tr>
+            <td>University / Organization :</td>
+            <td>{{ $eventSubscribe['university_org'] }}</td>
+        </tr>
     </table>
 </body>
 
