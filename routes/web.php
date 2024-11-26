@@ -11,6 +11,13 @@ use App\Http\Controllers\RobotsController;
 use App\Http\Controllers\SearchBoxController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TopicController;
+use App\Http\Middleware\CityPageFound;
+use App\Http\Middleware\CityTopicMonthPageFound;
+use App\Http\Middleware\CityTopicPageFound;
+use App\Http\Middleware\CountryPageFound;
+use App\Http\Middleware\CountryTopicMonthPageFound;
+use App\Http\Middleware\CountryTopicPageFound;
+use App\Http\Middleware\TopicPageFound;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -87,7 +94,7 @@ Route::controller(EventDetailsController::class)->group(function () {
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'homePage')->name('home');
-    Route::get('/topic/{topic}', 'topicListPage')->name('topic-list-page');
+    Route::get('/topic/{topic}', 'topicListPage')->middleware(TopicPageFound::class)->name('topic-list-page');
     Route::get('/journal', 'journalPage')->name('journal-page');
 });
 
@@ -99,8 +106,8 @@ Route::controller(SearchBoxController::class)->group(function () {
 
 
 Route::controller(TopicController::class)->group(function () {
-    Route::get('/topic-list/{topic}', 'topicPage')->name('topic-page');
-    Route::get('/topic-list/{topic}/{month}', 'topicMonthPage')->name('topic-month-page');
+    Route::get('/topic-list/{topic}', 'topicPage')->middleware(TopicPageFound::class)->name('topic-page');
+    Route::get('/topic-list/{topic}/{month}', 'topicMonthPage')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->middleware(TopicPageFound::class)->name('topic-month-page');
 
     Route::get('/topic-ajax', 'topicPage')->name('topic-ajax');
     Route::get('/topic-month-ajax', 'topicMonthPage')->name('topic-month-ajax');
@@ -108,10 +115,10 @@ Route::controller(TopicController::class)->group(function () {
 
 
 Route::controller(CityController::class)->group(function () {
-    Route::get('/cities/{city}', 'cityPage')->name('city-page');
-    Route::get('/cities/{city}/{month}', 'cityMonthPage')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->name('city-month-page');
-    Route::get('/cities/{city}/{topic}', 'cityTopicPage')->name('city-topic-page');
-    Route::get('/cities/{city}/{topic}/{month}', 'cityTopicMonthPage')->name('city-topic-month-page');
+    Route::get('/cities/{city}', 'cityPage')->middleware(CityPageFound::class)->name('city-page');
+    Route::get('/cities/{city}/{month}', 'cityMonthPage')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->middleware(CityPageFound::class)->name('city-month-page');
+    Route::get('/cities/{city}/{topic}', 'cityTopicPage')->middleware(CityTopicPageFound::class)->name('city-topic-page');
+    Route::get('/cities/{city}/{topic}/{month}', 'cityTopicMonthPage')->middleware(CityTopicMonthPageFound::class)->name('city-topic-month-page');
 
     Route::get('/city-ajax', 'cityPage')->name('city-ajax');
     Route::get('/city-month-ajax', 'cityMonthPage')->name('city-month-ajax');
@@ -128,10 +135,10 @@ Route::controller(MonthController::class)->group(function () {
 
 
 Route::controller(CountryController::class)->group(function () {
-    Route::get('/{country}', 'countryPage')->name('country-page');
-    Route::get('/{country}/{month}', 'countryMonthPage')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->name('country-month-page');
-    Route::get('/{country}/{topic}', 'countryTopicPage')->name('country-topic-page');
-    Route::get('/{country}/{topic}/{month}', 'countryTopicMonthPage')->name('country-topic-month-page');
+    Route::get('/{country}', 'countryPage')->middleware(CountryPageFound::class)->name('country-page');
+    Route::get('/{country}/{month}', 'countryMonthPage')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->middleware(CountryPageFound::class)->name('country-month-page');
+    Route::get('/{country}/{topic}', 'countryTopicPage')->middleware(CountryTopicPageFound::class)->name('country-topic-page');
+    Route::get('/{country}/{topic}/{month}', 'countryTopicMonthPage')->middleware(CountryTopicMonthPageFound::class)->name('country-topic-month-page');
 
     Route::get('/country-ajax', 'countryPage')->name('country-ajax');
     Route::get('/country-month-ajax', 'countryMonthPage')->name('country-month-ajax');

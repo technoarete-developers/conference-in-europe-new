@@ -9,9 +9,8 @@ class UpCommingEventService
 {
     private function getNextMonthDateRange()
     {
-        $nextMonth = Carbon::now()->addMonth();
-        $firstDate = $nextMonth->startOfMonth()->format('Y-m-d');
-        $lastDate = $nextMonth->endOfMonth()->format('Y-m-d');
+        $firstDate = Carbon::now()->addMonth()->startOfMonth()->format('Y-m-d');
+        $lastDate = Carbon::now()->addMonth(5)->endOfMonth()->format('Y-m-d');
 
         return [$firstDate, $lastDate];
     }
