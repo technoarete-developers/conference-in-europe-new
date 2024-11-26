@@ -840,7 +840,7 @@
         }
 
 
-        .dots-loader:not(:required) {
+        /* .dots-loader:not(:required) {
             opacity: 1;
             overflow: hidden;
             position: relative;
@@ -857,7 +857,7 @@
             transform-origin: 50% 50%;
             transform: scale(1);
             transition: .3s all;
-        }
+        } */
 
 
         .loaded .dots-loader {

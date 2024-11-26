@@ -203,8 +203,8 @@
 
     //  fetching subtopic list using city
     function fetch_country(data, slectedType) {
-        $('.hero').removeClass('loaded')
-        $('.hero').addClass('loading');
+        // $('.hero').removeClass('loaded')
+        // $('.hero').addClass('loading');
         const fetch_country_api = async () => {
             const response = await fetch('{{ route('subtopics-fetch-api-fr') }}', {
                 method: 'POST',
@@ -214,8 +214,8 @@
                 }),
             });
             const myJson = await response.json();
-            $('.hero').removeClass('loading')
-            $('.hero').addClass('loaded');
+            // $('.hero').removeClass('loading')
+            // $('.hero').addClass('loaded');
 
             Object.keys(myJson).forEach((topicName) => {
                 const subtopicsList = myJson[topicName];

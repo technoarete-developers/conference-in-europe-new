@@ -289,7 +289,7 @@
 @endsection
 @section('content')
     @include('layout-fr.header')
-    <section class="tm-banner">
+    <section class="tm-banner p-0">
         <div class="tm-container-outer tm-banner-bg new-width" loading="lazy">
             @if (session()->has('smessage'))
                 <div class="alert-message">
