@@ -70,7 +70,12 @@ class FilterApiController extends Controller
                 $subtopic = [];
                 foreach ($subTopicList as $subTopicUrl => $sTopicFr) {
                     $subTopicUrls = str_replace("-", " ", $subTopicUrl);
-                    $result = EventTable::where('country', str_replace("-", " ", $content['data']))->where('sub_topic', 'like', "%{$subTopicUrls}%")->exists();
+
+                    if ($content['slectedType'] == 'city_select') {
+                        $result = EventTable::where('city', str_replace("-", " ", $content['data']))->where('sub_topic', 'like', "%{$subTopicUrls}%")->exists();
+                    } else {
+                        $result = EventTable::where('country', str_replace("-", " ", $content['data']))->where('sub_topic', 'like', "%{$subTopicUrls}%")->exists();
+                    }
 
                     if ($result) {
                         $subtopic[$subTopicUrl] = $sTopicFr;

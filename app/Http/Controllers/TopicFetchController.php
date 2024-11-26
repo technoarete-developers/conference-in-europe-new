@@ -22,22 +22,45 @@ class TopicFetchController extends Controller
         $topicList = $this->filter->topicSubtopicList();
         $topCountry = $this->filter->topCountry();
 
+        $countryNames = array_map(fn($url) => str_replace("-", " ", $url), array_keys($topCountry));
+        $subTopicUrls = [];
+
+        foreach ($topicList as $subTopics) {
+            foreach ($subTopics as $subTopicUrl => $subTopicName) {
+                $subTopicUrls[] = str_replace("-", " ", $subTopicUrl);
+            }
+        }
+
+        $events = EventTable::whereIn('country', $countryNames)
+            ->where(function ($query) use ($subTopicUrls) {
+                foreach ($subTopicUrls as $subTopicUrl) {
+                    $query->orWhere('sub_topic', 'like', "%{$subTopicUrl}%");
+                }
+            })
+            ->get(['country', 'sub_topic']);
+
         $topicCountry = [];
         foreach ($topCountry as $countryUrl => $countryName) {
-            foreach ($topicList as $topic => $subTopic) {
-                foreach ($subTopic as $subTopicUrl => $subTopicName) {
-                    $subTopicUrl =  str_replace("-", " ", $subTopicUrl);
+            $filteredTopicList = [];
+            foreach ($topicList as $topic => $subTopics) {
+                $subtopic = [];
+                foreach ($subTopics as $subTopicUrl => $subTopicName) {
+                    $subTopicUrlFormatted = str_replace("-", " ", $subTopicUrl);
 
-                    $result = EventTable::where('country', str_replace("-", " ", $countryUrl))->where('sub_topic', 'like', "%{$subTopicUrl}%")->exists();
+                    $eventExists = $events->contains(function ($event) use ($countryUrl, $subTopicUrlFormatted) {
+                        return $event->country === str_replace("-", " ", $countryUrl) &&
+                            str_contains($event->sub_topic, $subTopicUrlFormatted);
+                    });
 
-                    if ($result) {
+                    if ($eventExists) {
                         $subtopic[$subTopicUrl] = $subTopicName;
                     }
                 }
-                $topicList[$topic] = $subtopic;
+                $filteredTopicList[$topic] = $subtopic;
             }
-            $topicCountry[$countryUrl] = $topicList;
+            $topicCountry[$countryUrl] = $filteredTopicList;
         }
+
         dd($topicCountry);
     }
 }

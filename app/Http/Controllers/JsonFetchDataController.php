@@ -421,7 +421,7 @@ class JsonFetchDataController extends Controller
     public function getMonthFrName($month)
     {
 
-        $jsonData = json_decode(file_get_contents(public_path('json-fr/month.json')), true);
+        $jsonData = file_get_contents(public_path('json-fr/month.json'));
 
         $monthList = json_decode($jsonData, true);
 
@@ -490,7 +490,10 @@ class JsonFetchDataController extends Controller
     //  month list
     public function monthListFr()
     {
-        $jsonData = json_decode(file_get_contents(public_path('json-fr/month.json')), true);
+
+        $jsonData = file_get_contents(public_path('json-fr/month.json'));
+
+        $jsonData = json_decode($jsonData, true);
 
         $currentMonth = strtolower(date('F'));
 
