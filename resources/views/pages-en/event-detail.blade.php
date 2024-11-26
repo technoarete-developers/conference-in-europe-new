@@ -298,6 +298,13 @@
         .date-new {
             margin-top: 15px;
         }
+        .container-fluid {
+    background-color: white !important;
+    padding: 18px;
+}
+a{
+    text-decoration: none;
+}
     </style>
 @endsection
 
@@ -1138,8 +1145,15 @@
     @include('layout-en.footer')
 @endsection
 @section('script')
-    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
+
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
     <script>
+        
         function onClick(e) {
             e.preventDefault();
 
