@@ -181,13 +181,6 @@
 
         }
 
-        /*
-                                                                                        h6{
-                                                                                            font-size:small;
-                                                                                  
-                                                                                        }
-                                                                                */
-
         /* Custom styles for mobile responsiveness */
         @media (max-width: 767px) {
             .card {
@@ -298,13 +291,15 @@
         .date-new {
             margin-top: 15px;
         }
+
         .container-fluid {
-    background-color: white !important;
-    padding: 18px;
-}
-a{
-    text-decoration: none;
-}
+            background-color: white !important;
+            padding: 18px;
+        }
+
+        a {
+            text-decoration: none;
+        }
     </style>
 @endsection
 
@@ -847,8 +842,8 @@ a{
                                                     </div>
                                                 </div>
 
-                                                <button type="submit"
-                                                    class="btn btn-primary submit mb-4 continue" onclick="onClick(event)">Submit</button>
+                                                <button type="submit" class="btn btn-primary submit mb-4 continue"
+                                                    onclick="onClick(event)">Submit</button>
 
                                             </form>
                                         </div>
@@ -1085,75 +1080,75 @@ a{
                 @endforeach
             </div>
         </section>
-
-        <div class="p-5 tm-container-outer tm-bg-gray">
-            <div class="container-fluid">
-                <h4 class="org-details"><b>Similar Conferences in </b>
-                </h4>
-                <div class="carousel-wrap">
-                    <div class="owl-carousel">
-                        @foreach ($similarEventName as $data)
-                            <div class="card">
-                                <div class="item">
-                                    <a class="similar-conferences" data-name="{{ $data->event_name }}"
-                                        data-date="{{ date('dS-M-Y', strtotime($data->sdate)) }}" style="color: black;"
-                                        href="/eventdetail/{{ $data->event_id }}">
-                                        <h6>{{ $data->event_name }} ({{ $data->event_title }})</h6>
-                                        <p class="date-new"><img src="/img/ccalender.png">
-                                            &nbsp;{{ date('dS-M-Y', strtotime($data->sdate)) }}<sup></sup> to
-                                            {{ date('dS-M-Y', strtotime($data->edate)) }}<sup></sup>
-                                        </p>
-                                        <p class="name"><img src="/img/location.png">&nbsp;{{ $data->city }},
-                                            {{ $data->country }}
-                                        </p>
-                                    </a>
+        @foreach ($events as $eventing)
+            <div class="p-5 tm-container-outer tm-bg-gray">
+                <div class="container-fluid">
+                    <h4 class="org-details"><b>Similar Conferences in {{ $eventing->country }}</b>
+                    </h4>
+                    <div class="carousel-wrap">
+                        <div class="owl-carousel">
+                            @foreach ($similarEventName as $data)
+                                <div class="card">
+                                    <div class="item">
+                                        <a class="similar-conferences" data-name="{{ $data->event_name }}"
+                                            data-date="{{ date('dS-M-Y', strtotime($data->sdate)) }}"
+                                            style="color: black;" href="/eventdetail/{{ $data->event_id }}">
+                                            <h6>{{ $data->event_name }} ({{ $data->event_title }})</h6>
+                                            <p class="date-new"><img src="/img/ccalender.png">
+                                                &nbsp;{{ date('dS-M-Y', strtotime($data->sdate)) }}<sup></sup> to
+                                                {{ date('dS-M-Y', strtotime($data->edate)) }}<sup></sup>
+                                            </p>
+                                            <p class="name"><img src="/img/location.png">&nbsp;{{ $data->city }},
+                                                {{ $data->country }}
+                                            </p>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="p-5 tm-container-outer tm-bg-gray">
-            <div class="container-fluid">
-                <h4 class="org-details">You Might Also be Interested In </h4>
-                <div class="carousel-wrap">
-                    <div class="owl-carousel">
-                        @foreach ($similarCountryEvent as $data)
-                            <div class="card">
-                                <div class="item">
-                                    <a class="interested-conference" style="color: black;"
-                                        href="/eventdetail/{{ $data->event_id }}">
-                                        <h6 class="text-black-50">{{ $data->event_name }}
-                                            ({{ $data->event_title }})
-                                        </h6>
-                                        <p class="date-new "><img src="/img/ccalender.png">
-                                            &nbsp;{{ date('dS-M-Y', strtotime($data->sdate)) }}<sup></sup> to
-                                            {{ date('dS-M-Y', strtotime($data->edate)) }}<sup></sup>
-                                        </p>
-                                        <p class="name "><img src="/img/location.png">
-                                            &nbsp;{{ $data->city }}, {{ $data->country }}</p>
-                                    </a>
+            <div class="p-5 tm-container-outer tm-bg-gray">
+                <div class="container-fluid">
+                    <h4 class="org-details">You Might Also be Interested In {{ $eventing->country }}</h4>
+                    <div class="carousel-wrap">
+                        <div class="owl-carousel">
+                            @foreach ($similarCountryEvent as $data)
+                                <div class="card">
+                                    <div class="item">
+                                        <a class="interested-conference" style="color: black;"
+                                            href="/eventdetail/{{ $data->event_id }}">
+                                            <h6 class="text-black-50">{{ $data->event_name }}
+                                                ({{ $data->event_title }})
+                                            </h6>
+                                            <p class="date-new "><img src="/img/ccalender.png">
+                                                &nbsp;{{ date('dS-M-Y', strtotime($data->sdate)) }}<sup></sup> to
+                                                {{ date('dS-M-Y', strtotime($data->edate)) }}<sup></sup>
+                                            </p>
+                                            <p class="name "><img src="/img/location.png">
+                                                &nbsp;{{ $data->city }}, {{ $data->country }}</p>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
     @include('layout-en.footer')
 @endsection
 @section('script')
-
-<!-- Owl Carousel CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
     <script>
-        
         function onClick(e) {
             e.preventDefault();
 

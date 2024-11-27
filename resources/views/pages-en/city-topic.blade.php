@@ -151,7 +151,7 @@
             });
 
             var city = '{{ request()->city }}';
-            var slectedType = "city_select";
+            var slectedType = "city";
             fetch_country(city, slectedType);
             // passing to main-filter page
         });

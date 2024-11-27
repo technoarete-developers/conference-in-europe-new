@@ -2,11 +2,20 @@
 
 namespace App\Services;
 
+use App\Http\Controllers\JsonFetchDataController;
 use App\Models\EventTable;
 use Carbon\Carbon;
 
 class UpCommingEventService
 {
+
+    protected $filter;
+
+    public function __construct(JsonFetchDataController $filter)
+    {
+        $this->filter = $filter;
+    }
+
     private function getNextMonthDateRange()
     {
         $firstDate = Carbon::now()->addMonth()->startOfMonth()->format('Y-m-d');
@@ -18,9 +27,11 @@ class UpCommingEventService
 
     public function cityUpcomingEvents($city)
     {
+        $topCountry = $this->filter->topCountry();
+
         [$firstDate, $lastDate] = $this->getNextMonthDateRange();
 
-        return EventTable::where('city', $city)
+        return EventTable::whereIn('country', $topCountry)->where('city', $city)
             ->whereBetween('sdate', [$firstDate, $lastDate])
             ->orderBy('sdate')
             ->limit(3)
@@ -40,9 +51,11 @@ class UpCommingEventService
 
     public function topicUpcomingEvents($topic)
     {
+        $topCountry = $this->filter->topCountry();
+
         [$firstDate, $lastDate] = $this->getNextMonthDateRange();
 
-        return  EventTable::where(function ($query) use ($topic) {
+        return  EventTable::whereIn('country', $topCountry)->where(function ($query) use ($topic) {
             $query->where('sub_topic', 'LIKE', "%{$topic}%")
                 ->orWhere('topic', 'like', "%{$topic}%");
         })->whereBetween('sdate', [$firstDate, $lastDate])->orderBy('sdate')->limit(3)
@@ -51,10 +64,11 @@ class UpCommingEventService
 
     public function monthUpcomingEvents($month)
     {
+        $topCountry = $this->filter->topCountry();
+
         [$firstDate, $lastDate] = $this->getNextMonthDateRange();
 
-        return  EventTable::where('month', 'like', "%{$month}%")->whereBetween('sdate', [$firstDate, $lastDate])->orderBy('sdate')->limit(3)
+        return  EventTable::whereIn('country', $topCountry)->where('month', 'like', "%{$month}%")->whereBetween('sdate', [$firstDate, $lastDate])->orderBy('sdate')->limit(3)
             ->get();
     }
-
 }

@@ -9,11 +9,12 @@ use Illuminate\Http\Request;
 
 class EventDetailsController extends Controller
 {
-    protected $getEvent;
+    protected $filter, $getEvent;
 
-    public function __construct(EventsService $getEvent)
+    public function __construct(JsonFetchDataController $filter, EventsService $getEvent)
     {
         $this->getEvent = $getEvent;
+        $this->filter = $filter;
     }
 
 
@@ -22,18 +23,13 @@ class EventDetailsController extends Controller
 
         [$events, $similarEventName, $similarCountryEvent] = $this->getEvent->eventDetailsEvents($request->event_id);
 
+        $countryNameFr = $this->filter->getCountryFrName(strtolower(str_replace(" ","-",$events[0]->country)));
         $breadcrumbs = generateBreadcrumb($events[0]->country, $events[0]->city, $events[0]->topic, $events[0]->month);
 
-        return view('pages-en.event-detail', compact('events', 'similarEventName', 'similarCountryEvent', 'breadcrumbs'));
-    }
-
-    public function eventDetailPageFr(Request $request)
-    {
-
-        [$events, $similarEventName, $similarCountryEvent] = $this->getEvent->eventDetailsEvents($request->event_id);
-
-        $breadcrumbs = generateBreadcrumb($events[0]->country, $events[0]->city, $events[0]->topic, $events[0]->month);
-
-        return view('pages-en.event-detail', compact('events', 'similarEventName', 'similarCountryEvent', 'breadcrumbs'));
+        if (app()->getLocale() == 'en') {
+            return view('pages-en.event-detail', compact('events', 'similarEventName', 'similarCountryEvent', 'breadcrumbs'));
+        } else {
+            return view('pages-fr.event-detail', compact('events', 'similarEventName', 'similarCountryEvent', 'breadcrumbs', 'countryNameFr'));
+        }
     }
 }

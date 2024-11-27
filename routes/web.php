@@ -17,6 +17,7 @@ use App\Http\Middleware\CityTopicPageFound;
 use App\Http\Middleware\CountryPageFound;
 use App\Http\Middleware\CountryTopicMonthPageFound;
 use App\Http\Middleware\CountryTopicPageFound;
+use App\Http\Middleware\SearchPageFound;
 use App\Http\Middleware\TopicPageFound;
 use Illuminate\Support\Facades\Route;
 
@@ -46,10 +47,6 @@ Route::get('/blog', function () {
 Route::get('/faq', function () {
     return view('pages-en.faq');
 })->name('faq');
-
-Route::get('/advance-search', function () {
-    return view('pages-en.advance-search');
-})->name('advance-search');
 
 Route::get('/video-conferences', function () {
     return view('pages-en.video-conferences');
@@ -99,7 +96,7 @@ Route::controller(HomeController::class)->group(function () {
 });
 
 Route::controller(SearchBoxController::class)->group(function () {
-    Route::get('/advance-search', 'advanceSerachPage')->name('advance-search');
+    Route::get('/search', 'advanceSerachPage')->middleware(SearchPageFound::class)->name('advance-search');
 
     Route::get('/advance-search-ajax', 'advanceSerachPage')->name('advance-search-ajax');
 });

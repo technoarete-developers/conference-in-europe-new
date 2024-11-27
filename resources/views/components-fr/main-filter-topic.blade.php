@@ -17,7 +17,7 @@
                                             style=" background: linear-gradient(316.24deg,#ae1010 24.99%,#030351 100%); padding: 8px; border-radius: 5px; font-size: 24px;">
                                             <a href="{{ route('topic-page', ['topic' => $url]) }}"
                                                 style=" color: #fff;">
-                                                {{ $name }}</a></span> Sub Topics</h3>
+                                                {{ $name }}</a></span> Sous-thèmes</h3>
                                     <hr>
                                     <div class="row">
                                         <div class="col-12">
@@ -81,7 +81,7 @@
                                     style="color: #000;position: relative;top: 4px; font-size: 19px;"></i>&nbsp;
                                 <select class="dropdown select_months" id="selected_month">
                                     <option value="{{ request()->month ? request()->month : '' }}">
-                                        {{ request()->month ? ucfirst(request()->month) : 'Select Month' }}</option>
+                                        {{ request()->month ? ucfirst(request()->month) : 'Sélectionnez le mois' }}</option>
                                     @foreach ($monthList as $url => $name)
                                         <option value="{{ $url }}" data-name="{{ $name }}">
                                             {{ $name }} </option>
@@ -98,7 +98,7 @@
                                     style="color: #000;position: relative;top: 4px; font-size: 19px;"></i>&nbsp;
                                 <select class="dropdown select_countries" id="selected_country">
                                     <option value="{{ request()->country ? request()->country : '' }}">
-                                        {{ request()->country ? ucfirst(str_replace('-', ' ', request()->country)) : 'Select Country' }}
+                                        {{ request()->country ? $countryNameFr : 'Sélectionnez un pays' }}
                                     </option>
                                     @foreach ($topCountry as $url => $name)
                                         <option value="{{ $url }}" data-name="{{ $name }}">
@@ -116,7 +116,7 @@
                                     style="color: #000;position: relative;top: 4px; font-size: 19px;"></i>&nbsp;
                                 <select class="dropdown select_cities" id="selected_city">
                                     <option value="">
-                                        {{ request()->city ? ucfirst(str_replace('-', ' ', request()->city)) : 'Select City' }}
+                                        {{ request()->city ? ucfirst(str_replace('-', ' ', request()->city)) : 'Sélectionnez la ville' }}
                                     </option>
                                 </select>
                             </span>
@@ -129,7 +129,7 @@
                 <button type="submit" class="btn btn-danger search_loading"
                     style="font-size: 19px;padding: 9px 36px;
                       border-radius: 10px;text-transform: uppercase;font-weight: 600;letter-spacing: 0.5px;"
-                    onclick="search();">Search</button>
+                    onclick="search();">Recherche</button>
             </div>
         </div>
         <div class="dots-loader"></div>
@@ -151,7 +151,7 @@
         function updateCities() {
             var selectedCountry = $('#selected_country').val();
             citySelect.empty();
-            citySelect.append('<option value="">Select City</option>');
+            citySelect.append('<option value="">Sélectionnez la ville</option>');
 
             if (countryWithCity[selectedCountry]) {
                 $.each(countryWithCity[selectedCountry], function(cityKey, cityName) {
@@ -207,19 +207,19 @@
 
     $('#selected_country').change(function() {
         var country = $(this).val();
-        var slectedType = "country_select";
+        var slectedType = "country";
         fetch_country(country, slectedType);
     });
 
     $('#selected_city').change(function() {
         var city = $(this).val();
-        var slectedType = "city_select";
+        var slectedType = "city";
         fetch_country(city, slectedType);
     });
 
 
     function fetch_country(data, slectedType) {
-        $('.hero').removeClass('loaded')
+        $('.hero').removeClass('loaded');
         $('.hero').addClass('loading');
         const fetch_country_api = async () => {
             const response = await fetch('{{ route('subtopics-fetch-api-fr') }}', {
@@ -230,7 +230,7 @@
                 }),
             });
             const myJson = await response.json();
-            $('.hero').removeClass('loading')
+            $('.hero').removeClass('loading');
             $('.hero').addClass('loaded');
 
             Object.keys(myJson).forEach((topicName) => {
@@ -243,7 +243,7 @@
                     topicList.append(
                         $(`<li><button class="subnav-item text-capitalize text-center" 
                                                         value="">
-                                                        No Subtopics for ${data.replace(/-/g, ' ')}
+                                                        Aucun sous-thème pour ${data.replace(/-/g, ' ')}
                                                     </button></li>`)
                     );
                 } else {

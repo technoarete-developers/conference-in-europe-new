@@ -208,19 +208,19 @@
 
     $('#selected_country').change(function() {
         var country = $(this).val();
-        var slectedType = "country_select";
+        var slectedType = "country";
         fetch_country(country, slectedType);
     });
 
     $('#selected_city').change(function() {
         var city = $(this).val();
-        var slectedType = "city_select";
+        var slectedType = "city";
         fetch_country(city, slectedType);
     });
 
 
     function fetch_country(data, slectedType) {
-        $('.hero').removeClass('loaded')
+        $('.hero').removeClass('loaded');
         $('.hero').addClass('loading');
         const fetch_country_api = async () => {
             const response = await fetch('{{ route('subtopics-fetch-api') }}', {
@@ -231,7 +231,7 @@
                 }),
             });
             const myJson = await response.json();
-            $('.hero').removeClass('loading')
+            $('.hero').removeClass('loading');
             $('.hero').addClass('loaded');
 
             Object.keys(myJson).forEach((topicName) => {

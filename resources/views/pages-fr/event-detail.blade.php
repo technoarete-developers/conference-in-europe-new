@@ -1095,7 +1095,7 @@
         @foreach ($events as $eventing)
             <div class="p-5 tm-container-outer tm-bg-gray">
                 <div class="container-fluid">
-                    <h4 class="org-details"><b>Conférences similaires en {{ $eventing->country }}</b>
+                    <h4 class="org-details"><b>Conférences similaires en {{ $countryNameFr }}</b>
                     </h4>
                     <div class="carousel-wrap">
                         <div class="owl-carousel">
@@ -1123,7 +1123,7 @@
             </div>
             <div class="p-5 tm-container-outer tm-bg-gray">
                 <div class="container-fluid">
-                    <h4 class="org-details">You Might Also be Interested In {{ $eventing->country }}</h4>
+                    <h4 class="org-details">You Might Also be Interested In {{ $countryNameFr }}</h4>
                     <div class="carousel-wrap">
                         <div class="owl-carousel">
                             @foreach ($similarCountryEvent as $data)

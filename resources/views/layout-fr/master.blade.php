@@ -10,7 +10,7 @@
 
     {{-- load stylesheets --}}
     <link rel="preload" href="{{ url('/css/bootstrap.min.css') }}" as="style" onload="this.rel='stylesheet'">
-    <link rel="shortcut icon" href="{{ url('/img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url('/favicon.ico') }}" type="image/x-icon">
     <link rel="preload" type="text/css" href="{{ url('/slick/slick.css') }}" as="style"
         onload="this.rel='stylesheet'" />
     <link rel="preload" type="text/css" href="{{ url('/slick/slick-theme.css') }}" as="style"
@@ -840,7 +840,7 @@
         }
 
 
-        /* .dots-loader:not(:required) {
+        .dots-loader:not(:required) {
             opacity: 1;
             overflow: hidden;
             position: relative;
@@ -857,7 +857,7 @@
             transform-origin: 50% 50%;
             transform: scale(1);
             transition: .3s all;
-        } */
+        }
 
 
         .loaded .dots-loader {
