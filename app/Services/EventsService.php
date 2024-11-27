@@ -223,7 +223,7 @@ class EventsService
 
         $searchQuery = implode(' AND ', $searchConditions);
 
-        return EventTable::whereIn('country', $topCountry)->whereRaw($searchQuery)->orderBy('sdate')->paginate(100);
+        return EventTable::whereIn('country', $topCountry)->whereRaw($searchQuery)->orderBy('sdate')->paginate(50);
     }
 
     ///////////////////////////////////////// ------------> EVENT DETAILS PAGES <------------- ///////////////////////////////////////

@@ -61,7 +61,7 @@ class FilterApiController extends Controller
         $content_json = $request->getContent();
         $content = json_decode($content_json, true);
 
-        $locationColumn = $content['slectedType'] == 'city_select' ? 'city' : 'country';
+        $locationColumn = $content['slectedType'];
 
         $locationValue = str_replace("-", " ", $content['data']);
 

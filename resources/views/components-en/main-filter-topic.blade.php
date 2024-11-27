@@ -237,6 +237,9 @@
             Object.keys(myJson).forEach((topicName) => {
                 const subtopicsList = myJson[topicName];
                 const topicList = $(`#${topicName}_ul`);
+                const country = $('#selected_country option:selected').data('name');
+                const city = $('#selected_city option:selected').data('name');
+                const cityCountry = city || country;
 
                 topicList.empty();
 
@@ -244,7 +247,7 @@
                     topicList.append(
                         $(`<li><button class="subnav-item text-capitalize text-center" 
                                                         value="">
-                                                        No Subtopics for ${data.replace(/-/g, ' ')}
+                                                        No Subtopics for ${cityCountry}
                                                     </button></li>`)
                     );
                 } else {

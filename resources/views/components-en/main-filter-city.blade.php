@@ -1,4 +1,3 @@
-
 <div class="container">
 
     <nav class="megamenu">
@@ -150,7 +149,7 @@
         // update the cities based on the selected country
         function updateCities() {
             var selectedCountry = $('#selected_country').val();
-            
+
             if (countryWithCity[selectedCountry]) {
                 $.each(countryWithCity[selectedCountry], function(cityKey, cityName) {
                     citySelect.append(
@@ -218,6 +217,9 @@
             Object.keys(myJson).forEach((topicName) => {
                 const subtopicsList = myJson[topicName];
                 const topicList = $(`#${topicName}_ul`);
+                const country = $('#selected_country option:selected').data('name');
+                const city = $('#selected_city option:selected').data('name');
+                const cityCountry = city || country;
 
                 topicList.empty();
 
@@ -225,7 +227,7 @@
                     topicList.append(
                         $(`<li><button class="subnav-item text-capitalize text-center" 
                                                         value="">
-                                                        No Subtopics for ${data.replace(/-/g, ' ')}
+                                                        No Subtopics for ${cityCountry}
                                                     </button></li>`)
                     );
                 } else {
