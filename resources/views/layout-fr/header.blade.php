@@ -70,6 +70,9 @@
                             <a class="nav-link" href="{{ route('add-event-fr') }}">Ajouter des événements</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('journal-page-fr') }}">Journal</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('blog') }}">Blog</a>
                         </li>
                         <li class="nav-item">

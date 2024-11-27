@@ -70,6 +70,9 @@
                             <a class="nav-link" href="{{ route('add-event') }}">Add Events</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('journal-page') }}">Journal</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('blog') }}">Blog</a>
                         </li>
                         <li class="nav-item">

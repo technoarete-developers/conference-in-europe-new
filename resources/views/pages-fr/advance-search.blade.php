@@ -27,10 +27,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2>{{ str_replace('-', ' ', request()->keyword) }}
-                            {{ request()->country ? '/ ' . str_replace('-', ' ', request()->country) : '' }}
-                            {{ request()->city ? '/ ' . str_replace('-', ' ', request()->city) : '' }}
-                            {{ request()->topic ? '/ ' . str_replace('-', ' ', request()->topic) : '' }}
-                            {{ request()->month ? '/ ' . str_replace('-', ' ', request()->month) : '' }}</h2>
+                            {{ request()->country ? '/ ' . $countryNameFr : '' }}
+                            {{ request()->city ? '/ ' . $cityNameFr : '' }}
+                            {{ request()->topic ? '/ ' . $topicNameFr : '' }}
+                            {{ request()->month ? '/ ' . $monthNameFr : '' }}</h2>
                     </div>
                 </div>
             </div>
@@ -42,32 +42,39 @@
                         <div class="toppage">
                             <div class="row">
                                 <div class="col-sm-12 topic-midule-grid">
-                                    {{-- <div class="topic-date-cnfr">
-                                        <legend> <span
-                                                class="fld_hed text-capitalize">{{ str_replace('-', ' ', request()->keyword) }}</span>
-                                        </legend>
+                                    <div class="topic-date-cnfr">
                                         <div class="county-conference">
                                             <div class="col-md-12">
-                                                <h1 style=" font-size: 18px;font-family:Gill Sans;"></h1>
-                                                    <p></p>
-                                                    <p></p>
+                                                <h1 style=" font-size: 18px;font-family:Gill Sans;">À venir
+                                                    {{ request()->keyword }} en Europe {{ date('Y') }}</h1>
                                             </div>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                     <div class="eve-prom">
                                         <div class="col-xs-12 text-justify">
                                             @include ('components-fr.main-filter-search')
                                         </div>
                                     </div>
                                     <div class="p-4 mt-4" style="background-color: #f5f7fd: font-weight: 700">
-                                        <h3 class="text-center mb-4 p-2" style="color: #b03031">Liste de toutes les
-                                            conférences</h3>
-                                        <div class="row bg-dark text-white py-2">
-                                            <div class="col-2">Date</div>
-                                            <div class="col-7">Nom de la conférence</div>
-                                            <div class="col-3">Lieu</div>
-                                        </div>
-                                        @include ('components-fr.event-listing')
+                                        @if ($events->isNotEmpty())
+                                            <h3 class="text-center mb-4 p-2" style="color: #b03031">Liste de toutes les
+                                                conférences</h3>
+                                            <div class="row bg-dark text-white py-2">
+                                                <div class="col-2">Date</div>
+                                                <div class="col-7">Nom de la conférence</div>
+                                                <div class="col-3">Lieu</div>
+                                            </div>
+                                            @include ('components-fr.event-listing')
+                                        @else
+                                            <h4 class="text-capitalize fs-3">Aucun résultat pour {{ request()->keyword }}
+                                                {{ request()->country ? '/ ' . $countryNameFr : '' }}
+                                                {{ request()->city ? '/ ' . $cityNameFr : '' }}
+                                                {{ request()->topic ? '/ ' . $topicNameFr : '' }}
+                                                {{ request()->month ? '/ ' . $monthNameFr : '' }}.
+                                            </h4>
+                                            <p>Vérifiez votre orthographe ou utilisez des termes plus généraux
+                                            </p>
+                                        @endif
                                     </div>
                                     @include ('components-fr.load-more')
                                 </div>

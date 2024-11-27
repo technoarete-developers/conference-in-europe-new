@@ -109,7 +109,7 @@
         </section>
         <div class="marqq">
             <div class="container-fluid">
-                <h1 class="heading" style="text-align: center;text-transform: uppercase;"><b>Subtopics of Business</b< /h1>
+                <h1 class="heading" style="text-align: center;text-transform: uppercase;"><b>Subtopics of Business</b</h1>
                         <div class="titleline"> </div>
             </div>
         </div>

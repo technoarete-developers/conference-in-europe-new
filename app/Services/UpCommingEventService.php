@@ -34,7 +34,7 @@ class UpCommingEventService
         return EventTable::whereIn('country', $topCountry)->where('city', $city)
             ->whereBetween('sdate', [$firstDate, $lastDate])
             ->orderBy('sdate')
-            ->limit(3)
+            ->limit(6)
             ->get();
     }
 
@@ -45,7 +45,7 @@ class UpCommingEventService
         return EventTable::where('country', $country)
             ->whereBetween('sdate', [$firstDate, $lastDate])
             ->orderBy('sdate')
-            ->limit(3)
+            ->limit(6)
             ->get();
     }
 
@@ -58,7 +58,7 @@ class UpCommingEventService
         return  EventTable::whereIn('country', $topCountry)->where(function ($query) use ($topic) {
             $query->where('sub_topic', 'LIKE', "%{$topic}%")
                 ->orWhere('topic', 'like', "%{$topic}%");
-        })->whereBetween('sdate', [$firstDate, $lastDate])->orderBy('sdate')->limit(3)
+        })->whereBetween('sdate', [$firstDate, $lastDate])->orderBy('sdate')->limit(6)
             ->get();
     }
 
@@ -68,7 +68,7 @@ class UpCommingEventService
 
         [$firstDate, $lastDate] = $this->getNextMonthDateRange();
 
-        return  EventTable::whereIn('country', $topCountry)->where('month', 'like', "%{$month}%")->whereBetween('sdate', [$firstDate, $lastDate])->orderBy('sdate')->limit(3)
+        return  EventTable::whereIn('country', $topCountry)->where('month', 'like', "%{$month}%")->whereBetween('sdate', [$firstDate, $lastDate])->orderBy('sdate')->limit(6)
             ->get();
     }
 }
