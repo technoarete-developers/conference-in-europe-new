@@ -26,7 +26,7 @@ $monthName = ucfirst(request()->month);
       <div class="container">
          <div class="row">
             <div class="col-md-12">
-               <h2>{{ $cityName }}</h2>
+               <h2>{{ $cityName }} / {{ $monthName }}</h2>
             </div>
          </div>
       </div>

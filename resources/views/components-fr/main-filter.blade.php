@@ -336,12 +336,12 @@
                     '{{ route('city-month-page-fr', ['city' => '__CITY__', 'month' => '__MONTH__']) }}'
                     .replace('__CITY__', cityUrl)
                     .replace('__MONTH__', monthUrl);
-                return;
+              
 
             } else {
                 window.location.href = '{{ route('city-page-fr', ['city' => '__CITY__']) }}'
                     .replace('__CITY__', cityUrl);
-                return;
+              
             }
 
         } else if (countryUrl) {
@@ -350,16 +350,16 @@
                     '{{ route('country-month-page-fr', ['country' => '__COUNTRY__', 'month' => '__MONTH__']) }}'
                     .replace('__COUNTRY__', countryUrl)
                     .replace('__MONTH__', monthUrl);
-                return;
+              
             } else {
                 window.location.href = '{{ route('country-page-fr', ['country' => '__COUNTRY__']) }}'
                     .replace('__COUNTRY__', countryUrl);
-                return;
+              
             }
         } else if (monthUrl) {
             window.location.href = '{{ route('month-page-fr', ['month' => '__MONTH__']) }}'
                 .replace('__MONTH__', monthUrl);
-            return;
+          
         }
 
     }
@@ -379,11 +379,11 @@
                     '{{ route('city-topic-page-fr', ['city' => '__CITY__', 'topic' => '__TOPIC__']) }}'
                     .replace('__CITY__', cityUrl)
                     .replace('__TOPIC__', subtopicUrl);
-                return;
+              
             } else {
                 window.location.href = '{{ route('city-page-fr', ['city' => '__CITY__']) }}'
                     .replace('__CITY__', cityUrl);
-                return;
+              
             }
         } else if (countryUrl) {
 
@@ -392,16 +392,16 @@
                     '{{ route('country-topic-page-fr', ['country' => '__COUNTRY__', 'topic' => '__TOPIC__']) }}'
                     .replace('__COUNTRY__', countryUrl)
                     .replace('__TOPIC__', subtopicUrl);
-                return;
+              
             } else {
                 window.location.href = '{{ route('country-page-fr', ['country' => '__COUNTRY__']) }}'
                     .replace('__COUNTRY__', countryUrl);
-                return;
+              
             }
         } else if (subtopicUrl) {
             window.location.href = '{{ route('topic-page-fr', ['topic' => '__TOPIC__']) }}'
                 .replace('__TOPIC__', subtopicUrl);
-            return;
+          
         }
 
     }
@@ -424,23 +424,23 @@
                     .replace('__CITY__', cityUrl)
                     .replace('__TOPIC__', subtopicUrl)
                     .replace('__MONTH__', monthUrl);
-                return;
+              
             } else if (cityUrl && subtopicUrl) {
                 window.location.href =
                     '{{ route('city-topic-page-fr', ['city' => '__CITY__', 'topic' => '__TOPIC__']) }}'
                     .replace('__CITY__', cityUrl)
                     .replace('__TOPIC__', subtopicUrl);
-                return;
+              
             } else if (cityUrl && monthUrl) {
                 window.location.href =
                     '{{ route('city-month-page-fr', ['city' => '__CITY__', 'month' => '__MONTH__']) }}'
                     .replace('__CITY__', cityUrl)
                     .replace('__MONTH__', monthUrl);
-                return;
+              
             } else {
                 window.location.href = '{{ route('city-page-fr', ['city' => '__CITY__']) }}'
                     .replace('__CITY__', cityUrl);
-                return;
+              
             }
 
         } else if (countryUrl) {
@@ -451,23 +451,23 @@
                     .replace('__COUNTRY__', countryUrl)
                     .replace('__TOPIC__', subtopicUrl)
                     .replace('__MONTH__', monthUrl);
-                return;
+              
             } else if (countryUrl && subtopicUrl) {
                 window.location.href =
                     '{{ route('country-topic-page-fr', ['country' => '__COUNTRY__', 'topic' => '__TOPIC__']) }}'
                     .replace('__COUNTRY__', countryUrl)
                     .replace('__TOPIC__', subtopicUrl);
-                return;
+              
             } else if (countryUrl && monthUrl) {
                 window.location.href =
                     '{{ route('country-month-page-fr', ['country' => '__COUNTRY__', 'month' => '__MONTH__']) }}'
                     .replace('__COUNTRY__', countryUrl)
                     .replace('__MONTH__', monthUrl);
-                return;
+              
             } else {
                 window.location.href = '{{ route('country-page-fr', ['country' => '__COUNTRY__']) }}'
                     .replace('__COUNTRY__', countryUrl);
-                return;
+              
             }
         } else if (subtopicUrl) {
             if (subtopicUrl && monthUrl) {
@@ -475,18 +475,18 @@
                     '{{ route('topic-month-page-fr', ['topic' => '__TOPIC__', 'month' => '__MONTH__']) }}'
                     .replace('__TOPIC__', subtopicUrl)
                     .replace('__MONTH__', monthUrl);
-                return;
+              
             } else {
                 window.location.href = '{{ route('topic-page-fr', ['topic' => '__TOPIC__']) }}'
                     .replace('__TOPIC__', subtopicUrl);
 
-                return;
+              
             }
 
         } else if (monthUrl) {
             window.location.href = '{{ route('month-page-fr', ['month' => '__MONTH__']) }}'
                 .replace('__MONTH__', monthUrl);
-            return;
+          
         }
     }
 </script>
