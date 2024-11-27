@@ -26,6 +26,3 @@ Route::controller(FilterApiController::class)->group(function () {
     Route::post('/subtopics/fetch/fr', 'getSubtopicApiFr')->name('subtopics-fetch-api-fr');
 });
 
-Route::controller(TopicFetchController::class)->group(function () {
-    Route::get('/topic-fetch', 'countryApi')->name('topic-fetch');
-});

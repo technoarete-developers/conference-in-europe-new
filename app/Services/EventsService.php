@@ -170,14 +170,34 @@ class EventsService
 
     ///////////////////////////////////////// ------------> ADVANCE SEARCH PAGES <------------- ///////////////////////////////////////
 
-    public function advanceSearchEvents($keyword)
+    public function advanceSearchEvents($keyword, $country, $city, $topic, $month)
     {
+        $country = str_replace('-', ' ', $country);
+        $city = str_replace('-', ' ', $city);
+        $topic = str_replace('-', ' ', $topic);
+        $month = str_replace('-', ' ', $month);
 
         $topCountry = $this->filter->topCountry();
 
         $importantWords = ['conference', 'international', 'Upcoming', 'virtual', 'upcoming', 'conferences', 'and', 'in', 'events', 'event'];
         $keywords = explode(' ', str_replace(',', ' ', $keyword));
         $searchConditions = [];
+
+        if ($city) {
+            $searchConditions[] = "city LIKE '%{$city}%'";
+        }
+
+        if ($country) {
+            $searchConditions[] = "country LIKE '%{$country}%'";
+        }
+
+        if ($topic) {
+            $searchConditions[] = "(topic LIKE '%$topic%' OR sub_topic LIKE '%$topic%')";
+        }
+
+        if ($month) {
+            $searchConditions[] = "month LIKE '%{$month}%'";
+        }
 
         foreach ($keywords as $word) {
             $word = trim($word);
@@ -203,27 +223,28 @@ class EventsService
 
         $searchQuery = implode(' AND ', $searchConditions);
 
-        return EventTable::where('country', $topCountry)->whereRaw($searchQuery)->orderBy('sdate')->paginate(100);
+        return EventTable::whereIn('country', $topCountry)->whereRaw($searchQuery)->orderBy('sdate')->paginate(100);
     }
 
     ///////////////////////////////////////// ------------> EVENT DETAILS PAGES <------------- ///////////////////////////////////////
 
     public function eventDetailsEvents($event_id)
     {
+        $topCountry = $this->filter->topCountry();
 
         $nextMonthStart = Carbon::now()->addMonth()->startOfMonth()->format('Y-m-d');
         $afterThreeMonthsLastDate = Carbon::now()->addMonth(5)->endOfMonth()->format('Y-m-d');
 
         $events = EventTable::where('event_id', $event_id)->get();
 
-        $similarEventName = EventTable::where('event_name', $events[0]->event_name)
+        $similarEventName = EventTable::whereIn('country', $topCountry)->where('event_name', $events[0]->event_name)
             ->where('event_id', '!=', $event_id)
             ->whereBetween('sdate', [$nextMonthStart, $afterThreeMonthsLastDate])
             ->orderBy('sdate')
             ->limit(20)
             ->get();
 
-        $similarCountryEvent = EventTable::where('country', $events[0]->country)
+        $similarCountryEvent = EventTable::whereIn('country', $topCountry)->where('country', $events[0]->country)
             ->orderBy('sdate')->where('event_id', '!=', $event_id)
             ->whereBetween('sdate', [$nextMonthStart, $afterThreeMonthsLastDate])
             ->orderBy('sdate')

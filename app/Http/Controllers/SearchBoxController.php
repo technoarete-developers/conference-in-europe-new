@@ -28,7 +28,7 @@ class SearchBoxController extends Controller
         $topCountry = $this->filter->topCountry();
         $countryWithCity = $this->filter->countryWithCity();
 
-        $events = $this->getEvent->advanceSearchEvents($request->keyword);
+        $events = $this->getEvent->advanceSearchEvents($request->keyword, $request->country, $request->city, $request->topic, $request->month);
 
         if ($request->ajax()) {
             $response = [
@@ -44,13 +44,31 @@ class SearchBoxController extends Controller
     public function advanceSerachPageFr(Request $request)
     {
 
+        $countryNameFr = null;
+        $cityNameFr = null;
+        $topicNameFr = null;
+        $monthNameFr = null;
+
         $monthList = $this->filter->monthListFr();
         $topicList = $this->filter->topicListFr();
         $topicStopicList = $this->filter->topicSubtopicListFr();
         $topCountry = $this->filter->topCountryFr();
         $countryWithCity = $this->filter->countryWithCityFr();
 
-        $events = $this->getEvent->advanceSearchEvents($request->keyword);
+        if ($request->country) {
+            $countryNameFr = $this->filter->getCountryFrName($request->country);
+        }
+        if ($request->city) {
+            $cityNameFr = $this->filter->getCityFrName($request->city);
+        }
+        if ($request->topic) {
+            $topicNameFr = $this->filter->getTopicFrName($request->topic);
+        }
+        if ($request->month) {
+            $monthNameFr = $this->filter->getMonthFrName($request->month);
+        }
+
+        $events = $this->getEvent->advanceSearchEvents($request->keyword, $request->country, $request->city, $request->topic, $request->month);
 
         if ($request->ajax()) {
             $response = [
@@ -60,6 +78,6 @@ class SearchBoxController extends Controller
             return response()->json($response);
         }
 
-        return view('pages-fr.advance-search', compact('events', 'topCountry', 'topicList', 'topicStopicList', 'countryWithCity', 'monthList'));
+        return view('pages-fr.advance-search', compact('events', 'topCountry', 'topicList', 'topicStopicList', 'countryWithCity', 'monthList', 'countryNameFr', 'cityNameFr', 'topicNameFr', 'monthNameFr'));
     }
 }

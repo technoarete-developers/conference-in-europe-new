@@ -1,4 +1,3 @@
-
 <div class="container">
 
     <nav class="megamenu">
@@ -40,6 +39,12 @@
         <div class="container pt-4">
             <div class="selection text-capitalize">
                 <div class="select-list-container">
+                    <div class="select-item">
+                        <span class="sub-top sub_topic text-capitalize">
+                            {{ request()->keyword }}
+                        </span>
+                        <span class="separator"> | </span>
+                    </div>
                     <div class="select-item" id="city-country-select">
                         @if (request()->city || request()->country)
                             <span class="sub-top sub_topic text-capitalize">
@@ -140,6 +145,9 @@
 <script>
     $(document).ready(function() {
 
+        $('.hero').removeClass('loading')
+        $('.hero').addClass('loaded');
+
         localStorage.removeItem('subTopicUrl');
 
         var selectedCountry = $('#selected_country').val();
@@ -186,8 +194,6 @@
 
     $(document).ready(function() {
         var topicStopicList = @json($topicStopicList);
-        $('.hero').removeClass('loading')
-        $('.hero').addClass('loaded');
         Object.keys(topicStopicList).forEach((topicName) => {
             const topicList = $(`#${topicName}_ul`);
             topicList.empty();
@@ -204,63 +210,6 @@
         });
     });
 
-
-    $('#selected_country').change(function() {
-        var country = $(this).val();
-        var slectedType = "country_select";
-        fetch_country(country, slectedType);
-    });
-
-    $('#selected_city').change(function() {
-        var city = $(this).val();
-        var slectedType = "city_select";
-        fetch_country(city, slectedType);
-    });
-
-
-    function fetch_country(data, slectedType) {
-        $('.hero').removeClass('loaded')
-        $('.hero').addClass('loading');
-        const fetch_country_api = async () => {
-            const response = await fetch('{{ route('subtopics-fetch-api') }}', {
-                method: 'POST',
-                body: JSON.stringify({
-                    "slectedType": slectedType,
-                    "data": data,
-                }),
-            });
-            const myJson = await response.json();
-            $('.hero').removeClass('loading')
-            $('.hero').addClass('loaded');
-
-            Object.keys(myJson).forEach((topicName) => {
-                const subtopicsList = myJson[topicName];
-                const topicList = $(`#${topicName}_ul`);
-
-                topicList.empty();
-
-                if (myJson[topicName].length === 0) {
-                    topicList.append(
-                        $(`<li><button class="subnav-item text-capitalize text-center" 
-                                                        value="">
-                                                        No Subtopics for ${data.replace(/-/g, ' ')}
-                                                    </button></li>`)
-                    );
-                } else {
-                    Object.entries(subtopicsList).forEach(([subTopicUrl, subTopicName]) => {
-                        topicList.append(
-                            $(`<li style="list-style-type: disclosure-closed;">
-                                <div class="subnav-item" data-url="${subTopicUrl}" data-name="${subTopicName}">
-                                    ${subTopicName}
-                                </div>
-                            </li>`)
-                        );
-                    });
-                }
-            });
-        }
-        fetch_country_api();
-    }
 
     // if clicked subtopic
     $(document).on('click', '.subnav-item', function() {
@@ -294,7 +243,7 @@
             <span class="sub-top sub_topic text-capitalize">
                 ${cityCountry.replace(/-/g, ' ')}
             </span>
-            <a onclick="country_clear();" class="country_clear p-1">
+            <a onclick="city_country_clear();" class="city_country_clear p-1">
                 <img src="/img/close-button.png" style="width: 18px; cursor: pointer;">
             </a>
              <span class="separator"> | </span>
@@ -323,20 +272,26 @@
         $("#city-country-select").empty();
         var monthUrl = $("#selected_month").val();
         var subtopicUrl = localStorage.getItem('subTopicUrl');
+        var keywordUrl = '{{ request()->keyword }}';
 
         if (subtopicUrl) {
             if (subtopicUrl && monthUrl) {
                 window.location.href =
-                    '{{ route('topic-month-page', ['topic' => '__TOPIC__', 'month' => '__MONTH__']) }}'
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'topic' => '__TOPIC__', 'month' => '__MONTH__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__TOPIC__', subtopicUrl)
                     .replace('__MONTH__', monthUrl);
             } else {
-                window.location.href = '{{ route('topic-page', ['topic' => '__TOPIC__']) }}'
+                window.location.href =
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'topic' => '__TOPIC__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__TOPIC__', subtopicUrl);
             }
 
         } else if (monthUrl) {
-            window.location.href = '{{ route('month-page', ['month' => '__MONTH__']) }}'
+            window.location.href =
+                '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'month' => '__MONTH__']) !!}'
+                .replace('__KEYWORD__', keywordUrl)
                 .replace('__MONTH__', monthUrl);
         }
 
@@ -349,35 +304,45 @@
         var monthUrl = $("#selected_month").val();
         var countryUrl = $("#selected_country").val();
         var cityUrl = $("#selected_city").val();
+        var keywordUrl = '{{ request()->keyword }}';
 
         if (cityUrl) {
             if (cityUrl && monthUrl) {
                 window.location.href =
-                    '{{ route('city-month-page', ['city' => '__CITY__', 'month' => '__MONTH__']) }}'
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'city' => '__CITY__', 'month' => '__MONTH__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__CITY__', cityUrl)
                     .replace('__MONTH__', monthUrl);
                 return;
 
             } else {
-                window.location.href = '{{ route('city-page', ['city' => '__CITY__']) }}'
-                    .replace('__CITY__', cityUrl);
+                window.location.href =
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'city' => '__CITY__', 'month' => '__MONTH__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
+                    .replace('__CITY__', cityUrl)
+                    .replace('__MONTH__', monthUrl);
                 return;
             }
 
         } else if (countryUrl) {
             if (countryUrl && monthUrl) {
                 window.location.href =
-                    '{{ route('country-month-page', ['country' => '__COUNTRY__', 'month' => '__MONTH__']) }}'
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'country' => '__COUNTRY__', 'month' => '__MONTH__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__COUNTRY__', countryUrl)
                     .replace('__MONTH__', monthUrl);
                 return;
             } else {
-                window.location.href = '{{ route('country-page', ['country' => '__COUNTRY__']) }}'
+                window.location.href =
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'country' => '__COUNTRY__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__COUNTRY__', countryUrl);
                 return;
             }
         } else if (monthUrl) {
-            window.location.href = '{{ route('month-page', ['month' => '__MONTH__']) }}'
+            window.location.href =
+                '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'month' => '__MONTH__']) !!}'
+                .replace('__KEYWORD__', keywordUrl)
                 .replace('__MONTH__', monthUrl);
             return;
         }
@@ -391,36 +356,43 @@
         var countryUrl = $("#selected_country").val();
         var cityUrl = $("#selected_city").val();
         var subtopicUrl = localStorage.getItem('subTopicUrl');
+        var keywordUrl = '{{ request()->keyword }}';
 
         if (cityUrl) {
-
             if (cityUrl && subtopicUrl) {
                 window.location.href =
-                    '{{ route('city-topic-page', ['city' => '__CITY__', 'topic' => '__TOPIC__']) }}'
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'city' => '__CITY__', 'topic' => '__TOPIC__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__CITY__', cityUrl)
                     .replace('__TOPIC__', subtopicUrl);
                 return;
             } else {
-                window.location.href = '{{ route('city-page', ['city' => '__CITY__']) }}'
+                window.location.href =
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'city' => '__CITY__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__CITY__', cityUrl);
                 return;
             }
         } else if (countryUrl) {
-
             if (countryUrl && subtopicUrl) {
                 window.location.href =
-                    '{{ route('country-topic-page', ['country' => '__COUNTRY__', 'topic' => '__TOPIC__']) }}'
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'country' => '__COUNTRY__', 'topic' => '__TOPIC__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__COUNTRY__', countryUrl)
                     .replace('__TOPIC__', subtopicUrl);
                 return;
             } else {
-                window.location.href = '{{ route('country-page', ['country' => '__COUNTRY__']) }}'
+                window.location.href =
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'country' => '__COUNTRY__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__COUNTRY__', countryUrl);
                 return;
             }
         } else if (subtopicUrl) {
-            window.location.href = '{{ route('topic-page', ['topic' => '__TOPIC__']) }}'
-                .replace('__TOPIC__', subtopicUrl);
+            window.location.href =
+                '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'topic' => '__TOPIC__']) !!}'
+                .replace('__KEYWORD__', keywordUrl)
+                .replace('__TOPIC__', subtopicUrl)
             return;
         }
 
@@ -432,79 +404,105 @@
         $('.search_loading').css("background-color", "rgb(24 62 131)");
         $('.search_loading').css("border-color", "blue");
 
-        var monthUrl = $("#selected_month").val();
-        var countryUrl = $("#selected_country").val();
-        var cityUrl = $("#selected_city").val();
-        var subtopicUrl = localStorage.getItem('subTopicUrl');
+        var monthUrl = encodeURIComponent($("#selected_month").val());
+        var countryUrl = encodeURIComponent($("#selected_country").val());
+        var cityUrl = encodeURIComponent($("#selected_city").val());
+        var subtopicUrl = encodeURIComponent(localStorage.getItem('subTopicUrl'));
+        var keywordUrl = encodeURIComponent('{{ request()->keyword }}');
 
         if (cityUrl) {
             if (cityUrl && monthUrl && subtopicUrl) {
                 window.location.href =
-                    '{{ route('city-topic-month-page', ['city' => '__CITY__', 'topic' => '__TOPIC__', 'month' => '__MONTH__']) }}'
+                    '{!! route('advance-search', [
+                        'keyword' => '__KEYWORD__',
+                        'city' => '__CITY__',
+                        'topic' => '__TOPIC__',
+                        'month' => '__MONTH__',
+                    ]) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__CITY__', cityUrl)
                     .replace('__TOPIC__', subtopicUrl)
                     .replace('__MONTH__', monthUrl);
                 return;
             } else if (cityUrl && subtopicUrl) {
                 window.location.href =
-                    '{{ route('city-topic-page', ['city' => '__CITY__', 'topic' => '__TOPIC__']) }}'
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'city' => '__CITY__', 'topic' => '__TOPIC__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__CITY__', cityUrl)
                     .replace('__TOPIC__', subtopicUrl);
                 return;
             } else if (cityUrl && monthUrl) {
                 window.location.href =
-                    '{{ route('city-month-page', ['city' => '__CITY__', 'month' => '__MONTH__']) }}'
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'city' => '__CITY__', 'month' => '__MONTH__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__CITY__', cityUrl)
                     .replace('__MONTH__', monthUrl);
                 return;
             } else {
-                window.location.href = '{{ route('city-page', ['city' => '__CITY__']) }}'
+                window.location.href =
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'city' => '__CITY__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__CITY__', cityUrl);
                 return;
             }
 
         } else if (countryUrl) {
-
             if (countryUrl && monthUrl && subtopicUrl) {
                 window.location.href =
-                    '{{ route('country-topic-month-page', ['country' => '__COUNTRY__', 'topic' => '__TOPIC__', 'month' => '__MONTH__']) }}'
+                    '{!! route('advance-search', [
+                        'keyword' => '__KEYWORD__',
+                        'country' => '__COUNTRY__',
+                        'topic' => '__TOPIC__',
+                        'month' => '__MONTH__',
+                    ]) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__COUNTRY__', countryUrl)
                     .replace('__TOPIC__', subtopicUrl)
                     .replace('__MONTH__', monthUrl);
                 return;
             } else if (countryUrl && subtopicUrl) {
                 window.location.href =
-                    '{{ route('country-topic-page', ['country' => '__COUNTRY__', 'topic' => '__TOPIC__']) }}'
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'country' => '__COUNTRY__', 'topic' => '__TOPIC__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__COUNTRY__', countryUrl)
                     .replace('__TOPIC__', subtopicUrl);
                 return;
             } else if (countryUrl && monthUrl) {
                 window.location.href =
-                    '{{ route('country-month-page', ['country' => '__COUNTRY__', 'month' => '__MONTH__']) }}'
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'country' => '__COUNTRY__', 'month' => '__MONTH__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__COUNTRY__', countryUrl)
                     .replace('__MONTH__', monthUrl);
                 return;
             } else {
-                window.location.href = '{{ route('country-page', ['country' => '__COUNTRY__']) }}'
+                window.location.href =
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'country' => '__COUNTRY__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__COUNTRY__', countryUrl);
                 return;
             }
         } else if (subtopicUrl) {
             if (subtopicUrl && monthUrl) {
                 window.location.href =
-                    '{{ route('topic-month-page', ['topic' => '__TOPIC__', 'month' => '__MONTH__']) }}'
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'topic' => '__TOPIC__', 'month' => '__MONTH__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
                     .replace('__TOPIC__', subtopicUrl)
                     .replace('__MONTH__', monthUrl);
                 return;
             } else {
-                window.location.href = '{{ route('topic-page', ['topic' => '__TOPIC__']) }}'
-                    .replace('__TOPIC__', subtopicUrl);
+                window.location.href =
+                    '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'topic' => '__TOPIC__', 'month' => '__MONTH__']) !!}'
+                    .replace('__KEYWORD__', keywordUrl)
+                    .replace('__TOPIC__', subtopicUrl)
+                    .replace('__MONTH__', monthUrl);
 
                 return;
             }
 
         } else if (monthUrl) {
-            window.location.href = '{{ route('month-page', ['month' => '__MONTH__']) }}'
+            window.location.href =
+                '{!! route('advance-search', ['keyword' => '__KEYWORD__', 'month' => '__MONTH__']) !!}'
+                .replace('__KEYWORD__', keywordUrl)
                 .replace('__MONTH__', monthUrl);
             return;
         }

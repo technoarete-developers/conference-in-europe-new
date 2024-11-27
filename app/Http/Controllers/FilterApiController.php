@@ -17,76 +17,77 @@ class FilterApiController extends Controller
 
     public function getSubtopicApi(Request $request)
     {
-        try {
-            $topicList = $this->filter->topicSubtopicList();
+        $topicList = $this->filter->topicSubtopicList();
 
-            $content_json = $request->getContent();
-            $content = json_decode($content_json, true);
-            foreach ($topicList as $main_topic => $sub_topic) {
+        $content_json = $request->getContent();
 
-                $subtopicName = [];
+        $content = json_decode($content_json, true);
 
-                if ($content['slectedType'] == 'city_select') {
-                    $result = EventTable::where('city', str_replace("-", " ", $content['data']))->whereIn('sub_topic', $sub_topic)
-                        ->select('topic', 'sub_topic')
-                        ->orderBy('sub_topic', 'asc')
-                        ->get();
-                } else {
-                    $result = EventTable::where('country', str_replace("-", " ", $content['data']))->whereIn('sub_topic', $sub_topic)
-                        ->select('topic', 'sub_topic')
-                        ->orderBy('sub_topic', 'asc')
-                        ->get();
+        $locationColumn = $content['slectedType'];
+
+        $locationValue = str_replace("-", " ", $content['data']);
+
+        $filterTopic = [];
+
+        foreach ($topicList as $mainTopic => $subTopicList) {
+
+            $subTopicUrls = array_map(fn($url) => str_replace("-", " ", $url), array_keys($subTopicList));
+
+            $existingSubtopics = EventTable::where($locationColumn, $locationValue)
+                ->whereIn('sub_topic', $subTopicUrls)
+                ->whereNotNull('sub_topic')
+                ->distinct()
+                ->pluck('sub_topic');
+
+            $subtopic = [];
+
+            foreach ($existingSubtopics as $stopicList) {
+                $subTopicUrl = strtolower(trim(str_replace(" ","-",$stopicList)));
+                if (array_key_exists($subTopicUrl, $subTopicList)) {
+                    $subtopic[$subTopicUrl] = $subTopicList[$subTopicUrl];
                 }
-
-                foreach ($result as $subtopic) {
-                    $explode_subtopic = explode(',', $subtopic->sub_topic);
-                    foreach ($explode_subtopic as $sub_topic_explode) {
-                        if (!in_array(trim($sub_topic_explode), $subtopicName) && $sub_topic_explode != "") {
-                            $stopic = strtolower(str_replace(" ", "-", trim($sub_topic_explode)));
-                            $subtopicName[$stopic] = $sub_topic_explode;
-                        }
-                    }
-                }
-
-                $filterTopic[$main_topic] = $subtopicName;
             }
 
-            return $filterTopic;
-        } catch (\Exception $e) {
-            $failure['response']['message'] = 'Exception:' . $e->getMessage() . ' | Line: ' . $e->getLine();
-            return $failure;
+            $filterTopic[$mainTopic] = $subtopic;
         }
+
+        return $filterTopic;
     }
 
     public function getSubtopicApiFr(Request $request)
     {
-        try {
-            $topicList = $this->filter->topicSubtopicListFr();
+        $topicList = $this->filter->topicSubtopicListFr();
 
-            $content_json = $request->getContent();
-            $content = json_decode($content_json, true);
+        $content_json = $request->getContent();
+        $content = json_decode($content_json, true);
 
-            foreach ($topicList as $mainTopic => $subTopicList) {
-                $subtopic = [];
-                foreach ($subTopicList as $subTopicUrl => $sTopicFr) {
-                    $subTopicUrls = str_replace("-", " ", $subTopicUrl);
+        $locationColumn = $content['slectedType'] == 'city_select' ? 'city' : 'country';
 
-                    if ($content['slectedType'] == 'city_select') {
-                        $result = EventTable::where('city', str_replace("-", " ", $content['data']))->where('sub_topic', 'like', "%{$subTopicUrls}%")->exists();
-                    } else {
-                        $result = EventTable::where('country', str_replace("-", " ", $content['data']))->where('sub_topic', 'like', "%{$subTopicUrls}%")->exists();
-                    }
+        $locationValue = str_replace("-", " ", $content['data']);
 
-                    if ($result) {
-                        $subtopic[$subTopicUrl] = $sTopicFr;
-                    }
+        $filterTopic = [];
+
+        foreach ($topicList as $mainTopic => $subTopicList) {
+
+            $subTopicUrls = array_map(fn($url) => str_replace("-", " ", $url), array_keys($subTopicList));
+
+            $existingSubtopics = EventTable::where($locationColumn, $locationValue)
+                ->whereIn('sub_topic', $subTopicUrls)
+                ->whereNotNull('sub_topic')
+                ->distinct()
+                ->pluck('sub_topic');
+
+            $subtopic = [];
+
+            foreach ($existingSubtopics as $stopicList) {
+                $subTopicUrl = strtolower(trim(str_replace(" ","-",$stopicList)));
+                if (array_key_exists($subTopicUrl, $subTopicList)) {
+                    $subtopic[$subTopicUrl] = $subTopicList[$subTopicUrl];
                 }
-                $filterTopic[$mainTopic] = $subtopic;
             }
-            return $filterTopic;
-        } catch (\Exception $e) {
-            $failure['response']['message'] = 'Exception:' . $e->getMessage() . ' | Line: ' . $e->getLine();
-            return $failure;
+
+            $filterTopic[$mainTopic] = $subtopic;
         }
+        return $filterTopic;
     }
 }

@@ -304,7 +304,7 @@
                 </div>
                 <div class="row tm-banner-rows" id="tm-section-search">
 
-                    <form action="{{ url('advance-search') }}" class="tm-search-form tm-section-pad-2">
+                    <form action="{{ route('advance-search') }}" class="tm-search-form tm-section-pad-2">
                         <div class="row">
                             <div class="col-md-2"></div>
                             <div class="col-md-6">

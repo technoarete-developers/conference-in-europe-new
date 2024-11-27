@@ -183,7 +183,7 @@
     // if selected country
     $('#selected_country').change(function() {
         var country = $(this).val();
-        var slectedType = "country_select";
+        var slectedType = "country";
 
         var citySelect = $('#selected_city');
         citySelect.empty();
@@ -195,14 +195,14 @@
     // if selected city
     $('#selected_city').change(function() {
         var city = $(this).val();
-        var slectedType = "city_select";
+        var slectedType = "city";
         fetch_country(city, slectedType);
     });
 
     //  fetching subtopic list using city
     function fetch_country(data, slectedType) {
-        // $('.hero').removeClass('loaded')
-        // $('.hero').addClass('loading');
+        $('.hero').removeClass('loaded');
+        $('.hero').addClass('loading');
         const fetch_country_api = async () => {
             const response = await fetch('{{ route('subtopics-fetch-api') }}', {
                 method: 'POST',
@@ -212,8 +212,8 @@
                 }),
             });
             const myJson = await response.json();
-            // $('.hero').removeClass('loading')
-            // $('.hero').addClass('loaded');
+            $('.hero').removeClass('loading');
+            $('.hero').addClass('loaded');
 
             Object.keys(myJson).forEach((topicName) => {
                 const subtopicsList = myJson[topicName];

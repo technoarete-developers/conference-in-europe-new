@@ -150,7 +150,7 @@
             });
 
             var country = '{{ request()->country }}';
-            var slectedType = "country_select";
+            var slectedType = "country";
             fetch_country(country, slectedType);
             // passing to main-filter page
         });
