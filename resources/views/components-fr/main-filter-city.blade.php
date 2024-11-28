@@ -83,7 +83,7 @@
                                 <select class="dropdown select_months" id="selected_month">
                                     <option value="{{ request()->month }}"
                                         data-name="{{ request()->month ? $monthNameFr : '' }}">
-                                        {{ request()->month ? $monthName : 'Sélectionnez le mois' }}</option>
+                                        {{ request()->month ? $monthNameFr : 'Sélectionnez le mois' }}</option>
                                     @foreach ($monthList as $url => $name)
                                         <option value="{{ $url }}" data-name="{{ $name }}">
                                             {{ $name }} </option>
@@ -100,7 +100,7 @@
                                     style="color: #000;position: relative;top: 4px; font-size: 19px;"></i>&nbsp;
                                 <select class="dropdown select_countries text-capitalize" id="selected_country">
                                     <option value="{{ $countryName }}" data-name="{{ $countryNameFr }}">
-                                        {{ ucfirst($countryNameFr) }}
+                                       {{ $countryNameFr ? $countryNameFr : 'Sélectionnez le mois' }}
                                     </option>
                                     @foreach ($topCountry as $url => $name)
                                         <option value="{{ $url }}" data-name="{{ $name }}">

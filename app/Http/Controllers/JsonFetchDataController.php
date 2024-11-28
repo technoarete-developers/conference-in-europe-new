@@ -248,11 +248,7 @@ class JsonFetchDataController extends Controller
         $data = json_decode($jsonData, true);
 
         if (isset($data[$month])) {
-            if (isset($data[$month][$city])) {
-                $content = $data[$city];
-            } else {
-                $content = $data[$month]['default'];
-            }
+            $content = $data[$month];
         } else {
             $content = $data['default'];
         }
