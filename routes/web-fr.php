@@ -118,7 +118,7 @@ Route::controller(CityController::class)->group(function () {
     Route::get('/cities/{city}', 'cityPageFr')->middleware(CityPageFound::class)->name('city-page-fr');
     Route::get('/cities/{city}/{month}', 'cityMonthPageFr')->where('month', '(january|february|march|april|may|june|july|august|september|october|november|december)')->middleware(CityPageFound::class)->name('city-month-page-fr');
     Route::get('/cities/{city}/{topic}', 'cityTopicPageFr')->middleware(CityTopicPageFound::class)->name('city-topic-page-fr');
-    Route::get('/cities/{city}/{topic}/{month}', 'cityTopicMonthPage')->middleware(CityTopicMonthPageFound::class)->name('city-topic-month-page-fr');
+    Route::get('/cities/{city}/{topic}/{month}', 'cityTopicMonthPageFr')->middleware(CityTopicMonthPageFound::class)->name('city-topic-month-page-fr');
 
     Route::get('/city-ajax', 'cityPageFr')->name('city-ajax-fr');
     Route::get('/city-month-ajax', 'cityMonthPageFr')->name('city-month-ajax-fr');
