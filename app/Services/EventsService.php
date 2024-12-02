@@ -26,12 +26,7 @@ class EventsService
     {
 
         // topic name not matched to data base so here changed as per data base topic name
-        if ($topic == "e commerce") {
-            $topic = str_replace("e commerce", "e-commerce", $topic);
-        }
-        if ($topic == "e learning") {
-            $topic = str_replace("e learning", "e-learning", $topic);
-        }
+        $topic = str_ireplace(["e commerce", "e learning"], ["e-commerce", "e-learning"], $topic);
 
         return EventTable::where('city', $city)
             ->where(function ($query) use ($topic) {
@@ -49,12 +44,7 @@ class EventsService
     public function cityTopicMonthEvents($city, $topic, $month)
     {
         // topic name not matched to data base so here changed as per data base topic name
-        if ($topic == "e commerce") {
-            $topic = str_replace("e commerce", "e-commerce", $topic);
-        }
-        if ($topic == "e learning") {
-            $topic = str_replace("e learning", "e-learning", $topic);
-        }
+        $topic = str_ireplace(["e commerce", "e learning"], ["e-commerce", "e-learning"], $topic);
 
         return EventTable::where('city', $city)->where('month', 'like', "%{$month}%")
             ->where(function ($query) use ($topic) {
@@ -75,12 +65,7 @@ class EventsService
     {
 
         // topic name not matched to data base so here changed as per data base topic name
-        if ($topic == "e commerce") {
-            $topic = str_replace("e commerce", "e-commerce", $topic);
-        }
-        if ($topic == "e learning") {
-            $topic = str_replace("e learning", "e-learning", $topic);
-        }
+        $topic = str_ireplace(["e commerce", "e learning"], ["e-commerce", "e-learning"], $topic);
 
         return EventTable::where('country', $country)
             ->where(function ($query) use ($topic) {
@@ -102,12 +87,7 @@ class EventsService
     {
 
         // topic name not matched to data base so here changed as per data base topic name
-        if ($topic == "e commerce") {
-            $topic = str_replace("e commerce", "e-commerce", $topic);
-        }
-        if ($topic == "e learning") {
-            $topic = str_replace("e learning", "e-learning", $topic);
-        }
+        $topic = str_ireplace(["e commerce", "e learning"], ["e-commerce", "e-learning"], $topic);
 
         return EventTable::where('country', $country)->where('month', 'like', "%{$month}%")
             ->where(function ($query) use ($topic) {
@@ -124,12 +104,7 @@ class EventsService
         $topCountry = $this->filter->topCountry();
 
         // topic name not matched to data base so here changed as per data base topic name
-        if ($topic == "e commerce") {
-            $topic = str_replace("e commerce", "e-commerce", $topic);
-        }
-        if ($topic == "e learning") {
-            $topic = str_replace("e learning", "e-learning", $topic);
-        }
+        $topic = str_ireplace(["e commerce", "e learning"], ["e-commerce", "e-learning"], $topic);
 
         return EventTable::whereIn('country', $topCountry)->where(function ($query) use ($topic) {
             $query->where('sub_topic', 'LIKE', "%{$topic}%")
@@ -143,12 +118,7 @@ class EventsService
         $topCountry = $this->filter->topCountry();
 
         // topic name not matched to data base so here changed as per data base topic name
-        if ($topic == "e commerce") {
-            $topic = str_replace("e commerce", "e-commerce", $topic);
-        }
-        if ($topic == "e learning") {
-            $topic = str_replace("e learning", "e-learning", $topic);
-        }
+        $topic = str_ireplace(["e commerce", "e learning"], ["e-commerce", "e-learning"], $topic);
 
         return EventTable::whereIn('country', $topCountry)->where('month', 'like', "%{$month}%")->where(function ($query) use ($topic) {
             $query->where('sub_topic', 'LIKE', "%{$topic}%")
@@ -192,6 +162,9 @@ class EventsService
         }
 
         if ($topic) {
+
+            $topic = str_ireplace(["e commerce", "e learning"], ["e-commerce", "e-learning"], $topic);
+            
             $searchConditions[] = "(topic LIKE '%$topic%' OR sub_topic LIKE '%$topic%')";
         }
 
