@@ -61,6 +61,10 @@
     </script>
 
     <style>
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
         #mainNav {
             position: relative;
         }

@@ -83,27 +83,17 @@
             font-family: open sans-serif;
             font-size: 23px;
         }
+
+      
     </style>
 @endsection
 
 @section('content')
     @include('layout-fr.header')
     <div class="tm-main-content" id="top">
-        <section class="global-page-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="block text-capitalize py-4">
-                            <h2>{{ $topicNameFr }}</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <div class="marqq">
-            <div class="container-fluid">
-                <h1 class="heading" style="text-align:center; text-transform:uppercase;"><b>Sous-thèmes des {{ $topicNameFr }}</b</h1>
-                        <div class="titleline"> </div>
+            <div class="container-fluid" id="topic-container">
+                <div class="titleline"> </div>
             </div>
         </div>
         <div class="tm-page-wrap mx-auto container">
@@ -115,7 +105,7 @@
                                 <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2 bhoechie-tab-menu">
                                     <div class="list-group">
                                         @foreach ($topicList as $topicUrl => $topicName)
-                                            <a class="list-group-item text-center topic-link {{ request()->topic == $topicUrl ? 'active' : '' }} text-capitalize"
+                                            <a class="list-group-item text-center topic-link {{ request()->topic == $topicUrl ? 'active' : '' }} text-capitalize cursor-pointer"
                                                 id="{{ $topicUrl }}" data-topic="{{ $topicUrl }}">
                                                 {{ $topicName }}</a>
                                         @endforeach
@@ -123,7 +113,7 @@
                                 </div>
                                 <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10 bhoechie-tab" id="bhoechie">
                                     <div class="bhoechie-tab-content active">
-                                        <div class="selected boxing-tab subtopics-container ">
+                                        <div class="selected boxing-tab subtopics-container cursor-pointer">
 
                                         </div>
                                     </div>
@@ -142,6 +132,7 @@
     <script>
         $(document).ready(function() {
             var topicStopicList = @json($topicStopicList);
+            var topicList = @json($topicList);
 
             var requestTopic = "{{ request()->topic }}";
             displaySubtopics(requestTopic);
@@ -157,6 +148,14 @@
 
 
             function displaySubtopics(topics) {
+
+                var topicName = topicList[topics];
+                $('#topic-container').empty();
+                $('#topic-container').append(
+                    `<h1 class="heading" style="text-align: center; text-transform: uppercase;">
+            <b>Sous-thèmes des ${topicName.replace(/-/g, ' ')}</b>
+        </h1>`
+                );
 
                 if (topicStopicList[topics]) {
                     var subTopics = topicStopicList[topics];
