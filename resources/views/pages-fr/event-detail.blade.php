@@ -2,15 +2,15 @@
 
 @section('meta')
         <title>
-            {{ $data->event_name }}</title>
+            {{ $events->event_name }}</title>
         <meta name="keyword" content="" />
         <meta name="description"
-            content="{{ $data->event_name }} {{ $data->event_title }} portal and get lnformation in your inbox." />
+            content="{{ $events->event_name }} {{ $events->event_title }} portal and get lnformation in your inbox." />
 
-        <meta property="og:title" content="{{ $data->event_name }}" />
+        <meta property="og:title" content="{{ $events->event_name }}" />
         <meta property="og:keywords" content="" />
         <meta property="og:description"
-            content="{{ $data->event_name }} {{ $data->event_title }} portal and get lnformation in your inbox." />
+            content="{{ $events->event_name }} {{ $events->event_title }} portal and get lnformation in your inbox." />
 
         <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
@@ -222,7 +222,7 @@
 
         .global-page-header {
 
-            background: url(/img/event-banner-new.jpg)
+            background: url('/img/event-banner-new.jpg')
         }
 
         .image-container {
@@ -327,7 +327,7 @@
                 @if (session()->has('smessage_subscribe'))
                     <div class="alert alert-success"
                         style="color: green; font-size: 25px; text-align: center; padding: 10px">
-                        <h2>{{ session()->get('smessage_subscribe') }} ({{ $eventing->event_title }}) Conférence.</h2>
+                        <h2>{{ session()->get('smessage_subscribe') }} ({{ $events->event_title }}) Conférence.</h2>
                     </div>
                 @endif
 
@@ -338,13 +338,13 @@
 
                             <div class="image-container">
                                 <img src="/img/imageicmb.png" alt="" class="img">
-                                <div class="image-text">{{ $eventing->event_name }} ({{ $eventing->event_title }})</div>
+                                <div class="image-text">{{ $events->event_name }} ({{ $events->event_title }})</div>
                                 <div class="button-container">
-                                    @if (strpos($eventing->event_location, 'outside'))
-                                        <a href="{{ $eventing->url }}" target="_blank"
+                                    @if (strpos($events->event_location, 'outside'))
+                                        <a href="{{ $events->url }}" target="_blank"
                                             class="image-button outside-event">Participer</a>
                                     @else
-                                        <a href="{{ $eventing->url }}{{ $eventing->event_id }}" target="_blank"
+                                        <a href="{{ $events->url }}{{ $events->event_id }}" target="_blank"
                                             class="image-button outside-event">Participer</a>
                                     @endif
                                     <a href="#" target="_blank" class="image-button" data-toggle="modal"
@@ -770,50 +770,50 @@
                                                     placeholder="Université/Organisation" class="form-control">
 
                                                 <input type="text" class="form-control" name="conference_name"
-                                                    id="topic" value="{{ $eventing->event_name }}" readonly="">
+                                                    id="topic" value="{{ $events->event_name }}" readonly="">
 
                                                 <input type="text" class="form-control" name="conference_country"
-                                                    id="conference_country" value="{{ $eventing->country }}"
+                                                    id="conference_country" value="{{ $events->country }}"
                                                     readonly="">
 
                                                 <input type="text" class="form-control" name="conference_city"
-                                                    id="conference_city" value="{{ $eventing->city }}" readonly="">
+                                                    id="conference_city" value="{{ $events->city }}" readonly="">
 
                                                 <input type="text" class="form-control" name="conference_date"
-                                                    id="conference_date" value="{{ $eventing->sdate }}" readonly="">
+                                                    id="conference_date" value="{{ $events->sdate }}" readonly="">
 
                                                 <input type="hidden" name="conference_title"
-                                                    value="{{ $eventing->event_title }}" />
+                                                    value="{{ $events->event_title }}" />
 
                                                 <input type="hidden" name="conference_url"
-                                                    value="{{ $eventing->url . $eventing->event_id }}" />
+                                                    value="{{ $events->url . $events->event_id }}" />
 
                                                 <input type="hidden" name="paper_submission_url"
-                                                    value="{{ $eventing->pslink }}" />
+                                                    value="{{ $events->pslink }}" />
 
                                                 <input type="hidden" name="registration_url"
-                                                    value="{{ $eventing->reglink }}" />
+                                                    value="{{ $events->reglink }}" />
 
                                                 <input type="hidden" name="event_id"
-                                                    value="{{ $eventing->event_id }}" />
+                                                    value="{{ $events->event_id }}" />
 
                                                 <input type="hidden" name="conference_rdead"
-                                                    value="{{ $eventing->rdead }}">
+                                                    value="{{ $events->rdead }}">
 
                                                 <input type="hidden" name="conference_sdead"
-                                                    value="{{ $eventing->sdead }}">
+                                                    value="{{ $events->sdead }}">
 
                                                 <input type="hidden" name="contact_person"
-                                                    value="{{ $eventing->contact_person }}">
+                                                    value="{{ $events->contact_person }}">
 
                                                 <input type="hidden" name="organization"
-                                                    value="{{ $eventing->org }}" />
+                                                    value="{{ $events->org }}" />
 
                                                 <input type="hidden" name="contact_no"
-                                                    value="{{ $eventing->contact_no }}" />
+                                                    value="{{ $events->contact_no }}" />
 
                                                 <input type="hidden" name="contact_email"
-                                                    value="{{ $eventing->contact_email }}" />
+                                                    value="{{ $events->contact_email }}" />
 
                                                 <input type="hidden" name="captcha" id="captcha">
 
@@ -838,35 +838,35 @@
 
 
                             <p class="date-new"><img src="/img/ccalender.png"> &nbsp;
-                                &nbsp;{{ date('dS-M-Y', strtotime($eventing->sdate)) }}<sup></sup> to
-                                {{ date('dS-M-Y', strtotime($eventing->edate)) }}<sup></sup>
+                                &nbsp;{{ date('dS-M-Y', strtotime($events->sdate)) }}<sup></sup> to
+                                {{ date('dS-M-Y', strtotime($events->edate)) }}<sup></sup>
                             </p>
                             <p class="name"><img src="/img/location.png">&nbsp; &nbsp;
-                                {{ $eventing->city }}, {{ $eventing->country }}
+                                {{ $events->city }}, {{ $events->country }}
                             </p>
                             <hr>
                             <h4 class="org-details"><b>
                                     Détails de l'organisateur</b>
                             </h4>
                             <p class="new-user"><img src="/img/user-clock.png">&nbsp;
-                                &nbsp;{{ $eventing->contact_person }}</p>
+                                &nbsp;{{ $events->contact_person }}</p>
                             <p><img src="/img/caller.png">&nbsp; &nbsp;
-                                {{ $eventing->contact_no }}
+                                {{ $events->contact_no }}
                             </p>
                             <p><img src="/img/gmail.png">&nbsp; &nbsp;
-                                {{ $eventing->contact_email }}
+                                {{ $events->contact_email }}
                             </p>
                             <hr>
                             <h4 class="call-paper" style="color:#150371;"><b>Appel à communication</b>
                             </h4>
                             <ul class="paper-topics" style="line-height: 2;">
-                                @if ($eventing->call_for_paper != null)
+                                @if ($events->call_for_paper != null)
                                     <div>
                                         @php
                                             $topics = str_replace(
                                                 ['<p>', '</p>', '<li>', '</li>', '<ul>', '</ul>', '<br />'],
                                                 '',
-                                                $eventing->call_for_paper,
+                                                $events->call_for_paper,
                                             );
                                             $topicsSplit = preg_split('/<br>|,/', $topics);
                                         @endphp
@@ -890,11 +890,11 @@
                             <div class="description" style=" margin-top: 48px;">
                                 <h2 style="color:#150371;"> <b>À propos de la conférence</b>
                                 </h2>
-                                <p style="text-align:justify;">À propos de la <span>{{ $eventing->event_name }}
-                                        ({{ $eventing->event_title }})
+                                <p style="text-align:justify;">À propos de la <span>{{ $events->event_name }}
+                                        ({{ $events->event_title }})
                                         .</span>
                                     est un excellent moyen de créer du réseautage en engageant des discussions sur
-                                    <span>{{ $eventing->topic }}</span> Sujets. Cette plateforme veut rassembler tous les
+                                    <span>{{ $events->topic }}</span> Sujets. Cette plateforme veut rassembler tous les
                                     étudiants, chercheurs et
                                     professionnels réunis sur une même scène pour discuter de nouvelles opportunités, idées
                                     et développements.
@@ -1024,13 +1024,13 @@
                                         <p><strong>Votre paiement total :</strong></p>
                                         <p>
                                             @if (isset($_GET['source']))
-                                                <a href="{{ !str_contains($eventing->event_location, 'outside')
-                                                    ? $eventing->url . $eventing->event_id . '&source=' . $_GET['source']
-                                                    : $eventing->url }}"
+                                                <a href="{{ !str_contains($events->event_location, 'outside')
+                                                    ? $events->url . $events->event_id . '&source=' . $_GET['source']
+                                                    : $events->url }}"
                                                     target="_blank" class="btn secondary-button text-white "
                                                     id="go" target="_new">Inscrivez-vous en ligne</a>
                                             @else
-                                                <a href="{{ !str_contains($eventing->event_location, 'outside') ? $eventing->url . $eventing->event_id : $eventing->url }}"
+                                                <a href="{{ !str_contains($events->event_location, 'outside') ? $events->url . $events->event_id : $events->url }}"
                                                     target="_blank" class="btn secondary-button text-white "
                                                     id="go" target="_new">Inscrivez-vous en ligne</a>
                                             @endif
@@ -1068,10 +1068,10 @@
                                 </div>
                                 <div data-tab="addtocalender" class="tabs__tab">
                                     <div class="conn">
-                                        <a href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text= {{ $eventing->event_name }}and Recognition &amp;add=foo@bar.baz&amp;location= {{ $eventing->city }} &amp;details=The aim of the Conference is to provide a platform to the researchers and practitioners from both academia as well as industry to meet the share cuttingedge development in the field."
+                                        <a href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text= {{ $events->event_name }}and Recognition &amp;add=foo@bar.baz&amp;location= {{ $events->city }} &amp;details=The aim of the Conference is to provide a platform to the researchers and practitioners from both academia as well as industry to meet the share cuttingedge development in the field."
                                             class="goog" style=" background-color: #5e70c5;">Google
                                             Calendrier</a>
-                                        <a href="https://calendar.yahoo.com/render?action=template&amp;text={{ $eventing->event_name }}and recognition &amp;add=foo@bar.baz&amp;location={{ $eventing->city }}&amp;details=the aim of the conference is to provide a platform to the researchers and practitioners from both academia as 0well 0as industry to meet the share cuttingedge development in the field."
+                                        <a href="https://calendar.yahoo.com/render?action=template&amp;text={{ $events->event_name }}and recognition &amp;add=foo@bar.baz&amp;location={{ $events->city }}&amp;details=the aim of the conference is to provide a platform to the researchers and practitioners from both academia as 0well 0as industry to meet the share cuttingedge development in the field."
                                             class="yah" style="background-color: #bbb62c;">
                                             Yahoo Calendrier</a>
                                         <a href="https://office.live.com/start/Calendar.aspx" class="outl"

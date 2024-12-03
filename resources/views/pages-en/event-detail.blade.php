@@ -221,7 +221,7 @@
 
         .global-page-header {
 
-            background: url(/img/event-banner-new.jpg)
+            background: url('/img/event-banner-new.jpg')
         }
 
         .image-container {
