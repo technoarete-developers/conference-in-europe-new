@@ -208,16 +208,16 @@ class EventsService
         $nextMonthStart = Carbon::now()->addMonth()->startOfMonth()->format('Y-m-d');
         $afterThreeMonthsLastDate = Carbon::now()->addMonth(5)->endOfMonth()->format('Y-m-d');
 
-        $events = EventTable::where('event_id', $event_id)->get();
+        $events = EventTable::where('event_id', $event_id)->first();
 
-        $similarEventName = EventTable::whereIn('country', $topCountry)->where('event_name', $events[0]->event_name)
+        $similarEventName = EventTable::whereIn('country', $topCountry)->where('event_name', $events->event_name)
             ->where('event_id', '!=', $event_id)
             ->whereBetween('sdate', [$nextMonthStart, $afterThreeMonthsLastDate])
             ->orderBy('sdate')
             ->limit(20)
             ->get();
 
-        $similarCountryEvent = EventTable::whereIn('country', $topCountry)->where('country', $events[0]->country)
+        $similarCountryEvent = EventTable::whereIn('country', $topCountry)->where('country', $events->country)
             ->orderBy('sdate')->where('event_id', '!=', $event_id)
             ->whereBetween('sdate', [$nextMonthStart, $afterThreeMonthsLastDate])
             ->orderBy('sdate')

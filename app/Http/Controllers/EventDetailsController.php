@@ -23,8 +23,8 @@ class EventDetailsController extends Controller
 
         [$events, $similarEventName, $similarCountryEvent] = $this->getEvent->eventDetailsEvents($request->event_id);
 
-        $countryNameFr = $this->filter->getCountryFrName(strtolower(str_replace(" ","-",$events[0]->country)));
-        $breadcrumbs = generateBreadcrumb($events[0]->country, $events[0]->city, $events[0]->topic, $events[0]->month);
+        $countryNameFr = $this->filter->getCountryFrName(strtolower(str_replace(" ", "-", $events->country)));
+        $breadcrumbs = generateBreadcrumb($events->country, $events->city, $events->topic, $events->month);
 
         if (app()->getLocale() == 'en') {
             return view('pages-en.event-detail', compact('events', 'similarEventName', 'similarCountryEvent', 'breadcrumbs'));

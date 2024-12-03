@@ -1,7 +1,6 @@
 @extends('layout-fr.master')
 
 @section('meta')
-    @foreach ($events as $data)
         <title>
             {{ $data->event_name }}</title>
         <meta name="keyword" content="" />
@@ -14,7 +13,6 @@
             content="{{ $data->event_name }} {{ $data->event_title }} portal and get lnformation in your inbox." />
 
         <link rel="canonical" href="{{ url()->current() }}" />
-    @endforeach
 @endsection
 
 @section('style')
@@ -326,19 +324,14 @@
 
                 </div>
             @endif
-
-            @foreach ($events as $eventing)
                 @if (session()->has('smessage_subscribe'))
                     <div class="alert alert-success"
                         style="color: green; font-size: 25px; text-align: center; padding: 10px">
                         <h2>{{ session()->get('smessage_subscribe') }} ({{ $eventing->event_title }}) Conférence.</h2>
                     </div>
                 @endif
-            @endforeach
 
             <div class="container-fluid">
-
-                @foreach ($events as $eventing)
                     <div class="row">
 
                         <div class="col-md-4">
@@ -1089,10 +1082,8 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
             </div>
         </section>
-        @foreach ($events as $eventing)
             <div class="p-5 tm-container-outer tm-bg-gray">
                 <div class="container-fluid">
                     <h4 class="org-details"><b>Conférences similaires en {{ $countryNameFr }}</b>
@@ -1148,7 +1139,6 @@
                     </div>
                 </div>
             </div>
-        @endforeach
     </div>
     @include('layout-fr.footer')
 @endsection
