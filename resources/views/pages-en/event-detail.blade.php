@@ -803,19 +803,16 @@
 
                                             <input type="hidden" name="event_id" value="{{ $events->event_id }}" />
 
-                                            <input type="hidden" name="conference_rdead"
-                                                value="{{ $events->rdead }}">
+                                            <input type="hidden" name="conference_rdead" value="{{ $events->rdead }}">
 
-                                            <input type="hidden" name="conference_sdead"
-                                                value="{{ $events->sdead }}">
+                                            <input type="hidden" name="conference_sdead" value="{{ $events->sdead }}">
 
                                             <input type="hidden" name="contact_person"
                                                 value="{{ $events->contact_person }}">
 
                                             <input type="hidden" name="organization" value="{{ $events->org }}" />
 
-                                            <input type="hidden" name="contact_no"
-                                                value="{{ $events->contact_no }}" />
+                                            <input type="hidden" name="contact_no" value="{{ $events->contact_no }}" />
 
                                             <input type="hidden" name="contact_email"
                                                 value="{{ $events->contact_email }}" />
@@ -1069,61 +1066,65 @@
                 </div>
             </div>
         </section>
-        <div class="p-5 tm-container-outer tm-bg-gray">
-            <div class="container-fluid">
-                <h4 class="org-details"><b>Similar Conferences in {{ $events->country }}</b>
-                </h4>
-                <div class="carousel-wrap">
-                    <div class="owl-carousel">
-                        @foreach ($similarEventName as $data)
-                            <div class="card">
-                                <div class="item">
-                                    <a class="similar-conferences" data-name="{{ $data->event_name }}"
-                                        data-date="{{ date('dS-M-Y', strtotime($data->sdate)) }}" style="color: black;"
-                                        href="/eventdetail/{{ $data->event_id }}">
-                                        <h6>{{ $data->event_name }} ({{ $data->event_title }})</h6>
-                                        <p class="date-new"><img src="/img/ccalender.png">
-                                            &nbsp;{{ date('dS-M-Y', strtotime($data->sdate)) }}<sup></sup> to
-                                            {{ date('dS-M-Y', strtotime($data->edate)) }}<sup></sup>
-                                        </p>
-                                        <p class="name"><img src="/img/location.png">&nbsp;{{ $data->city }},
-                                            {{ $data->country }}
-                                        </p>
-                                    </a>
+        @if ($similarEventName->isNotEmpty())
+            <div class="p-5 tm-container-outer tm-bg-gray">
+                <div class="container-fluid">
+                    <h4 class="org-details"><b>Similar Conferences in {{ $events->country }}</b>
+                    </h4>
+                    <div class="carousel-wrap">
+                        <div class="owl-carousel">
+                            @foreach ($similarEventName as $data)
+                                <div class="card">
+                                    <div class="item">
+                                        <a class="similar-conferences" data-name="{{ $data->event_name }}"
+                                            data-date="{{ date('dS-M-Y', strtotime($data->sdate)) }}"
+                                            style="color: black;" href="/eventdetail/{{ $data->event_id }}">
+                                            <h6>{{ $data->event_name }} ({{ $data->event_title }})</h6>
+                                            <p class="date-new"><img src="/img/ccalender.png">
+                                                &nbsp;{{ date('dS-M-Y', strtotime($data->sdate)) }}<sup></sup> to
+                                                {{ date('dS-M-Y', strtotime($data->edate)) }}<sup></sup>
+                                            </p>
+                                            <p class="name"><img src="/img/location.png">&nbsp;{{ $data->city }},
+                                                {{ $data->country }}
+                                            </p>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="p-5 tm-container-outer tm-bg-gray">
-            <div class="container-fluid">
-                <h4 class="org-details">You Might Also be Interested In {{ $events->country }}</h4>
-                <div class="carousel-wrap">
-                    <div class="owl-carousel">
-                        @foreach ($similarCountryEvent as $data)
-                            <div class="card">
-                                <div class="item">
-                                    <a class="interested-conference" style="color: black;"
-                                        href="/eventdetail/{{ $data->event_id }}">
-                                        <h6 class="text-black-50">{{ $data->event_name }}
-                                            ({{ $data->event_title }})
-                                        </h6>
-                                        <p class="date-new "><img src="/img/ccalender.png">
-                                            &nbsp;{{ date('dS-M-Y', strtotime($data->sdate)) }}<sup></sup> to
-                                            {{ date('dS-M-Y', strtotime($data->edate)) }}<sup></sup>
-                                        </p>
-                                        <p class="name "><img src="/img/location.png">
-                                            &nbsp;{{ $data->city }}, {{ $data->country }}</p>
-                                    </a>
+        @endif
+        @if ($similarEventName->isNotEmpty())
+            <div class="p-5 tm-container-outer tm-bg-gray">
+                <div class="container-fluid">
+                    <h4 class="org-details">You Might Also be Interested In {{ $events->country }}</h4>
+                    <div class="carousel-wrap">
+                        <div class="owl-carousel">
+                            @foreach ($similarCountryEvent as $data)
+                                <div class="card">
+                                    <div class="item">
+                                        <a class="interested-conference" style="color: black;"
+                                            href="/eventdetail/{{ $data->event_id }}">
+                                            <h6 class="text-black-50">{{ $data->event_name }}
+                                                ({{ $data->event_title }})
+                                            </h6>
+                                            <p class="date-new "><img src="/img/ccalender.png">
+                                                &nbsp;{{ date('dS-M-Y', strtotime($data->sdate)) }}<sup></sup> to
+                                                {{ date('dS-M-Y', strtotime($data->edate)) }}<sup></sup>
+                                            </p>
+                                            <p class="name "><img src="/img/location.png">
+                                                &nbsp;{{ $data->city }}, {{ $data->country }}</p>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
     </div>
     @include('layout-en.footer')
 @endsection
