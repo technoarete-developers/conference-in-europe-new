@@ -210,7 +210,7 @@ class EventsService
 
         $events = EventTable::where('event_id', $event_id)->first();
 
-        $similarEventName = EventTable::whereIn('country', $topCountry)->where('event_name', $events->event_name)
+        $similarEventName = EventTable::whereIn('country', $topCountry)->where('event_title', $events->event_title)
             ->where('event_id', '!=', $event_id)
             ->whereBetween('sdate', [$nextMonthStart, $afterThreeMonthsLastDate])
             ->orderBy('sdate')
@@ -218,7 +218,7 @@ class EventsService
             ->get();
 
         $similarCountryEvent = EventTable::whereIn('country', $topCountry)->where('country', $events->country)
-            ->orderBy('sdate')->where('event_id', '!=', $event_id)
+            ->where('event_id', '!=', $event_id)
             ->whereBetween('sdate', [$nextMonthStart, $afterThreeMonthsLastDate])
             ->orderBy('sdate')
             ->limit(20)
