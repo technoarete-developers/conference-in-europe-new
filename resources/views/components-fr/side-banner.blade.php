@@ -57,7 +57,7 @@
                         {{ $detail->event_name }} ({{ $detail->event_title }})
                         prestigious event organized with a motivation to provide an excellent international platform for the academicians, researchers, engineers, industrial participants and budding students around the world to SHARE their research findings with the global experts.
                     </div>
-                    <a href="{{ route('event-detail', ['event_id' => $detail->event_id]) }}" class="prom_submit"
+                    <a href="{{ route('event-detail-fr', ['event_id' => $detail->event_id]) }}" class="prom_submit"
                         target="_blank">Voir plus</a>
                 </div>
             @endforeach
@@ -84,7 +84,7 @@
                             ({{ $detail->event_title }})
                             prestigious event organized with a motivation to provide an excellent international platform for the academicians, researchers, engineers, industrial participants and budding students around the world to SHARE their research findings with the global experts.
                         </div>
-                        <a href="{{ route('event-detail', ['event_id' => $detail->event_id]) }}" class="prom_submit"
+                        <a href="{{ route('event-detail-fr', ['event_id' => $detail->event_id]) }}" class="prom_submit"
                             target="_blank">Voir plus</a>
                     </div>
                 @endforeach
