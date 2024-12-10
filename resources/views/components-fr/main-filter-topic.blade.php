@@ -53,7 +53,7 @@
                     <div class="select-item" id="subtopic-select">
                         @if (request()->topic)
                             <span class="sub-top sub_topic text-capitalize">
-                                {{ str_replace('-', ' ', request()->topic) }}
+                                {{ $topicNameFr }}
                             </span>
                             <a onclick="subtopic_clear();" class="subtopic_clear p-1">
                                 <img src="/img/close-button.png" style="width: 18px; cursor: pointer;">
@@ -64,7 +64,7 @@
                     <div class="select-item" id="month-select">
                         @if (request()->month)
                             <span class="sub-top sub_topic text-capitalize">
-                                {{ str_replace('-', ' ', request()->month) }}
+                                {{ $monthNameFr }}
                             </span>
                             <a onclick="month_clear();" class="month_clear p-1">
                                 <img src="/img/close-button.png" style="width: 18px; cursor: pointer;">
@@ -81,7 +81,7 @@
                                     style="color: #000;position: relative;top: 4px; font-size: 19px;"></i>&nbsp;
                                 <select class="dropdown select_months" id="selected_month">
                                     <option value="{{ request()->month ? request()->month : '' }}">
-                                        {{ request()->month ? ucfirst(request()->month) : 'Sélectionnez le mois' }}</option>
+                                        {{ request()->month ? $monthNameFr : 'Sélectionnez le mois' }}</option>
                                     @foreach ($monthList as $url => $name)
                                         <option value="{{ $url }}" data-name="{{ $name }}">
                                             {{ $name }} </option>

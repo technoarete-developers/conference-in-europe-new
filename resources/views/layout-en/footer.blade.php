@@ -89,7 +89,7 @@
             <div class="row">
                 <div class="col-md-12" style="margin-top: 8px;">
                     <h4>Copyright &copy; {{ date('Y') }} Conference in Europe. All Rights Reserved. | <a
-                            href="{{ route('terms-and-condition-fr') }}">Terms &amp; Conditions</a></h4>
+                            href="{{ route('terms-and-condition') }}">Terms &amp; Conditions</a></h4>
                 </div>
             </div>
         </div>
