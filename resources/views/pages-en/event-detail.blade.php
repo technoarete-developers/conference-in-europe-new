@@ -313,8 +313,7 @@
                             <ol class="breadcrumb">
                                 @foreach ($breadcrumbs as $breadcrumb)
                                     <li class="breadcrumb-item">
-                                        <a
-                                            href="{{ $breadcrumb['url'] }}">{{ str_replace('-', ' ', $breadcrumb['title']) }}</a>
+                                        <a href="{{ $breadcrumb['url'] }}">{{ str_replace('-', ' ', $breadcrumb['title']) }}</a>
                                     </li>
                                 @endforeach
                                 <li class="breadcrumb-item active" aria-current="page">Event Detail</li>
@@ -1233,9 +1232,6 @@
 
         // Get the Contact Us tab element
         const contactUsTab = document.querySelector('[data-tab-id="contactus"]');
-
-        // Add the 'tabs__tab-btn--selected' class to make it appear active
-        contactUsTab.classList.add('tabs__tab-btn--selected');
     </script>
 
     <script>

@@ -39,8 +39,7 @@
                             <div class="row">
                                 <div class="col-sm-12 topic-midule-grid">
                                     <div class="topic-date-cnfr">
-                                        <legend> <span class="fld_hed text-capitalize">{{ $cityNameFr }}</span>
-                                        </legend>
+                                        <legend><span class="fld_hed text-capitalize">{{ $cityNameFr }}</span></legend>
                                         <div class="county-conference">
                                             <div class="col-md-12">
                                                 <h1 style=" font-size: 18px;font-family:Gill Sans;">
@@ -77,10 +76,8 @@
                                 @include('components-fr.side-banner')
                             </div>
                         </div>
-                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

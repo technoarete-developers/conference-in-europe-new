@@ -2241,7 +2241,7 @@
      display: inline-block;
      padding-right: .5rem;
      padding-left: .5rem;
-     color: #868e96;
+     color: #ffffff;
      content: "/"
  }
 
@@ -2254,7 +2254,7 @@
  }
 
  .breadcrumb-item.active {
-     color: #868e96
+     color: #f4f6f8
  }
 
  .list-group {

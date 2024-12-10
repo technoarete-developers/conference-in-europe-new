@@ -1,1 +1,201 @@
-*{margin:0;padding:0;list-style:none}.tab{width:100%;height:350px;border:1px solid #ccc;margin:20px auto;background:#fff}.tabContent>div{display:none}.tabHeader{height:50px;line-height:50px;border-bottom:1px solid #ccc}.tabHeader ul{margin-bottom:0;list-style:none}.tabHeader li{float:left;width:200px;text-align:center;cursor:pointer;color:#000;font-weight:600}.tabHeader li.active{background:#031e6b;color:#fff}.tabContent .active{display:block}.tabContent a{background:#f7f4f4;color:#333;padding:7px;margin:5px;display:inline-block;border-radius:5px;width:13%;text-align:center;font-size:14px;font-weight:600;box-shadow:1px 1px 3px #ccc}.tabContent .tabItem{padding:10px}@media only screen and (max-width:767px){.tabHeader li{float:left;width:100%}.tabContent a{width:46%}.tab{width:100%;height:auto}}@media only screen and (max-width:767px){.sbtn{text-align:center}}.justify-content-center{justify-content:center}.upcoming-section .calander-div{text-align:center;margin-bottom:27px}.upcoming-section .calander-div .up-month{position:absolute;top:13%;left:0;right:0}.upcoming-section .calander-div .up-year{position:absolute;top:65%;left:50%;transform:translate(-50%,-50%)}.calendar{margin:1.25em 30px 11px 10px;padding-top:7px;float:left;width:111px;background:#ededef;background:-webkit-gradient(linear,left top,left bottom,from(#ededef),to(#ccc));background:-moz-linear-gradient(top,#ededef,#ccc);font:bold 30px/60px Arial #000,Arial,Helvetica,sans-serif;text-align:center;color:#000;text-shadow:#fff 0 1px 0;border-radius:3px;position:relative;box-shadow:0 2px 2px #888}.calendar em{display:block;font:normal bold 11px/30px Arial,Helvetica,sans-serif;color:#fff;text-shadow:#00365a 0 -1px 0;background:#04599a;background:-webkit-gradient(linear,left top,left bottom,from(#04599a),to(#00365a));background:-moz-linear-gradient(top,#04599a,#00365a);border-bottom-right-radius:3px;border-bottom-left-radius:3px;border-top:1px solid #00365a}.calendar:after,.calendar:before{content:'';float:left;position:absolute;top:5px;width:8px;height:8px;background:#111;z-index:1;border-radius:10px;box-shadow:0 1px 1px #fff}.calendar:before{left:11px}.calendar:after{right:11px}.calendar em:after,.calendar em:before{content:'';float:left;position:absolute;top:-5px;width:4px;height:14px;background:#dadada;background:-webkit-gradient(linear,left top,left bottom,from(#f1f1f1),to(#aaa));background:-moz-linear-gradient(top,#f1f1f1,#aaa);z-index:2;border-radius:2px}.calendar em:before{left:13px}.calendar em:after{right:13px}.calander-year{font-family:Roboto;font-weight:700;font-size:21px;text-align:center}.new-width{max-width:100%}.tm-banner-bg{background-image:url(/img/banner-new.webp)!important;background-size:cover;width:100%}
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.tab {
+    width: 100%;
+    height: 350px;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    background: #fff
+}
+
+.tabContent>div {
+    display: none
+}
+
+.tabHeader {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc
+}
+
+.tabHeader ul {
+    margin-bottom: 0;
+    list-style: none
+}
+
+.tabHeader li {
+    float: left;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    color: #000;
+    font-weight: 600
+}
+
+.tabHeader li.active {
+    background: #031e6b;
+    color: #fff
+}
+
+.tabContent .active {
+    display: block
+}
+
+.tabContent a {
+    background: #f7f4f4;
+    color: #333;
+    padding: 7px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 5px;
+    width: 13%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 1px 1px 3px #ccc
+}
+
+.tabContent .tabItem {
+    padding: 10px
+}
+
+@media only screen and (max-width:767px) {
+    .tabHeader li {
+        float: left;
+        width: 100%
+    }
+
+    .tabContent a {
+        width: 46%
+    }
+
+    .tab {
+        width: 100%;
+        height: auto
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .sbtn {
+        text-align: center
+    }
+}
+
+.justify-content-center {
+    justify-content: center
+}
+
+.upcoming-section .calander-div {
+    text-align: center;
+    margin-bottom: 27px
+}
+
+.upcoming-section .calander-div .up-month {
+    position: absolute;
+    top: 13%;
+    left: 0;
+    right: 0
+}
+
+.upcoming-section .calander-div .up-year {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.calendar {
+    margin: 1.25em 30px 11px 10px;
+    padding-top: 7px;
+    float: left;
+    width: 111px;
+    background: #ededef;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ededef), to(#ccc));
+    background: -moz-linear-gradient(top, #ededef, #ccc);
+    font: bold 30px/60px Arial #000, Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #000;
+    text-shadow: #fff 0 1px 0;
+    border-radius: 3px;
+    position: relative;
+    box-shadow: 0 2px 2px #888
+}
+
+.calendar em {
+    display: block;
+    font: normal bold 11px/30px Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-shadow: #00365a 0 -1px 0;
+    background: #04599a;
+    background: -webkit-gradient(linear, left top, left bottom, from(#04599a), to(#00365a));
+    background: -moz-linear-gradient(top, #04599a, #00365a);
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top: 1px solid #00365a
+}
+
+.calendar:after,
+.calendar:before {
+    content: '';
+    float: left;
+    position: absolute;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    background: #111;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px #fff
+}
+
+.calendar:before {
+    left: 11px
+}
+
+.calendar:after {
+    right: 11px
+}
+
+.calendar em:after,
+.calendar em:before {
+    content: '';
+    float: left;
+    position: absolute;
+    top: -5px;
+    width: 4px;
+    height: 14px;
+    background: #dadada;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#aaa));
+    background: -moz-linear-gradient(top, #f1f1f1, #aaa);
+    z-index: 2;
+    border-radius: 2px
+}
+
+.calendar em:before {
+    left: 13px
+}
+
+.calendar em:after {
+    right: 13px
+}
+
+.calander-year {
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 21px;
+    text-align: center
+}
+
+.new-width {
+    max-width: 100%
+}
+
+.tm-banner-bg {
+    background-image: url("/img/banner-new.webp") !important;
+    background-size: cover;
+    width: 100%
+}

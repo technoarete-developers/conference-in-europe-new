@@ -2,10 +2,13 @@
 
 @section('meta')
     <title>{{ str_replace(['@topic', '@month'], [$topicNameFr, $monthNameFr], $content['title']) }}</title>
-    <meta name="keyword" content="{{ str_replace(['@topic', '@month'], [$topicNameFr, $monthNameFr], $content['metaKey']) }}" />
-    <meta name="description" content="{{ str_replace(['@topic', '@month'], [$topicNameFr, $monthNameFr], $content['metaDes']) }}" />
+    <meta name="keyword"
+        content="{{ str_replace(['@topic', '@month'], [$topicNameFr, $monthNameFr], $content['metaKey']) }}" />
+    <meta name="description"
+        content="{{ str_replace(['@topic', '@month'], [$topicNameFr, $monthNameFr], $content['metaDes']) }}" />
 
-    <meta property="og:title" content="{{ str_replace(['@topic', '@month'], [$topicNameFr, $monthNameFr], $content['title']) }}" />
+    <meta property="og:title"
+        content="{{ str_replace(['@topic', '@month'], [$topicNameFr, $monthNameFr], $content['title']) }}" />
     <meta property="og:keywords"
         content="{{ str_replace(['@topic', '@month'], [$topicNameFr, $monthNameFr], $content['metaKey']) }}" />
     <meta property="og:description"
@@ -24,7 +27,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>{{ $topicNameFr }}</h2>
+                        <h2>{{ $topicNameFr }} / {{ $monthNameFr }}</h2>
                     </div>
                 </div>
             </div>
@@ -37,8 +40,7 @@
                             <div class="row">
                                 <div class="col-sm-12 topic-midule-grid">
                                     <div class="topic-date-cnfr">
-                                        <legend> <span
-                                                class="fld_hed text-capitalize">{{ $topicNameFr }}</span>
+                                        <legend> <span class="fld_hed text-capitalize">{{ $topicNameFr }}</span>
                                         </legend>
                                         <div class="county-conference">
                                             <div class="col-md-12">
@@ -62,7 +64,8 @@
                             <div class="row">
                                 <div class="col-sm-9">
                                     <div class="p-4 mt-4" style="background-color: #f5f7fd: font-weight: 700">
-                                        <h3 class="text-center mb-4 p-2" style="color: #b03031">Liste de toutes les conférences</h3>
+                                        <h3 class="text-center mb-4 p-2" style="color: #b03031">Liste de toutes les
+                                            conférences</h3>
                                         <div class="row bg-dark text-white py-2">
                                             <div class="col-2">Date</div>
                                             <div class="col-7">Nom de la conférence</div>
@@ -75,12 +78,12 @@
                                 @include('components-fr.side-banner')
                             </div>
                         </div>
-                        </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
+    </div>
     </div>
     @include('layout-fr.footer')
 @endsection
