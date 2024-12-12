@@ -201,8 +201,10 @@
             }
 
             .tabContent>div {
-                display: block !important;
-            }
+            display: grid !important        ;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
         }
 
         .new-width {
@@ -235,13 +237,13 @@
         }
 
         .faq-drawer__title {
-            border-top: #000 1px solid;
+            border-bottom: 1px solid;
 
             cursor: pointer;
             display: block;
             font-size: 1.25em;
             font-weight: 700;
-            padding: 15px 9px 11px 6px;
+            padding: 10px ;
             position: relative;
             margin-bottom: 0;
             transition: all 0.25s ease-out;
@@ -284,6 +286,9 @@
             color: #fff;
             padding: 6px 13px 6px 13px;
             font-size: 17px;
+        }
+        a#advance-serch{
+            display: none;
         }
     </style>
 @endsection

@@ -148,3 +148,19 @@ body{
     .drop {
         padding: 15px !important;
     }
+    @media(max-width: 768px){
+        .row.drop.select_row{
+            flex-direction: column !important;
+        }
+        .list-head{
+            font-size: 24px !important;
+        }
+        nav.navbar.navbar-expand-lg.narbar-light{
+            justify-content: space-around !important; 
+        }
+       
+        a.topic_click, a.country_click, a.city_click {
+            width: 100% !important;
+            font-size: 12px;
+        }
+    }

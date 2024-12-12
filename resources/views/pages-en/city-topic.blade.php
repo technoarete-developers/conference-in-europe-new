@@ -66,7 +66,7 @@
                             <div class="row">
                                 <div class="col-sm-9 topic-midule-grid">
                                     <div class="p-4 mt-4" style="background-color: #f5f7fd: font-weight: 700">
-                                        <h3 class="text-center mb-4 p-2" style="color: #b03031">All Conference List</h3>
+                                        <h3 class="text-center mb-4 p-2 list-head" style="color: #b03031">All Conference List</h3>
                                         <div class="row bg-dark text-white py-2">
                                             <div class="col-2">Date</div>
                                             <div class="col-7">Conference Name</div>
