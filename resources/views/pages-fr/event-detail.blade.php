@@ -16,7 +16,7 @@
 @endsection
 
 @section('style')
-    <style>
+<style>
         body {
             font-family: 'Open Sans', Helvetica, Arial, sans-serif;
             font-size: 15px;
@@ -93,6 +93,30 @@
             .tabs__buttons--container {
                 display: flex;
             }
+            .card {
+    text-align: left;
+    height: 260px;
+            }
+            .image-text {
+    position: absolute;
+    bottom: 55px !important;
+    left: 10px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 16px !important;
+    color: white;
+    text-align: center;
+}
+.image-button:nth-child(1) {
+    left: 13% !important;
+}
+
+}
+.breadcrumb-item+.breadcrumb-item::before{
+
+content="/";
+color: #fff !important;
+}
 
             .container-fluid {
                 background-color: white !important;
@@ -289,6 +313,27 @@
 
         .date-new {
             margin-top: 15px;
+        }
+
+        .container-fluid {
+            background-color: white !important;
+            padding: 18px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        .owl-next>span{
+            background: #031e6b;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    position: absolute;
+    right: -12px;
+    top: 60px;
+    /* border-radius: 50%; */
+    padding: 5px 12px !important;
         }
     </style>
 @endsection
@@ -1084,7 +1129,7 @@
                     </div>
             </div>
         </section>
-            <div class="p-5 tm-container-outer tm-bg-gray">
+            <div class="p-0 p-md-5 tm-container-outer tm-bg-gray">
                 <div class="container-fluid">
                     <h4 class="org-details"><b>Conférences similaires en {{ $countryNameFr }}</b>
                     </h4>
@@ -1112,7 +1157,7 @@
                     </div>
                 </div>
             </div>
-            <div class="p-5 tm-container-outer tm-bg-gray">
+            <div class="p-0 p-md-5 tm-container-outer tm-bg-gray">
                 <div class="container-fluid">
                     <h4 class="org-details">You Might Also be Interested In {{ $countryNameFr }}</h4>
                     <div class="carousel-wrap">
@@ -1300,4 +1345,25 @@
             }
         });
     </script>
+      <script>
+        $(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+        loop: true,   // Enable looping
+        margin: 10,   // Space between items
+        nav: true,    // Navigation arrows
+        responsive: {
+            0: {
+                items: 1   // Show only 1 item on mobile
+            },
+            600: {
+                items: 2   // Show 2 items on small devices like tablets
+            },
+            1000: {
+                items: 3   // Show 3 items on large screens
+            }
+        }
+    });
+});
+
+        </script>
 @endsection

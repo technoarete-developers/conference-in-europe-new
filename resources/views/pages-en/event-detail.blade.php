@@ -92,6 +92,30 @@
             .tabs__buttons--container {
                 display: flex;
             }
+            .card {
+    text-align: left;
+    height: 260px;
+            }
+            .image-text {
+    position: absolute;
+    bottom: 55px !important;
+    left: 10px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 16px !important;
+    color: white;
+    text-align: center;
+}
+.image-button:nth-child(1) {
+    left: 13% !important;
+}
+
+}
+.breadcrumb-item+.breadcrumb-item::before{
+
+content="/";
+color: #fff !important;
+}
 
             .container-fluid {
                 background-color: white !important;
@@ -297,6 +321,18 @@
 
         a {
             text-decoration: none;
+        }
+        .owl-next>span{
+            background: #031e6b;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    position: absolute;
+    right: -12px;
+    top: 60px;
+    /* border-radius: 50%; */
+    padding: 5px 12px !important;
         }
     </style>
 @endsection
@@ -1066,7 +1102,7 @@
             </div>
         </section>
         @if ($similarEventName->isNotEmpty())
-            <div class="p-5 tm-container-outer tm-bg-gray">
+            <div class="p-0 p-md-5 tm-container-outer tm-bg-gray">
                 <div class="container-fluid">
                     <h4 class="org-details"><b>Similar Conferences in {{ $events->country }}</b>
                     </h4>
@@ -1096,7 +1132,7 @@
             </div>
         @endif
         @if ($similarEventName->isNotEmpty())
-            <div class="p-5 tm-container-outer tm-bg-gray">
+            <div class="p-0 p-md-5 tm-container-outer tm-bg-gray">
                 <div class="container-fluid">
                     <h4 class="org-details">You Might Also be Interested In {{ $events->country }}</h4>
                     <div class="carousel-wrap">
@@ -1135,6 +1171,27 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
+    <script>
+        $(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+        loop: true,   // Enable looping
+        margin: 10,   // Space between items
+        nav: true,    // Navigation arrows
+        responsive: {
+            0: {
+                items: 1   // Show only 1 item on mobile
+            },
+            600: {
+                items: 2   // Show 2 items on small devices like tablets
+            },
+            1000: {
+                items: 3   // Show 3 items on large screens
+            }
+        }
+    });
+});
+
+        </script>
     <script>
         function onClick(e) {
             e.preventDefault();
