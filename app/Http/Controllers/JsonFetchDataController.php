@@ -399,14 +399,22 @@ class JsonFetchDataController extends Controller
     public function getTopicFrName($topic)
     {
 
-        $jsonData = file_get_contents(public_path('json-fr/topic-with-subtopic.json'));
+        $jsonSubtopic = file_get_contents(public_path('json-fr/topic-with-subtopic.json'));
 
-        $topicSubtopic = json_decode($jsonData, true);
+        $topicSubtopic = json_decode($jsonSubtopic, true);
 
-        foreach ($topicSubtopic as $topics => $subtopicList) {
-            if (array_key_exists($topic, $subtopicList)) {
-                $topicNameFr = $subtopicList[$topic];
-                break;
+        $jsonTopic = file_get_contents(public_path('json-fr/topic.json'));
+
+        $topicList = json_decode($jsonTopic, true);
+
+        if ($topicList[$topic]) {
+            $topicNameFr = $topicList[$topic];
+        } else {
+            foreach ($topicSubtopic as $topics => $subtopicList) {
+                if (array_key_exists($topic, $subtopicList)) {
+                    $topicNameFr = $subtopicList[$topic];
+                    break;
+                }
             }
         }
 
