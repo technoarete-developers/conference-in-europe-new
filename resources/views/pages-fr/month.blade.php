@@ -1,17 +1,14 @@
-@php
-    $monthName = ucfirst(str_replace('-', ' ', request()->month));
-@endphp
 
 @extends('layout-fr.master')
 
 @section('meta')
-    <title>{{ str_replace('@month', $monthName, $content['title']) }}</title>
-    <meta name="keywords" content="{{ str_replace('@month', $monthName, $content['metaKey']) }}" />
-    <meta name="Description" content="{{ str_replace('@month', $monthName, $content['metaDes']) }}" />
+    <title>{{ str_replace('@month', $monthNameFr, $content['title']) }}</title>
+    <meta name="keywords" content="{{ str_replace('@month', $monthNameFr, $content['metaKey']) }}" />
+    <meta name="Description" content="{{ str_replace('@month', $monthNameFr, $content['metaDes']) }}" />
 
-    <meta property="og:title" content="{{ str_replace('@month', $monthName, $content['title']) }}" />
-    <meta property="og:keywords" content="{{ str_replace('@month', $monthName, $content['metaKey']) }}" />
-    <meta property="og:description" content="{{ str_replace('@month', $monthName, $content['metaDes']) }}" />
+    <meta property="og:title" content="{{ str_replace('@month', $monthNameFr, $content['title']) }}" />
+    <meta property="og:keywords" content="{{ str_replace('@month', $monthNameFr, $content['metaKey']) }}" />
+    <meta property="og:description" content="{{ str_replace('@month', $monthNameFr, $content['metaDes']) }}" />
 
     <link rel="canonical" href="{{ url()->current() }}" />
 @endsection
@@ -26,7 +23,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>{{ $monthName }}</h2>
+                        <h2>{{ $monthNameFr }}</h2>
                     </div>
                 </div>
             </div>
@@ -40,14 +37,14 @@
                                 <div class="col-sm-12 topic-midule-grid">
                                     <div class="topic-date-cnfr">
                                         <legend> <span
-                                                class="fld_hed text-capitalize">{{ $monthName }}</span>
+                                                class="fld_hed text-capitalize">{{ $monthNameFr }}</span>
                                         </legend>
                                         <div class="county-conference">
                                             <div class="col-md-12">
                                                 <h1 style=" font-size: 18px;font-family:Gill Sans;">
-                                                    {{ str_replace('@month', $monthName, $content['h1']) }}</h1>
-                                                <p>{{ str_replace('@month', $monthName, $content['contentOne']) }}</p>
-                                                <p>{{ str_replace('@month', $monthName, $content['contentTwo']) }}</p>
+                                                    {{ str_replace('@month', $monthNameFr, $content['h1']) }}</h1>
+                                                <p>{{ str_replace('@month', $monthNameFr, $content['contentOne']) }}</p>
+                                                <p>{{ str_replace('@month', $monthNameFr, $content['contentTwo']) }}</p>
                                             </div>
                                         </div>
                                     </div>

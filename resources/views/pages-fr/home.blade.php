@@ -510,7 +510,7 @@
                     @endphp
                     @foreach ($monthList as $url => $name)
                         <div class="col-lg-2 col-6 col-sm-4 col-md-3 calender-media">
-                            <a href="{{ route('month-page', ['month' => $url]) }}" class="calendar month_click">
+                            <a href="{{ route('month-page-fr', ['month' => $url]) }}" class="calendar month_click">
                                 <div class="calander-div">
                                     <em>{{ date('Y', strtotime("first day of $i month ")) }}</em>
                                     <span class="calander-year">
