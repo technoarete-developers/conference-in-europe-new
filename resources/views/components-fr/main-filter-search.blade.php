@@ -15,7 +15,7 @@
                                 <div class="col-12 pr-5">
                                     <h3 class="text-center"><span
                                             style=" background: linear-gradient(316.24deg,#ae1010 24.99%,#030351 100%); padding: 8px; border-radius: 5px; font-size: 24px;">
-                                            <a href="{{ route('topic-page', ['topic' => $url]) }}"
+                                            <a href="{{ route('topic-page-fr', ['topic' => $url]) }}"
                                                 style=" color: #fff;">
                                                 {{ $name }}</a></span> Sous-thèmes</h3>
                                     <hr>
